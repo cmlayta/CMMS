@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Editar Equipo</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f9;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+      color: #2c3e50;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      resize: vertical;
+    }
+    button,
+    a {
+      display: inline-block;
+      padding: 10px 16px;
+      margin-right: 10px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover,
+    a:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Editar Equipo</h1>
+
+  <form method="POST">
+    <label for="codigo">Código:</label>
+    <textarea name="codigo" required>{{ equipo[2] }}</textarea>
+
+    <label for="marca">Marca:</label>
+    <input type="text" name="marca" value="{{ equipo[5] }}" required>
+
+    <label for="modelo">Modelo:</label>
+    <input type="text" name="modelo" value="{{ equipo[4] }}" required>
+
+    <label for="nombre">Nombre del equipo:</label>
+    <input type="text" name="nombre" value="{{ equipo[1] }}" required>
+
+    <label for="categoria">Categoría:</label>
+    <input type="text" name="categoria" value="{{ equipo[3] }}" required>
+
+    <button type="submit">Guardar Cambios</button>
+    <a href="{{ url_for('ver_equipos') }}">Cancelar</a>
+  </form>
+
+</body>
+</html>

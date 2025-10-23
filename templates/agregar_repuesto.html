@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Agregar Repuesto</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f7f9fc;
+      max-width: 600px;
+      margin: 30px auto;
+      color: #333;
+      padding: 20px;
+      box-shadow: 0 0 12px rgb(0 0 0 / 0.1);
+      border-radius: 8px;
+    }
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    label {
+      font-weight: 600;
+      margin-bottom: 5px;
+      display: block;
+      color: #34495e;
+    }
+    input[type="text"],
+    input[type="number"],
+    select {
+      padding: 10px 12px;
+      border: 1.5px solid #ccc;
+      border-radius: 5px;
+      font-size: 15px;
+      transition: border-color 0.3s ease;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    input[type="text"]:focus,
+    input[type="number"]:focus,
+    select:focus {
+      border-color: #2980b9;
+      outline: none;
+    }
+    input[type="submit"] {
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      padding: 12px 0;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+    input[type="submit"]:hover {
+      background-color: #1a5276;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      color: #2980b9;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #1a5276;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Agregar Repuesto</h2>
+
+  <form method="POST">
+    <label for="codigo">Código:</label>
+    <input type="text" id="codigo" name="codigo" required>
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="tipo">Tipo:</label>
+    <input type="text" id="tipo" name="tipo" required>
+
+    <label for="ubicacion">Ubicación:</label>
+    <input type="text" id="ubicacion" name="ubicacion" required>
+
+    <label for="stock">Stock inicial:</label>
+    <input type="number" id="stock" name="stock" min="0" required>
+
+    <label for="stock_minimo">Stock mínimo:</label>
+    <input type="number" id="stock_minimo" name="stock_minimo" min="0" required>
+
+    <label for="precio">Precio (Q):</label>
+    <input type="number" id="precio" name="precio" min="0" step="0.01" required>
+
+    <label for="comercial">Tipo Comercio:</label>
+    <select id="comercial" name="comercial" required>
+      <option value="Comercial">Comercial</option>
+      <option value="No Comercial">No Comercial</option>
+    </select>
+
+    <label for="proveniencia">Proveniencia:</label>
+    <select id="proveniencia" name="proveniencia" required>
+      <option value="Importado">Importado</option>
+      <option value="Local">Local</option>
+    </select>
+
+    <label for="proveedor">Proveedor:</label>
+    <input type="text" id="proveedor" name="proveedor">
+
+    <label for="codigo_fabricante">Código de Fabricante:</label>
+    <input type="text" id="codigo_fabricante" name="codigo_fabricante">
+
+    <input type="submit" value="Guardar">
+  </form>
+
+  <a href="{{ url_for('ver_repuestos') }}">← Volver a Repuestos</a>
+
+</body>
+</html>

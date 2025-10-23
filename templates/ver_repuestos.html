@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Repuestos</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f7f9fc;
+      margin: 20px auto;
+      max-width: 1200px;
+      color: #333;
+    }
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+    nav a {
+      text-decoration: none;
+      margin-right: 15px;
+      color: #2980b9;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #1a5276;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    input[type="text"] {
+      padding: 8px 12px;
+      width: 300px;
+      border: 1.5px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: border-color 0.3s ease;
+    }
+    input[type="text"]:focus {
+      border-color: #2980b9;
+      outline: none;
+    }
+    button {
+      padding: 8px 18px;
+      background-color: #2980b9;
+      border: none;
+      color: white;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-left: 8px;
+    }
+    button:hover {
+      background-color: #1a5276;
+    }
+    .table-container {
+      overflow-x: hidden; 
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 0 0.1rem rgb(0 0 0 / 0.1);
+      border-radius: 6px;
+      overflow: hidden;
+      table-layout: fixed;
+    }
+    th, td {
+      padding: 12px 8px;
+      text-align: left;
+      border-bottom: 1px solid #e1e8ed;
+      font-size: 14px;
+      white-space: normal;
+      word-wrap: break-word;
+    }
+    th {
+      background-color: #2980b9;
+      color: white;
+      font-weight: 600;
+      user-select: none;
+    }
+    tr:hover {
+      background-color: #f1f6fb;
+    }
+    td a {
+      color: #2980b9;
+      font-weight: 600;
+      text-decoration: none;
+      margin-right: 8px;
+      font-size: 13px;
+    }
+    td a:hover {
+      text-decoration: underline;
+      color: #1a5276;
+    }
+    tfoot input {
+      width: 100%;
+      padding: 4px;
+      box-sizing: border-box;
+      font-size: 12px;
+    }
+
+    /* Ajustar anchos */
+    th:nth-child(1), td:nth-child(1) { width: 3%; }
+    th:nth-child(2), td:nth-child(2) { width: 7%; }
+    th:nth-child(3), td:nth-child(3) { width: 16%; }
+    th:nth-child(4), td:nth-child(4) { width: 9%; }
+    th:nth-child(5), td:nth-child(5) { width: 10%; }
+    th:nth-child(6), td:nth-child(6) { width: 8%; }
+    th:nth-child(7), td:nth-child(7) { width: 6%; }
+    th:nth-child(8), td:nth-child(8) { width: 8%; }
+    th:nth-child(9), td:nth-child(9) { width: 8%; }
+    th:nth-child(10), td:nth-child(10) { width: 8%; }
+    th:nth-child(11), td:nth-child(11) { width: 8%; }
+    th:nth-child(12), td:nth-child(12) { width: 7%; }
+    th:nth-child(13), td:nth-child(13) { width: 9%; }
+  </style>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+</head>
+<body>
+
+  <h2>Repuestos</h2>
+
+  <nav>
+    <a href="{{ url_for('agregar_repuesto') }}">Agregar Repuesto</a>
+    <a href="{{ url_for('alertas_stock') }}">🚨 Alertas de Stock</a>
+    <a href="{{ url_for('inicio') }}">Volver al menú</a>
+  </nav>
+
+  <form method="get" action="{{ url_for('ver_repuestos') }}">
+    <br>
+    <input type="text" name="q" placeholder="Buscar repuesto..." value="{{ request.args.get('q', '') }}">
+    <button type="submit">Buscar</button>
+  </form>
+
+  <div class="table-container">
+    <table id="repuestos-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Código</th>
+          <th>Nombre</th>
+          <th>Tipo</th>
+          <th>Ubicación</th>
+          <th>Cantidad Actual</th>
+          <th>Stock Mínimo</th>
+          <th>Tipo Comercio</th>
+          <th>Proveniencia</th>
+          <th>Proveedor</th>
+          <th>Código Fabricante</th>
+          <th>Precio</th> <!-- NUEVA COLUMNA -->
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <th>ID</th>
+          <th>Código</th>
+          <th>Nombre</th>
+          <th>Tipo</th>
+          <th>Ubicación</th>
+          <th>Cantidad Actual</th>
+          <th>Stock Mínimo</th>
+          <th>Tipo Comercio</th>
+          <th>Proveniencia</th>
+          <th>Proveedor</th>
+          <th>Código Fabricante</th>
+          <th>Precio</th> <!-- NUEVA COLUMNA -->
+          <th>Acciones</th>
+        </tr>
+      </tfoot>
+      <tbody>
+        {% for r in repuestos %}
+        <tr>
+          <td>{{ r[0] }}</td>
+          <td>{{ r[1] }}</td>
+          <td>{{ r[2] }}</td>
+          <td>{{ r[3] }}</td>
+          <td>{{ r[4] }}</td>
+          <td>{{ r[5] }}</td>
+          <td>{{ r[10] }}</td>
+          <td>{{ r[6] }}</td>
+          <td>{{ r[7] }}</td>
+          <td>{{ r[8] }}</td>
+          <td>{{ r[9] }}</td>
+          <td>{{ r[11] }}</td> <!-- PRECIO -->
+          <td>
+            <a href="{{ url_for('editar_repuesto', id=r[0]) }}">Editar</a>
+            <a href="{{ url_for('ingreso_repuesto', id=r[0]) }}">Ingreso</a>
+            <a href="{{ url_for('salida_repuesto', id=r[0]) }}">Salida</a>
+            <a href="{{ url_for('eliminar_repuesto', id=r[0]) }}">Eliminar</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Agregar inputs de filtrado en el footer
+      $('#repuestos-table tfoot th').each(function () {
+        var title = $(this).text();
+        if(title !== "Acciones") {
+          $(this).html('<input type="text" placeholder="Buscar '+title+'" />');
+        } else {
+          $(this).html('');
+        }
+      });
+
+      var table = $('#repuestos-table').DataTable({
+        "language": {
+          "search": "Buscar global:",
+          "lengthMenu": "Mostrar _MENU_ registros",
+          "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
+          "paginate": {
+            "first": "Primero",
+            "last": "Último",
+            "next": "Siguiente",
+            "previous": "Anterior"
+          }
+        }
+      });
+
+      // Búsqueda individual por columna
+      table.columns().every(function () {
+        var that = this;
+        $('input', this.footer()).on('keyup change clear', function () {
+          that.search(this.value, true, false).draw();
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Inicio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .welcome {
+            margin-bottom: 40px;
+        }
+
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            flex: 1 1 180px;
+            background-color: #e3f2fd;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #0d47a1;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .card:hover {
+            background-color: #bbdefb;
+            transform: translateY(-5px);
+        }
+
+        .logout {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .logout a {
+            color: #c62828;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .logout a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="welcome">
+            <h2>Bienvenido, {{ usuario }} <small style="color: #888;">({{ rol }})</small></h2>
+            <p>Selecciona una opción para comenzar:</p>
+        </div>
+
+        <div class="menu">
+            <a href="{{ url_for('ver_repuestos') }}" class="card">🛠 Repuestos</a>
+            <a href="{{ url_for('ver_equipos') }}" class="card">📦 Equipos</a>
+            <a href="{{ url_for('menu_reportes') }}" class="card">🧾 Reportería</a>
+        </div>
+
+        <div class="logout">
+            <p><a href="{{ url_for('logout') }}">🔒 Cerrar sesión</a></p>
+        </div>
+    </div>
+</body>
+</html>

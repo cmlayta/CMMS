@@ -1,0 +1,42 @@
+<h2 style="margin-top: 20px;">🔔 Repuestos con Stock Bajo</h2>
+
+{% if repuestos %}
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
+  <thead style="background-color: #f44336; color: white;">
+    <tr>
+      <th>ID</th>
+      <th>Código</th>
+      <th>Nombre</th>
+      <th>Tipo</th>
+      <th>Ubicación</th>
+      <th>Cantidad Actual</th>
+      <th>Stock Mínimo</th>
+      <th>Tipo Comercio</th>
+      <th>Proveniencia</th>
+      <th>Proveedor</th>
+      <th>Código Fabricante</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for r in repuestos %}
+    <tr style="background-color: #fff5f5;">
+      <td>{{ r[0] }}</td>
+      <td>{{ r[1] }}</td>
+      <td>{{ r[2] }}</td>
+      <td>{{ r[3] }}</td>
+      <td>{{ r[4] }}</td>
+      <td style="color: red; font-weight: bold;">{{ r[5] }}</td>
+      <td style="color: #555;">{{ r[10] }}</td>
+      <td>{{ r[6] }}</td>
+      <td>{{ r[7] }}</td>
+      <td>{{ r[8] }}</td>
+      <td>{{ r[9] }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p style="font-family: Arial; color: #444;">✅ No hay repuestos con stock bajo actualmente.</p>
+{% endif %}
+
+<a href="{{ url_for('ver_repuestos') }}">Volver a Repuestos</a>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eliminar Equipo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        h1 {
+            color: #b00020;
+        }
+
+        .confirm-box {
+            background-color: #fce4ec;
+            padding: 20px;
+            border: 1px solid #f8bbd0;
+            border-radius: 8px;
+            max-width: 500px;
+        }
+
+        .confirm-box p {
+            font-size: 18px;
+        }
+
+        .actions {
+            margin-top: 20px;
+        }
+
+        .actions button {
+            background-color: #d32f2f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-right: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .actions a {
+            text-decoration: none;
+            color: #555;
+        }
+
+        .actions a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Eliminar Equipo</h1>
+    <div class="confirm-box">
+        <p>¿Estás seguro de que deseas eliminar el equipo <strong>{{ equipo[1] }}</strong>?</p>
+
+        <form method="POST" class="actions">
+            <button type="submit">Sí, eliminar</button>
+            <a href="{{ url_for('ver_equipos') }}">Cancelar</a>
+        </form>
+    </div>
+</body>
+</html>
+    

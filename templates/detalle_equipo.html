@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle del Equipo</title>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9fafc;
+            color: #2c3e50;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+        }
+
+        h1, h2, h3 {
+            color: #34495e;
+        }
+
+        a {
+            display: inline-block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #3498db;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f3f7;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 6px 0 16px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        button,
+        input[type="submit"] {
+            padding: 10px 18px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover,
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        hr {
+            margin: 40px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Detalle del Equipo: {{ equipo[1] }}</h1>
+    <a href="{{ url_for('ver_equipos') }}">← Volver a la lista de equipos</a>
+
+    <hr>
+
+    <h2>Información del equipo</h2>
+    <ul>
+        <li><strong>ID:</strong> {{ equipo[0] }}</li>
+        <li><strong>Código:</strong> {{ equipo[2] }}</li>
+        <li><strong>Nombre:</strong> {{ equipo[1] }}</li>
+        <li><strong>Categoría:</strong> {{ equipo[3] }}</li>
+        <li><strong>Modelo:</strong> {{ equipo[4] }}</li>
+        <li><strong>Marca:</strong> {{ equipo[5] }}</li>
+        <li><strong>Fecha de ingreso:</strong> {{ equipo[6] }}</li>
+    </ul>
+
+    <h3>Repuestos utilizados por este equipo</h3>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Cantidad</th>
+            <th>Comentario</th>
+            <th>Acción</th>
+        </tr>
+        {% for r in repuestos_equipo %}
+        <tr>
+            <td>{{ r[1] }}</td>
+            <td>{{ r[2] }}</td>
+            <td>{{ r[3] }}</td>
+            <td>
+                <form method="POST" action="{{ url_for('eliminar_asociacion_repuesto', equipo_id=equipo_id, asociacion_id=r[0]) }}" style="display:inline;">
+                    <button type="submit" onclick="return confirm('¿Eliminar este repuesto del equipo?')">Eliminar</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h3>Agregar Repuesto a este equipo</h3>
+    <form method="POST" action="{{ url_for('asociar_repuesto_equipo', equipo_id=equipo[0]) }}">
+        <label for="repuesto_id">Repuesto:</label>
+        <select name="repuesto_id" id="repuesto_id" style="width: 100%;" required>
+            <option value="">Seleccione un repuesto</option>
+            {% for r in todos_repuestos %}
+            <option value="{{ r[0] }}">{{ r[1] }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" name="cantidad" min="1" required>
+
+        <label for="comentario">Comentario:</label>
+        <input type="text" name="comentario">
+
+        <input type="submit" value="Asociar Repuesto">
+    </form>
+
+    <hr>
+
+    <h2>Historial de Salidas a este Equipo</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID Movimiento</th>
+                <th>Repuesto</th>
+                <th>Cantidad</th>
+                <th>Fecha</th>
+                <th>Técnico</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for m in historial_salidas %}
+            <tr>
+                <td>{{ m[0] }}</td>
+                <td>{{ m[1] }}</td>
+                <td>{{ m[2] }}</td>
+                <td>{{ m[3] }}</td>
+                <td>{{ m[4] }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="5" style="text-align:center;">No hay movimientos de salida registrados para este equipo.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        $(document).ready(function() {
+            $('#repuesto_id').select2({
+                placeholder: "Buscar repuesto...",
+                allowClear: true
+            });
+        });
+    </script>
+
+</body>
+</html>

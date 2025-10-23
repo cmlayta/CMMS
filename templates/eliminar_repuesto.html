@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Eliminar Repuesto</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f7f9fc;
+      max-width: 500px;
+      margin: 30px auto;
+      color: #333;
+      padding: 30px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+    h1 {
+      color: #c0392b;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 16px;
+      text-align: center;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 20px 0;
+      background: #ecf0f1;
+      border-radius: 8px;
+    }
+    li {
+      padding: 8px 12px;
+      border-bottom: 1px solid #ccc;
+    }
+    li:last-child {
+      border-bottom: none;
+    }
+    strong {
+      color: #2c3e50;
+    }
+    form {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 25px;
+    }
+    input[type="submit"] {
+      background-color: #c0392b;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    input[type="submit"]:hover {
+      background-color: #922b21;
+    }
+    a {
+      display: inline-block;
+      background-color: #bdc3c7;
+      color: #2c3e50;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    a:hover {
+      background-color: #95a5a6;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Eliminar Repuesto</h1>
+  <p>¿Estás seguro que deseas eliminar el siguiente repuesto?</p>
+
+  <ul>
+    <li><strong>ID:</strong> {{ repuesto[0] }}</li>
+    <li><strong>Código:</strong> {{ repuesto[1] }}</li>
+    <li><strong>Nombre:</strong> {{ repuesto[2] }}</li>
+    <li><strong>Tipo:</strong> {{ repuesto[3] }}</li>
+    <li><strong>Ubicación:</strong> {{ repuesto[4] }}</li>
+    <li><strong>Cantidad:</strong> {{ repuesto[5] }}</li>
+  </ul>
+
+  <form method="post">
+    <input type="submit" value="Eliminar definitivamente">
+    <a href="{{ url_for('ver_repuestos') }}">Cancelar</a>
+  </form>
+
+</body>
+</html>

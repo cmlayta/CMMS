@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agregar Mantenimiento</title>
+</head>
+<body>
+    <h1>Agregar Mantenimiento</h1>
+
+    <form method="POST">
+        <label>Equipo:</label>
+        <select name="equipo_id" required>
+            {% for equipo in equipos %}
+                <option value="{{ equipo[0] }}">{{ equipo[1] }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label>Descripción:</label>
+        <input type="text" name="descripcion" required><br><br>
+
+        <label>Tipo:</label>
+        <select name="tipo" required>
+            <option value="preventivo">Preventivo</option>
+            <option value="correctivo">Correctivo</option>
+        </select><br><br>
+
+        <label>Fecha programada:</label>
+        <input type="date" name="fecha_programada"><br><br>
+
+        <label>Horas de uso:</label>
+        <input type="number" name="horas_uso" value="0"><br><br>
+
+        <label>Técnico:</label>
+        <input type="text" name="tecnico" value="{{ session['usuario'] }}" readonly><br><br>
+
+        <label>¿Realizado?</label>
+        <select name="realizado">
+            <option value="0">No</option>
+            <option value="1">Sí</option>
+        </select><br><br>
+
+        <input type="submit" value="Guardar">
+    </form>
+
+    <br>
+    <a href="{{ url_for('ver_mantenimientos') }}">Volver a lista</a>
+</body>
+</html>

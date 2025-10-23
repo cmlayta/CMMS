@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Equipos</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f6f9;
+      max-width: 1000px;
+      margin: 40px auto;
+      color: #2c3e50;
+      padding: 30px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 25px;
+    }
+    a {
+      display: inline-block;
+      margin: 0 10px 20px 0;
+      padding: 10px 16px;
+      background-color: #3498db;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+    a:hover {
+      background-color: #2980b9;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 12px 15px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #34495e;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    tr:hover {
+      background-color: #ecf0f1;
+    }
+    .opciones a {
+      background-color: #7f8c8d;
+      margin: 2px;
+    }
+    .opciones a:hover {
+      background-color: #636e72;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Lista de Equipos</h1>
+
+  <a href="{{ url_for('inicio') }}">Volver al menú</a>
+  <a href="{{ url_for('agregar_equipo') }}">Agregar nuevo equipo</a>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Código</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Nombre</th>
+        <th>Categoría</th>
+        <th>Fecha de Ingreso</th>
+        <th>Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for equipo in equipos %}
+      <tr>
+        <td>{{ equipo[0] }}</td>
+        <td>{{ equipo[2] }}</td>
+        <td>{{ equipo[5] }}</td>
+        <td>{{ equipo[4] }}</td>
+        <td>{{ equipo[1] }}</td>
+        <td>{{ equipo[3] }}</td>
+        <td>{{ equipo[6] }}</td>
+        <td class="opciones">
+          <a href="{{ url_for('editar_equipo', id=equipo[0]) }}">Editar</a>
+          <a href="{{ url_for('eliminar_equipo', id=equipo[0]) }}" onclick="return confirm('¿Estás seguro de que deseas eliminar este equipo?')">Eliminar</a>
+          <a href="{{ url_for('detalle_equipo', equipo_id=equipo[0]) }}">Ver Repuestos y Historial</a>
+        </td>
+      </tr>
+      {% else %}
+      <tr>
+        <td colspan="8">No hay equipos registrados.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</body>
+</html>

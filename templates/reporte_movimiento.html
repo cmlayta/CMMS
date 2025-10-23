@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reporte de Movimientos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #2c3e50;
+        }
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        form {
+            background: white;
+            padding: 15px 20px;
+            border: 1px solid #ccc;
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: flex-end;
+            border-radius: 5px;
+        }
+        form > div {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[list],
+        input[type="date"],
+        select {
+            padding: 7px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            width: 220px;
+        }
+        input[type="date"] {
+            width: 160px;
+        }
+        button {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 15px;
+            transition: background-color 0.3s ease;
+            min-width: 120px;
+        }
+        button:hover {
+            background-color: #1c5980;
+        }
+        .boton-volver {
+            background-color: #7f8c8d;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 15px;
+            transition: background-color 0.3s ease;
+            min-width: 120px;
+            text-align: center;
+        }
+        .boton-volver:hover {
+            background-color: #5d6d7e;
+        }
+        .form-actions {
+            display: flex;
+            gap: 10px;
+            margin-left: auto;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: #27ae60;
+            font-weight: bold;
+        }
+        ul li {
+            margin-bottom: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 8px rgb(0 0 0 / 0.1);
+        }
+        thead {
+            background-color: #2980b9;
+            color: white;
+        }
+        th, td {
+            padding: 10px 12px;
+            border: 1px solid #aaa;
+            text-align: left;
+        }
+        tbody tr:hover {
+            background-color: #f1f9ff;
+        }
+        .table-responsive {
+            overflow-x: auto;
+            margin-bottom: 30px;
+        }
+        .chart-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .chart-container img {
+            max-width: 90%;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        p.no-results {
+            text-align: center;
+            color: #888;
+            font-size: 16px;
+            margin-top: 50px;
+        }
+        .export-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            margin-top: -15px;
+            margin-bottom: 30px;
+        }
+        .export-buttons form {
+            padding: 0;
+            margin: 0;
+            border: none;
+            display: inline-block;
+        }
+        @media (max-width: 600px) {
+            form {
+                flex-direction: column;
+                gap: 15px;
+            }
+            input[type="text"],
+            input[list],
+            input[type="date"],
+            select {
+                width: 100%;
+            }
+            .form-actions,
+            .export-buttons {
+                flex-direction: column;
+                width: 100%;
+                margin-left: 0;
+            }
+            .form-actions > *,
+            .export-buttons button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Reporte de Movimientos de Repuestos</h2>
+
+    <form method="POST">
+        <div>
+            <label for="repuesto">Repuesto</label>
+            <input list="lista_repuestos" name="repuesto" id="repuesto" value="{{ filtros.repuesto }}" autocomplete="off">
+            <datalist id="lista_repuestos">
+                {% for r in repuestos_lista %}
+                    <option value="{{ r }}">
+                {% endfor %}
+            </datalist>
+
+        </div>
+
+        <div>
+            <label for="fecha_inicio">Fecha inicio</label>
+            <input type="date" name="fecha_inicio" id="fecha_inicio" value="{{ filtros.fecha_inicio }}">
+        </div>
+
+        <div>
+            <label for="fecha_fin">Fecha fin</label>
+            <input type="date" name="fecha_fin" id="fecha_fin" value="{{ filtros.fecha_fin }}">
+        </div>
+
+        <div class="form-actions">
+            <button type="submit">Filtrar</button>
+            <a href="{{ url_for('menu_reportes') }}" class="boton-volver">Volver al menú</a>
+        </div>
+    </form>
+
+    <div class="export-buttons">
+        <form method="POST" action="{{ url_for('reporte_movimiento') }}">
+            <input type="hidden" name="repuesto" value="{{ filtros.repuesto }}">
+            <input type="hidden" name="fecha_inicio" value="{{ filtros.fecha_inicio }}">
+            <input type="hidden" name="fecha_fin" value="{{ filtros.fecha_fin }}">
+            {% for tipo in filtros.tipos %}
+                <input type="hidden" name="tipos" value="{{ tipo }}">
+            {% endfor %}
+            {% for equipo in filtros.equipos %}
+                <input type="hidden" name="equipos" value="{{ equipo }}">
+            {% endfor %}
+            <input type="hidden" name="exportar" value="excel">
+            <button type="submit">Exportar Excel</button>
+        </form>
+
+        <form method="POST" action="{{ url_for('reporte_movimiento') }}">
+            <input type="hidden" name="repuesto" value="{{ filtros.repuesto }}">
+            <input type="hidden" name="fecha_inicio" value="{{ filtros.fecha_inicio }}">
+            <input type="hidden" name="fecha_fin" value="{{ filtros.fecha_fin }}">
+            {% for tipo in filtros.tipos %}
+                <input type="hidden" name="tipos" value="{{ tipo }}">
+            {% endfor %}
+            {% for equipo in filtros.equipos %}
+                <input type="hidden" name="equipos" value="{{ equipo }}">
+            {% endfor %}
+            <input type="hidden" name="exportar" value="pdf">
+            <button type="submit">Exportar PDF</button>
+        </form>
+    </div>
+
+    <h5>Totales</h5>
+    <ul>
+        <li>Stock actual: <strong>{{ total_stock }}</strong></li>
+        <li>Total de salidas: <strong>{{ total_salidas }}</strong></li>
+        <li>Total de ingresos: <strong>{{ total_ingresos }}</strong></li>
+    </ul>
+
+    {% if datos %}
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>Repuesto</th>
+                    <th>Tipo</th>
+                    <th>Tipo Movimiento</th>
+                    <th>Cantidad</th>
+                    <th>Fecha</th>
+                    <th>Equipo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for d in datos %}
+                <tr>
+                    <td>{{ d.repuesto }}</td>
+                    <td>{{ d.tipo }}</td>
+                    <td>{{ d.tipo_movimiento }}</td>
+                    <td>{{ d.cantidad }}</td>
+                    <td>{{ d.fecha }}</td>
+                    <td>{{ d.maquina or 'Sin equipo' }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="chart-container">
+        <h5>Gráfico por máquina</h5>
+        {% if grafico_base64 %}
+        <img src="data:image/png;base64,{{ grafico_base64 }}" alt="Gráfico por máquina">
+        {% endif %}
+    </div>
+    {% else %}
+    <p class="no-results">No se encontraron resultados con los filtros aplicados.</p>
+    {% endif %}
+</div>
+
+</body>
+</html>

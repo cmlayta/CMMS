@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Salida Repuesto</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f7f9fc;
+      max-width: 400px;
+      margin: 30px auto;
+      color: #333;
+      padding: 20px;
+      box-shadow: 0 0 12px rgb(0 0 0 / 0.1);
+      border-radius: 8px;
+    }
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    label {
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #34495e;
+      display: block;
+    }
+    input[type="number"],
+    select {
+      padding: 10px 12px;
+      border: 1.5px solid #ccc;
+      border-radius: 5px;
+      font-size: 15px;
+      width: 100%;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease;
+    }
+    input[type="number"]:focus,
+    select:focus {
+      border-color: #2980b9;
+      outline: none;
+    }
+    input[type="submit"] {
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      padding: 12px 0;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    input[type="submit"]:hover {
+      background-color: #1a5276;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      color: #2980b9;
+      font-weight: 600;
+      text-decoration: none;
+      text-align: center;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #1a5276;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Salida Repuesto</h2>
+
+  <form method="POST">
+    <label for="stock">Cantidad:</label>
+    <input type="number" id="stock" name="stock" min="1" required>
+
+    <label for="equipo_id">Equipo:</label>
+    <select id="equipo_id" name="equipo_id" required>
+      <option value="" disabled selected>Selecciona un equipo</option>
+      {% for equipo in equipos %}
+        <option value="{{ equipo[0] }}">{{ equipo[1] }}</option>
+      {% endfor %}
+    </select>
+
+    <input type="submit" value="Guardar">
+  </form>
+
+  <a href="{{ url_for('ver_repuestos') }}">← Volver a Repuestos</a>
+
+</body>
+</html>

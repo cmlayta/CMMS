@@ -1,0 +1,15 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>{{ tipo|capitalize }} de Repuesto</title></head>
+<body>
+<h1>{{ tipo|capitalize }} de Repuesto</h1>
+<form method="POST">
+    ID Repuesto: <input type="number" name="repuesto_id"><br>
+    Cantidad: <input type="number" name="cantidad"><br>
+    Técnico: <input type="text" name="tecnico"><br>
+    <input type="submit" value="Guardar">
+</form>
+<a href="/repuestos">Volver</a>
+</body>
+</html>
