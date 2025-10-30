@@ -275,7 +275,7 @@ def editar_equipo(id):
         modelo = request.form['modelo']
         marca = request.form['marca']
         cur.execute("UPDATE equipos SET nombre=%s, codigo=%s, categoria=%s, modelo=%s, marca=%s WHERE id=%s",
-                    (nombre, codigo, categoria, marca, modelo, id))
+                    (nombre, codigo, categoria, modelo, marca, id))
         con.commit()
         con.close()
         return redirect(url_for('ver_equipos'))
