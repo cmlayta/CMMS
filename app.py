@@ -495,12 +495,14 @@ def reporte_salida():
             # Agregar gráfico
             graph_img = BytesIO(base64.b64decode(img_base64))
             pdf.image(graph_img, x=10, w=180)
-
+            # Generar PDF en memoria
             pdf_output = BytesIO()
-            pdf.output(pdf_output)
+            pdf_bytes = pdf.output(dest='S').encode('latin1')  # 🔹 devuelve el PDF como bytes
+            pdf_output.write(pdf_bytes)
             pdf_output.seek(0)
+
             return send_file(pdf_output, download_name='reporte_salidas.pdf', as_attachment=True)
-    
+
     con.close()
     return render_template('reporte_salida.html', datos=datos, total=total_repuestos,
                            equipos_lista=equipos_lista, tipos_lista=tipos_lista,
