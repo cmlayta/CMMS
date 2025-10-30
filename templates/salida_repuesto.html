@@ -79,19 +79,38 @@
   <h2>Salida Repuesto</h2>
 
   <form method="POST">
-    <label for="stock">Cantidad:</label>
-    <input type="number" id="stock" name="stock" min="1" required>
+  <label for="stock">Cantidad:</label>
+  <input type="number" id="stock" name="stock" min="1" required>
 
-    <label for="equipo_id">Equipo:</label>
-    <input list="equipos_list" id="equipo_id" name="equipo_id" required placeholder="Escribe para buscar...">
-    <datalist id="equipos_list">
-      {% for equipo in equipos %}
-        <option value="{{ equipo[0] }} - {{ equipo[1] }}"></option>
-      {% endfor %}
-    </datalist>
+  <label for="equipo_buscar">Equipo:</label>
+  <input list="equipos_list" id="equipo_buscar" placeholder="Escribe para buscar..." oninput="updateEquipoId()" required>
+  <input type="hidden" id="equipo_id" name="equipo_id">
 
-    <input type="submit" value="Guardar">
+  <datalist id="equipos_list">
+    {% for equipo in equipos %}
+      <option data-id="{{ equipo[0] }}" value="{{ equipo[1] }}"></option>
+    {% endfor %}
+  </datalist>
+
+  <input type="submit" value="Guardar">
 </form>
+
+<script>
+function updateEquipoId() {
+  const input = document.getElementById('equipo_buscar');
+  const hidden = document.getElementById('equipo_id');
+  const options = document.getElementById('equipos_list').options;
+
+  hidden.value = ""; // reset
+  for (let i = 0; i < options.length; i++) {
+    if (options[i].value === input.value) {
+      hidden.value = options[i].dataset.id; // guardar solo el ID
+      break;
+    }
+  }
+}
+</script>
+
 
 
   <a href="{{ url_for('ver_repuestos') }}">← Volver a Repuestos</a>
