@@ -774,46 +774,28 @@ def reporte_movimiento():
             elif d['tipo_movimiento'] == 'salida':
                 total_salidas += d['cantidad']
 
-         # --- Cálculo correcto de stock actual ---
-        stock_query = """
-            SELECT 
-                SUM(
-                    CASE 
-                        WHEN m.tipo_movimiento = 'ingreso' THEN m.stock
-                        WHEN m.tipo_movimiento = 'salida' THEN -m.stock
-                        ELSE 0 
-                    END
-                ) AS total_stock
-            FROM movimientos m
-        """
+        # --- ✅ CÁLCULO CORRECTO DEL STOCK ACTUAL (desde tabla 'repuestos') ---
+        stock_query = "SELECT SUM(stock) AS total_stock FROM repuestos WHERE 1=1"
         stock_params = []
 
-        # Si querés filtrar por nombre de repuesto o tipo
-        if filtros['repuesto'] or filtros['tipos']:
-            stock_query += " JOIN repuestos r ON m.repuesto_id = r.id WHERE 1=1"
-            if filtros['repuesto']:
-                stock_query += " AND r.nombre LIKE %s"
-                stock_params.append('%' + filtros['repuesto'] + '%')
-            if filtros['tipos']:
-                stock_query += " AND r.tipo IN (%s)" % ','.join(['%s'] * len(filtros['tipos']))
-                stock_params.extend(filtros['tipos'])
-        else:
-            stock_query += " WHERE 1=1"
+        if filtros['repuesto']:
+            stock_query += " AND nombre LIKE %s"
+            stock_params.append('%' + filtros['repuesto'] + '%')
+
+        if filtros['tipos']:
+            stock_query += " AND tipo IN (" + ','.join(['%s'] * len(filtros['tipos'])) + ")"
+            stock_params.extend(filtros['tipos'])
 
         cur.execute(stock_query, stock_params)
         total_stock = cur.fetchone()['total_stock'] or 0
-        # --- FIN DEL CÁLCULO ---
-
-
+        # --- FIN DEL CÁLCULO CORRECTO ---
 
         conteo_por_maquina = {}
         for d in datos:
-            # ✅ Ajuste aquí: mostrar "Ingresos" en lugar de "Sin máquina" cuando sea ingreso
             if d['tipo_movimiento'] == 'ingreso':
                 maquina = 'Ingresos'
             else:
                 maquina = d['maquina'] or 'Sin máquina'
-
             conteo_por_maquina[maquina] = conteo_por_maquina.get(maquina, 0) + d['cantidad']
 
         etiquetas = list(conteo_por_maquina.keys())
@@ -865,11 +847,18 @@ def reporte_movimiento():
             return send_file(pdf_output, download_name='reporte_movimientos.pdf', as_attachment=True)
 
     con.close()
-    return render_template('reporte_movimiento.html', datos=datos, total_stock=total_stock,
-                            total_salidas=total_salidas, total_ingresos=total_ingresos,
-                            repuestos_lista=repuestos_lista, tipos_lista=tipos_lista,
-                            equipos_lista=equipos_lista, filtros=filtros,
-                            grafico_base64=grafico_base64)
+    return render_template(
+        'reporte_movimiento.html',
+        datos=datos,
+        total_stock=total_stock,
+        total_salidas=total_salidas,
+        total_ingresos=total_ingresos,
+        repuestos_lista=repuestos_lista,
+        tipos_lista=tipos_lista,
+        equipos_lista=equipos_lista,
+        filtros=filtros,
+        grafico_base64=grafico_base64
+    )
 
 #--------------------------------------------------------
 
