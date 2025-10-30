@@ -62,6 +62,22 @@
     .opciones a:hover {
       background-color: #636e72;
     }
+    /* --- Estilo del buscador --- */
+    #buscador {
+      width: 100%;
+      padding: 10px 14px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      box-sizing: border-box;
+      transition: 0.3s;
+    }
+    #buscador:focus {
+      border-color: #3498db;
+      box-shadow: 0 0 6px rgba(52, 152, 219, 0.4);
+      outline: none;
+    }
   </style>
 </head>
 <body>
@@ -71,7 +87,10 @@
   <a href="{{ url_for('inicio') }}">Volver al menú</a>
   <a href="{{ url_for('agregar_equipo') }}">Agregar nuevo equipo</a>
 
-  <table>
+  <!-- 🔍 Buscador -->
+  <input type="text" id="buscador" placeholder="Buscar equipo por nombre, código, marca, modelo, etc...">
+
+  <table id="tablaEquipos">
     <thead>
       <tr>
         <th>ID</th>
@@ -107,6 +126,18 @@
       {% endfor %}
     </tbody>
   </table>
+
+  <script>
+    // 🔍 Filtro en tiempo real
+    document.getElementById('buscador').addEventListener('keyup', function() {
+      const filtro = this.value.toLowerCase();
+      const filas = document.querySelectorAll('#tablaEquipos tbody tr');
+      filas.forEach(fila => {
+        const textoFila = fila.textContent.toLowerCase();
+        fila.style.display = textoFila.includes(filtro) ? '' : 'none';
+      });
+    });
+  </script>
 
 </body>
 </html>
