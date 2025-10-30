@@ -773,22 +773,34 @@ def reporte_movimiento():
                 total_ingresos += d['cantidad']
             elif d['tipo_movimiento'] == 'salida':
                 total_salidas += d['cantidad']
-
-     # --- CORRECCIÓN AQUÍ ---
-        # Lógica para calcular el stock actual de los repuestos filtrados
-        stock_query = "SELECT SUM(stock) AS total_stock FROM repuestos WHERE 1 = 1"
+        # --- CORRECCIÓN AQUÍ ---
+        # Calcular el stock actual dinámicamente según los movimientos
+        stock_query = """
+            SELECT 
+                SUM(
+                    CASE 
+                        WHEN m.tipo_movimiento = 'ingreso' THEN m.stock 
+                        WHEN m.tipo_movimiento = 'salida' THEN -m.stock 
+                        ELSE 0 
+                    END
+                ) AS total_stock
+            FROM movimientos m
+            JOIN repuestos r ON m.repuesto_id = r.id
+            WHERE 1 = 1
+        """
         stock_params = []
 
         if filtros['repuesto']:
-            stock_query += " AND nombre LIKE %s"
+            stock_query += " AND r.nombre LIKE %s"
             stock_params.append('%' + filtros['repuesto'] + '%')
         if filtros['tipos']:
-            stock_query += " AND tipo IN (%s)" % ','.join(['%s'] * len(filtros['tipos']))
+            stock_query += " AND r.tipo IN (%s)" % ','.join(['%s'] * len(filtros['tipos']))
             stock_params.extend(filtros['tipos'])
 
         cur.execute(stock_query, stock_params)
         total_stock = cur.fetchone()['total_stock'] or 0
         # --- FIN DE LA CORRECCIÓN ---
+
 
         conteo_por_maquina = {}
         for d in datos:
