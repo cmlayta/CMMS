@@ -90,14 +90,44 @@
 
     <form method="post" action="{{ url_for('reporte_salida') }}">
         <div>
-            <label for="equipos">Equipos:</label><br>
-            <select name="equipos" id="equipos" multiple>
-                <option value="todos" {% if 'todos' in filtros.equipos %}selected{% endif %}>-- Todos los equipos --</option>
-                {% for equipo in equipos_lista %}
-                <option value="{{ equipo }}" {% if equipo in filtros.equipos %}selected{% endif %}>{{ equipo }}</option>
-                {% endfor %}
-            </select>
-        </div><br>
+  <label>Equipos:</label><br>
+  <input type="text" id="buscar_equipo" placeholder="Buscar equipo..." 
+         style="padding:5px; width:250px; margin-bottom:8px; border:1px solid #ccc; border-radius:4px;"><br>
+
+  <div id="lista_equipos" 
+       style="border:1px solid #ccc; background:#fff; padding:8px; width:260px; height:120px; overflow-y:auto;">
+      <label style="display:block;">
+        <input type="checkbox" name="equipos" value="todos"
+               {% if 'todos' in filtros.equipos %}checked{% endif %}> -- Todos los equipos --
+      </label>
+      {% for equipo in equipos_lista %}
+      <label style="display:block;">
+        <input type="checkbox" name="equipos" value="{{ equipo }}"
+               {% if equipo in filtros.equipos %}checked{% endif %}> {{ equipo }}
+      </label>
+      {% endfor %}
+  </div>
+</div><br>
+
+<script>
+document.getElementById('buscar_equipo').addEventListener('keyup', function() {
+  var filter = this.value.toLowerCase();
+  var labels = document.querySelectorAll('#lista_equipos label');
+  labels.forEach(label => {
+    var text = label.textContent.toLowerCase();
+    label.style.display = text.includes(filter) ? '' : 'none';
+  });
+});
+
+// Si se marca "todos", desmarcar los demás automáticamente
+document.querySelector('input[value="todos"]').addEventListener('change', function() {
+  const allCheckboxes = document.querySelectorAll('#lista_equipos input[type="checkbox"]');
+  if (this.checked) {
+    allCheckboxes.forEach(chk => { if (chk !== this) chk.checked = false; });
+  }
+});
+</script>
+
 
         <div>
             <label for="tipos">Tipos de Repuesto:</label><br>
