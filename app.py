@@ -715,12 +715,6 @@ def reporte_movimiento():
         filtros['fecha_fin'] = request.form.get('fecha_fin', '')
         exportar = request.form.get('exportar')
 
-        # --- Limpieza de selección "todos" ---
-        if 'todos' in filtros['tipos'] or set(filtros['tipos']) == set(tipos_lista):
-            filtros['tipos'] = []
-        if 'todos' in filtros['equipos'] or set(filtros['equipos']) == set(equipos_lista):
-            filtros['equipos'] = []
-
         # --- Manejo de fechas ---
         fecha_inicio = None
         fecha_fin = None
@@ -757,13 +751,13 @@ def reporte_movimiento():
             query += " AND m.maquina IN (%s)" % ','.join(['%s'] * len(filtros['equipos']))
             params.extend(filtros['equipos'])
         if fecha_inicio and fecha_fin:
-            query += " AND m.fecha BETWEEN %s AND %s "
+            query += " AND m.fecha BETWEEN %s AND %s"
             params.extend([fecha_inicio, fecha_fin])
         elif fecha_inicio:
-            query += " AND m.fecha >= %s "
+            query += " AND m.fecha >= %s"
             params.append(fecha_inicio)
         elif fecha_fin:
-            query += " AND m.fecha <= %s "
+            query += " AND m.fecha <= %s"
             params.append(fecha_fin)
 
         query += " ORDER BY m.fecha DESC"
@@ -778,34 +772,29 @@ def reporte_movimiento():
             elif d['tipo_movimiento'] == 'salida':
                 total_salidas += d['cantidad']
 
-        # --- Cálculo del STOCK ACTUAL usando la tabla repuestos ---
-        stock_query = """
-            SELECT SUM(stock) AS total_stock
-            FROM repuestos
-            WHERE 1 = 1
-        """
+        # --- OBTENER EL STOCK ACTUAL REAL DIRECTO DESDE TABLA REPUESTOS ---
+        stock_query = "SELECT SUM(stock) AS total_stock FROM repuestos WHERE 1 = 1"
         stock_params = []
 
         if filtros['repuesto']:
             stock_query += " AND nombre LIKE %s"
             stock_params.append('%' + filtros['repuesto'] + '%')
-
         if filtros['tipos']:
             stock_query += " AND tipo IN (%s)" % ','.join(['%s'] * len(filtros['tipos']))
             stock_params.extend(filtros['tipos'])
 
         cur.execute(stock_query, stock_params)
-        resultado_stock = cur.fetchone()
-        total_stock = resultado_stock['total_stock'] if resultado_stock and resultado_stock['total_stock'] else 0
+        result = cur.fetchone()
+        total_stock = result['total_stock'] if result and result['total_stock'] else 0
+        # --- FIN DEL CÁLCULO DE STOCK ---
 
-        # --- Datos para gráfico ---
+        # --- Gráfico ---
         conteo_por_maquina = {}
         for d in datos:
             if d['tipo_movimiento'] == 'ingreso':
                 maquina = 'Ingresos'
             else:
                 maquina = d['maquina'] or 'Sin máquina'
-
             conteo_por_maquina[maquina] = conteo_por_maquina.get(maquina, 0) + d['cantidad']
 
         etiquetas = list(conteo_por_maquina.keys())
@@ -848,7 +837,7 @@ def reporte_movimiento():
 
             for row in datos:
                 pdf.cell(0, 10, f"{row['fecha']} - {row['repuesto']} ({row['tipo']}) - {row['tipo_movimiento']} - {row['cantidad']} - {row['maquina']}", ln=1)
-            
+
             if grafico_base64:
                 graph_img = BytesIO(base64.b64decode(grafico_base64))
                 pdf.image(graph_img, x=10, w=180)
