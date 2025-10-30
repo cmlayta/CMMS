@@ -181,23 +181,21 @@ def ingreso_repuesto(id):
 def salida_repuesto(id):
     con = connect_db()
     cur = con.cursor()
+
     if request.method == 'POST':
         stock = int(request.form['stock'])
-        equipo_id_str = request.form['equipo_id']  # '103 - Soldadora Soudronic'
-        equipo_id = int(equipo_id_str.split(" - ")[0])  # toma solo el ID
+        equipo_id = int(request.form['equipo_id']) 
         usuario = session.get('usuario')
-        
         cur.execute("SELECT nombre FROM equipos WHERE id = %s", (equipo_id,))
         nombre_equipo = cur.fetchone()[0]
-
         cur.execute("SELECT stock FROM repuestos WHERE id = %s", (id,))
         actual = cur.fetchone()[0]
 
         if actual < stock:
             con.close()
             return "No hay suficientes repuestos"
-
         from datetime import datetime
+
         cur.execute("""
             INSERT INTO movimientos (repuesto_id, tipo_movimiento, stock, tecnico, maquina, fecha)
             VALUES (%s, 'salida', %s, %s, %s, %s)
@@ -207,6 +205,11 @@ def salida_repuesto(id):
         con.close()
         return redirect(url_for('ver_repuestos'))
 
+    # Solo si GET: cargar equipos
+    cur.execute("SELECT id, nombre FROM equipos")
+    equipos = cur.fetchall()
+    con.close()
+    return render_template('salida_repuesto.html', equipos=equipos)
 
 @app.route('/repuestos/eliminar/<int:id>', methods=['GET', 'POST'])
 def eliminar_repuesto(id):
