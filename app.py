@@ -773,14 +773,15 @@ def reporte_movimiento():
                 total_ingresos += d['cantidad']
             elif d['tipo_movimiento'] == 'salida':
                 total_salidas += d['cantidad']
-        # --- CORRECCIÓN AQUÍ ---
-        # Calcular el stock actual dinámicamente según los movimientos
+
+        # --- CORRECCIÓN DEFINITIVA DEL STOCK ---
+        # Calcular el stock actual dinámicamente según los movimientos registrados
         stock_query = """
             SELECT 
                 SUM(
                     CASE 
-                        WHEN m.tipo_movimiento = 'ingreso' THEN m.stock 
-                        WHEN m.tipo_movimiento = 'salida' THEN -m.stock 
+                        WHEN tipo_movimiento = 'ingreso' THEN stock
+                        WHEN tipo_movimiento = 'salida' THEN -stock
                         ELSE 0 
                     END
                 ) AS total_stock
@@ -790,15 +791,20 @@ def reporte_movimiento():
         """
         stock_params = []
 
+        # Filtrar por repuesto si fue seleccionado
         if filtros['repuesto']:
             stock_query += " AND r.nombre LIKE %s"
             stock_params.append('%' + filtros['repuesto'] + '%')
+
+        # Filtrar por tipo si aplica
         if filtros['tipos']:
             stock_query += " AND r.tipo IN (%s)" % ','.join(['%s'] * len(filtros['tipos']))
             stock_params.extend(filtros['tipos'])
 
+        # Ejecutar y obtener el total de stock calculado
         cur.execute(stock_query, stock_params)
-        total_stock = cur.fetchone()['total_stock'] or 0
+        row = cur.fetchone()
+        total_stock = row['total_stock'] if row and row['total_stock'] is not None else 0
         # --- FIN DE LA CORRECCIÓN ---
 
 
