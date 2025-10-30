@@ -533,37 +533,33 @@ def menu_reportes():
 def reporte_ingreso():
     con = connect_db()
     cur = con.cursor(dictionary=True)
-    
-    # Listas para filtros
-    cur.execute("SELECT DISTINCT nombre FROM equipos")
-    equipos_lista = [row['nombre'] for row in cur.fetchall()]
+
+    # Filtros: solo tipo y fechas (no por equipo)
     cur.execute("SELECT DISTINCT tipo FROM repuestos")
     tipos_lista = [row['tipo'] for row in cur.fetchall()]
-    
+
     filtros = {
-        'equipos': [],
         'tipos': [],
         'fecha_inicio': '',
         'fecha_fin': ''
     }
-    
+
     datos = []
     total_repuestos = 0
     etiquetas = []
     valores = []
-    
+
     if request.method == 'POST':
-        filtros['equipos'] = request.form.getlist('equipos')
         filtros['tipos'] = request.form.getlist('tipos')
         filtros['fecha_inicio'] = request.form.get('fecha_inicio')
         filtros['fecha_fin'] = request.form.get('fecha_fin')
-        exportar = request.form.get('exportar')  # 'excel' o 'pdf'
-        
-        if 'todos' in filtros['equipos'] or set(filtros['equipos']) == set(equipos_lista):
-            filtros['equipos'] = []
+        exportar = request.form.get('exportar')
+
+        # “Todos”
         if 'todos' in filtros['tipos'] or set(filtros['tipos']) == set(tipos_lista):
             filtros['tipos'] = []
-        
+
+        # Rango de fechas
         fecha_inicio = None
         fecha_fin = None
         try:
@@ -572,8 +568,9 @@ def reporte_ingreso():
             if filtros['fecha_fin']:
                 fecha_fin = datetime.strptime(filtros['fecha_fin'], '%Y-%m-%d') + timedelta(days=1) - timedelta(seconds=1)
         except ValueError:
-            fecha_inicio = fecha_fin = None
+            pass
 
+        # Consulta principal (sin máquina)
         query = """
         SELECT 
             r.nombre AS repuesto,
@@ -581,61 +578,58 @@ def reporte_ingreso():
             m.stock AS cantidad,
             m.id AS movimiento,
             m.fecha,
-            m.maquina
+            m.tecnico
         FROM movimientos m
         JOIN repuestos r ON m.repuesto_id = r.id
         WHERE m.tipo_movimiento = 'ingreso'
         """
         params = []
-        
-        if filtros['equipos']:
-            query += " AND m.maquina IN (%s) " % ','.join(['%s'] * len(filtros['equipos']))
-            params.extend(filtros['equipos'])
-        
+
         if filtros['tipos']:
-            query += " AND r.tipo IN (%s) " % ','.join(['%s'] * len(filtros['tipos']))
+            query += " AND r.tipo IN (%s)" % ','.join(['%s'] * len(filtros['tipos']))
             params.extend(filtros['tipos'])
-        
+
         if fecha_inicio and fecha_fin:
-            query += " AND m.fecha BETWEEN %s AND %s "
+            query += " AND m.fecha BETWEEN %s AND %s"
             params.extend([fecha_inicio, fecha_fin])
         elif fecha_inicio:
-            query += " AND m.fecha >= %s "
+            query += " AND m.fecha >= %s"
             params.append(fecha_inicio)
         elif fecha_fin:
-            query += " AND m.fecha <= %s "
+            query += " AND m.fecha <= %s"
             params.append(fecha_fin)
-        
+
         query += " ORDER BY m.fecha DESC"
-        
+
         cur.execute(query, params)
         datos = cur.fetchall()
         total_repuestos = sum(d['cantidad'] for d in datos)
-        
-        # Gráfico
-        conteo_por_maquina = {}
+
+        # Conteo por técnico (quién hizo el ingreso)
+        conteo_por_tecnico = {}
         for d in datos:
-            maquina = d['maquina'] or 'Sin máquina'
-            conteo_por_maquina[maquina] = conteo_por_maquina.get(maquina, 0) + d['cantidad']
-        etiquetas = list(conteo_por_maquina.keys())
-        valores = list(conteo_por_maquina.values())
+            tecnico = d['tecnico'] or 'Sin técnico'
+            conteo_por_tecnico[tecnico] = conteo_por_tecnico.get(tecnico, 0) + d['cantidad']
+
+        etiquetas = list(conteo_por_tecnico.keys())
+        valores = list(conteo_por_tecnico.values())
 
         # Exportar a Excel
         if exportar == 'excel':
             df = pd.DataFrame(datos)
             output = BytesIO()
             with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
-                df.to_excel(writer, index=False, sheet_name='Salidas')
+                df.to_excel(writer, index=False, sheet_name='Ingresos')
             output.seek(0)
-            return send_file(output, download_name='reporte_salidas.xlsx', as_attachment=True)
-        # ✅ Exportar a PDF
+            return send_file(output, download_name='reporte_ingresos.xlsx', as_attachment=True)
+
+        # Exportar a PDF
         elif exportar == 'pdf':
-            # Crear gráfico y guardarlo en memoria
             fig = Figure()
             ax = fig.subplots()
             ax.bar(etiquetas, valores, color='mediumseagreen')
-            ax.set_title("Cantidad de Repuestos Ingresados por Equipo")
-            ax.set_xlabel("Equipo")
+            ax.set_title("Cantidad de Repuestos Ingresados por Técnico")
+            ax.set_xlabel("Técnico")
             ax.set_ylabel("Cantidad")
             fig.tight_layout()
 
@@ -643,7 +637,6 @@ def reporte_ingreso():
             fig.savefig(img_buffer, format='png')
             img_buffer.seek(0)
 
-            # Clase personalizada de PDF
             class PDF(FPDF):
                 def header(self):
                     self.set_font("Arial", "B", 12)
@@ -654,22 +647,19 @@ def reporte_ingreso():
             pdf.add_page()
             pdf.set_font("Arial", size=10)
 
-            # Escribir datos del reporte
             for row in datos:
                 pdf.multi_cell(
                     0, 8,
                     f"{row['fecha']} - {row['repuesto']} ({row['tipo']}) - "
-                    f"{row['cantidad']} - {row['maquina'] or 'Sin máquina'}",
+                    f"{row['cantidad']} - {row['tecnico'] or 'Sin técnico'}",
                     border=0, align='L'
                 )
 
-            # Insertar gráfico (FPDF no acepta BytesIO directamente → se usa archivo temporal)
             with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as tmp_img:
                 tmp_img.write(img_buffer.getvalue())
                 tmp_img.flush()
                 pdf.image(tmp_img.name, x=10, w=pdf.w - 20)
 
-            # Generar PDF en memoria correctamente
             pdf_output = BytesIO()
             pdf_bytes = pdf.output(dest='S').encode('latin1')
             pdf_output.write(pdf_bytes)
@@ -679,8 +669,8 @@ def reporte_ingreso():
 
     con.close()
     return render_template('reporte_ingreso.html', datos=datos, total=total_repuestos,
-                           equipos_lista=equipos_lista, tipos_lista=tipos_lista,
-                           filtros=filtros, etiquetas=etiquetas, valores=valores)
+                           tipos_lista=tipos_lista, filtros=filtros,
+                           etiquetas=etiquetas, valores=valores)
 
 @app.route('/reporte_movimiento', methods=['GET', 'POST'])
 def reporte_movimiento():
