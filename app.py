@@ -613,27 +613,34 @@ def reporte_ingreso():
 
         etiquetas = list(conteo_por_tecnico.keys())
         valores = list(conteo_por_tecnico.values())
-
-        # Exportar a Excel
+        # === Exportar a Excel ===
         if exportar == 'excel':
+            import io
             df = pd.DataFrame(datos)
-            output = BytesIO()
+            output = io.BytesIO()
             with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
                 df.to_excel(writer, index=False, sheet_name='Ingresos')
             output.seek(0)
             return send_file(output, download_name='reporte_ingresos.xlsx', as_attachment=True)
 
-        # Exportar a PDF
+        # === Exportar a PDF ===
         elif exportar == 'pdf':
+            from fpdf import FPDF
+            import base64
+            import io
+            from matplotlib.figure import Figure
+            import tempfile
+
+            # Crear gráfico y guardarlo en memoria
             fig = Figure()
             ax = fig.subplots()
             ax.bar(etiquetas, valores, color='mediumseagreen')
-            ax.set_title("Cantidad de Repuestos Ingresados por Técnico")
-            ax.set_xlabel("Técnico")
+            ax.set_title("Cantidad de Repuestos Ingresados por Equipo")
+            ax.set_xlabel("Equipo")
             ax.set_ylabel("Cantidad")
             fig.tight_layout()
 
-            img_buffer = BytesIO()
+            img_buffer = io.BytesIO()
             fig.savefig(img_buffer, format='png')
             img_buffer.seek(0)
 
@@ -651,16 +658,18 @@ def reporte_ingreso():
                 pdf.multi_cell(
                     0, 8,
                     f"{row['fecha']} - {row['repuesto']} ({row['tipo']}) - "
-                    f"{row['cantidad']} - {row['tecnico'] or 'Sin técnico'}",
+                    f"{row['cantidad']} - {row['maquina'] or 'Sin máquina'}",
                     border=0, align='L'
                 )
 
+            # Guardar gráfico temporal y agregarlo al PDF
             with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as tmp_img:
                 tmp_img.write(img_buffer.getvalue())
                 tmp_img.flush()
                 pdf.image(tmp_img.name, x=10, w=pdf.w - 20)
 
-            pdf_output = BytesIO()
+            # Generar PDF final
+            pdf_output = io.BytesIO()
             pdf_bytes = pdf.output(dest='S').encode('latin1')
             pdf_output.write(pdf_bytes)
             pdf_output.seek(0)
