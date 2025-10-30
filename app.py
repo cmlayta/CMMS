@@ -628,39 +628,59 @@ def reporte_ingreso():
             output.seek(0)
             return send_file(output, download_name='reporte_ingresos.xlsx', as_attachment=True)
 
-        # Exportar a PDF
+                # Exportar a PDF
         elif exportar == 'pdf':
+            from fpdf import FPDF
+            import base64
+            from io import BytesIO
+            from matplotlib.figure import Figure
+            import tempfile
+
+            # Crear gráfico y guardarlo en memoria
             fig = Figure()
             ax = fig.subplots()
-            ax.bar(etiquetas, valores, color='lightgreen')
-            ax.set_title("Cantidad de Repuestos por Equipo")
+            ax.bar(etiquetas, valores, color='mediumseagreen')
+            ax.set_title("Cantidad de Repuestos Ingresados por Equipo")
             ax.set_xlabel("Equipo")
             ax.set_ylabel("Cantidad")
             fig.tight_layout()
-            img = BytesIO()
-            fig.savefig(img, format='png')
-            img.seek(0)
-            img_base64 = base64.b64encode(img.read()).decode('utf-8')
 
+            img_buffer = BytesIO()
+            fig.savefig(img_buffer, format='png')
+            img_buffer.seek(0)
+
+            # Clase personalizada de PDF
             class PDF(FPDF):
                 def header(self):
                     self.set_font("Arial", "B", 12)
-                    self.cell(0, 10, "Reporte de Ingresos de Repuestos", ln=1, align="C")
+                    self.cell(0, 10, "Reporte de Ingreso de Repuestos", ln=1, align="C")
                     self.ln(5)
 
             pdf = PDF()
             pdf.add_page()
             pdf.set_font("Arial", size=10)
 
+            # Escribir datos del reporte
             for row in datos:
-                pdf.cell(0, 10, f"{row['fecha']} - {row['repuesto']} ({row['tipo']}) - {row['cantidad']} - {row['maquina']}", ln=1)
+                pdf.multi_cell(
+                    0, 8,
+                    f"{row['fecha']} - {row['repuesto']} ({row['tipo']}) - "
+                    f"{row['cantidad']} - {row['maquina'] or 'Sin máquina'}",
+                    border=0, align='L'
+                )
 
-            graph_img = BytesIO(base64.b64decode(img_base64))
-            pdf.image(graph_img, x=10, w=180)
+            # Insertar gráfico (FPDF no acepta BytesIO directamente → se usa archivo temporal)
+            with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as tmp_img:
+                tmp_img.write(img_buffer.getvalue())
+                tmp_img.flush()
+                pdf.image(tmp_img.name, x=10, w=pdf.w - 20)
 
+            # Generar PDF en memoria
             pdf_output = BytesIO()
-            pdf.output(pdf_output)
+            pdf_bytes = pdf.output(dest='S').encode('latin1')
+            pdf_output.write(pdf_bytes)
             pdf_output.seek(0)
+
             return send_file(pdf_output, download_name='reporte_ingresos.pdf', as_attachment=True)
 
     con.close()
