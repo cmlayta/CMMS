@@ -95,13 +95,15 @@
          style="padding:5px; width:250px; margin-bottom:8px; border:1px solid #ccc; border-radius:4px;"><br>
 
   <div id="lista_equipos" 
-       style="border:1px solid #ccc; background:#fff; padding:8px; width:260px; height:120px; overflow-y:auto;">
-      <label style="display:block;">
+       style="border:1px solid #ccc; background:#fff; padding:8px; width:260px; height:150px; overflow-y:auto;">
+      
+      <label style="display:block; margin-bottom:4px;">
         <input type="checkbox" name="equipos" value="todos"
                {% if 'todos' in filtros.equipos %}checked{% endif %}> -- Todos los equipos --
       </label>
+
       {% for equipo in equipos_lista %}
-      <label style="display:block;">
+      <label style="display:block; margin-bottom:4px;">
         <input type="checkbox" name="equipos" value="{{ equipo }}"
                {% if equipo in filtros.equipos %}checked{% endif %}> {{ equipo }}
       </label>
