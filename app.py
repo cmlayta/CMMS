@@ -464,9 +464,14 @@ def reporte_salida():
             output.seek(0)
             return send_file(output, download_name='reporte_salidas.xlsx', as_attachment=True)
 
-        # Exportar a PDF
+                # Exportar a PDF
         elif exportar == 'pdf':
-            # Crear gráfico en imagen
+            from fpdf import FPDF
+            import base64
+            from io import BytesIO
+            from matplotlib.figure import Figure
+
+            # Crear gráfico y guardarlo en memoria
             fig = Figure()
             ax = fig.subplots()
             ax.bar(etiquetas, valores, color='skyblue')
@@ -474,11 +479,12 @@ def reporte_salida():
             ax.set_xlabel("Equipo")
             ax.set_ylabel("Cantidad")
             fig.tight_layout()
-            img = BytesIO()
-            fig.savefig(img, format='png')
-            img.seek(0)
-            img_base64 = base64.b64encode(img.read()).decode('utf-8')
 
+            img_buffer = BytesIO()
+            fig.savefig(img_buffer, format='png')
+            img_buffer.seek(0)
+
+            # Clase personalizada de PDF
             class PDF(FPDF):
                 def header(self):
                     self.set_font("Arial", "B", 12)
@@ -489,15 +495,25 @@ def reporte_salida():
             pdf.add_page()
             pdf.set_font("Arial", size=10)
 
+            # Escribir datos del reporte
             for row in datos:
-                pdf.cell(0, 10, f"{row['fecha']} - {row['repuesto']} ({row['tipo']}) - {row['cantidad']} - {row['maquina']}", ln=1)
+                pdf.multi_cell(0, 8,
+                    f"{row['fecha']} - {row['repuesto']} ({row['tipo']}) - "
+                    f"{row['cantidad']} - {row['maquina'] or 'Sin máquina'}",
+                    border=0, align='L'
+                )
 
-            # Agregar gráfico
-            graph_img = BytesIO(base64.b64decode(img_base64))
-            pdf.image(graph_img, x=10, w=180)
+            # Insertar gráfico
+            # Guardamos temporalmente la imagen en BytesIO -> FPDF necesita una ruta o un archivo real
+            import tempfile
+            with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as tmp_img:
+                tmp_img.write(img_buffer.getvalue())
+                tmp_img.flush()
+                pdf.image(tmp_img.name, x=10, w=pdf.w - 20)
+
             # Generar PDF en memoria
             pdf_output = BytesIO()
-            pdf_bytes = pdf.output(dest='S').encode('latin1')  # 🔹 devuelve el PDF como bytes
+            pdf_bytes = pdf.output(dest='S').encode('latin1')
             pdf_output.write(pdf_bytes)
             pdf_output.seek(0)
 
