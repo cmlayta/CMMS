@@ -682,7 +682,7 @@ def reporte_movimiento():
     con = connect_db()
     cur = con.cursor(dictionary=True)
 
-    # Listas para filtros
+    # --- Listas para filtros ---
     cur.execute("SELECT DISTINCT nombre FROM repuestos")
     repuestos_lista = [row['nombre'] for row in cur.fetchall()]
     cur.execute("SELECT DISTINCT tipo FROM repuestos")
@@ -707,6 +707,7 @@ def reporte_movimiento():
     grafico_base64 = None
 
     if request.method == 'POST':
+        # --- Captura de filtros ---
         filtros['repuesto'] = request.form.get('repuesto', '')
         filtros['tipos'] = request.form.getlist('tipos')
         filtros['equipos'] = request.form.getlist('equipos')
@@ -714,11 +715,13 @@ def reporte_movimiento():
         filtros['fecha_fin'] = request.form.get('fecha_fin', '')
         exportar = request.form.get('exportar')
 
+        # --- Limpieza de selección "todos" ---
         if 'todos' in filtros['tipos'] or set(filtros['tipos']) == set(tipos_lista):
             filtros['tipos'] = []
         if 'todos' in filtros['equipos'] or set(filtros['equipos']) == set(equipos_lista):
             filtros['equipos'] = []
 
+        # --- Manejo de fechas ---
         fecha_inicio = None
         fecha_fin = None
         try:
@@ -729,6 +732,7 @@ def reporte_movimiento():
         except ValueError:
             pass
 
+        # --- Consulta principal de movimientos ---
         query = """
         SELECT
             r.nombre AS repuesto,
@@ -752,7 +756,6 @@ def reporte_movimiento():
         if filtros['equipos']:
             query += " AND m.maquina IN (%s)" % ','.join(['%s'] * len(filtros['equipos']))
             params.extend(filtros['equipos'])
-        
         if fecha_inicio and fecha_fin:
             query += " AND m.fecha BETWEEN %s AND %s "
             params.extend([fecha_inicio, fecha_fin])
@@ -762,42 +765,47 @@ def reporte_movimiento():
         elif fecha_fin:
             query += " AND m.fecha <= %s "
             params.append(fecha_fin)
-        
+
         query += " ORDER BY m.fecha DESC"
-        
+
         cur.execute(query, params)
         datos = cur.fetchall()
 
-        # Totales de ingresos y salidas
+        # --- Totales de ingresos y salidas ---
         for d in datos:
             if d['tipo_movimiento'] == 'ingreso':
                 total_ingresos += d['cantidad']
             elif d['tipo_movimiento'] == 'salida':
                 total_salidas += d['cantidad']
 
-        # ✅ Stock actual directamente desde la tabla repuestos
-        stock_query = "SELECT SUM(stock) AS total_stock FROM repuestos WHERE 1=1"
+        # --- Cálculo del STOCK ACTUAL usando la tabla repuestos ---
+        stock_query = """
+            SELECT SUM(stock) AS total_stock
+            FROM repuestos
+            WHERE 1 = 1
+        """
         stock_params = []
 
-        # Si se aplican filtros, se filtra también el stock mostrado
         if filtros['repuesto']:
             stock_query += " AND nombre LIKE %s"
             stock_params.append('%' + filtros['repuesto'] + '%')
+
         if filtros['tipos']:
-            stock_query += " AND tipo IN (" + ','.join(['%s'] * len(filtros['tipos'])) + ")"
+            stock_query += " AND tipo IN (%s)" % ','.join(['%s'] * len(filtros['tipos']))
             stock_params.extend(filtros['tipos'])
 
         cur.execute(stock_query, stock_params)
-        result = cur.fetchone()
-        total_stock = result['total_stock'] if result and result['total_stock'] is not None else 0
+        resultado_stock = cur.fetchone()
+        total_stock = resultado_stock['total_stock'] if resultado_stock and resultado_stock['total_stock'] else 0
 
-        # Conteo por máquina
+        # --- Datos para gráfico ---
         conteo_por_maquina = {}
         for d in datos:
             if d['tipo_movimiento'] == 'ingreso':
                 maquina = 'Ingresos'
             else:
                 maquina = d['maquina'] or 'Sin máquina'
+
             conteo_por_maquina[maquina] = conteo_por_maquina.get(maquina, 0) + d['cantidad']
 
         etiquetas = list(conteo_por_maquina.keys())
@@ -816,6 +824,7 @@ def reporte_movimiento():
             img.seek(0)
             grafico_base64 = base64.b64encode(img.read()).decode('utf-8')
 
+        # --- Exportar a Excel ---
         if exportar == 'excel':
             df = pd.DataFrame(datos)
             output = BytesIO()
@@ -825,6 +834,7 @@ def reporte_movimiento():
             con.close()
             return send_file(output, download_name='reporte_movimientos.xlsx', as_attachment=True)
 
+        # --- Exportar a PDF ---
         elif exportar == 'pdf':
             class PDF(FPDF):
                 def header(self):
