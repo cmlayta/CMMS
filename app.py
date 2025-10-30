@@ -682,7 +682,7 @@ def reporte_movimiento():
     con = connect_db()
     cur = con.cursor(dictionary=True)
 
-    # Listas para filtros (se obtienen una sola vez)
+    # Listas para filtros
     cur.execute("SELECT DISTINCT nombre FROM repuestos")
     repuestos_lista = [row['nombre'] for row in cur.fetchall()]
     cur.execute("SELECT DISTINCT tipo FROM repuestos")
@@ -768,28 +768,30 @@ def reporte_movimiento():
         cur.execute(query, params)
         datos = cur.fetchall()
 
+        # Totales de ingresos y salidas
         for d in datos:
             if d['tipo_movimiento'] == 'ingreso':
                 total_ingresos += d['cantidad']
             elif d['tipo_movimiento'] == 'salida':
                 total_salidas += d['cantidad']
 
-        # --- ✅ CÁLCULO CORRECTO DEL STOCK ACTUAL (desde tabla 'repuestos') ---
+        # ✅ Stock actual directamente desde la tabla repuestos
         stock_query = "SELECT SUM(stock) AS total_stock FROM repuestos WHERE 1=1"
         stock_params = []
 
+        # Si se aplican filtros, se filtra también el stock mostrado
         if filtros['repuesto']:
             stock_query += " AND nombre LIKE %s"
             stock_params.append('%' + filtros['repuesto'] + '%')
-
         if filtros['tipos']:
             stock_query += " AND tipo IN (" + ','.join(['%s'] * len(filtros['tipos'])) + ")"
             stock_params.extend(filtros['tipos'])
 
         cur.execute(stock_query, stock_params)
-        total_stock = cur.fetchone()['total_stock'] or 0
-        # --- FIN DEL CÁLCULO CORRECTO ---
+        result = cur.fetchone()
+        total_stock = result['total_stock'] if result and result['total_stock'] is not None else 0
 
+        # Conteo por máquina
         conteo_por_maquina = {}
         for d in datos:
             if d['tipo_movimiento'] == 'ingreso':
@@ -800,7 +802,7 @@ def reporte_movimiento():
 
         etiquetas = list(conteo_por_maquina.keys())
         valores = list(conteo_por_maquina.values())
-        
+
         if etiquetas and valores:
             fig = Figure()
             ax = fig.subplots()
