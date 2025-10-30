@@ -774,7 +774,7 @@ def reporte_movimiento():
             elif d['tipo_movimiento'] == 'salida':
                 total_salidas += d['cantidad']
 
-        # --- CORRECCIÓN FINAL DEL CÁLCULO DE STOCK ---
+         # --- Cálculo correcto de stock actual ---
         stock_query = """
             SELECT 
                 SUM(
@@ -785,23 +785,24 @@ def reporte_movimiento():
                     END
                 ) AS total_stock
             FROM movimientos m
-            JOIN repuestos r ON m.repuesto_id = r.id
-            WHERE 1 = 1
         """
         stock_params = []
 
-        if filtros['repuesto']:
-            stock_query += " AND r.nombre LIKE %s"
-            stock_params.append('%' + filtros['repuesto'] + '%')
-
-        if filtros['tipos']:
-            stock_query += " AND r.tipo IN (%s)" % ','.join(['%s'] * len(filtros['tipos']))
-            stock_params.extend(filtros['tipos'])
+        # Si querés filtrar por nombre de repuesto o tipo
+        if filtros['repuesto'] or filtros['tipos']:
+            stock_query += " JOIN repuestos r ON m.repuesto_id = r.id WHERE 1=1"
+            if filtros['repuesto']:
+                stock_query += " AND r.nombre LIKE %s"
+                stock_params.append('%' + filtros['repuesto'] + '%')
+            if filtros['tipos']:
+                stock_query += " AND r.tipo IN (%s)" % ','.join(['%s'] * len(filtros['tipos']))
+                stock_params.extend(filtros['tipos'])
+        else:
+            stock_query += " WHERE 1=1"
 
         cur.execute(stock_query, stock_params)
-        row = cur.fetchone()
-        total_stock = row['total_stock'] if row and row['total_stock'] is not None else 0
-        # --- FIN DE LA CORRECCIÓN ---
+        total_stock = cur.fetchone()['total_stock'] or 0
+        # --- FIN DEL CÁLCULO ---
 
 
 
