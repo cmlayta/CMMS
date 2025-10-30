@@ -620,15 +620,14 @@ def reporte_ingreso():
         etiquetas = list(conteo_por_maquina.keys())
         valores = list(conteo_por_maquina.values())
 
-        # ✅ Exportar a Excel
+        # Exportar a Excel
         if exportar == 'excel':
             df = pd.DataFrame(datos)
             output = BytesIO()
             with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
-                df.to_excel(writer, index=False, sheet_name='Ingresos')
+                df.to_excel(writer, index=False, sheet_name='Salidas')
             output.seek(0)
-            return send_file(output, download_name='reporte_ingresos.xlsx', as_attachment=True)
-
+            return send_file(output, download_name='reporte_salidas.xlsx', as_attachment=True)
         # ✅ Exportar a PDF
         elif exportar == 'pdf':
             # Crear gráfico y guardarlo en memoria
