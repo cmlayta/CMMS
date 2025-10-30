@@ -772,7 +772,9 @@ def reporte_movimiento():
             elif d['tipo_movimiento'] == 'salida':
                 total_salidas += d['cantidad']
 
-        # ✅ --- CONSULTA CORRECTA DE STOCK ACTUAL DESDE TABLA REPUESTOS ---
+                # ✅ --- CONSULTA CORRECTA DE STOCK ACTUAL DESDE TABLA REPUESTOS ---
+        cur_stock = con.cursor(dictionary=True)
+
         stock_query = "SELECT SUM(stock) AS total_stock FROM repuestos WHERE 1=1"
         stock_params = []
 
@@ -783,11 +785,13 @@ def reporte_movimiento():
             stock_query += " AND tipo IN (%s)" % ','.join(['%s'] * len(filtros['tipos']))
             stock_params.extend(filtros['tipos'])
 
-        # ❗ Sin joins, sin movimientos: solo la tabla repuestos
-        cur.execute(stock_query, stock_params)
-        result = cur.fetchone()
+        cur_stock.execute(stock_query, stock_params)
+        result = cur_stock.fetchone()
         total_stock = result['total_stock'] if result and result['total_stock'] is not None else 0
+
+        cur_stock.close()
         # ✅ --- FIN CONSULTA CORRECTA DE STOCK ACTUAL ---
+
 
         # --- Gráfico ---
         conteo_por_maquina = {}
