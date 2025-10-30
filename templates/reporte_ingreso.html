@@ -1,218 +1,234 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reporte de Ingreso de Repuestos</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        h1, h2 {
-            color: #2c3e50;
-        }
-        form {
-            margin-bottom: 20px;
-            padding: 15px;
-            border: 1px solid #ccc;
-            background: #f9f9f9;
-        }
-        label {
-            font-weight: bold;
-            margin-right: 10px;
-        }
-        select[multiple] {
-            height: 100px;
-            width: 250px;
-        }
-        input[type="date"] {
-            padding: 5px;
-        }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin-top: 15px;
-        }
-        th, td {
-            border: 1px solid #aaa;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #27ae60;
-            color: white;
-        }
-        .total-container {
-            font-size: 20px;
-            font-weight: bold;
-            margin: 10px 0;
-            color: #2980b9;
-        }
-        .chart-container {
-            width: 70%;
-            margin: 30px auto;
-        }
-        button {
-            background-color: #27ae60;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            cursor: pointer;
-            margin-right: 10px;
-            border-radius: 4px;
-            font-size: 15px;
-        }
-        button:hover {
-            background-color: #1f7e4d;
-        }
-        a {
-            margin-left: 10px;
-        }
-        .boton-volver {
-            background-color: #7f8c8d;
-            color: white;
-            padding: 8px 15px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 16px;
-            margin-left: 10px;
-        }
-        .boton-volver:hover {
-            background-color: #5d6d7e;
-        }
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reporte de Ingreso de Repuestos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    form {
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      background: #f9f9f9;
+    }
+    label {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    input[type="date"] {
+      padding: 5px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 15px;
+    }
+    th, td {
+      border: 1px solid #aaa;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #27ae60;
+      color: white;
+    }
+    .total-container {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 10px 0;
+      color: #2980b9;
+    }
+    .chart-container {
+      width: 70%;
+      margin: 30px auto;
+    }
+    button {
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      cursor: pointer;
+      margin-right: 10px;
+      border-radius: 4px;
+      font-size: 15px;
+    }
+    button:hover {
+      background-color: #1f7e4d;
+    }
+    a {
+      margin-left: 10px;
+    }
+    .boton-volver {
+      background-color: #7f8c8d;
+      color: white;
+      padding: 8px 15px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 16px;
+      margin-left: 10px;
+    }
+    .boton-volver:hover {
+      background-color: #5d6d7e;
+    }
+  </style>
 </head>
 <body>
 
-    <h1>Reporte de Ingreso de Repuestos</h1>
+  <h1>Reporte de Ingreso de Repuestos</h1>
 
-    <form method="post" action="{{ url_for('reporte_ingreso') }}">
-        <div>
-            <label for="equipos">Equipos:</label><br>
-            <select name="equipos" id="equipos" multiple>
-                <option value="todos" {% if 'todos' in filtros.equipos %}selected{% endif %}>-- Todos los equipos --</option>
-                {% for equipo in equipos_lista %}
-                <option value="{{ equipo }}" {% if equipo in filtros.equipos %}selected{% endif %}>{{ equipo }}</option>
-                {% endfor %}
-            </select>
-        </div><br>
+  <form method="post" action="{{ url_for('reporte_ingreso') }}">
+    <!-- FILTRO EQUIPOS -->
+    <div>
+      <label for="equipos">Equipos:</label><br>
+      <input type="text" id="buscar_equipo" placeholder="Buscar equipo...">
+      <button type="button" id="deseleccionar_todo" style="margin-bottom:10px;">Deseleccionar todo</button>
+      <div id="lista_equipos" style="max-height:150px; overflow-y:auto; border:1px solid #ccc; padding:5px;">
+        <label><input type="checkbox" name="equipos" value="todos"> -- Todos los equipos --</label><br>
+        {% for equipo in equipos_lista %}
+        <label><input type="checkbox" name="equipos" value="{{ equipo }}"
+          {% if equipo in filtros.equipos %}checked{% endif %}> {{ equipo }}</label><br>
+        {% endfor %}
+      </div>
+    </div><br>
 
-        <div>
-            <label for="tipos">Tipos de Repuesto:</label><br>
-            <select name="tipos" id="tipos" multiple>
-                <option value="todos" {% if 'todos' in filtros.tipos %}selected{% endif %}>-- Todos los tipos --</option>
-                {% for tipo in tipos_lista %}
-                <option value="{{ tipo }}" {% if tipo in filtros.tipos %}selected{% endif %}>{{ tipo }}</option>
-                {% endfor %}
-            </select>
-        </div><br>
+    <!-- FILTRO TIPOS -->
+    <div>
+      <label for="tipos">Tipos de Repuesto:</label><br>
+      <select name="tipos" id="tipos" multiple>
+        <option value="todos" {% if 'todos' in filtros.tipos %}selected{% endif %}>-- Todos los tipos --</option>
+        {% for tipo in tipos_lista %}
+        <option value="{{ tipo }}" {% if tipo in filtros.tipos %}selected{% endif %}>{{ tipo }}</option>
+        {% endfor %}
+      </select>
+    </div><br>
 
-        <div>
-            <label for="fecha_inicio">Fecha inicio:</label>
-            <input type="date" id="fecha_inicio" name="fecha_inicio" value="{{ filtros.fecha_inicio }}">
-        </div><br>
+    <!-- FILTRO FECHAS -->
+    <div>
+      <label for="fecha_inicio">Fecha inicio:</label>
+      <input type="date" id="fecha_inicio" name="fecha_inicio" value="{{ filtros.fecha_inicio }}">
+    </div><br>
 
-        <div>
-            <label for="fecha_fin">Fecha fin:</label>
-            <input type="date" id="fecha_fin" name="fecha_fin" value="{{ filtros.fecha_fin }}">
-        </div><br>
+    <div>
+      <label for="fecha_fin">Fecha fin:</label>
+      <input type="date" id="fecha_fin" name="fecha_fin" value="{{ filtros.fecha_fin }}">
+    </div><br>
 
-        <button type="submit">Filtrar</button>
-        <button type="submit" name="exportar" value="excel">Exportar a Excel</button>
-        <button type="submit" name="exportar" value="pdf">Exportar a PDF</button>
-        <a href="{{ url_for('menu_reportes') }}" class="boton-volver">Volver al menú</a>
-    </form>
+    <button type="submit">Filtrar</button>
+    <button type="submit" name="exportar" value="excel">Exportar a Excel</button>
+    <button type="submit" name="exportar" value="pdf">Exportar a PDF</button>
+    <a href="{{ url_for('menu_reportes') }}" class="boton-volver">Volver al menú</a>
+  </form>
 
-    <div class="total-container">
-        Total de repuestos ingresados: {{ total }}
-    </div>
+  <div class="total-container">
+    Total de repuestos ingresados: {{ total }}
+  </div>
 
-    <table>
-        <thead>
-            <tr>
-                <th>No. Movimiento</th>
-                <th>Repuesto</th>
-                <th>Cantidad</th>
-                <th>Tipo</th>
-                <th>Fecha de ingreso</th>
-                <th>Máquina</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% if datos %}
-                {% for d in datos %}
-                <tr>
-                    <td>{{ d.movimiento }}</td>
-                    <td>{{ d.repuesto }}</td>
-                    <td>{{ d.cantidad }}</td>
-                    <td>{{ d.tipo }}</td>
-                    <td>{{ d.fecha.strftime('%Y-%m-%d %H:%M') }}</td>
-                    <td>{{ d.maquina or 'Sin máquina' }}</td>
-                </tr>
-                {% endfor %}
-            {% else %}
-                <tr><td colspan="6" style="text-align:center;">No hay datos para mostrar</td></tr>
-            {% endif %}
-        </tbody>
-    </table>
+  <table>
+    <thead>
+      <tr>
+        <th>No. Movimiento</th>
+        <th>Repuesto</th>
+        <th>Cantidad</th>
+        <th>Tipo</th>
+        <th>Fecha de ingreso</th>
+        <th>Máquina</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if datos %}
+        {% for d in datos %}
+        <tr>
+          <td>{{ d.movimiento }}</td>
+          <td>{{ d.repuesto }}</td>
+          <td>{{ d.cantidad }}</td>
+          <td>{{ d.tipo }}</td>
+          <td>{{ d.fecha.strftime('%Y-%m-%d %H:%M') }}</td>
+          <td>{{ d.maquina or 'Sin máquina' }}</td>
+        </tr>
+        {% endfor %}
+      {% else %}
+        <tr><td colspan="6" style="text-align:center;">No hay datos para mostrar</td></tr>
+      {% endif %}
+    </tbody>
+  </table>
 
-    <div class="chart-container">
-        <canvas id="graficoBarras"></canvas>
-    </div>
+  <div class="chart-container">
+    <canvas id="graficoBarras"></canvas>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        // Previene seleccionar "todos" y otros valores a la vez
-        function manejarSeleccionMultiple(id) {
-            const select = document.getElementById(id);
-            select.addEventListener('change', () => {
-                const options = Array.from(select.options);
-                const todos = options.find(opt => opt.value === 'todos');
-                if (todos.selected) {
-                    options.forEach(opt => {
-                        if (opt !== todos) opt.selected = false;
-                    });
-                } else {
-                    todos.selected = false;
-                }
-            });
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // 🔍 Buscador en la lista de equipos
+    document.getElementById('buscar_equipo').addEventListener('input', function() {
+      const filtro = this.value.toLowerCase();
+      const etiquetas = document.querySelectorAll('#lista_equipos label');
+      etiquetas.forEach(lbl => {
+        const texto = lbl.textContent.toLowerCase();
+        lbl.style.display = texto.includes(filtro) ? 'block' : 'none';
+      });
+    });
+
+    // 🚫 Deseleccionar todos los checkboxes
+    document.getElementById('deseleccionar_todo').addEventListener('click', function() {
+      const checkboxes = document.querySelectorAll('#lista_equipos input[type="checkbox"]');
+      checkboxes.forEach(chk => chk.checked = false);
+    });
+
+    // ⚙️ Control de selección múltiple en tipos
+    function manejarSeleccionMultiple(id) {
+      const select = document.getElementById(id);
+      select.addEventListener('change', () => {
+        const options = Array.from(select.options);
+        const todos = options.find(opt => opt.value === 'todos');
+        if (todos.selected) {
+          options.forEach(opt => {
+            if (opt !== todos) opt.selected = false;
+          });
+        } else {
+          todos.selected = false;
         }
-        manejarSeleccionMultiple('equipos');
-        manejarSeleccionMultiple('tipos');
+      });
+    }
+    manejarSeleccionMultiple('tipos');
 
-        // Generar gráfico
-        const ctx = document.getElementById('graficoBarras').getContext('2d');
-        const etiquetas = {{ etiquetas | tojson }};
-        const valores = {{ valores | tojson }};
+    // 📊 Gráfico
+    const ctx = document.getElementById('graficoBarras').getContext('2d');
+    const etiquetas = {{ etiquetas | tojson }};
+    const valores = {{ valores | tojson }};
 
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: etiquetas,
-                datasets: [{
-                    label: 'Cantidad por máquina',
-                    data: valores,
-                    backgroundColor: 'rgba(39, 174, 96, 0.7)',
-                    borderColor: 'rgba(39, 174, 96, 1)',
-                    borderWidth: 1,
-                    borderRadius: 5
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        precision: 0
-                    }
-                },
-                plugins: {
-                    legend: { display: false }
-                }
-            }
-        });
-    </script>
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: etiquetas,
+        datasets: [{
+          label: 'Cantidad por máquina',
+          data: valores,
+          backgroundColor: 'rgba(39, 174, 96, 0.7)',
+          borderColor: 'rgba(39, 174, 96, 1)',
+          borderWidth: 1,
+          borderRadius: 5
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            precision: 0
+          }
+        },
+        plugins: {
+          legend: { display: false }
+        }
+      }
+    });
+  </script>
 </body>
 </html>
