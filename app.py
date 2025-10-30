@@ -4,6 +4,7 @@ from io import BytesIO
 import os
 import base64
 import mysql.connector
+import tempfile
 import pandas as pd
 from fpdf import FPDF
 from matplotlib.figure import Figure
@@ -619,7 +620,7 @@ def reporte_ingreso():
         etiquetas = list(conteo_por_maquina.keys())
         valores = list(conteo_por_maquina.values())
 
-        # Exportar a Excel
+        # ✅ Exportar a Excel
         if exportar == 'excel':
             df = pd.DataFrame(datos)
             output = BytesIO()
@@ -628,14 +629,8 @@ def reporte_ingreso():
             output.seek(0)
             return send_file(output, download_name='reporte_ingresos.xlsx', as_attachment=True)
 
-                # Exportar a PDF
+        # ✅ Exportar a PDF
         elif exportar == 'pdf':
-            from fpdf import FPDF
-            import base64
-            from io import BytesIO
-            from matplotlib.figure import Figure
-            import tempfile
-
             # Crear gráfico y guardarlo en memoria
             fig = Figure()
             ax = fig.subplots()
@@ -675,7 +670,7 @@ def reporte_ingreso():
                 tmp_img.flush()
                 pdf.image(tmp_img.name, x=10, w=pdf.w - 20)
 
-            # Generar PDF en memoria
+            # Generar PDF en memoria correctamente
             pdf_output = BytesIO()
             pdf_bytes = pdf.output(dest='S').encode('latin1')
             pdf_output.write(pdf_bytes)
