@@ -133,6 +133,11 @@ document.querySelector('input[value="todos"]').addEventListener('change', functi
     allCheckboxes.forEach(chk => { if (chk !== this) chk.checked = false; });
   }
 });
+// Botón para deseleccionar todo
+document.getElementById('deseleccionar_todo').addEventListener('click', function() {
+  const checkboxes = document.querySelectorAll('#lista_equipos input[type="checkbox"]');
+  checkboxes.forEach(chk => chk.checked = false);
+});
 </script>
 
 
@@ -253,10 +258,4 @@ document.querySelector('input[value="todos"]').addEventListener('change', functi
         });
     </script>
 </body>
-// Botón para deseleccionar todo
-document.getElementById('deseleccionar_todo').addEventListener('click', function() {
-  const checkboxes = document.querySelectorAll('#lista_equipos input[type="checkbox"]');
-  checkboxes.forEach(chk => chk.checked = false);
-});
-
 </html>
