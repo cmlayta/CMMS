@@ -93,6 +93,7 @@
   <label>Equipos:</label><br>
   <input type="text" id="buscar_equipo" placeholder="Buscar equipo..." 
          style="padding:5px; width:250px; margin-bottom:8px; border:1px solid #ccc; border-radius:4px;"><br>
+<button type="button" id="deseleccionar_todo" style="margin-bottom:10px;">Deseleccionar todo</button>
 
   <div id="lista_equipos" 
        style="border:1px solid #ccc; background:#fff; padding:8px; width:260px; height:150px; overflow-y:auto;">
@@ -252,4 +253,10 @@ document.querySelector('input[value="todos"]').addEventListener('change', functi
         });
     </script>
 </body>
+// Botón para deseleccionar todo
+document.getElementById('deseleccionar_todo').addEventListener('click', function() {
+  const checkboxes = document.querySelectorAll('#lista_equipos input[type="checkbox"]');
+  checkboxes.forEach(chk => chk.checked = false);
+});
+
 </html>
