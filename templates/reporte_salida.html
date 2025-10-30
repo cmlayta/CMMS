@@ -117,7 +117,11 @@ document.getElementById('buscar_equipo').addEventListener('keyup', function() {
   var labels = document.querySelectorAll('#lista_equipos label');
   labels.forEach(label => {
     var text = label.textContent.toLowerCase();
-    label.style.display = text.includes(filter) ? '' : 'none';
+    if (text.includes(filter)) {
+      label.style.display = 'block';   // 🔹 fuerza que cada label siga en su línea
+    } else {
+      label.style.display = 'none';
+    }
   });
 });
 
@@ -129,6 +133,7 @@ document.querySelector('input[value="todos"]').addEventListener('change', functi
   }
 });
 </script>
+
 
 
         <div>
