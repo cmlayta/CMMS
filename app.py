@@ -528,7 +528,7 @@ def reporte_salida():
 @app.route('/reportes')
 def menu_reportes():
     return render_template('menu_reportes.html')
-
+from io import BytesIO
 @app.route('/reporte_ingreso', methods=['GET', 'POST'])
 def reporte_ingreso():
     con = connect_db()
