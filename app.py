@@ -791,9 +791,14 @@ def reporte_movimiento():
 
         conteo_por_maquina = {}
         for d in datos:
-            maquina = d['maquina'] or 'Sin máquina'
+            # ✅ Ajuste aquí: mostrar "Ingresos" en lugar de "Sin máquina" cuando sea ingreso
+            if d['tipo_movimiento'] == 'ingreso':
+                maquina = 'Ingresos'
+            else:
+                maquina = d['maquina'] or 'Sin máquina'
+
             conteo_por_maquina[maquina] = conteo_por_maquina.get(maquina, 0) + d['cantidad']
-        
+
         etiquetas = list(conteo_por_maquina.keys())
         valores = list(conteo_por_maquina.values())
         
