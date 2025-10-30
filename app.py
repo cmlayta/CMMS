@@ -528,6 +528,7 @@ def reporte_salida():
 @app.route('/reportes')
 def menu_reportes():
     return render_template('menu_reportes.html')
+
 from io import BytesIO
 @app.route('/reporte_ingreso', methods=['GET', 'POST'])
 def reporte_ingreso():
@@ -613,11 +614,10 @@ def reporte_ingreso():
 
         etiquetas = list(conteo_por_tecnico.keys())
         valores = list(conteo_por_tecnico.values())
-        # === Exportar a Excel ===
+               # === Exportar a Excel ===
         if exportar == 'excel':
-            import io
             df = pd.DataFrame(datos)
-            output = io.BytesIO()
+            output = BytesIO()
             with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
                 df.to_excel(writer, index=False, sheet_name='Ingresos')
             output.seek(0)
@@ -627,7 +627,6 @@ def reporte_ingreso():
         elif exportar == 'pdf':
             from fpdf import FPDF
             import base64
-            import io
             from matplotlib.figure import Figure
             import tempfile
 
@@ -635,12 +634,12 @@ def reporte_ingreso():
             fig = Figure()
             ax = fig.subplots()
             ax.bar(etiquetas, valores, color='mediumseagreen')
-            ax.set_title("Cantidad de Repuestos Ingresados por Equipo")
-            ax.set_xlabel("Equipo")
+            ax.set_title("Cantidad de Repuestos Ingresados por Técnico")
+            ax.set_xlabel("Técnico")
             ax.set_ylabel("Cantidad")
             fig.tight_layout()
 
-            img_buffer = io.BytesIO()
+            img_buffer = BytesIO()
             fig.savefig(img_buffer, format='png')
             img_buffer.seek(0)
 
@@ -658,7 +657,7 @@ def reporte_ingreso():
                 pdf.multi_cell(
                     0, 8,
                     f"{row['fecha']} - {row['repuesto']} ({row['tipo']}) - "
-                    f"{row['cantidad']} - {row['maquina'] or 'Sin máquina'}",
+                    f"{row['cantidad']} - {row['tecnico'] or 'Sin técnico'}",
                     border=0, align='L'
                 )
 
@@ -669,7 +668,7 @@ def reporte_ingreso():
                 pdf.image(tmp_img.name, x=10, w=pdf.w - 20)
 
             # Generar PDF final
-            pdf_output = io.BytesIO()
+            pdf_output = BytesIO()
             pdf_bytes = pdf.output(dest='S').encode('latin1')
             pdf_output.write(pdf_bytes)
             pdf_output.seek(0)
