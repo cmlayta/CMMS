@@ -772,7 +772,7 @@ def reporte_movimiento():
             elif d['tipo_movimiento'] == 'salida':
                 total_salidas += d['cantidad']
 
-                # ✅ --- CONSULTA CORRECTA DE STOCK ACTUAL DESDE TABLA REPUESTOS ---
+        # ✅ --- CONSULTA CORRECTA DE STOCK ACTUAL DESDE TABLA REPUESTOS ---
         cur_stock = con.cursor(dictionary=True)
 
         stock_query = "SELECT SUM(stock) AS total_stock FROM repuestos WHERE 1=1"
