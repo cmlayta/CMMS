@@ -772,34 +772,34 @@ def reporte_movimiento():
             elif d['tipo_movimiento'] == 'salida':
                 total_salidas += d['cantidad']
 
-        # ✅ --- CONSULTA CORRECTA DE STOCK ACTUAL DESDE TABLA REPUESTOS ---
+        # ✅ --- CONSULTA DIRECTA DEL STOCK DESDE TABLA REPUESTOS ---
         cur_stock = con.cursor(dictionary=True)
 
-        stock_query = "SELECT SUM(stock) AS total_stock FROM repuestos WHERE 1=1"
-        stock_params = []
-
         if filtros['repuesto']:
-            stock_query += " AND nombre LIKE %s"
-            stock_params.append('%' + filtros['repuesto'] + '%')
-        if filtros['tipos']:
-            stock_query += " AND tipo IN (%s)" % ','.join(['%s'] * len(filtros['tipos']))
-            stock_params.extend(filtros['tipos'])
-
-        cur_stock.execute(stock_query, stock_params)
-        result = cur_stock.fetchone()
-        total_stock = result['total_stock'] if result and result['total_stock'] is not None else 0
+            # Si hay filtro por nombre, traer el stock de ese repuesto exacto
+            stock_query = "SELECT stock FROM repuestos WHERE nombre LIKE %s LIMIT 1"
+            cur_stock.execute(stock_query, ('%' + filtros['repuesto'] + '%',))
+            result = cur_stock.fetchone()
+            total_stock = result['stock'] if result else 0
+        elif filtros['tipos']:
+            # Si hay filtro por tipo, sumar todos los stocks de ese tipo
+            stock_query = "SELECT SUM(stock) AS total_stock FROM repuestos WHERE tipo IN (%s)" % ','.join(['%s'] * len(filtros['tipos']))
+            cur_stock.execute(stock_query, filtros['tipos'])
+            result = cur_stock.fetchone()
+            total_stock = result['total_stock'] if result['total_stock'] is not None else 0
+        else:
+            # Si no hay filtros, mostrar stock total de toda la tabla
+            cur_stock.execute("SELECT SUM(stock) AS total_stock FROM repuestos")
+            result = cur_stock.fetchone()
+            total_stock = result['total_stock'] if result['total_stock'] is not None else 0
 
         cur_stock.close()
-        # ✅ --- FIN CONSULTA CORRECTA DE STOCK ACTUAL ---
-
+        # ✅ --- FIN CONSULTA DIRECTA DEL STOCK ---
 
         # --- Gráfico ---
         conteo_por_maquina = {}
         for d in datos:
-            if d['tipo_movimiento'] == 'ingreso':
-                maquina = 'Ingresos'
-            else:
-                maquina = d['maquina'] or 'Sin máquina'
+            maquina = 'Ingresos' if d['tipo_movimiento'] == 'ingreso' else (d['maquina'] or 'Sin máquina')
             conteo_por_maquina[maquina] = conteo_por_maquina.get(maquina, 0) + d['cantidad']
 
         etiquetas = list(conteo_por_maquina.keys())
@@ -818,7 +818,7 @@ def reporte_movimiento():
             img.seek(0)
             grafico_base64 = base64.b64encode(img.read()).decode('utf-8')
 
-        # --- Exportar a Excel ---
+        # --- Exportar Excel / PDF ---
         if exportar == 'excel':
             df = pd.DataFrame(datos)
             output = BytesIO()
@@ -828,7 +828,6 @@ def reporte_movimiento():
             con.close()
             return send_file(output, download_name='reporte_movimientos.xlsx', as_attachment=True)
 
-        # --- Exportar a PDF ---
         elif exportar == 'pdf':
             class PDF(FPDF):
                 def header(self):
