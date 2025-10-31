@@ -707,7 +707,6 @@ def reporte_movimiento():
     grafico_base64 = None
 
     if request.method == 'POST':
-        # --- Captura de filtros ---
         filtros['repuesto'] = request.form.get('repuesto', '')
         filtros['tipos'] = request.form.getlist('tipos')
         filtros['equipos'] = request.form.getlist('equipos')
@@ -715,7 +714,6 @@ def reporte_movimiento():
         filtros['fecha_fin'] = request.form.get('fecha_fin', '')
         exportar = request.form.get('exportar')
 
-        # --- Manejo de fechas ---
         fecha_inicio = None
         fecha_fin = None
         try:
@@ -726,7 +724,6 @@ def reporte_movimiento():
         except ValueError:
             pass
 
-        # --- Consulta principal de movimientos ---
         query = """
         SELECT
             r.nombre AS repuesto,
@@ -765,35 +762,28 @@ def reporte_movimiento():
         cur.execute(query, params)
         datos = cur.fetchall()
 
-        # --- Totales de ingresos y salidas ---
+        # Totales
         for d in datos:
             if d['tipo_movimiento'] == 'ingreso':
                 total_ingresos += d['cantidad']
             elif d['tipo_movimiento'] == 'salida':
                 total_salidas += d['cantidad']
 
-        # ✅ --- CONSULTA DIRECTA DEL STOCK DESDE TABLA REPUESTOS ---
+        # ✅ STOCK REAL DESDE TABLA REPUESTOS
         cur_stock = con.cursor(dictionary=True)
-
         if filtros['repuesto']:
-            stock_query = "SELECT stock FROM repuestos WHERE nombre = %s LIMIT 1"
-            cur_stock.execute(stock_query, (filtros['repuesto'],))
+            cur_stock.execute("SELECT stock FROM repuestos WHERE nombre = %s LIMIT 1", (filtros['repuesto'],))
             result = cur_stock.fetchone()
             total_stock = result['stock'] if result else 0
-
         elif filtros['tipos']:
-            stock_query = "SELECT SUM(stock) AS total_stock FROM repuestos WHERE tipo IN (%s)" % ','.join(['%s'] * len(filtros['tipos']))
-            cur_stock.execute(stock_query, filtros['tipos'])
+            cur_stock.execute("SELECT SUM(stock) AS total_stock FROM repuestos WHERE tipo IN (%s)" % ','.join(['%s'] * len(filtros['tipos'])), filtros['tipos'])
             result = cur_stock.fetchone()
-            total_stock = result['total_stock'] if result and result['total_stock'] is not None else 0
-
+            total_stock = result['total_stock'] if result['total_stock'] is not None else 0
         else:
             cur_stock.execute("SELECT SUM(stock) AS total_stock FROM repuestos")
             result = cur_stock.fetchone()
-            total_stock = result['total_stock'] if result and result['total_stock'] is not None else 0
-
+            total_stock = result['total_stock'] if result['total_stock'] is not None else 0
         cur_stock.close()
-        # ✅ --- FIN CONSULTA DIRECTA DEL STOCK ---
 
         # --- Gráfico ---
         conteo_por_maquina = {}
@@ -817,7 +807,7 @@ def reporte_movimiento():
             img.seek(0)
             grafico_base64 = base64.b64encode(img.read()).decode('utf-8')
 
-        # --- Exportar Excel / PDF ---
+        # --- EXPORTAR ---
         if exportar == 'excel':
             df = pd.DataFrame(datos)
             output = BytesIO()
@@ -828,8 +818,6 @@ def reporte_movimiento():
             return send_file(output, download_name='reporte_movimientos.xlsx', as_attachment=True)
 
         elif exportar == 'pdf':
-            import tempfile, os
-
             class PDF(FPDF):
                 def header(self):
                     self.set_font("Arial", "B", 12)
@@ -843,17 +831,22 @@ def reporte_movimiento():
             for row in datos:
                 pdf.cell(0, 10, f"{row['fecha']} - {row['repuesto']} ({row['tipo']}) - {row['tipo_movimiento']} - {row['cantidad']} - {row['maquina']}", ln=1)
 
-            # ✅ Guardar gráfico temporal antes de insertarlo
+            # ✅ GUARDAR IMAGEN TEMPORAL PARA PDF
             if grafico_base64:
-                temp_img = tempfile.NamedTemporaryFile(delete=False, suffix=".png")
-                temp_img.write(base64.b64decode(grafico_base64))
-                temp_img.close()
-                pdf.image(temp_img.name, x=10, w=180)
-                os.remove(temp_img.name)
+                import tempfile
+                import os
+                with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as tmpfile:
+                    tmpfile.write(base64.b64decode(grafico_base64))
+                    temp_path = tmpfile.name
+                pdf.image(temp_path, x=10, w=180)
+                os.remove(temp_path)
 
+            # ✅ GUARDAR PDF EN MEMORIA CORRECTAMENTE
             pdf_output = BytesIO()
-            pdf.output(pdf_output)
+            pdf_bytes = pdf.output(dest='S').encode('latin1')
+            pdf_output.write(pdf_bytes)
             pdf_output.seek(0)
+
             con.close()
             return send_file(pdf_output, download_name='reporte_movimientos.pdf', as_attachment=True)
 
