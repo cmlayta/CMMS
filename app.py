@@ -776,11 +776,12 @@ def reporte_movimiento():
         cur_stock = con.cursor(dictionary=True)
 
         if filtros['repuesto']:
-            # Si hay filtro por nombre, traer el stock de ese repuesto exacto
-            stock_query = "SELECT stock FROM repuestos WHERE nombre LIKE %s LIMIT 1"
-            cur_stock.execute(stock_query, ('%' + filtros['repuesto'] + '%',))
+            # Buscar el repuesto exacto por nombre (sin LIKE para evitar coincidencias parciales)
+            stock_query = "SELECT stock FROM repuestos WHERE nombre = %s LIMIT 1"
+            cur_stock.execute(stock_query, (filtros['repuesto'],))
             result = cur_stock.fetchone()
             total_stock = result['stock'] if result else 0
+
         elif filtros['tipos']:
             # Si hay filtro por tipo, sumar todos los stocks de ese tipo
             stock_query = "SELECT SUM(stock) AS total_stock FROM repuestos WHERE tipo IN (%s)" % ','.join(['%s'] * len(filtros['tipos']))
