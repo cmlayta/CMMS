@@ -1,0 +1,2551 @@
+﻿#,Número de artículo,Descripción del artículo,En stock,Último precio de compra,Ubicacion
+1,M002150,Faja A - 125,0.0000,0.000000,
+2,M002171,"Resorte a compresión Øe: 12.5mm, Øa: 3mm Paso: 4mm Distancia entre espiras=1mm Largo=110mm",0.0000,0.000000,
+3,P000001,"TAPON LISO PVC 3/4"" MACHO",0.0000,0.000000,
+4,P000002,PEGAMENTO WET&DRY COLOR AZUL USO PVC,0.0000,0.000000,
+5,P000003,KIT PEGAMENTO EPOXI PEGATANKE TRANSP. 32 CC,0.0000,0.000000,
+6,P000004,POXILINA 70 gms,0.0000,0.000000,
+7,P000005,"BARRA ROSCADA 5/16"" X 36"" GALVANIZADA",0.0000,0.000000,
+8,P000006,"TUERCA HEXAGONAL P/TORNILLO 5/16"" GALVANIZADA",0.0000,0.000000,
+9,P000007,"ROLDANA P/TORNILLO 5/16"" GALVANIZADA",0.0000,0.000000,
+10,P000008,Sikadur 32 Primer (1 Kg),1.0000,228.530000,
+11,P000009,ANILLO DE CERA P/SANITARIO UNIVERSAL,0.0000,0.000000,
+12,P000010,"UNION EMT LISO C/TORNILLO 1""",0.0000,0.000000,
+13,PI23,Pintura blanco hueso RAL1013 para Máquinas,5.0000,235.710000,
+14,R000002,Resorte Øa: 11; Øi: 47; Øe: 70; L: 440; ; paso 22 mm,1.0000,0.000000,E1.0
+15,R000003,Resorte 60 x 75 x 400 x 9 x 19,1.0000,0.000000,E1.0
+16,R000004,Starter Komatsu,1.0000,0.000000,E1.0
+17,R000005,Starter modelo 169924,1.0000,0.000000,E1.0
+18,R000006,Resorte 33 x 50 x 230 x 8 x 19,3.0000,0.000000,E1.0
+19,R000007,Resorte 30 x 41 x 315 x 5 x 19,5.0000,0.000000,E1.0
+20,R000008,Corredera automáticas para portones marca profesional modelo 370,2.0000,0.000000,E1.1
+21,R000009,Corredera automáticas para portones marca profesional modelo IZ – I,2.0000,0.000000,E1.1
+22,R00001,usar con codigo nuevo,0.0000,0.000000,
+23,R000010,Camisas antiguas para chichera 08/10/2003,2.0000,0.000000,E1.2
+24,R000011,Cilindro ADVU-16-15-A-P-A,0.0000,0.000000,E1.2
+25,R000012,Cilindro CDM2B25-50A,12.0000,22.876667,E1.2
+26,R000013,Cilindro CDM2E20-150,3.0000,0.000000,E1.2
+27,R000014,Cilindro DPZ-16-40-P-A-KF,0.0000,0.000000,E1.2
+28,R000015,Cilindro DPZ-25-50-P-A-KF,0.0000,0.000000,E1.2
+29,R000016,Cilindro MCSM16150,2.0000,0.000000,E1.2
+30,R000017,Cilindro SC80X75-S,1.0000,0.000000,E1.2
+31,R000018,Cilindro SDA32X25,0.0000,0.000000,E1.2
+32,R000019,Cilindro SDAS25X5,1.0000,0.000000,E1.2
+33,R000020,Cilindro SDA20X10,1.0000,0.000000,E1.2
+34,R000021,Cilindro MXS6-50AT,0.0000,0.000000,E1.2
+35,R000022,Cilindro MAL32X150,0.0000,0.000000,E1.2
+36,R000023,Cilindro C85N 20X10-B,2.0000,0.000000,E1.2
+37,R000024,Drenador de agua,0.0000,0.000000,E1.2
+38,R000025,Filtro con regulador de aire de 1/2” BFR4000D,8.0000,480.358000,E1.2
+39,R000026,Filtro con regulador de aire de 1/4” BFR200D,6.0000,308.928000,E1.2
+40,R000027,Filtro para aire conexión de 1/2” BF4000D,4.0000,0.000000,E1.2
+41,R000028,Filtro para aire conexión de 1/4” AEF -2000-T,2.0000,0.000000,E1.2
+42,R000029,Lubricador conexión de 1/2” BL4000,5.0000,383.930000,E1.2
+43,R000030,Lubricador conexión de 3/8”,0.0000,0.000000,E1.2
+44,R000031,Lubricador conexión de 1/4” BL2000,4.0000,312.500000,E1.2
+45,R000032,"Manómetro 0 – 4 BAR, Caratula de 40 mm, conexión posterior de 1/8”",2.0000,0.000000,E1.2
+46,R000033,"Manómetro 0 a 16 BAR, caratula 2”, conexión de 1/4” posterior",2.0000,0.000000,E1.2
+47,R000034,"Manómetro 0 a 20 PSI, caratula 2 1/2”, conexión de 1/4” posterior",10.0000,0.000000,E1.2
+48,R000035,Regulador de aire de 1” JAR-5000-10,3.0000,0.000000,E1.2
+49,R000036,Regulador de aire de 1/2”,8.0000,397.322000,E1.2
+50,R000037,Regulador de aire de 1/4”,8.0000,355.356000,E1.2
+51,R000038,Regulador de aire de 1/8” AER2000,2.0000,0.000000,E1.2
+52,R000039,Regulador de caudal 1/8”. 0 -30 L/Min,1.0000,0.000000,E1.2
+53,R000040,Rotula 1010/M10x1.25,5.0000,0.000000,E1.2
+54,R000041,Trampa de agua de cubeta invertida,14.0000,65.830000,E1.2
+55,R000042,Unidad de mantenimiento de aire de 1/2” BFC4000D5-T,10.0000,606.250000,E1.2
+56,R000043,Unidad de mantenimiento de aire de 1/4”,19.0000,468.750000,E1.2
+57,R000044,Abrazadera de cincho de 19/44 mm,14.0000,11.905000,E1.3 - 01
+58,R000045,Abrazadera de cincho de 40/64 mm,13.0000,12.500000,E1.3 - 01
+59,R000046,Abrazadera de cincho de 29/76 mm,10.0000,0.000000,E1.3 - 01
+60,R000047,Abrazadera de cincho de 17/32 mm,19.0000,3.348000,E1.3 - 01
+61,R000048,"Abrazadera de cincho para manguera de 1""  (18/38 mm)",14.0000,11.905000,E1.3 - 01
+62,R000049,Abrazadera de cincho de 25/51 mm,29.0000,5.446400,E1.3 - 01
+63,R000050,Abrazadera de cincho de 10/25 mm,40.0000,1.785500,E1.3 - 01
+64,R000051,"Abrazadera de cincho para manguera de 1/2 "" (7/13 mm)",42.0000,1.339500,E1.3 - 01
+65,R000052,Abrazadera de cincho de 1/4”,37.0000,1.339500,E1.3 - 01
+66,R000053,Abrazadera de cincho de 10-20”,0.0000,0.000000,E1.3 - 01
+67,R000054,Anillo o cono de compresión para tubo de 1/4”,5.0000,0.000000,E1.3 - 02
+68,R000055,Anillo o cono de compresión para tubo de 1/8”,80.0000,0.000000,E1.3 - 02
+69,R000056,Anillo o cono de compresión para tubo de 3/16”,25.0000,0.000000,E1.3 - 02
+70,R000057,Anillo o cono de compresión para tubo de 3/8”,5.0000,0.000000,E1.3 - 02
+71,R000058,Anillo o cono de compresión para tubo de 4 mm,20.0000,0.000000,E1.3 - 02
+72,R000059,Anillo o cono de compresión para tubo de 8 mm,11.0000,0.000000,E1.3 - 02
+73,R000060,Boquilla para pistola de aire,3.0000,0.000000,E1.3 - 02
+74,R000061,Boquilla recta de 1/8”,3.0000,0.000000,E1.3 - 02
+75,R000062,Centro para manguera de 2 mm,25.0000,0.000000,E1.3 - 02
+76,R000063,Centro para manguera de 3 mm,20.0000,0.000000,E1.3 - 02
+77,R000064,Centro para manguera de 4 mm,6.0000,0.000000,E1.3 - 02
+78,R000065,Centro para manguera de 6 mm,6.0000,0.000000,E1.3 - 02
+79,R000066,Codo macho a 90º de bronce de 1/8” para tubo de 3/8”,0.0000,0.000000,E1.3 - 02
+80,R000067,Conector rápido para manguera hembra,1.0000,0.000000,E1.3 - 02
+81,R000068,Grasera 90º de 1/4”,1.0000,0.000000,E1.3 - 02
+82,R000069,Grasera 90º de 3/32”,0.0000,0.000000,E1.3 - 02
+83,R000070,Grasera recta de 1/8”,15.0000,0.000000,E1.3 - 02
+84,R000071,Grasera 90º de 1/8”,15.0000,6.874667,E1.3 - 02
+85,R000072,Grasera recta de 1/4”,5.0000,0.000000,E1.3 - 02
+86,R000073,Grasera recta de 1/2”,2.0000,0.000000,E1.3 - 02
+87,R000074,Grasera 90º de 1/2”,2.0000,0.000000,E1.3 - 02
+88,R000075,Silenciador para aire de 1”; Bronce,0.0000,0.000000,E1.3 - 02
+89,R000076,Silenciador para aire de 1/4”; Bronce,15.0000,12.366000,E1.3 - 02
+90,R000077,Silenciador para aire de 1/4” con regulador; Bronce,24.0000,21.875000,E1.3 - 02
+91,R000078,Silenciador para aire de 1/8”; Bronce,10.0000,10.580000,E1.3 - 02
+92,R000079,Silenciador para aire de 1/8” con regulador; Bronce,17.0000,19.643000,E1.3 - 02
+93,R000080,Tuerca de compresión tubo  3/8” rosca M14,3.0000,0.000000,E1.3 - 02
+94,R000081,Tuerca de compresión tubo 1/4” rosca M10,48.0000,0.000000,E1.3 - 02
+95,R000082,Tuerca de compresión tubo 1/8” rosca M6,20.0000,0.000000,E1.3 - 02
+96,R000083,Tuerca de compresión tubo 3/16” rosca M8,15.0000,0.000000,E1.3 - 02
+97,R000084,Tuerca de compresión tubo 8mm rosca M12,5.0000,0.000000,E1.3 - 02
+98,R000085,Válvula de escape rápido de 1/4”,2.0000,0.000000,E1.3 - 02
+99,R000086,Conector para manguera bronce 1/2” x 3/4”,3.0000,0.000000,E1.3 - 03
+100,R000087,Conector para manguera bronce 1/2” x 1/2”,12.0000,25.714000,E1.3 - 03
+101,R000088,Conector para manguera bronce 1/2” x 1/4”,8.0000,26.428000,E1.3 - 03
+102,R000089,Conector para manguera bronce 1/2” x 3/8”,6.0000,19.286000,E1.3 - 03
+103,R000090,Conector para manguera bronce 1/4” x 1/2”,18.0000,12.590000,E1.3 - 03
+104,R000091,Conector para manguera 1/4” x 1/4” a 90ª,6.0000,0.000000,E1.3 - 03
+105,R000092,Conector para manguera bronce 1/4” x 1/8”,3.0000,0.000000,E1.3 - 03
+106,R000093,Conector para manguera bronce 1/4” x 3/8”,20.0000,11.786000,E1.3 - 03
+107,R000094,Conector para manguera bronce 1/8” x 1/4”,18.0000,0.000000,E1.3 - 03
+108,R000095,Conector para manguera  bronce 1/8” x 1/8”,10.0000,0.000000,E1.3 - 03
+109,R000096,"Conector para manguera 3/32"""" x 4 mm macho""",0.0000,0.000000,E1.3 - 03
+110,R000097,Conector para manguera bronce 3/4” x 1/2”,5.0000,25.224000,E1.3 - 03
+111,R000098,Conector para manguera bronce 3/8” x 1/2”,4.0000,0.000000,E1.3 - 03
+112,R000099,Conector para manguera bronce 3/8” x 1/4”,2.0000,0.000000,E1.3 - 03
+113,R000100,Conector para manguera bronce 3/8” x 1/8”,5.0000,15.176000,E1.3 - 03
+114,R000101,Conector rápido para manguera 1/4” x 1/4”,0.0000,0.000000,E1.3 - 03
+115,R000102,Conector rápido para manguera 1/8” x 1/4”,2.0000,0.000000,E1.3 - 03
+116,R000103,Conector rápido para manguera 3/8” hembra x 1/4”,2.0000,0.000000,E1.3 - 03
+117,R000104,Codo 90º de 1/4” de acero inoxidable,1.0000,0.000000,E1.3 - 04
+118,R000105,Conector para manguera de 1/2” x rosca 1/4” de acero inoxidable,14.0000,0.000000,E1.3 - 04
+119,R000106,Conector para manguera de 1/2” x rosca 3/8” de acero inoxidable,0.0000,0.000000,E1.3 - 04
+120,R000107,Conector para manguera de 3/8” x rosca 1/2” de acero inoxidable,0.0000,0.000000,E1.3 - 04
+121,R000108,Niple rosca corrida de 1/4” de acero inoxidable,8.0000,0.000000,E1.3 - 04
+122,R000109,Niple rosca corrida de 3/8” de acero inoxidable,0.0000,0.000000,E1.3 - 04
+123,R000110,Te de 1/4” de acero inoxidable,2.0000,0.000000,E1.3 - 04
+124,R000111,Te de acero inoxidable de 1/2”,1.0000,0.000000,E1.3 - 04
+125,R000112,Niple Hexagonal de acero inoxidable de 1/2”,0.0000,0.000000,E1.3 - 04
+126,R000113,Niple bushing de acero inoxidable de 1” a 1/2”,0.0000,0.000000,E1.3 - 04
+127,R000114,Tee de acero inoxidable de 1”,0.0000,0.000000,E1.3 - 04
+128,R000115,Niple hexagonal de 1/2” a 1/4”,4.0000,0.000000,E1.3 - 05
+129,R000116,Niple hexagonal de 1/2” a 3/8”,2.0000,0.000000,E1.3 - 05
+130,R000117,Niple hexagonal de 1/4” a 1/8”,5.0000,0.000000,E1.3 - 05
+131,R000118,Niple hexagonal de 3/4” a 1/2”,9.0000,0.000000,E1.3 - 05
+132,R000119,Niple hexagonal de 3/8” a 1/4”,15.0000,0.000000,E1.3 - 05
+133,R000120,Niple hexagonal de 3/8” a 1/8”,8.0000,0.000000,E1.3 - 05
+134,R000121,Reducidor bushing de 1” a 3/4”,1.0000,0.000000,E1.3 - 05
+135,R000122,Reducidor bushing de 1/2” a 1/4”,9.0000,20.626000,E1.3 - 05
+136,R000123,Reducidor bushing de 1/2” a 1/8”,10.0000,3.820000,E1.3 - 05
+137,R000124,Reducidor bushing de 1/4” a 1/8,3.0000,17.410000,E1.3 - 05
+138,R000125,Reducidor bushing de 3/4” a 1/2”,8.0000,0.000000,E1.3 - 05
+139,R000126,Reducidor bushing de 3/4” a 1/4”,10.0000,0.000000,E1.3 - 05
+140,R000127,Reducidor bushing de 3/4” a 3/8”,9.0000,0.000000,E1.3 - 05
+141,R000128,Reducidor bushing de 3/8” a 1/4”,15.0000,0.000000,E1.3 - 05
+142,R000129,Reducidor bushing de 3/8” a 1/8”,9.0000,0.000000,E1.3 - 05
+143,R000130,Reducidor hembra de 1/2” a 1/4”,6.0000,0.000000,E1.3 - 05
+144,R000131,Reducidor hembra de 1/4” a 1/8”,8.0000,0.000000,E1.3 - 05
+145,R000132,Reducidor hembra de 1/4” a macho de 1/8”,6.0000,0.000000,E1.3 - 05
+146,R000133,Reducidor hembra de 3/4” a 1/2”,8.0000,0.000000,E1.3 - 05
+147,R000134,Reducidor hembra de 3/8” a 1/4”,8.0000,0.000000,E1.3 - 05
+148,R000135,Reducidor hembra de 3/8” a 1/8”,10.0000,0.000000,E1.3 - 05
+149,R000136,Cadena de rodillos doble 06B (pies),10.0000,0.000000,E1.3 - 07
+150,R000137,Unión para cadena de No. 35,22.0000,0.000000,E1.3 - 07
+151,R000138,Unión para cadena de rodillo tipo medio eslabón ANSI 40 – 1,11.0000,0.000000,E1.3 - 07
+152,R000139,Unión para cadena de rodillos doble 06B,1.0000,0.000000,E1.3 - 07
+153,R000140,Unión para cadena No. 40,20.0000,2.678667,E1.3 - 07
+154,R000141,Codo a 90º de 1/4” hembra x 1/8” macho,4.0000,0.000000,E1.3 - 08
+155,R000142,Codo a 90º de bronce de 1/2” Hembra,1.0000,0.000000,E1.3 - 08
+156,R000143,Codo a 90º de bronce de 1/2” Macho,2.0000,0.000000,E1.3 - 08
+157,R000144,Codo a 90º de bronce de 1/4” Hembra,8.0000,29.910000,E1.3 - 08
+158,R000145,Codo a 90º de bronce de 1/4” Macho,4.0000,0.000000,E1.3 - 08
+159,R000146,Racor rápido roscado de 1/2” x 10 mm,35.0000,17.813000,E1.3 - 10
+160,R000147,Codo a 90º de bronce de 1/8” Hembra,7.0000,23.304000,E1.3 - 08
+161,R000148,Codo a 90º de bronce de 1/8” Hembra – Macho,0.0000,0.000000,E1.3 - 08
+162,R000149,Codo a 90º de bronce de 1/8” Macho,5.0000,0.000000,E1.3 - 08
+163,R000150,Codo a 90º de bronce de 1/8” para tubing de 3/8”,4.0000,0.000000,E1.3 - 08
+164,R000151,Codo a 90º de bronce de 3/8” Hembra,2.0000,0.000000,E1.3 - 08
+165,R000152,Codo a 90º de bronce de 3/8” Macho,2.0000,0.000000,E1.3 - 08
+166,R000153,"Reducidor de campana 2” a 1/2"""" HG""",5.0000,0.000000,E1.3 - 08
+167,R000154,T de bronce de 1/4”,9.0000,0.000000,E1.3 - 08
+168,R000155,T de bronce de 1/8”,1.0000,0.000000,E1.3 - 08
+169,R000156,Tapón macho de 1/2”,6.0000,2.768333,E1.3 - 08
+170,R000157,Tapón macho de 1/4”,15.0000,14.285000,E1.3 - 08
+171,R000158,Tapón macho de 1/8”,10.0000,8.929000,E1.3 - 08
+172,R000159,Tapón macho de 3/4”,0.0000,0.000000,E1.3 - 08
+173,R000160,Tapón macho de 3/8”,14.0000,0.000000,E1.3 - 08
+174,R000161,Tuerca unión de 1/4”,0.0000,0.000000,E1.3 - 08
+175,R000162,Tuerca unión de 1/8”,0.0000,0.000000,E1.3 - 08
+176,R000163,Niple de bronce de 1/2” x 2”,10.0000,47.616000,E1.3 - 09
+177,R000164,Niple de bronce de 1/4” x 1 1/2”,6.0000,6.060000,E1.3 - 09
+178,R000165,Niple de bronce de 1/4” x 2”,3.0000,0.000000,E1.3 - 09
+179,R000166,Niple de bronce de 1/8” x 1 1/2”,6.0000,0.000000,E1.3 - 09
+180,R000167,Niple de bronce de 1/8” x 2”,3.0000,0.000000,E1.3 - 09
+181,R000168,Niple de bronce de 3/8” x 1 1/2”,10.0000,0.000000,E1.3 - 09
+182,R000169,Niple de bronce de 3/8” x 2”,0.0000,0.000000,E1.3 - 09
+183,R000170,Niple hexagonal de 1/2”,20.0000,0.000000,E1.3 - 09
+184,R000171,Niple hexagonal de 1/4” HG,13.0000,10.571667,E1.3 - 09
+185,R000172,Niple hexagonal de 1/8”,4.0000,0.000000,E1.3 - 09
+186,R000173,Niple hexagonal de 3/8”,5.0000,0.000000,E1.3 - 09
+187,R000174,Niple rosca corrida de bronce de 1/2”,3.0000,0.000000,E1.3 - 09
+188,R000175,Niple rosca corrida de bronce de 1/4”,0.0000,0.000000,E1.3 - 09
+189,R000176,Niple rosca corrida de bronce de 1/8”,1.0000,0.000000,E1.3 - 09
+190,R000177,Racor rápido roscado de 1/16” x 04 mm,12.0000,0.000000,E1.3 - 10
+191,R000178,Racor rápido roscado de 1/16” x 06 mm,3.0000,0.000000,E1.3 - 10
+192,R000179,Racor rápido roscado de 1/2” x 06 mm,10.0000,1.446000,E1.3 - 10
+193,R000180,Racor rápido roscado de 1/2” x 1/2”,9.0000,0.000000,E1.3 - 10
+194,R000181,Racor rápido roscado de 1/2” x 12 mm,34.0000,17.813000,E1.3 - 10
+195,R000182,Racor rápido roscado de 1/2” x 16 MM,16.0000,1.583000,E1.3 - 10
+196,R000183,Racor rápido roscado de 1/4” x 04 mm,27.0000,1.130000,E1.3 - 10
+197,R000184,Racor rápido roscado de 1/4” x 06 mm,17.0000,0.000000,E1.3 - 10
+198,R000185,Racor rápido roscado de 1/4” x 08 mm,59.0000,6.384000,E1.3 - 10
+199,R000186,Racor rápido roscado de 1/4” x 1/4”,2.0000,0.000000,E1.3 - 10
+200,R000187,Racor rápido roscado de 1/4” x 10 mm,9.0000,0.000000,E1.3 - 10
+201,R000188,Racor rápido roscado de 1/4” x 12 MM,29.0000,17.411000,E1.3 - 10
+202,R000189,Racor rápido roscado de 1/8” x 04 mm,20.0000,0.845000,E1.3 - 10
+203,R000190,Racor rápido roscado de 1/8” x 06 mm,26.0000,0.877000,E1.3 - 10
+204,R000191,Racor rápido roscado de 1/8” x 08 mm,27.0000,0.983000,E1.3 - 10
+205,R000192,Racor rápido roscado de 1/8” x 1/4”,12.0000,0.000000,E1.3 - 10
+206,R000193,Racor rápido roscado de 1/8” x 1/8”,14.0000,0.000000,E1.3 - 10
+207,R000194,Racor rápido roscado de 1/8” x 10 mm,20.0000,0.983000,E1.3 - 10
+208,R000195,Racor rápido roscado de 1/8” x 12 mm,19.0000,1.024000,E1.3 - 10
+209,R000196,Racor rápido roscado en L de 1/4” x 16 mm,10.0000,0.000000,E1.3 - 11
+210,R000197,Racor rápido reductor de 12 mm a 10 mm,3.0000,0.000000,E1.3 - 12
+211,R000198,Racor rápido roscado de 1/8” x 5/32”,0.0000,0.000000,E1.3 - 10
+212,R000199,Racor rápido roscado de 3/8” x 10 mm,25.0000,2.155000,E1.3 - 10
+213,R000200,Racor rápido roscado de 3/8” x 16 mm,10.0000,2.181000,E1.3 - 10
+214,R000201,Racor rápido roscado en L de 03 mm x 04 mm,20.0000,31.250000,E1.3 - 11
+215,R000202,Racor rápido roscado en L de 03 mm x 06 mm,23.0000,0.000000,E1.3 - 11
+216,R000203,Racor rápido roscado en L de 03 mm x 08 mm,10.0000,0.000000,E1.3 - 11
+217,R000204,Racor rápido roscado en L de 5 mm x 06 mm Cortos,7.0000,0.000000,E1.3 - 11
+218,R000205,Racor rápido roscado en L de 5 mm x 06 mm,9.0000,0.000000,E1.3 - 11
+219,R000206,Racor rápido roscado en L de 1/2” x 1/2”,8.0000,0.000000,E1.3 - 11
+220,R000207,Racor rápido roscado en L de 1/2” x 10 mm,33.0000,22.321000,E1.3 - 11
+221,R000208,Racor rápido roscado en L de 1/2” x 12 mm,29.0000,23.213000,E1.3 - 11
+222,R000209,Racor rápido roscado en L de 1/2” x 16 mm,17.0000,2.082000,E1.3 - 11
+223,R000210,Racor rápido roscado en L de 1/4” x 06 mm,33.0000,1.395000,E1.3 - 11
+224,R000211,Racor rápido roscado en L de 1/4” x 08 mm,44.0000,11.384000,E1.3 - 11
+225,R000212,Racor rápido roscado en L de 1/4” x 10 mm,42.0000,15.848000,E1.3 - 11
+226,R000213,Racor rápido roscado en L de 1/4” x 12 mm,25.0000,1.362500,E1.3 - 11
+227,R000214,Racor rápido roscado en L de 1/4” x 3/8”,11.0000,0.000000,E1.3 - 11
+228,R000215,Racor rápido roscado en L de 1/8” x 04 mm,25.0000,0.000000,E1.3 - 11
+229,R000216,Racor rápido roscado en L de 1/8” x 06 mm,31.0000,0.935500,E1.3 - 11
+230,R000217,Racor rápido roscado en L de 1/8” x 08 mm,23.0000,0.000000,E1.3 - 11
+231,R000218,Racor rápido roscado en L de 1/8” x 10 mm,29.0000,1.022000,E1.3 - 11
+232,R000219,Racor rápido roscado en L de 1/8” x 12 mm,7.0000,0.000000,E1.3 - 11
+233,R000220,Racor rápido roscado en L de 3/8” x 08 mm,8.0000,0.000000,E1.3 - 11
+234,R000221,Racor rápido roscado en L de 3/8” x 1/2”,9.0000,0.000000,E1.3 - 11
+235,R000222,Racor rápido roscado en L de 3/8” x 10 mm,7.0000,0.000000,E1.3 - 11
+236,R000223,Racor rápido roscado en L de 3/8” x 12 mm,4.0000,0.000000,E1.3 - 11
+237,R000224,Racor rápido en L de 04 mm,17.0000,0.849000,E1.3 - 12
+238,R000225,Racor rápido en L de 06 mm,12.0000,0.871000,E1.3 - 12
+239,R000226,Racor rápido en L de 08 mm,16.0000,0.950000,E1.3 - 12
+240,R000227,Racor rápido en L de 10 mm,10.0000,1.009000,E1.3 - 12
+241,R000228,Racor rápido en L de 12 mm,13.0000,1.089000,E1.3 - 12
+242,R000229,Racor rápido en T de 04 mm,12.0000,0.000000,E1.3 - 12
+243,R000230,Racor rápido en T de 06 mm,15.0000,0.782000,E1.3 - 12
+244,R000231,Racor rápido en T de 08 mm,26.0000,10.268000,E1.3 - 12
+245,R000232,Racor rápido en T de 1/8”,12.0000,0.000000,E1.3 - 12
+246,R000233,Racor rápido en T de 10 mm,30.0000,10.714000,E1.3 - 12
+247,R000234,Racor rápido en T de 12 mm,29.0000,10.714000,E1.3 - 12
+248,R000235,Racor rápido en Y de 06 mm,6.0000,0.000000,E1.3 - 12
+249,R000236,Racor rápido reductor de 10 mm a 08 mm,1.0000,0.000000,E1.3 - 12
+250,R000237,Racor rápido reductor de 06 mm a 04 mm,4.0000,0.000000,E1.3 - 12
+251,R000238,Racor rápido reductor de 08 mm a 06 mm,6.0000,0.000000,E1.3 - 12
+252,R000239,Unión para manguera de 06 mm,7.0000,0.000000,E1.3 - 12
+253,R000240,Unión para manguera de 08 mm,9.0000,0.000000,E1.3 - 12
+254,R000241,Unión para manguera de 10 mm,5.0000,0.000000,E1.3 - 12
+255,R000242,Válvula regulador racor de 8 mm,8.0000,0.000000,E1.3 - 12
+256,R000243,Válvula regulador racor de 6 mm,11.0000,0.000000,E1.3 - 12
+257,R000244,Racor rápido roscado en T 1/4” x 06 mm,9.0000,0.000000,E1.3 - 13
+258,R000245,Racor rápido roscado en T 1/4” x 10 mm,9.0000,0.000000,E1.3 - 13
+259,R000246,Racor rápido roscado en T 1/8” x 06 mm,4.0000,0.000000,E1.3 - 13
+260,R000247,Racor rápido roscado en T 1/8” x 08 mm,11.0000,0.000000,E1.3 - 13
+261,R000248,Racor rápido roscado en Y 1/4” x 08 mm,4.0000,0.000000,E1.3 - 13
+262,R000249,Racor rápido roscado en Y 1/8” x 06 mm,5.0000,0.000000,E1.3 - 13
+263,R000250,Regulador roscado en L de 1/4” x 06 mm,14.0000,0.000000,E1.3 - 13
+264,R000251,Regulador roscado en L de 1/4” x 08 mm,7.0000,3.612000,E1.3 - 13
+265,R000252,Regulador roscado en L de 1/8” x 06 mm,10.0000,0.000000,E1.3 - 13
+266,R000253,Regulador roscado en L de 1/8” x 08 mm,7.0000,3.888000,E1.3 - 13
+267,R000254,Regulador roscado en L de 3 mm x 06 mm,10.0000,0.000000,E1.3 - 13
+268,R000255,Transformador GOLSOURCE 110V – 220V,1.0000,0.000000,E1.4
+269,R000256,Variador  PI160 – 1R5G3Z,1.0000,0.000000,E1.4
+270,R000257,"Variador AF – 300 MiniDRIVE  2 HP, 230 V 3 PH",1.0000,0.000000,E1.4
+271,R000258,"Variador AF – 60 LP 1 HP, 240V, 3 PH",1.0000,0.000000,E1.4
+272,R000259,"Variador AF – 60 LP 2 HP, 240V, 3 PH",1.0000,0.000000,E1.4
+273,R000260,Variador TECO WESTINHOUSE FM100 -203-N1 230 V – 3HP 10.5 AMP,1.0000,0.000000,E1.4
+274,R000261,Variador TECO WESTINHOUSE FM50 -203 OC 240 V – 3HP 10.5 AMP,1.0000,0.000000,E1.4
+275,R000262,Condensador 440UF 400 VCD,2.0000,0.000000,E1.4
+276,R000263,Variador AF – 600 FP 5.5 KW/ 7.5 HP Modelo 6 KFP 23007X9XXXA1,1.0000,0.000000,E1.5
+277,R000264,Variador Lenze 30 HP 380/360V PH3,1.0000,0.000000,E1.5
+278,R000265,Rieles para portones eléctricos,1.0000,0.000000,E2.0
+279,R000266,Resortes para prensas manuales,6.0000,0.000000,E2.1
+280,R000267,Resorte a tension Ø20 largo 230,4.0000,0.000000,E2.1
+281,R000268,Resorte 1 1/4” x 10” x 0.148”,2.0000,0.000000,E2.1
+282,R000269,"Válvula solenoide 1/2” NPT, DC 24 V NO",4.0000,34.990000,E2.2
+283,R000270,"Válvula solenoide 1/2” NPT, DC 24 V NC",5.0000,44.100000,E2.2
+284,R000271,"Switch de presión Square D, 135 – 1000",3.0000,0.000000,E2.2
+285,R000272,Manifold para electroválvulas,2.0000,0.000000,E2.2 - 12
+286,R000273,"Electro Válvula 3/2 , 24VDC 1/4 NPT",1.0000,0.000000,E2.2 - 12
+287,R000274,"Electro Válvula 3/2 pilotada, 24VDC 1/4 NPT",2.0000,0.000000,E2.2 - 12
+288,R000275,"Electro Válvula 3/2, 24VDC 1/8 NPT",0.0000,0.000000,E2.2 - 12
+289,R000276,"Electro Válvula 5/2  AC110V 3.4VA, 1/8 NPT",1.0000,0.000000,E2.2 - 12
+290,R000277,"Electro Válvula 5/2  DC24V 3.4VA, 1/8 NPT",3.0000,9.095000,E2.2 - 12
+291,R000278,"Electro Válvula 5/2, AC 110V 1/4 NPT",3.0000,0.000000,E2.2 - 12
+292,R000279,"Electro Válvula 5/2, AC 220V 1/4 NPT",1.0000,0.000000,E2.2 - 12
+293,R000280,"Electro Válvula 5/2, DC24V 1/4 NPT",33.0000,9.630000,E2.2 - 12
+294,R000281,Válvula 5/2 pilotada 1/4 NPT,1.0000,0.000000,E2.2 - 12
+295,R000282,"Electro Válvula 0.0-0.7 Mpa, DC24V con base",2.0000,0.000000,E2.2 - 13
+296,R000283,Prensas para cable,8.0000,0.000000,E2.2 - 13
+297,R000284,Presostato,1.0000,0.000000,E2.2 - 13
+298,R000285,Presostato PEV-1/4-B FESTO 1 – 12 BAR,1.0000,0.000000,E2.2 - 13
+299,R000286,Presostato QPM11-NO  0.1 – 1.0 Mpa,2.0000,0.000000,E2.2 - 13
+300,R000287,Presostatos de 180 – 3000 PSI,1.0000,0.000000,E2.2 - 13
+301,R000288,Repuestos usados de electroválvulas,0.0000,0.000000,E2.2 - 15
+302,R000289,"Electro Válvula 0.15-0.8 MPA. Modelo 4v220-08, 5/2 doble piloteada",1.0000,0.000000,E2.2 - 15
+303,R000290,"Electro Válvula 120 PSI Modelo 35A-ACA-DDAA-1BA, 24 v, 3/2",2.0000,0.000000,E2.2 - 15
+304,R000291,"Electro Válvula 2.5-10 BAR Modelo 420-G-03, 3/2",2.0000,0.000000,E2.2 - 15
+305,R000292,"Electro Válvula 21-115 PSI Modelo 4v220- 1/4, 5/2 doble piloteada",0.0000,0.000000,E2.2 - 15
+306,R000293,"Regulador de presión de 1/2”, MODEL RE-04, 3/2",2.0000,0.000000,E2.2 - 15
+307,R000294,"Switch de presión PK506, 0.5 – 6 Kgd/cm2",1.0000,0.000000,E2.2 - 15
+308,R000295,Válvula de pedal 5/2,1.0000,0.000000,E2.2 - 15
+309,R000296,"Válvula solenoide 1/4 NPT, AC 220 V",1.0000,0.000000,E2.2 - 15
+310,R000297,Bombilla de 23 W,0.0000,0.000000,E2.2 - 16
+311,R000298,Capacitor de 0.22 mF,1.0000,0.000000,E2.2 - 16
+312,R000299,Espiga para bobina MPM,2.0000,0.000000,E2.2 - 16
+313,R000300,Interruptor de presión de punto 115VAC – 50 PSIG,1.0000,0.000000,E2.2 - 16
+314,R000301,Interruptor de presión de punto 60 PSI,3.0000,0.000000,E2.2 - 16
+315,R000302,Interruptor para BIBRA,2.0000,0.000000,E2.2 - 16
+316,R000303,Lubricador de presión EY25-2,1.0000,0.000000,E2.2 - 16
+317,R000304,Termostato W54,1.0000,0.000000,E2.2 - 16
+318,R000305,Thermoswitch PS115,1.0000,0.000000,E2.2 - 16
+319,R000306,"Vacuometro MARSH 2.5” x 1/4” NPT, 30 x 30”Hg x PSI",1.0000,0.000000,E2.2 - 16
+320,R000307,Bobina de 24V,32.0000,0.000000,E2.2 - 19
+321,R000308,"Electro Válvula 0.15-0.8 Mpa, 5/2 DC 24V de 1/8”",1.0000,0.000000,E2.2 - 19
+322,R000309,Válvula 3/2 para barniz,2.0000,0.000000,E2.2 - 19
+323,R000310,Válvula 5/2 de 1/4”,2.0000,0.000000,E2.2 - 19
+324,R000311,Rodamiento 108TV,2.0000,0.000000,E2.3 - 01
+325,R000312,Rodamiento 51101,4.0000,0.000000,E2.3 - 01
+326,R000313,Rodamiento 51105,2.0000,0.000000,E2.3 - 01
+327,R000314,Rodamiento 51106,0.0000,0.000000,E2.3 - 01
+328,R000315,Rodamiento 6002,6.0000,23.215000,E2.3 - 01
+329,R000316,Rodamiento 607,11.0000,0.000000,E2.3 - 01
+330,R000317,Rodamiento 608,30.0000,14.732000,E2.3 - 01
+331,R000318,Rodamiento 609,4.0000,0.000000,E2.3 - 01
+332,R000319,Rodamiento 61803,5.0000,0.000000,E2.3 - 01
+333,R000320,Rodamiento 6205,4.0000,0.000000,E2.3 - 01
+334,R000321,Rodamiento 624,10.0000,0.000000,E2.3 - 01
+335,R000322,Rodamiento 625,11.0000,0.000000,E2.3 - 01
+336,R000323,Rodamiento 626,46.0000,17.857200,E2.3 - 01
+337,R000324,Rodamiento 6300,4.0000,0.000000,E2.3 - 01
+338,R000325,Rodamiento 6301,4.0000,26.785000,E2.3 - 01
+339,R000326,Rodamiento 6302,2.0000,0.000000,E2.3 - 01
+340,R000327,Rodamiento 6804/61804,6.0000,0.000000,E2.3 - 01
+341,R000328,Rodamiento 685,17.0000,0.000000,E2.3 - 01
+342,R000329,Rodamiento 696,24.0000,0.000000,E2.3 - 01
+343,R000330,Rodamiento 699,4.0000,0.000000,E2.3 - 01
+344,R000331,Rodamiento 7200B,2.0000,0.000000,E2.3 - 01
+345,R000332,Rodamiento 8312,1.0000,0.000000,E2.3 - 01
+346,R000333,Rodamiento NU204,2.0000,0.000000,E2.3 - 01
+347,R000334,Rodamiento 16003,1.0000,0.000000,E2.3 - 02
+348,R000335,Rodamiento 30B – C5,1.0000,0.000000,E2.3 - 02
+349,R000336,Rodamiento 51100,2.0000,0.000000,E2.3 - 02
+350,R000337,Rodamiento 6001,2.0000,0.000000,E2.3 - 02
+351,R000338,Rodamiento 6003,5.0000,22.544000,E2.3 - 02
+352,R000339,Rodamiento 607,88.0000,0.000000,E2.3 - 02
+353,R000340,Rodamiento 6100 / 61900,9.0000,80.357500,E2.3 - 02
+354,R000341,Rodamiento 62203,1.0000,0.000000,E2.3 - 02
+355,R000342,Rodamiento 628,13.0000,0.000000,E2.3 - 02
+356,R000343,Rodamiento 7202B,1.0000,0.000000,E2.3 - 02
+357,R000344,Rodamiento LM29749/711/Q,2.0000,0.000000,E2.3 - 02
+358,R000345,Rodamiento 2203,2.0000,0.000000,E2.3 - 03
+359,R000346,Rodamiento 3202,1.0000,0.000000,E2.3 - 03
+360,R000347,Rodamiento 6000 zz,20.0000,17.856667,E2.3 - 03
+361,R000348,Rodamiento 6004,5.0000,0.000000,E2.3 - 03
+362,R000349,Rodamiento 6203,4.0000,0.000000,E2.3 - 03
+363,R000350,Rodamiento 6902,4.0000,0.000000,E2.3 - 03
+364,R000351,Rodamiento 6904,0.0000,0.000000,E2.3 - 03
+365,R000352,Rodamiento 6808 ZZ,12.0000,0.000000,E2.3 - 03
+366,R000353,Rodamiento 6807 ZZ,12.0000,0.000000,E2.3 - 03
+367,R000354,Rodamiento 6805 ZZ,24.0000,0.000000,E2.3 - 03
+368,R000355,Rodamiento 6010 2RS,5.0000,84.822500,E2.3 - 03
+369,R000356,Rodamiento NA 6903,12.0000,0.000000,E2.3 - 03
+370,R000357,Rodamiento 204,1.0000,0.000000,E2.3 - 04
+371,R000358,Rodamiento 2202,2.0000,0.000000,E2.3 - 04
+372,R000359,Rodamiento 3205 A-2R1TN9,0.0000,0.000000,E2.3 - 04
+373,R000360,Rodamiento 4023,1.0000,0.000000,E2.3 - 04
+374,R000361,Rodamiento 51106,4.0000,0.000000,E2.3 - 04
+375,R000362,Rodamiento 606,0.0000,0.000000,E2.3 - 04
+376,R000363,Rodamiento 6200,3.0000,0.000000,E2.3 - 04
+377,R000364,Rodamiento 6204,6.0000,0.000000,E2.3 - 04
+378,R000365,Rodamiento 6206,3.0000,0.000000,E2.3 - 04
+379,R000366,Rodamiento 6305,1.0000,0.000000,E2.3 - 04
+380,R000367,Rodamiento 6306,0.0000,0.000000,E2.3 - 04
+381,R000368,Rodamiento 6900,7.0000,0.000000,E2.3 - 04
+382,R000369,Rodamiento VXB CSK30,1.0000,0.000000,E2.3 - 04
+383,R000370,Rodamiento NA 6903,2.0000,0.000000,E2.3 - 05
+384,R000371,Rodamiento 16004,1.0000,0.000000,E2.3 - 05
+385,R000372,Rodamiento 203P,3.0000,0.000000,E2.3 - 05
+386,R000373,Rodamiento 2204,2.0000,0.000000,E2.3 - 05
+387,R000374,Rodamiento 5020 HK,1.0000,0.000000,E2.3 - 05
+388,R000375,Rodamiento 6005,2.0000,0.000000,E2.3 - 05
+389,R000376,Rodamiento 6006,4.0000,0.000000,E2.3 - 05
+390,R000377,Rodamiento 6015 2RS,1.0000,0.000000,E2.3 - 05
+391,R000378,Rodamiento 6201,1.0000,0.000000,E2.3 - 05
+392,R000379,Rodamiento 6202,12.0000,21.428750,E2.3 - 05
+393,R000380,Rodamiento 6304,0.0000,0.000000,E2.3 - 05
+394,R000381,Rodamiento 6803,17.0000,0.000000,E2.3 - 05
+395,R000382,Rodamiento 6805 RS,0.0000,0.000000,E2.3 - 05
+396,R000383,Rodamiento 7003AC,8.0000,0.000000,E2.3 - 05
+397,R000384,Rodamiento 1207,1.0000,0.000000,E2.3 - 06
+398,R000385,Rodamiento 1209K,3.0000,0.000000,E2.3 - 06
+399,R000386,Rodamiento 16007,2.0000,0.000000,E2.3 - 06
+400,R000387,Rodamiento 16009,1.0000,0.000000,E2.3 - 06
+401,R000388,Rodamiento 6007,1.0000,0.000000,E2.3 - 06
+402,R000389,Rodamiento 6009,3.0000,0.000000,E2.3 - 06
+403,R000390,Rodamiento 61810/6810,4.0000,0.000000,E2.3 - 06
+404,R000391,Rodamiento 6209,1.0000,0.000000,E2.3 - 06
+405,R000392,Rodamiento 6307,1.0000,0.000000,E2.3 - 06
+406,R000393,Rodamiento axk 4565,1.0000,0.000000,E2.3 - 06
+407,R000394,Rodamiento HK1010,1.0000,0.000000,E2.3 - 06
+408,R000395,Rodamiento HK1812 B,4.0000,0.000000,E2.3 - 06
+409,R000396,Fideo para Orines de 6 mm en metros,0.0000,0.000000,E2.3 - 07
+410,R000397,O ´ring 50V 1/8” x 44,45.0000,0.000000,E2.3 - 07
+411,R000398,O 'ring de 03 x 45 mm,0.0000,0.000000,E2.3 - 07
+412,R000399,O 'ring de 1 x 11 mm,0.0000,0.000000,E2.3 - 07
+413,R000400,O 'ring de 1 x 32 mm,9.0000,0.000000,E2.3 - 07
+414,R000401,O 'ring de 1 x 38 mm,10.0000,0.000000,E2.3 - 07
+415,R000402,O 'ring de 1.0 x 45 mm,49.0000,0.000000,E2.3 - 07
+416,R000403,O 'ring de 1.5 x 07 mm,0.0000,0.000000,E2.3 - 07
+417,R000404,O 'ring de 1.5 x 11 mm,1.0000,0.000000,E2.3 - 07
+418,R000405,O 'ring de 1.5 x 17.5 mm,1.0000,0.000000,E2.3 - 07
+419,R000406,O 'ring de 1.5 x 18 mm,2.0000,0.000000,E2.3 - 07
+420,R000407,O 'ring de 1.5 x 50 mm,0.0000,0.000000,E2.3 - 07
+421,R000408,O 'ring de 1/16”  x 7/16”,0.0000,0.000000,E2.3 - 07
+422,R000409,O 'ring de 1/16” x 1/2”,9.0000,0.000000,E2.3 - 07
+423,R000410,O 'ring de 1/8” x 2 1/2”,4.0000,0.000000,E2.3 - 07
+424,R000411,O 'ring de 1/8” x 3/4” mm,1.0000,0.000000,E2.3 - 07
+425,R000412,O 'ring de 1/8” x 7/16”,3.0000,0.000000,E2.3 - 07
+426,R000413,O 'ring de 2.0 x 04 mm,12.0000,0.000000,E2.3 - 07
+427,R000414,O 'ring de 2.0 x 06 mm,7.0000,0.000000,E2.3 - 07
+428,R000415,O 'ring de 2.0 x 07 mm,19.0000,0.000000,E2.3 - 07
+429,R000416,O 'ring de 2.0 x 11 mm,2.0000,0.000000,E2.3 - 07
+430,R000417,O 'ring de 2.0 x 17 mm,2.0000,0.000000,E2.3 - 07
+431,R000418,O 'ring de 2.0 x 20 mm,1.0000,0.000000,E2.3 - 07
+432,R000419,O 'ring de 2.0 x 22 mm,3.0000,0.000000,E2.3 - 07
+433,R000420,O 'ring de 2.0 x 24 mm,2.0000,0.000000,E2.3 - 07
+434,R000421,O 'ring de 2.0 x 32 mm,1.0000,0.000000,E2.3 - 07
+435,R000422,O 'ring de 2.0 x 35 mm,2.0000,0.000000,E2.3 - 07
+436,R000423,O 'ring de 2.0 x 44 mm,13.0000,0.000000,E2.3 - 07
+437,R000424,O 'ring de 2.5 x 08 mm,6.0000,0.000000,E2.3 - 07
+438,R000425,O 'ring de 2.5 x 10 mm,3.0000,0.000000,E2.3 - 07
+439,R000426,O 'ring de 2.5 x 14 mm,5.0000,0.000000,E2.3 - 07
+440,R000427,O 'ring de 2.5 x 15 mm,2.0000,0.000000,E2.3 - 07
+441,R000428,O 'ring de 2.5 x 16 mm,4.0000,0.000000,E2.3 - 07
+442,R000429,O 'ring de 2.5 x 18 mm,7.0000,0.000000,E2.3 - 07
+443,R000430,O 'ring de 2.5 x 45 mm,4.0000,0.000000,E2.3 - 07
+444,R000431,O 'ring de 3.0 x 12 mm,6.0000,0.000000,E2.3 - 07
+445,R000432,O 'ring de 3.0 x 14 mm,5.0000,0.000000,E2.3 - 07
+446,R000433,O 'ring de 3.0 x 15 mm,1.0000,0.000000,E2.3 - 07
+447,R000434,O 'ring de 3.0 x 32 mm,1.0000,0.000000,E2.3 - 07
+448,R000435,O 'ring de 3.0 x 38 mm,3.0000,0.000000,E2.3 - 07
+449,R000436,O 'ring de 3.0 x 60 mm,1.0000,0.000000,E2.3 - 07
+450,R000437,O 'ring de 3.0 x 65 mm,6.0000,0.000000,E2.3 - 07
+451,R000438,O 'ring de 3.4 x 42 mm,4.0000,0.000000,E2.3 - 07
+452,R000439,O 'ring de 3.5 x 18 mm,5.0000,0.000000,E2.3 - 07
+453,R000440,O 'ring de 3.5 x 19 mm,2.0000,0.000000,E2.3 - 07
+454,R000441,O 'ring de 3.5 x 20 mm,2.0000,0.000000,E2.3 - 07
+455,R000442,O 'ring de 3.5 x 25 mm,2.0000,0.000000,E2.3 - 07
+456,R000443,O 'ring de 3.5 x 28 mm,1.0000,0.000000,E2.3 - 07
+457,R000444,O 'ring de 3.5 x 34 mm,5.0000,0.000000,E2.3 - 07
+458,R000445,O 'ring de 3.5 x 36 mm,0.0000,0.000000,E2.3 - 07
+459,R000446,O 'ring de 3.5 x 50 mm,1.0000,0.000000,E2.3 - 07
+460,R000447,O 'ring de 3.5 x 56.6 mm,3.0000,0.000000,E2.3 - 07
+461,R000448,O 'ring de 3/32” x 3/4”,0.0000,0.000000,E2.3 - 07
+462,R000449,O 'ring de 4.0 x 34 mm,6.0000,0.000000,E2.3 - 07
+463,R000450,O 'ring de 4.0 x 40 mm,1.0000,0.000000,E2.3 - 07
+464,R000451,O 'ring de 4.0 x 55 mm,4.0000,0.000000,E2.3 - 07
+465,R000452,O 'ring de 6.0 x 200 mm,1.0000,0.000000,E2.3 - 07
+466,R000453,O 'ring de 6.0 x 64 mm,2.0000,0.000000,E2.3 - 07
+467,R000454,O 'ring de 7/16” x 3/32”,6.0000,0.000000,E2.3 - 07
+468,R000455,O 'ring de 8 – 2N x 8 mm,18.0000,0.000000,E2.3 - 07
+469,R000456,O 'ring plano 32 x 40 x 3.0 mm,0.0000,0.000000,E2.3 - 07
+470,R000457,"Fideo de 1/4” para o ring, pies",13.0000,0.000000,E2.3 - 07
+471,R000458,"Fideo de 1/8” para o ring, pies",7.0000,0.000000,E2.3 - 07
+472,R000459,Arandela de seguridad MB3 de 17 mm,1.0000,0.000000,E2.3 - 08
+473,R000460,Seguro para eje 1/2”,1.0000,0.000000,E2.3 - 08
+474,R000461,Seeger interior 1”,2.0000,0.000000,E2.3 - 08
+475,R000462,Seeger interior  47 MM,2.0000,0.000000,E2.3 - 08
+476,R000463,Seeger exterior 45 mm,4.0000,0.000000,E2.3 - 08
+477,R000464,Tope para eje de 5mm,6.0000,0.000000,E2.3 - 08
+478,R000465,Seeger interior 1/4”,7.0000,0.000000,E2.3 - 08
+479,R000466,Seeger interior 1 1/2”,13.0000,0.000000,E2.3 - 08
+480,R000467,Seeger interior 1 1/4”,35.0000,0.000000,E2.3 - 08
+481,R000468,Seguro Pin de expansión agujero Ø4 mm,1.0000,0.000000,E2.3 - 08
+482,R000469,Kit de sellos para cilindro de 8.00 mm Parker,1.0000,0.000000,E2.3 - 09
+483,R000470,Kit de sellos para cilindro de 8.00 mm,3.0000,0.000000,E2.3 - 09
+484,R000471,Arandela plana plástica de 18 x 13 x 2.0 mm,5.0000,0.000000,E2.3 - 09
+485,R000472,Anillos de caucho de 31 x 20 x 3.0 mm,49.0000,0.000000,E2.3 - 09
+486,R000473,Anillos de caucho de 20 x 11 x 2.0 mm,50.0000,0.000000,E2.3 - 09
+487,R000474,Castigador M4 x 4 mm,2.0000,0.000000,E2.3 - 09
+488,R000475,Arandela plana BELLE VILLE 51.2 x 100 x 5.7 mm,7.0000,0.000000,E2.3 - 10
+489,R000476,Arandela plana BELLE VILLE 20.5 x 40 x 2.26 mm,42.0000,0.000000,E2.3 - 10
+490,R000477,Arandela plana BELLE VILLE 25.4 x 50.0 x 3.0 mm,49.0000,0.000000,E2.3 - 10
+491,R000478,Arandela plana BELLE VILLE 14.2 x 28 x 1.5 mm,148.0000,0.000000,E2.3 - 10
+492,R000479,Arandela plana BELLE VILLE 8.2 x 15.9 x 1.26 mm,201.0000,0.000000,E2.3 - 10
+493,R000480,Arandela plana BELLE VILLE 6.24 x 12.4 x 0.5 mm,205.0000,0.000000,E2.3 - 10
+494,R000481,Retenedor 10 x 19 x 7,1.0000,0.000000,E2.3 - 11
+495,R000482,Retenedor 12 x 30 x 7,1.0000,0.000000,E2.3 - 11
+496,R000483,Retenedor 14 x 28 x 7,4.0000,0.000000,E2.3 - 11
+497,R000484,Retenedor 17 x 28 x 7,0.0000,0.000000,E2.3 - 11
+498,R000485,Retenedor 17 x 29 x 5,6.0000,0.000000,E2.3 - 11
+499,R000486,Retenedor 19 x 25 x 3,0.0000,0.000000,E2.3 - 11
+500,R000487,Retenedor 19 x 32 x 7,12.0000,0.000000,E2.3 - 11
+501,R000488,Retenedor 20 x 26 x 4,8.0000,31.250000,E2.3 - 11
+502,R000489,Retenedor 20 x 29 x 5,2.0000,0.000000,E2.3 - 11
+503,R000490,Retenedor 20 x 30 x 5,0.0000,0.000000,E2.3 - 11
+504,R000491,Retenedor 20 x 35 x 7,6.0000,0.000000,E2.3 - 11
+505,R000492,Retenedor 20 x 40 x 7,6.0000,0.000000,E2.3 - 11
+506,R000493,Retenedor 20 x 47 x 8.5,6.0000,0.000000,E2.3 - 11
+507,R000494,Retenedor 21 x 27 x 3,0.0000,0.000000,E2.3 - 11
+508,R000495,Retenedor 23 x 47 x 8,0.0000,0.000000,E2.3 - 11
+509,R000496,Retenedor 25 x 34.5 x 7,1.0000,0.000000,E2.3 - 11
+510,R000497,Retenedor 25 x 42 x 7,6.0000,0.000000,E2.3 - 11
+511,R000498,Retenedor 27 x 47 x 10,1.0000,0.000000,E2.3 - 11
+512,R000499,Retenedor 28 x 52 x 7,7.0000,0.000000,E2.3 - 11
+513,R000500,Retenedor 29 x 37 x 6,1.0000,0.000000,E2.3 - 11
+514,R000501,Retenedor 30 x 40 x 7,6.0000,0.000000,E2.3 - 11
+515,R000502,Retenedor 30 x 42 x 7,2.0000,0.000000,E2.3 - 11
+516,R000503,Retenedor 30 x 42 x 8,2.0000,0.000000,E2.3 - 11
+517,R000504,Retenedor 30 x 50 x 7,2.0000,0.000000,E2.3 - 11
+518,R000505,Retenedor 30 x 55 x 7,2.0000,0.000000,E2.3 - 11
+519,R000506,Retenedor 32 x 52 x 7,1.0000,0.000000,E2.3 - 11
+520,R000507,Retenedor 35 x 47 x 7,1.0000,0.000000,E2.3 - 11
+521,R000508,Retenedor 40 x 55 x 7,2.0000,0.000000,E2.3 - 11
+522,R000509,Retenedor 50 x 65 x 8,1.0000,0.000000,E2.3 - 11
+523,R000510,Retenedor 58 x 72 x 10,2.0000,0.000000,E2.3 - 11
+524,R000511,Retenedor 58 x 90 x 11,1.0000,0.000000,E2.3 - 11
+525,R000512,Retenedor 70 x 40 x 7,0.0000,0.000000,E2.3 - 11
+526,R000513,Retenedor 80 x 100 x 10,4.0000,0.000000,E2.3 - 11
+527,R000514,Resorte 13 mm x 110 mm x 3 mm,3.0000,0.000000,E2.3 - 12
+528,R000515,Resorte a compresión 04 mm x 31 mm x 0.5 mm,1.0000,0.000000,E2.3 - 12
+529,R000516,Resorte a compresión 06 mm x 20 mm x 1.0 mm,1.0000,0.000000,E2.3 - 12
+530,R000517,Resorte a compresión 07 mm x 70 mm x 1.7 mm,2.0000,0.000000,E2.3 - 12
+531,R000518,Resorte a compresión 07 mm x 20 mm x 1.0 mm,5.0000,0.000000,E2.3 - 12
+532,R000519,Resorte a compresión 08 mm x 70 mm x 0.2 mm,3.0000,0.000000,E2.3 - 12
+533,R000520,Resorte a compresión 09 mm x 16 mm x 1.0 mm,1.0000,0.000000,E2.3 - 12
+534,R000521,Resorte a compresión 09 mm x 40 mm x 1.0 mm,3.0000,0.000000,E2.3 - 12
+535,R000522,Resorte a compresión 1.6 mm x 26 mm x 1.5 mm,1.0000,0.000000,E2.3 - 12
+536,R000523,Resorte a compresión 1/4” x 1 1/4” x 1/32”,12.0000,0.000000,E2.3 - 12
+537,R000524,Resorte a compresión 10 mm x 36 mm x 0.75 mm,1.0000,0.000000,E2.3 - 12
+538,R000525,Resorte a compresión 12 mm x 22 mm x 1.0 mm,8.0000,0.000000,E2.3 - 12
+539,R000526,Resorte a compresión 15 mm x 28 mm x 2.0 mm,1.0000,0.000000,E2.3 - 12
+540,R000527,Resorte a compresión 18 mm x 48 mm x 3.5 mm,1.0000,0.000000,E2.3 - 12
+541,R000528,Resorte a compresión 18 mm x 50 mm x 4.0 mm,3.0000,0.000000,E2.3 - 12
+542,R000529,Resorte a compresión 21 mm x 80 mm x 3.0 mm,7.0000,0.000000,E2.3 - 12
+543,R000530,Resorte a compresión 23 mm x 20 mm x 03 mm,1.0000,0.000000,E2.3 - 12
+544,R000531,Resorte a compresión 3/8” x 2 3/16” x 1/32”,7.0000,0.000000,E2.3 - 12
+545,R000532,Resorte a compresión 6.21 mm x 12.65  mm x 1 mm,1.0000,0.000000,E2.3 - 12
+546,R000533,Resorte a compresión 7.2 mm x 19 mm x 0.5 mm,6.0000,0.000000,E2.3 - 12
+547,R000534,Resorte a compresión 7.3 mm x 6.1 mm x 1.0 mm,1.0000,0.000000,E2.3 - 12
+548,R000535,Resorte a compresión 7/16” x 2” x 1/16”,5.0000,0.000000,E2.3 - 12
+549,R000536,Resorte a compresión 8.25 mm x 20 mm x 1.3 mm,1.0000,0.000000,E2.3 - 12
+550,R000537,Resorte a tensión de 06 mm x 56 mm x 0.3 mm,3.0000,0.000000,E2.3 - 12
+551,R000538,Resorte a tensión de 07 mm x 20 mm x 0.3 mm,1.0000,0.000000,E2.3 - 12
+552,R000539,Resorte a tensión de 08 mm x 32 mm x 01 mm,1.0000,0.000000,E2.3 - 12
+553,R000540,Resorte a tensión de 08 mm x 40 mm x 0.3 mm,4.0000,0.000000,E2.3 - 12
+554,R000541,Resorte a tensión de 1/8” x 3 3/4” x 3/128”,1.0000,0.000000,E2.3 - 12
+555,R000542,Resorte a tensión de 10 mm x 27 mm x 1.5 mm,1.0000,0.000000,E2.3 - 12
+556,R000543,Resorte a tensión de 3.3 mm x 95 mm x 0.2 mm,4.0000,0.000000,E2.3 - 12
+557,R000544,Resorte a tensión de 4.0 mm x 77 mm x 0.2 mm,2.0000,0.000000,E2.3 - 12
+558,R000545,Resorte a tensión de 4.0 mm x 82 mm x 0.2 mm,3.0000,0.000000,E2.3 - 12
+559,R000546,Resorte a tensión de 6.3 mm x 55 mm x 0.2 mm,1.0000,0.000000,E2.3 - 12
+560,R000547,Resorte a tensión de Øint 11 mm x largo 111 mm x  Øalam 3 mm x paso 4 mm,1.0000,0.000000,E2.3 - 12
+561,R000548,"Variador ALLEN-BRADLEYAF 3 HP, 380-460 V, 3 PH",1.0000,0.000000,E2.4
+562,R000549,"Variador FUJIELECTRIC AF – 60 LP MICRO DRIVE 5 HP 200-240 V, 3 PH",2.0000,0.000000,E2.4
+563,R000550,"Variador FUJIELECTRIC AF – 60 LP MICRO DRIVE 5.5 HP, 380-480 V, 3 PH",2.0000,0.000000,E2.4
+564,R000551,Carcasa para filtro BIGBLUE 20” x 4.5”,1.0000,0.000000,E2.5
+565,R000552,Filtro de carbón GRANULEDOG 20” X 4.5”,3.0000,0.000000,E2.5
+566,R000553,Filtro de carbón BLOK BC 20” x 4.5”,7.0000,0.000000,E2.5
+567,R000554,Manguera TAYGON de 2”,3.0000,0.000000,E3.0
+568,R000555,Manguera TAYGON de 1 1/4”,2.0000,0.000000,E3.0
+569,R000556,Manguera TAYGON de 1/2”,58.0000,11.161000,E3.0
+570,R000557,Manguera TAYGON de 3/8”,15.0000,14.850000,E3.0
+571,R000558,Manguera TAYGON de 3/4”,7.0000,0.000000,E3.0
+572,R000559,Manguera TAYGON de 1/4”,26.0000,5.491000,E3.0
+573,R000560,Manguera transparente Ø 1”,3.0000,44.345000,E3.0
+574,R000561,Conector recto hembra,1.0000,0.000000,E3.1
+575,R000562,"Lubricadores conexión de 1/2”, BL4000",5.0000,0.000000,E3.1
+576,R000563,Retenedor 07 mm x 15 mm x 4 mm,1.0000,0.000000,E3.1
+577,R000564,Retenedor 45 mm x 72 mm x 12 mm,1.0000,0.000000,E3.1
+578,R000565,Retenedor 88 mm x 98 mm x 8 mm,1.0000,0.000000,E3.1
+579,R000566,Distribuidor 03 vías función,2.0000,0.000000,E3.1
+580,R000567,Retenedor 20 mm x 28 mm x 4 mm,2.0000,0.000000,E3.1
+581,R000568,Retenedor 3 1/8” x 3 7/8” x 3/8” FMI,2.0000,0.000000,E3.1
+582,R000569,Retenedor 53 mm x 59 mm x 8 mm,2.0000,0.000000,E3.1
+583,R000570,Retenedor 85 mm x 96 mm x 9 mm,2.0000,0.000000,E3.1
+584,R000571,Retenedor 90 mm x 115 mm x 12 mm,2.0000,0.000000,E3.1
+585,R000572,Cinta para identificación 4.700.0142 de 2”,3.0000,0.000000,E3.1
+586,R000573,Dosificador A 2540,3.0000,0.000000,E3.1
+587,R000574,Conectores Macho de 1/4” liso hembra,3.0000,0.000000,E3.1
+588,R000575,Distribuidor 04 vías FTD,3.0000,0.000000,E3.1
+589,R000576,Distribuidor 04 vías función,3.0000,0.000000,E3.1
+590,R000577,Retenedor 40 mm x 48 mm x 3 mm,3.0000,0.000000,E3.1
+591,R000578,Retenedor 50 mm x 67 mm x 8 mm,3.0000,0.000000,E3.1
+592,R000579,Ventosas de 38 mm,3.0000,0.000000,E3.1
+593,R000580,Ventosas de 45 mm,3.0000,0.000000,E3.1
+594,R000581,Retenedor 90 mm x 105 mm x 9 mm,4.0000,0.000000,E3.1
+595,R000582,A 2678 conectores 90°,4.0000,0.000000,E3.1
+596,R000583,Dosificador PPD- 0,4.0000,0.000000,E3.1
+597,R000584,Retenedor 54 mm x 70 mm x 9.2 mm,5.0000,0.000000,E3.1
+598,R000585,Tuerca de compresión 1/4”,5.0000,0.000000,E3.1
+599,R000586,Tuerca de compresión de 3/8”,5.0000,0.000000,E3.1
+600,R000587,Distribuidor 06 vías función AE-4,10.0000,0.000000,E3.1
+601,R000588,Dosificador  FTD 00,12.0000,0.000000,E3.1
+602,R000589,Ventosas de 50 mm,14.0000,0.000000,E3.1
+603,R000590,Bushing B1371,15.0000,0.000000,E3.1
+604,R000591,Anillo de compresión 5/32”,16.0000,0.000000,E3.1
+605,R000592,Dosificador FTA 02,17.0000,0.000000,E3.1
+606,R000593,Dosificador FTC,18.0000,0.000000,E3.1
+607,R000594,Conector recto FT,19.0000,0.000000,E3.1
+608,R000595,Distribuidor 04 vías FTA,19.0000,0.000000,E3.1
+609,R000596,Dosificador FTG 02,21.0000,0.000000,E3.1
+610,R000597,Secciones de freno de laminas,30.0000,0.000000,E3.1
+611,R000598,Tuerca de compresión 5/32”,43.0000,0.000000,E3.1
+612,R000599,Dosificador FJA 02,59.0000,0.000000,E3.1
+613,R000600,Ventosa para FMI de 2” tipo A70 BB 10-B,103.0000,0.000000,E3.1
+614,R000601,Castigador de 5/8” x 1 1/2”,1.0000,0.000000,E3.1 – 01
+615,R000602,Castigador de 08 x 40 mm,2.0000,0.000000,E3.1 – 01
+616,R000603,Castigador de 06 x 14 mm,4.0000,0.000000,E3.1 – 01
+617,R000604,Castigador de 3/16” x 1”,4.0000,0.000000,E3.1 – 01
+618,R000605,Castigador de 06 x 10 mm,6.0000,0.000000,E3.1 – 01
+619,R000606,Castigador de 08 x 08 mm,7.0000,0.000000,E3.1 – 01
+620,R000607,Castigador de 04 x 10 mm,8.0000,0.000000,E3.1 – 01
+621,R000608,Castigador de 1/4” x 3/8” mm,20.0000,0.000000,E3.1 – 01
+622,R000609,Tornillo hexagonal M8 x 30 HN,3.0000,0.000000,E3.1 – 01
+623,R000610,Tornillo avellanado Allen M6 x 30 HN,10.0000,0.000000,E3.1 – 01
+624,R000611,Tornillo hexagonal M8 x 50 mm HN,3.0000,0.000000,E3.1 – 01
+625,R000612,Arandela plana de M12 HG,0.0000,0.000000,E3.1 - 2
+626,R000613,Tornillo cilíndrico Allen M06 x 16 mm HN,1.0000,0.000000,E3.1 - 2
+627,R000614,Tornillo cilíndrico Allen M06 x 20 mm HN,1.0000,0.000000,E3.1 - 2
+628,R000615,Tornillo cónico Allen M06 x 45 mm HN,1.0000,0.000000,E3.1 - 2
+629,R000616,Tornillo cónico Allen de 3/16” x 1 1/4” HN,2.0000,0.000000,E3.1 - 2
+630,R000617,Tornillo cónico Allen M06 x 15 mm acero inoxidable,2.0000,0.000000,E3.1 - 2
+631,R000618,Tornillo cónico Allen M06 x 55 mm HN,2.0000,0.000000,E3.1 - 2
+632,R000619,Tornillo hexagonal  3/8” x 1” HG,2.0000,0.000000,E3.1 - 2
+633,R000620,Tornillo hexagonal  M10 x 50 mm Acero inoxidable,2.0000,0.000000,E3.1 - 2
+634,R000621,Tornillo hexagonal  M10 x 70 mm HG,6.0000,0.000000,E3.1 - 2
+635,R000622,Tornillo hexagonal  M10 x 70 mm HN,2.0000,0.000000,E3.1 - 2
+636,R000623,Tornillo hexagonal M08 x 50 mm HN,2.0000,0.000000,E3.1 - 2
+637,R000624,Tornillo hexagonal M12 x 100 mm HN,2.0000,0.000000,E3.1 - 2
+638,R000625,Tuerca hexagonal M10,2.0000,0.000000,E3.1 - 2
+639,R000626,Tuerca hexagonal M06,2.0000,0.000000,E3.1 - 2
+640,R000627,Tuerca hexagonal M12,2.0000,0.000000,E3.1 - 2
+641,R000628,Tuerca hexagonal M6,2.0000,0.000000,E3.1 - 2
+642,R000629,Arandela plana de 3/8” HG,3.0000,0.000000,E3.1 - 2
+643,R000630,Tornillo busca rosca hexagonal 5/16” x 2” HG,3.0000,0.000000,E3.1 - 2
+644,R000631,Tornillo hexagonal  3/8” x 1 1/4” Acero inoxidable,3.0000,0.000000,E3.1 - 2
+645,R000632,Tarugo para concreto de metal de 3/8”,10.0000,2.678750,E3.1 - 2
+646,R000633,Tornillo cilíndrico Allen M08 x 40 mm HN,7.0000,0.000000,E3.1 - 2
+647,R000634,Tornillo cilíndrico Allen de 1/4” x 2 1/2” HN,8.0000,0.000000,E3.1 - 2
+648,R000635,Tornillo busca rosca Phillips 1/4” x 2” HG,9.0000,0.000000,E3.1 - 2
+649,R000636,Arandela de presión M8,10.0000,0.000000,E3.1 - 2
+650,R000637,Tornillo cónico Allen M06 x 15 mm HN,11.0000,0.000000,E3.1 - 2
+651,R000638,Tornillo hexagonal M06 x 20 mm HN,12.0000,0.000000,E3.1 - 2
+652,R000639,Tuerca hexagonal M8,12.0000,0.000000,E3.1 - 2
+653,R000640,Válvula de bola de 1” de Hierro Negro,1.0000,0.000000,E3.2
+654,R000641,Válvula de retención tipo Y de 1 1/2” de BRONCE,1.0000,0.000000,E3.2
+655,R000642,Válvula de bola de 1 1/2” Cromada,0.0000,0.000000,E3.2
+656,R000643,Válvula de bola de 1 1/4” Cromada,1.0000,0.000000,E3.2
+657,R000644,Válvula de bola de 1” Inoxidable,1.0000,0.000000,E3.2
+658,R000645,Medidor de gas GLP IMAC modelo sz1-1G,2.0000,0.000000,E3.2
+659,R000646,Válvula de bola de 1/2” Cromada,10.0000,44.495000,E3.2
+660,R000647,Válvula de bola de 1 1/4” de Hierro Negro,3.0000,0.000000,E3.2
+661,R000648,Válvula de bola de 1/4”,2.0000,0.000000,E3.2
+662,R000649,Válvula de retención recta de 1 1/4” de bronce,5.0000,0.000000,E3.2
+663,R000650,Válvula de bola de 3/4” bronce,1.0000,0.000000,E3.2
+664,R000651,Reducidor bushing 1 1/2” a 1/2” HN,0.0000,0.000000,E3.2 - 01
+665,R000652,Reducidor bushing 1 1/4” a 1/2” HN,1.0000,0.000000,E3.2 - 01
+666,R000653,Reducidor bushing 1” a 1/2” HG,8.0000,8.036000,E3.2 - 01
+667,R000654,Reducidor bushing 1” a 1/2” HN,0.0000,0.000000,E3.2 - 01
+668,R000655,Reducidor bushing 1” a 1/4” HG,0.0000,0.000000,E3.2 - 01
+669,R000656,Reducidor bushing 1” a 1/4” HN,0.0000,0.000000,E3.2 - 01
+670,R000657,Reducidor bushing 2” a 1/2” HN,2.0000,0.000000,E3.2 - 01
+671,R000658,Reducidor bushing 3/4” a 1/2” HG,4.0000,0.000000,E3.2 - 01
+672,R000659,Reducidor bushing 3/4” a 1/2” HN,2.0000,0.000000,E3.2 - 01
+673,R000660,Reducidor bushing 3/4” a 1/4” HN,1.0000,0.000000,E3.2 - 01
+674,R000661,Reducidor de campana 1 1/2” a 1 1/4” HN,0.0000,0.000000,E3.2 - 01
+675,R000662,Reducidor de campana 1 1/2” a 1/2” HG,1.0000,0.000000,E3.2 - 01
+676,R000663,Reducidor de campana 1/2” a 1/4” HN,1.0000,0.000000,E3.2 - 01
+677,R000664,Reducidor de campana 1/2” a 3/8” HN,0.0000,0.000000,E3.2 - 01
+678,R000665,Reducidor de campana 2” a 1” HG,0.0000,0.000000,E3.2 - 01
+679,R000666,Reducidor de campana 3/4” a 1” HG,0.0000,0.000000,E3.2 - 01
+680,R000667,Reducidor de campana 3/8” a 1/8” HN,0.0000,0.000000,E3.2 - 01
+681,R000668,Tapón macho de 3/4” HN,0.0000,0.000000,E3.2 - 02
+682,R000669,Tapón macho de 1 1/4” HG,1.0000,0.000000,E3.2 - 02
+683,R000670,Tapón macho de 1” HN,0.0000,0.000000,E3.2 - 02
+684,R000671,Tapón macho de 1/4” HN,1.0000,0.000000,E3.2 - 02
+685,R000672,Tapón hembra de 1/2” HN,0.0000,0.000000,E3.2 - 02
+686,R000673,Tapón macho de 1/2” HG,0.0000,0.000000,E3.2 - 02
+687,R000674,Codo a 45º de 1/2” HN,6.0000,0.000000,E3.2 - 03
+688,R000675,Copla de 3/8” HG,0.0000,0.000000,E3.2 - 04
+689,R000676,Copla de 1 1/2” HG,1.0000,0.000000,E3.2 - 04
+690,R000677,Copla de 1” HG,0.0000,0.000000,E3.2 - 04
+691,R000678,Copla lisa de 1/2” HN,1.0000,0.000000,E3.2 - 04
+692,R000679,Copla lisa de 1/2” HG,0.0000,0.000000,E3.2 - 04
+693,R000680,Copla de 3/4” HG,2.0000,0.000000,E3.2 - 04
+694,R000681,Copla de 1/2” HG,9.0000,0.000000,E3.2 - 04
+695,R000682,Casquillo hembra para unión universal de 1” de bronce,1.0000,0.000000,E3.2 - 05
+696,R000683,Casquillo hembra para unión universal de 1/2” HN,1.0000,0.000000,E3.2 - 05
+697,R000684,Casquillo hembra para unión universal de 1/4” HN,1.0000,0.000000,E3.2 - 05
+698,R000685,Casquillo macho para unión universal de 1/2” HN,1.0000,0.000000,E3.2 - 05
+699,R000686,Tuerca para unión universal de 1” bronce,1.0000,0.000000,E3.2 - 05
+700,R000687,Unión universal de 3/8” HN,1.0000,0.000000,E3.2 - 05
+701,R000688,Unión universal de 1” HN,1.0000,0.000000,E3.2 - 05
+702,R000689,Unión universal de 3/4” HN,2.0000,0.000000,E3.2 - 05
+703,R000690,Unión universal de 3/4” HG,3.0000,0.000000,E3.2 - 05
+704,R000691,Unión universal de 1/2” HG,12.0000,30.360000,E3.2 - 05
+705,R000692,Unión universal de 1/4” HN,5.0000,0.000000,E3.2 - 05
+706,R000693,T de 1” bronce,1.0000,0.000000,E3.2 - 06
+707,R000694,T de 1/8” HN,1.0000,0.000000,E3.2 - 06
+708,R000695,Cruz de 1/2” HG,6.0000,0.000000,E3.2 - 06
+709,R000696,T de 1/2” HG,6.0000,4.464000,E3.2 - 06
+710,R000697,T de 3/8” HN,2.0000,0.000000,E3.2 - 06
+711,R000698,T de 3/4” HG,1.0000,0.000000,E3.2 - 06
+712,R000699,Codo roscado a 90º de 1 1/4” HG,1.0000,0.000000,E3.2 - 07
+713,R000700,Codo roscado a 90º de 1” HG,1.0000,0.000000,E3.2 - 07
+714,R000701,Codo roscado a 90º de 1/4” HN,1.0000,0.000000,E3.2 - 07
+715,R000702,Codo roscado a 90º de 1/8” HN,1.0000,0.000000,E3.2 - 07
+716,R000703,Codo roscado a 90º de 3/4” HG,7.0000,0.000000,E3.2 - 07
+717,R000704,Codo 90º hembra macho de 1/4”,2.0000,0.000000,E3.2 - 07
+718,R000705,Codo roscado a 90º de 3/8” HN,2.0000,0.000000,E3.2 - 07
+719,R000706,Codo 90º hembra macho de 3/8”,3.0000,0.000000,E3.2 - 07
+720,R000707,Codo roscado a 90º de 1/2” HG,11.0000,6.695000,E3.2 - 07
+721,R000708,Niple doble rosca de 1 1/2” x 8” HG,0.0000,0.000000,E3.2 - 08
+722,R000709,Niple doble rosca de 1 1/4” x 3” HG,0.0000,0.000000,E3.2 - 08
+723,R000710,Niple doble rosca de 1” x 3” HG,0.0000,0.000000,E3.2 - 08
+724,R000711,Niple doble rosca de 1” x 6” HG,1.0000,0.000000,E3.2 - 08
+725,R000712,Niple doble rosca de 1/2” x 2” HG,5.0000,4.020000,E3.2 - 08
+726,R000713,Niple rosca corrida de 1/2” HG,5.0000,3.120000,E3.2 - 08
+727,R000714,Niple doble rosca de 1” x 14” HG,1.0000,0.000000,E3.2 - 08
+728,R000715,Niple doble rosca de 1/2” x 10” HG,1.0000,0.000000,E3.2 - 08
+729,R000716,Niple doble rosca de 1/2” x 8” HG,1.0000,0.000000,E3.2 - 08
+730,R000717,Niple doble rosca de 1/4” x 1 1/2” HG,12.0000,4.460000,E3.2 - 08
+731,R000718,Niple doble rosca de 1/8” x 1 1/2” HG,10.0000,0.000000,E3.2 - 08
+732,R000719,Niple doble rosca de 3/8” x 1 1/2” HG,10.0000,0.000000,E3.2 - 08
+733,R000720,Niple rosca corrida de 3/4” bronce,1.0000,0.000000,E3.2 - 08
+734,R000721,Niple roscado de 1/2” x 8” HG,1.0000,0.000000,E3.2 - 08
+735,R000722,Niple doble rosca de 3/4” x 3” HG,2.0000,0.000000,E3.2 - 08
+736,R000723,Niple doble rosca de 3/4” x 4” HG,3.0000,0.000000,E3.2 - 08
+737,R000724,Niple doble rosca de 3/4” x 2” HG,3.0000,0.000000,E3.2 - 08
+738,R000725,Filtro 2283,4.0000,71.427500,E3.3
+739,R000726,Filtro de aceite FRAM PH2825,6.0000,0.000000,E3.3
+740,R000727,Filtro de aceite LUBERFINER PH 2867,3.0000,0.000000,E3.3
+741,R000728,Filtro de diésel Lucas 296,1.0000,0.000000,E3.3
+742,R000729,Filtro MATRIKX 32 – 250 – 125 – 975,2.0000,0.000000,E3.3
+743,R000730,Filtro para compresor 70,1.0000,0.000000,E3.3
+744,R000731,Filtro PH720 / 51824,0.0000,0.000000,E3.3
+745,R000732,Silbín para montacargas de 8”,1.0000,0.000000,E3.3
+746,R000733,Muestra de filtro 37Z – 02 – AF234,1.0000,0.000000,E3.3
+747,R000734,Muestra de filtro lorenz LA 2067,2.0000,0.000000,E3.3
+748,R000735,Muestra de filtro lorenz LA 2214,1.0000,0.000000,E3.3
+749,R000736,Paletas bomba de vacío conde,9.0000,0.000000,E3.3
+750,R000737,Paletas de grafito 140 mm x 48 mm x 3/16”,3.0000,0.000000,E3.3
+751,R000738,Paletas de grafito de 3/16” x 2” x 9/16”,2.0000,0.000000,E3.3
+752,R000739,Plancha grafitada de 1`x 1` x 3/16”,1.0000,0.000000,E3.3
+753,R000740,Plancha grafitada de 56 cm x 28 cm x 3/16”,1.0000,0.000000,E3.3
+754,R000741,Plancha grafitada de 69 cm x 41 cm x 5 mm,1.0000,0.000000,E3.3
+755,R000742,Retrovisor,1.0000,0.000000,E3.3
+756,R000743,Torque líneas STAR,1.0000,0.000000,E3.3
+757,R000744,Velumoide de 1/16”,2.0000,143.840000,E3.3
+758,R000745,Velumoide de 1/32”,1.0000,0.000000,E3.3
+759,R000746,Hinge BRCH LOC,1.0000,0.000000,E3.4
+760,R000747,Piñones y cadena de transmisión (5/8”) Z24,1.0000,0.000000,E3.4
+761,R000748,Rodamiento 3305,1.0000,0.000000,E3.4
+762,R000749,Rodamiento 5205K,1.0000,0.000000,E3.4
+763,R000750,Rodamiento de agujas 1305,1.0000,0.000000,E3.4
+764,R000751,Rodamiento de agujas Nu203,1.0000,0.000000,E3.4
+765,R000752,Sello de aceite 1 EA,1.0000,0.000000,E3.4
+766,R000753,Elemento Filtrante 1EA -00543259,2.0000,0.000000,E3.4
+767,R000754,Kit de filtro 1 EA,2.0000,0.000000,E3.4
+768,R000755,Empaque de grafito para manjole de 10”,3.0000,0.000000,E3.4
+769,R000756,Manguera con refuerzo de 300 PSI,6.0000,0.000000,E4.1
+770,R000757,Manguera Neumática de 04 mm,16.0000,0.000000,E4.1
+771,R000758,Manguera Neumática de 04 mm transparente,12.0000,0.000000,E4.1
+772,R000759,Manguera Neumática de 06 mm azul,99.0000,15.866000,E4.1
+773,R000760,Manguera Neumática de 06 mm transparente,16.0000,5.089000,E4.1
+774,R000761,Manguera Neumática de 08 mm azul,91.0000,5.276667,E4.1
+775,R000762,Manguera Neumática de 10 mm,89.0000,10.714400,E4.1
+776,R000763,Manguera Neumática de 10 mm transparente,28.0000,10.446400,E4.1
+777,R000764,Manguera Neumática de 12 mm,1.0000,10.321333,E4.1
+778,R000765,Manguera Neumática de 12 mm transparente,8.0000,0.000000,E4.1
+779,R000766,Manguera Neumática de 16 mm,13.0000,26.786000,E4.1
+780,R000767,Manguera Neumática en espiral de 08 mm,1.0000,477.680000,E4.1
+781,R000768,Manguera para lubricación de 3/8”,5.0000,0.000000,E4.1
+782,R000769,Cemento de contacto 1/4 galón,1.0000,49.106667,E4.2
+783,R000770,Cepillo de alambre 100 mm,6.0000,0.000000,E4.2
+784,R000771,Cepillo de alambre 75 mm,0.0000,0.000000,E4.2
+785,R000772,Cepillo de alambre para barreno,1.0000,0.000000,E4.2
+786,R000773,Disco de corte de 4 1/2” x 1.2 mm,1.0000,0.000000,E4.2
+787,R000774,Disco de corte de 4 1/2” x 1/4”,6.0000,0.000000,E4.2
+788,R000775,Disco para esmeril 125 x 50 x M14-2,2.0000,0.000000,E4.2
+789,R000776,Disco de lija de 4 1/2” No. 80,10.0000,0.000000,E4.2
+790,R000777,Disco de lija de 4 1/2” No. 60,8.0000,0.000000,E4.2
+791,R000778,Fideo de 4 mm (Pies),0.0000,0.000000,E4.2
+792,R000779,Fijador 271 LOCTITE,3.0000,0.000000,E4.2
+793,R000780,Filtros de gasolina,5.0000,0.000000,E4.2
+794,R000781,Loctite 242 50 ml,6.0000,227.677500,E4.2
+795,R000782,Loctite 609 50 ml,7.0000,304.022500,E4.2
+796,R000783,Lubricante WD-40; 11 Onz,14.0000,44.642500,E4.2
+797,R000784,Luz estroboscópica de 12 V 21/3 CP,0.0000,0.000000,E4.2
+798,R000785,Mercurio triestilado,1.0000,0.000000,E4.2
+799,R000786,Pegamento de viscosidad extra gruesa para PVC-rígido,1.0000,0.000000,E4.2
+800,R000787,Pegamento KLEBER7 ADHESIVE M130 leder,1.0000,0.000000,E4.2
+801,R000788,"Permatex fijador de roscas (azul), mediana resistencia",3.0000,0.000000,E4.2
+802,R000789,Permatex formador de empaque,1.0000,35.710000,E4.2
+803,R000790,Permatex para montaje de cojinetes para ajustes apretados,0.0000,0.000000,E4.2
+804,R000791,Permatex ultra grey #89145,5.0000,73.500000,E4.2
+805,R000792,Poxilina de 250 g,5.0000,71.428000,E4.2
+806,R000793,Remaches de 3/16”,0.0000,0.000000,E4.2
+807,R000794,Rollo de teflón de 1” x 13 m,5.0000,6.250000,E4.2
+808,R000795,Teflón de 1” para GAS,3.0000,0.000000,E4.2
+809,R000796,Teflón de 1/2”,28.0000,2.232500,E4.2
+810,R000797,Teflón de 1/2” para GAS,0.0000,0.000000,E4.2
+811,R000798,Teflón de 3/4” para GAS,12.0000,9.322000,E4.2
+812,R000799,RTC silicón loctite SI5699 grey,3.0000,0.000000,E4.2
+813,R000800,Sellador permatex #80011,0.0000,0.000000,E4.2
+814,R000801,"Sellante adhesivo, silicona RTV negra",1.0000,0.000000,E4.2
+815,R000802,Sikaflex Pomo 300 ml,7.0000,65.358000,E4.2
+816,R000803,Silicona alta temperatura rojo 85g,22.0000,20.089000,E4.2
+817,R000804,STR FL Taper pin R #5,0.0000,0.000000,E4.2
+818,R000805,STR FL Taper pin R #6,0.0000,0.000000,E4.2
+819,R000806,STR FL Taper pin R #7,0.0000,0.000000,E4.2
+820,R000807,Superglue/ superbonder,35.0000,7.145000,E4.2
+821,R000808,Tarugo plástico estándar para tornillo 1/2”,6.0000,0.000000,E4.2
+822,R000809,Aceitera de 500 ml,3.0000,0.000000,E4.3
+823,R000810,Adaptador hembra de PVC de 1”,1.0000,0.000000,E4.3
+824,R000811,Adaptador macho de PVC de 3/4”,1.0000,0.000000,E4.3
+825,R000812,Batería AAA,41.0000,4.285500,E4.3
+826,R000813,Bisagra de golpe recta,1.0000,0.000000,E4.3
+827,R000814,Bomba de gasolina,1.0000,0.000000,E4.3
+828,R000815,Bomba de grasa manual,0.0000,0.000000,E4.3
+829,R000816,Bombillo de luz blanca de 11W LED,1.0000,0.000000,E4.3
+830,R000817,Boquilla de punta para grasera,1.0000,0.000000,E4.3
+831,R000818,Boquilla para grasera,6.0000,45.267500,E4.3
+832,R000819,Broca para concreto de 3/8” x 4”,0.0000,0.000000,E4.3
+833,R000820,Broca para concreto de 7/8” x 6”,2.0000,0.000000,E4.3
+834,R000821,Brocha de 1 1/2”,1.0000,0.000000,E4.3
+835,R000822,Brocha de 1”,2.0000,4.285000,E4.3
+836,R000823,Brocha de 1/2”,2.0000,2.233333,E4.3
+837,R000824,Brocha de 2”,6.0000,12.500000,E4.3
+838,R000825,Cable TSJ 2 x 16,15.0000,0.000000,E4.3
+839,R000826,Candado YALE 110-50,3.0000,68.670000,E4.3
+840,R000827,Candado YALE 113-40,0.0000,0.000000,E4.3
+841,R000828,Candado YALE 110-70,2.0000,129.470000,E4.3
+842,R000829,Candela NGK 4549 CRFHSA,1.0000,0.000000,E4.3
+843,R000830,Candela 847DJ&J,1.0000,0.000000,E4.3
+844,R000831,Cepillo de ropa,2.0000,0.000000,E4.3
+845,R000832,Cerradura para mueble 30 mm,1.0000,0.000000,E4.3
+846,R000833,Colador de acero inoxidable,0.0000,0.000000,E4.3
+847,R000834,Conector para grasera,1.0000,0.000000,E4.3
+848,R000835,Copla de PVC de 3/4”,3.0000,0.000000,E4.3
+849,R000836,Cuchilla de papel,1.0000,0.000000,E4.3
+850,R000837,Dispensador de jabón,8.0000,0.000000,E4.3
+851,R000838,Electrodos para placas,40.0000,0.000000,E4.3
+852,R000839,Espátula de 1”,4.0000,0.000000,E4.3
+853,R000840,Espiga 110V,1.0000,0.000000,E4.3
+854,R000841,Flexómetro de 5 metros,2.0000,0.000000,E4.3
+855,R000842,Grapas para banda 3/32”-9/64”,3.0000,0.000000,E4.3
+856,R000843,Grapas para banda No. 25-G,1.0000,0.000000,E4.3
+857,R000844,Juego de llaves Allen de 25 Piezas en milímetros y pulgadas,1.0000,0.000000,E4.3
+858,R000845,Juego de llaves Allen cortas de 13 Piezas en milímetros,1.0000,0.000000,E4.3
+859,R000846,Lija grano 100,7.0000,3.930000,E4.3
+860,R000847,Pliego de lija grano 1000,16.0000,4.508000,E4.3
+861,R000848,Pliego de lija grano 280,24.0000,2.455000,E4.3
+862,R000849,Lija grano 400,11.0000,3.124000,E4.3
+863,R000850,Lija grano 60,15.0000,4.018000,E4.3
+864,R000851,Pliego de lija grano 600,21.0000,2.455000,E4.3
+865,R000852,Linterna LED,6.0000,14.286667,E4.3
+866,R000853,Llave Allen de 2.5 mm,2.0000,0.000000,E4.3
+867,R000854,Llave Allen de 4 mm,1.0000,0.000000,E4.3
+868,R000855,Llave Allen de 5 mm,2.0000,0.000000,E4.3
+869,R000856,Llave Allen de 6 mm,2.0000,0.000000,E4.3
+870,R000857,Llave para lavamanos,1.0000,0.000000,E4.3
+871,R000858,Llave para lavatrastos,1.0000,0.000000,E4.3
+872,R000859,Manguera para bomba de grasa,6.0000,93.330000,E4.3
+873,R000860,Manómetro para nitrógeno de 2 1/2” -  0 a 200 PSI,1.0000,0.000000,E4.3
+874,R000861,Martillo de hule,0.0000,0.000000,E4.3
+875,R000862,Martillo plástico,4.0000,0.000000,E4.3
+876,R000863,Mini desarmadores de 1/8”,0.0000,0.000000,E4.3
+877,R000864,Pistola para aire comprimido,3.0000,89.286667,E4.3
+878,R000865,Remachadora TRA STANLEY,1.0000,0.000000,E4.3
+879,R000866,Reposadera de aluminio,4.0000,0.000000,E4.3
+880,R000867,Rollo de hilo para Trimmer,1.0000,0.000000,E4.3
+881,R000868,Sifón metálicos para lavamanos,2.0000,0.000000,E4.3
+882,R000869,Tapón de gasolina G.W. 154 52 M/M,1.0000,0.000000,E4.3
+883,R000870,Tapón de gasolina G.W. 229 44 M/M,1.0000,0.000000,E4.3
+884,R000871,Thread recir kit M20-2.5 #35200,1.0000,0.000000,E4.3
+885,R000872,Tornillo cabeza redonda M4 x 16,100.0000,0.000000,E4.3
+886,R000873,Unión de PVC de 1 1/4”,0.0000,0.000000,E4.3
+887,R000874,Unión de PVC de 3/4”,3.0000,0.000000,E4.3
+888,R000875,Cap pusher cam roll #3P264=14EA,1.0000,0.000000,E4.4
+889,R000876,Cap pusher Cam roll pin #2P264=14EA,1.0000,0.000000,E4.4
+890,R000877,Clutch pressure spring #1P240=6EA,1.0000,0.000000,E4.4
+891,R000878,Cunas para rodamientos cónicos #186L616,1.0000,0.000000,E4.4
+892,R000879,Engranaje de 50 dientes,1.0000,0.000000,E4.4
+893,R000880,Engranaje de 75 dientes,1.0000,0.000000,E4.4
+894,R000881,Feed chain,1.0000,0.000000,E4.4
+895,R000882,Infeed Worm Chain RS25,1.0000,0.000000,E4.4
+896,R000883,Lower Chuck cam roll pin #4L629=8EA,1.0000,0.000000,E4.4
+897,R000884,Lower Chuck Plate,1.0000,0.000000,E4.4
+898,R000885,Lower chuck return cam roll #601P629=8EA,1.0000,0.000000,E4.4
+899,R000886,Lower chuck spring #4P240=8EA,1.0000,0.000000,E4.4
+900,R000887,S.V. Feed Pocket seal #2P165=28EA,1.0000,0.000000,E4.4
+901,R000888,S.V. Feed pocket spring #11P640=14EA,1.0000,0.000000,E4.4
+902,R000889,Seaming cam lever spring #6P140=16EA,1.0000,0.000000,E4.4
+903,R000890,Seaming cam roll #111P141=16.,1.0000,0.000000,E4.4
+904,R000891,Seaming roll lever take up sprig #17P140=16EA,1.0000,0.000000,E4.4
+905,R000892,Seaming roll pin clamping pin w/nut #20P241= SET,1.0000,0.000000,E4.4
+906,R000893,Seaming roll retainer screw #29L826=24EA,1.0000,0.000000,E4.4
+907,R000894,Snap ring #49L616=16EA,1.0000,0.000000,E4.4
+908,R000895,Upper Chuck 40P202,1.0000,0.000000,E4.4
+909,R000896,Upper chuck spindle W/ bushing #118P244,1.0000,0.000000,E4.4
+910,R000897,Caja de Cap Pusher W/ Bushing E/ roller (5/5)=14 SET,2.0000,0.000000,E4.4
+911,R000898,Faja 3226V450,1.0000,0.000000,B1.0
+912,R000899,Faja 7-2240 L1 0223,1.0000,0.000000,B1.0
+913,R000900,Faja 7-2500 L1 8343,1.0000,0.000000,B1.0
+914,R000901,Faja 15J5J-4060,2.0000,0.000000,B1.0
+915,R000902,"Rodillo 1 Op, Perfil R8",1.0000,0.000000,B1.1
+916,R000903,"Rodillo 2 Op, Perfil cevolani",1.0000,0.000000,B1.1
+917,R000904,Repuestos pestañadora cerradora de Galón,1.0000,0.000000,B1.1
+918,R000905,Rodillo 1 Op,2.0000,0.000000,B1.1
+919,R000906,Rodillo 2 Op,2.0000,0.000000,B1.1
+920,R000907,"Rodillo 2 Op, Perfil layta",3.0000,0.000000,B1.1
+921,R000908,"Rodillo 1 Op, Perfil R8",4.0000,0.000000,B1.1
+922,R000909,"Rodillo 1 Op, Perfil 233",4.0000,0.000000,B1.1
+923,R000910,"Rodillo 1 Op, Perfil 236",4.0000,0.000000,B1.1
+924,R000911,"Rodillo 1 Op, Perfil R8",4.0000,0.000000,B1.1
+925,R000912,"Rodillo 2 Op, Perfil antiguo",6.0000,0.000000,B1.1
+926,R000913,"Rodillo 1 Op, Perfil 276",12.0000,0.000000,B1.1
+927,R000914,Conos para pestañadora cerradora de galón,20.0000,0.000000,B1.1
+928,R000915,Chuck Seaming 300 DIA M252440,0.0000,0.000000,B1.2
+929,R000916,Chuck 300P,1.0000,0.000000,B1.2
+930,R000917,Chuck Alnico AXLE QTY 3,2.0000,0.000000,B1.2
+931,R000918,"Chuck Ángelus – L 303 DIA,SS",3.0000,0.000000,B1.2
+932,R000919,"Chuck Ángelus – P 202 DIA,SS",7.0000,0.000000,B1.2
+933,R000920,"Chuck Ángelus – L 211 DIA,SS",0.0000,0.000000,B1.2
+934,R000921,"Chuck Ángelus – P 211 DIA,SS",6.0000,0.000000,B1.2
+935,R000922,"Chuck Ángelus – L 401 DIA,SS",6.0000,0.000000,B1.2
+936,R000923,Chuck F0075L636AJCO  M283030,6.0000,0.000000,B1.2
+937,R000924,Chuck 202 Lrev 10 – 2013 SSFD,0.0000,0.000000,B1.2
+938,R000925,Chuck Ángelus -L 709 DIA,7.0000,0.000000,B1.2
+939,R000926,"Chuck Ángelus – L 214 DIA,SS",0.0000,0.000000,B1.2
+940,R000927,"Chuck Ángelus – L 202 DIA,SS",2.0000,0.000000,B1.2
+941,R000928,Plato base 603 DIA SS,1.0000,0.000000,B1.3
+942,R000929,"Pin de montaje ángelus -L, No. LAYTA 2 2OP",1.0000,0.000000,B1.3
+943,R000930,Plato base D303,1.0000,0.000000,B1.3
+944,R000931,Rodillo 211 DIA SS,1.0000,0.000000,B1.3
+945,R000932,Profire perfect double (complete assembly) Parte No. 777,5.0000,0.000000,B1.3
+946,R000933,Rodillo completo Ángelus L No. 99L641-12179SS,6.0000,0.000000,B1.3
+947,R000934,Rodillo completo Ángelus L No. 100L641-SRG262SS,6.0000,0.000000,B1.3
+948,R000935,Rodillos de 1OP ángelus 202,6.0000,0.000000,B1.3
+949,R000936,Rodillo Perfect doble L Parte No. 777-12179SSPF,9.0000,0.000000,B1.3
+950,R000937,Rodillo ANGELUS L No. 73L641 1OP,14.0000,0.000000,B1.3
+951,R000938,Rodillo ANGELUS L No. 74L641 2OP,15.0000,0.000000,B1.3
+952,R000939,"Rodillo doble P, parte No. 13 P 241  1OP",24.0000,0.000000,B1.3
+953,R000940,"Rodillo doble P, parte No. 12 P 241  2Op",24.0000,0.000000,B1.3
+954,R000941,Rodillo de cerradora CEVOLANI 360/15011 614/45 1era operacion1,1.0000,0.000000,B1.4
+955,R000942,Rodillo de cerradora CEVOLANI 360/1500 2da operación,1.0000,0.000000,B1.4
+956,R000943,"Rodillo doble, perfil R8",1.0000,0.000000,B1.4
+957,R000944,Micro switch TZ8167,2.0000,0.000000,B1.4
+958,R000945,Rodillo para eje de cuelladora combiner 202,2.0000,0.000000,B1.4
+959,R000946,Rodillo de cerradora CEVOLANI C.162.02,2.0000,0.000000,B1.4
+960,R000947,Rodillo cerradora Ángelus 13P241 R8SS,0.0000,0.000000,B1.4
+961,R000948,Rodamiento NA4906,5.0000,0.000000,B1.4
+962,R000949,Rodillo de cerradora CEVOLANI 360/1501 614/45 2da operación,6.0000,0.000000,B1.4
+963,R000950,Platos de cerradora de galón,6.0000,0.000000,B1.4
+964,R000951,Base para rodillos,8.0000,0.000000,B1.4
+965,R000952,Rodillo de cerradora CEVOLANI 378/1023 614/94 2da operación,9.0000,0.000000,B1.4
+966,R000953,Rodillo de cerradora CEVOLANI 360/1501 614/45 1era operación,9.0000,0.000000,B1.4
+967,R000954,Rodamiento de agujas K16X24X20,10.0000,0.000000,B1.4
+968,R000955,"Rodillo doble, perfil R11",10.0000,0.000000,B1.4
+969,R000956,Rodamiento B7010X2DTL,7.0000,69.847143,B1.4
+970,R000957,Rodillo de cerradora CEVOLANI 378/1004 614/51 1era operación,11.0000,0.000000,B1.4
+971,R000958,Rodillo cerradora Ángelus 13P241 R4SS,13.0000,0.000000,B1.4
+972,R000959,"Rodamiento NA4906, Casquillo interior",14.0000,0.000000,B1.4
+973,R000960,Rodamiento de agujas K20X26X20,15.0000,0.000000,B1.4
+974,R000961,Faja A - 41,1.0000,0.000000,B2.1
+975,R000962,Correa 32 T05 x 1100,3.0000,879.463333,B2.1
+976,R000963,Correa 25 DL T05 x 750,2.0000,0.000000,B2.1
+977,R000964,Correa 25 T12 x 1214,2.0000,0.000000,B2.1
+978,R000965,Correa 285L 075,2.0000,0.000000,B2.1
+979,R000966,Correa 345L 100,2.0000,0.000000,B2.1
+980,R000967,Correa 450-5M,3.0000,0.000000,B2.1
+981,R000968,Correa 25 DL T10 980,2.0000,0.000000,B2.1
+982,R000969,Correa 25 T10 x 1530,2.0000,0.000000,B2.1
+983,R000970,Correa 25 T10 x 1600,2.0000,0.000000,B2.1
+984,R000971,Correa 32 T10 x 1210,0.0000,0.000000,B2.1
+985,R000972,Correa  25 T10 x 1610,2.0000,0.000000,B2.1
+986,R000973,Correa 25 T10 x 720,2.0000,0.000000,B2.1
+987,R000974,Correa 16 T10 x 810,2.0000,0.000000,B2.1
+988,R000975,Correa 25 T05 x 455,3.0000,0.000000,B2.1
+989,R000976,Correa 600-5M-15,3.0000,0.000000,B2.1
+990,R000977,Correa 32 T10 x 980 DL,3.0000,0.000000,B2.1
+991,R000978,Correa 32 T10 x 980,3.0000,0.000000,B2.1
+992,R000979,Correa 25 T05 x 900,4.0000,0.000000,B2.1
+993,R000980,Correa 32 T10 x 840,4.0000,0.000000,B2.1
+994,R000981,Faja A – 220,4.0000,0.000000,B2.1
+995,R000982,Faja SPZ-1250,1.0000,0.000000,B2.1
+996,R000983,Correa 32 T05 x 840,5.0000,0.000000,B2.1
+997,R000984,Correa 25 T05 x 840,8.0000,0.000000,B2.1
+998,R000985,Correa 442L 8809,6.0000,0.000000,B2.1
+999,R000986,Aceite SANTOTRACK50,1.0000,0.000000,B2.1
+1000,R000987,Faja 11A – 1005,0.0000,0.000000,B2.2
+1001,R000988,Faja 13A – 5401,0.0000,0.000000,B2.2
+1002,R000989,Faja 13AV – 1744,0.0000,0.000000,B2.2
+1003,R000990,Faja 3/4,1.0000,0.000000,B2.2
+1004,R000991,Faja A – 27,3.0000,0.000000,B2.2
+1005,R000992,Faja A – 28,6.0000,0.000000,B2.2
+1006,R000993,Faja A – 32,3.0000,28.125000,B2.2
+1007,R000994,Faja A – 34,0.0000,0.000000,B2.2
+1008,R000995,Faja A – 35,3.0000,23.215000,B2.2
+1009,R000996,Faja A – 38,3.0000,0.000000,B2.2
+1010,R000997,Faja A – 40,2.0000,0.000000,B2.2
+1011,R000998,Faja A – 43,0.0000,0.000000,B2.2
+1012,R000999,Faja A – 45,0.0000,0.000000,B2.2
+1013,R001000,Faja A – 46,2.0000,0.000000,B2.2
+1014,R001001,Faja A – 47,0.0000,0.000000,B2.2
+1015,R001002,Faja A – 54,0.0000,0.000000,B2.2
+1016,R001003,Faja A – 56,2.0000,0.000000,B2.2
+1017,R001004,Faja A – 57,0.0000,0.000000,B2.2
+1018,R001005,Faja A – 62,0.0000,0.000000,B2.2
+1019,R001006,Faja A – 63,0.0000,0.000000,B2.2
+1020,R001007,Faja A – 64,2.0000,0.000000,B2.2
+1021,R001008,Faja A – 66,2.0000,0.000000,B2.2
+1022,R001009,Faja trapecial A–74,8.0000,53.572500,B2.2
+1023,R001010,Faja A – 76,0.0000,0.000000,B2.2
+1024,R001011,Faja A – 80,2.0000,0.000000,B2.2
+1025,R001012,Faja A – 89,2.0000,0.000000,B2.2
+1026,R001013,Faja A – 99,1.0000,0.000000,B2.2
+1027,R001014,Faja A – 120,4.0000,0.000000,B2.2
+1028,R001015,Faja A – 124,0.0000,0.000000,B2.2
+1029,R001016,Faja B – 42,0.0000,0.000000,B2.2
+1030,R001017,Faja B – 43,1.0000,0.000000,B2.2
+1031,R001018,Faja B – 50,3.0000,0.000000,B2.2
+1032,R001019,Faja B – 51,0.0000,0.000000,B2.2
+1033,R001020,Faja B – 68,7.0000,0.000000,B2.2
+1034,R001021,Faja B – 76,1.0000,0.000000,B2.2
+1035,R001022,Faja B – 85,2.0000,0.000000,B2.2
+1036,R001023,Faja B – 86,4.0000,0.000000,B2.2
+1037,R001024,Faja B – 92,1.0000,0.000000,B2.2
+1038,R001025,Faja B – 100,1.0000,0.000000,B2.2
+1039,R001026,Faja B – 102,4.0000,0.000000,B2.2
+1040,R001027,Faja B – 124,3.0000,0.000000,B2.2
+1041,R001028,Faja BP – 93,2.0000,0.000000,B2.2
+1042,R001029,Faja F – 45,2.0000,0.000000,B2.2
+1043,R001030,Faja FM – 29,0.0000,0.000000,B2.2
+1044,R001031,Faja FM – 63,2.0000,0.000000,B2.2
+1045,R001032,Faja M – 64,0.0000,0.000000,B2.2
+1046,R001033,Faja S – 7320X,1.0000,0.000000,B2.2
+1047,R001034,Faja 11AV – 0900   15361,1.0000,0.000000,B2.3
+1048,R001035,Faja 11AV – 965   15380,2.0000,0.000000,B2.3
+1049,R001036,Faja 13 x 690,1.0000,0.000000,B2.3
+1050,R001037,Faja 13A – 1055,1.0000,0.000000,B2.3
+1051,R001038,Faja 13A – 1120,1.0000,0.000000,B2.3
+1052,R001039,Faja 13A – 1220,2.0000,0.000000,B2.3
+1053,R001040,Faja 15AV – 0900   22360,1.0000,0.000000,B2.3
+1054,R001041,Faja 17 – 1880,2.0000,0.000000,B2.3
+1055,R001042,Faja 3AV – 1130,2.0000,0.000000,B2.3
+1056,R001043,Faja 3LX – 310,1.0000,0.000000,B2.3
+1057,R001044,Faja 3VX – 450,3.0000,0.000000,B2.3
+1058,R001045,Faja 41513    4595:2,1.0000,0.000000,B2.3
+1059,R001046,Faja 54013   2795:13,1.0000,0.000000,B2.3
+1060,R001047,Faja BP – 75,2.0000,0.000000,B2.3
+1061,R001048,Faja BX – 33,1.0000,0.000000,B2.3
+1062,R001049,Faja FM – 32,1.0000,0.000000,B2.3
+1063,R001050,Faja FM – 42,2.0000,0.000000,B2.3
+1064,R001051,Faja FM – 45,1.0000,0.000000,B2.3
+1065,R001052,Faja K 10 x 950,1.0000,0.000000,B2.3
+1066,R001053,Faja S – 7370X,2.0000,0.000000,B2.3
+1067,R001054,Faja S – 7390,1.0000,0.000000,B2.3
+1068,R001055,Eje de expulsor de anillo de galón,3.0000,0.000000,B2.4
+1069,R001056,Cadena doble JWIS tramo de 28.5 cm,1.0000,0.000000,B3.2
+1070,R001057,Cadena MCC 06B,1.0000,0.000000,B3.2
+1071,R001058,Cadena Perry england,1.0000,0.000000,B3.2
+1072,R001059,Cadena Regina,1.0000,0.000000,B3.2
+1073,R001060,Cadena L – B 40,1.0000,0.000000,B3.2
+1074,R001061,Cadena LB 41FMC,1.0000,0.000000,B3.2
+1075,R001062,Cadena DID 520DS,1.0000,0.000000,B3.2
+1076,R001063,Cadena CCM 41,1.0000,0.000000,B3.2
+1077,R001064,Cadena LG 80,1.0000,0.000000,B3.2
+1078,R001065,Cadena Renold engled,1.0000,0.000000,B3.2
+1079,R001066,Cadena ACME 40,1.0000,0.000000,B3.2
+1080,R001067,Cadena LB 06B FMO,1.0000,0.000000,B3.2
+1081,R001068,Cadena Cial,1.0000,0.000000,B3.2
+1082,R001069,Cadena EH 428,1.0000,0.000000,B3.2
+1083,R001070,Cadena 05B-1,2.5000,0.000000,B3.2
+1084,R001071,Cadena joresa SPAIN,3.0000,0.000000,B3.2
+1085,R001072,Cadena MCC 25,3.0000,0.000000,B3.2
+1086,R001073,Cadena JWIS tramo 28.5 cm,4.0000,0.000000,B3.2
+1087,R001074,Cadena REX german 08B,6.0000,0.000000,B3.2
+1088,R001075,Cadena 06B – 3,6.0000,0.000000,B3.2
+1089,R001076,Uniones para cadena de 1/4” (caja),1.0000,0.000000,B3.3
+1090,R001077,Unidad de poder FMI clas 1852 E 105,1.0000,0.000000,B3.3
+1091,R001078,Unidad de poder FMI clas 1852 E 106,1.0000,0.000000,B3.3
+1092,R001079,Unidad de poder FMI clas 1852 E 108,1.0000,0.000000,B3.3
+1093,R001080,Unidad de poder FMI clas 1852 E 203,1.0000,0.000000,B3.3
+1094,R001081,Unidad de poder FMI clas 1852 E 204,1.0000,0.000000,B3.3
+1095,R001082,Unidad de poder FMI clas 1852 E 208,1.0000,0.000000,B3.3
+1096,R001083,Unidad de poder FMI clas 1852 E 304,1.0000,0.000000,B3.3
+1097,R001084,Unidad de poder FMI clas 1852 E 502,1.0000,0.000000,B3.3
+1098,R001085,Unidad de poder FMI clas 1852 E 601,1.0000,0.000000,B3.3
+1099,R001086,Cilindro 4/208705 de 1/8”,1.0000,0.000000,B3.3
+1100,R001087,Electroválvula ELCPM/02400  24 VDC,1.0000,0.000000,B3.3
+1101,R001088,Kit de reparación de cilindro,1.0000,0.000000,B3.3
+1102,R001089,"Electroválvula 300-C-4, O-B-MS de 1/4”",1.0000,0.000000,B3.3
+1103,R001090,Kit de sellos de reparación de válvula solenoide LUCIFER,1.0000,0.000000,B3.3
+1104,R001091,Distribuidor 4 vías M-446317,1.0000,0.000000,B3.3
+1105,R001092,Bobina 482993 LUCIFER,1.0000,0.000000,B3.3
+1106,R001093,Válvula neumática 3/2 de 1/4” con enclavamiento,1.0000,0.000000,B3.3
+1107,R001094,Válvula neumática 5/2 de 1/4”,1.0000,0.000000,B3.3
+1108,R001095,Unidad de poder FMI clas 1852 E 601,2.0000,0.000000,B3.3
+1109,R001096,Filtro de bomba de vacío,2.0000,0.000000,B3.3
+1110,R001097,Filtros bomba de vacío,2.0000,0.000000,B3.3
+1111,R001098,Engranaje helicoidal A831AB160000B,2.0000,0.000000,B3.3
+1112,R001099,Pistón 86400 361902030,2.0000,0.000000,B3.3
+1113,R001100,Engranaje fibra fenólica,3.0000,0.000000,B3.3
+1114,R001101,Unidad de poder FMI clas 1852 E 401B,3.0000,0.000000,B3.3
+1115,R001102,Engranaje helicoidal FMI 6P24x24,4.0000,0.000000,B3.3
+1116,R001103,Orines de NYLON EPOP 311 QZ,4.0000,0.000000,B3.3
+1117,R001104,Kit de reparación de válvula solenoide LUCIFER,4.0000,0.000000,B3.3
+1118,R001105,Válvula de bola de 1/4”,13.0000,28.571000,B3.3
+1119,R001106,Boquilla engomadora,9.0000,0.000000,B3.3
+1120,R001107,Lámpara 099 B495 110V,10.0000,0.000000,B3.3
+1121,R001108,Retenedor 28x40x7,9.0000,0.000000,B3.3
+1122,R001109,Resortes 86400 A866BC410000A,10.0000,0.000000,B3.3
+1123,R001110,Polea dentada,13.0000,0.000000,B3.3
+1124,R001111,Faja D6 x 547 mm,0.0000,0.000000,B3.4
+1125,R001112,Faja D5 x 475,1.0000,0.000000,B3.4
+1126,R001113,Chuck de tres mordazas,1.0000,0.000000,B3.4
+1127,R001114,"Estación de preincersion, SOUDRONIC NORMA",1.0000,0.000000,C1.0
+1128,R001115,Filtro color verde 71/123 x 420,1.0000,0.000000,C1.0
+1129,R001116,Filtro de papel 76/130 x 305,2.0000,0.000000,C1.0
+1130,R001117,Filtro de papel amarillo 71/123 x 420,3.0000,0.000000,C1.0
+1131,R001118,"Imanes alimentador M14201/06, 39 x 16 x 402",1.0000,0.000000,C1.1
+1132,R001119,"Imanes alimentador M14201/05, 39 x 16 x 402",1.0000,0.000000,C1.1
+1133,R001120,"Imanes alimentador M14201/03, 29 x 16 x 402",1.0000,0.000000,C1.1
+1134,R001121,"Imanes alimentador M14201/04, 29 x 16 x 402",1.0000,0.000000,C1.1
+1135,R001122,"Imanes alimentador M14201/02, 19 x 16 x 402",1.0000,0.000000,C1.1
+1136,R001123,"Imanes alimentador M14201/01, 19 x 16 x 402",1.0000,0.000000,C1.1
+1137,R001124,Brazo aplicador de polvo 25 01331.10. 10 mm,1.0000,0.000000,C1.1
+1138,R001125,Brazo aplicador de polvo FREIAG 13477,1.0000,0.000000,C1.1
+1139,R001126,Brazo aplicador de polvo con cascada FREIAG 38194/109*,1.0000,0.000000,C1.1
+1140,R001127,Rodillo 62M-4-10471,1.0000,0.000000,C1.1
+1141,R001128,Base para aplicador de polvo M 317818 D52-64,1.0000,0.000000,C1.1
+1142,R001129,Guía Z de acero inoxidable 2 -10048,1.0000,0.000000,C1.1
+1143,R001130,Base Metálica de acero inoxidable,1.0000,0.000000,C1.1
+1144,R001131,Barra de guía FLEXER de acero inoxidable 62M 305020,1.0000,0.000000,C1.1
+1145,R001132,Barra de guía  de acero al carbón  M 29699,1.0000,0.000000,C1.1
+1146,R001133,Barra de guía  de acero al carbón  M 396990,1.0000,0.000000,C1.1
+1147,R001134,"Base tipo I de D135-149 M-303054, de acero inoxidable",2.0000,0.000000,C1.1
+1148,R001135,"Base tipo I de D150-165 M-303054, de acero inoxidable",2.0000,0.000000,C1.1
+1149,R001136,"Base tipo I de D95-134 M-303054, de acero inoxidable",2.0000,0.000000,C1.1
+1150,R001137,"Barra de acero al carbón M14202/01, 19 x 16 x 402",2.0000,0.000000,C1.1
+1151,R001138,"Correderas de acero al carbón 17253, 30 x 40 x 120",2.0000,0.000000,C1.1
+1152,R001139,Base para aplicador de polvo M 317816 D65-89,2.0000,0.000000,C1.1
+1153,R001140,Brazo aplicador de polvo FREIAG 41345,1.0000,0.000000,C1.1
+1154,R001141,"Eje guía D20 x 402, 62M-426389",2.0000,0.000000,C1.1
+1155,R001142,Eje de acero al carbón FREIAG 13123,2.0000,0.000000,C1.1
+1156,R001143,Barras de sujeción M426372,4.0000,0.000000,C1.1
+1157,R001144,Rodillo cerámico SOUDRONC 62M – 403942,88.0000,0.000000,C1.1
+1158,R001145,Sistema de accionamiento de alambre,1.0000,0.000000,C1.2
+1159,R001146,Barra de tungsteno de flexer,1.0000,0.000000,C1.2
+1160,R001147,Base para apilador de lámina flexer,1.0000,0.000000,C1.2
+1161,R001148,Base para rueda de soldar superior SOUDRONIC,1.0000,0.000000,C1.2
+1162,R001149,Cadena de rodillos con levas de cadena,2.0000,0.000000,C1.2
+1163,R001150,Cincho metálico de 10 x 0.6 x 15230,4.0000,0.000000,C1.2
+1164,R001151,Cincho metálico de 12 x 0.6 x 15230,4.0000,0.000000,C1.2
+1165,R001152,Cincho metálico de 15 x 0.6 x 15230,2.0000,0.000000,C1.2
+1166,R001153,"Eje 62N-4-10471, 20 x 25 x 405",1.0000,0.000000,C1.2
+1167,R001154,Extensión para brazo aplicador de polvo,2.0000,0.000000,C1.2
+1168,R001155,Polea dentada 24 dientes paso 10 mm,1.0000,0.000000,C1.2
+1169,R001156,Rodillo de flexer Soudronic,1.0000,0.000000,C1.2
+1170,R001157,"Válvula 5/2 pilotada de 1/4 NPT, 24VDC",1.0000,0.000000,C1.2
+1171,R001158,"Faja verde 2750 20 x 06, FREIAG 19786",0.0000,0.000000,C1.3
+1172,R001159,Faja de hule  - lona de 3” x 13 m,1.0000,0.000000,C1.3
+1173,R001160,Faja verde 3460 x 12 x 08,1.0000,0.000000,C1.3
+1174,R001161,Faja de 2” x 9170 x 2 mm,1.0000,0.000000,C1.3
+1175,R001162,"Filtro MXP – 95 – 537, 4.438.0003",1.0000,0.000000,C1.3
+1176,R001163,"Faja verde 2772 x 20 x 06, FREIAG 17682",6.0000,0.000000,C1.3
+1177,R001164,Faja verde 600 x 12 x 04,2.0000,0.000000,C1.3
+1178,R001165,"Faja verde 3570 x 12 x 06, FREIAG 12268",3.0000,"1,654.503333",C1.3
+1179,R001166,"Filtro MXP – 95 – 550, 4.438.0004",2.0000,0.000000,C1.3
+1180,R001167,Recipientes para barniz,2.0000,0.000000,C1.3
+1181,R001168,Faja verde 3050 x 10 x 04,3.0000,0.000000,C1.3
+1182,R001169,"Faja verde 3460 x 12 x 06, FREIAG 12269",3.0000,"1,448.510000",C1.3
+1183,R001170,Correa 3VX850,3.0000,0.000000,C1.3
+1184,R001171,Sellos de 7”/8” x 1/2”,3.0000,0.000000,C1.3
+1185,R001172,"Cobertores de uniones, FREIAG 17761 + 17765",4.0000,0.000000,C1.3
+1186,R001173,Tornillo cabeza hexagonal M12 x 25 y parte cilíndrica de 30,5.0000,0.000000,C1.3
+1187,R001175,Correa 32 T10 x 880,3.0000,0.000000,C1.4
+1188,R001176,Correa 25 T05 x 720,2.0000,0.000000,C1.4
+1189,R001177,Anulado/continuacion anterior,0.0000,0.000000,C1.4
+1190,R001178,Correa 25 DL T10 x 840,6.0000,0.000000,C1.4
+1191,R001179,Correa 25 DL T05 x 1100,2.0000,0.000000,C1.4
+1192,R001180,Correa 16 T05 x 560,4.0000,0.000000,C1.4
+1193,R001181,Correa 25 DL T05 x 940,3.0000,245.535000,C1.4
+1194,R001182,Correa 16 T05 x 480,5.0000,526.780000,C1.4
+1195,R001183,Correa 32 T10 x 1210,5.0000,0.000000,C1.4
+1196,R001184,Correa 25 T05 x 560,4.0000,80.355000,C1.4
+1197,R001185,Correa 25 T05 x 455,5.0000,0.000000,C1.4
+1198,R001186,Faja T05 x 16 x 480,10.0000,102.680000,C1.4
+1199,R001187,Correa 25 T05 x 545,3.0000,0.000000,C1.4
+1200,R001188,Correa 32 DL T10 1610,1.0000,0.000000,C1.4
+1201,R001189,Correa 25 T10 x 1210,4.0000,0.000000,C1.4
+1202,R001190,Correa 16 T10 x 1880,3.0000,709.820000,C1.4
+1203,R001191,Correa 25 T10 x 1560,4.0000,0.000000,C1.4
+1204,R001192,Correa 25 T10 x 600,4.0000,0.000000,C1.4
+1205,R001193,Correa 20 T10 x 700,4.0000,0.000000,C1.4
+1206,R001194,Correa 32 T10 x 1560,6.0000,0.000000,C1.4
+1207,R001195,Correa 16 T10 x 810,5.0000,156.250000,C1.4
+1208,R001196,Correa 25 T05 x 480,3.0000,156.250000,C1.4
+1209,R001197,Correa 32 T10 x 1350,2.0000,0.000000,C1.4
+1210,R001198,Correa 32 T10 x 1610,3.0000,0.000000,C1.4
+1211,R001199,Correa 16 T05 x 500,2.0000,0.000000,C1.4
+1212,R001200,Correa 25 T10 x 920,3.0000,316.960000,C1.4
+1213,R001201,Correa 25 T05 x 500,3.0000,0.000000,C1.4
+1214,R001202,Correa 32 DL T10 x 1420,4.0000,0.000000,C1.4
+1215,R001203,Correa 16 T05 x 780,6.0000,0.000000,C1.4
+1216,R001204,Correa 25 T10 x 1460,4.0000,330.360000,C1.4
+1217,R001205,Correa 25 T10 x 700,7.0000,0.000000,C1.4
+1218,R001206,"Correa 25 T10 x 2800 – V – PAZ – T, 62M-480710/01",2.0000,0.000000,C1.4
+1219,R001207,Correa 25 T10 x 2800 – V – D0110,2.0000,0.000000,C1.4
+1220,R001208,Base para relé,6.0000,0.000000,C2.1
+1221,R001209,Cabezal de lámpara de señalización SQUARED ROJA,1.0000,0.000000,C2.1
+1222,R001210,Cabezal de lámpara de señalización SQUARED ROJA VERDE,1.0000,0.000000,C2.1
+1223,R001211,Cámara de contactos,1.0000,0.000000,C2.1
+1224,R001212,Conmutador de manecilla SQUARED,1.0000,0.000000,C2.1
+1225,R001213,Control de velocidad US425 02,1.0000,0.000000,C2.1
+1226,R001214,Control electrónico PID-48-101000,1.0000,0.000000,C2.1
+1227,R001215,Guardamotor termomagnético NS2-25X 0.63 – 1A 495180,1.0000,0.000000,C2.1
+1228,R001216,Guardamotor termomagnético NS2-25X 1 – 1.6A 495181,1.0000,0.000000,C2.1
+1229,R001217,Guardamotor termomagnético NS2-25X 1.6 – 2.5A 495182,1.0000,0.000000,C2.1
+1230,R001218,Guardamotor termomagnético NS2-25X 2.5 – 4A 495183,1.0000,0.000000,C2.1
+1231,R001219,Guardamotor termomagnético NS2-25X 4 – 6.3A 495184,1.0000,0.000000,C2.1
+1232,R001220,Guardamotor termomagnético NS2-25X 6 – 10A 495185,1.0000,0.000000,C2.1
+1233,R001221,Pantalla medidor de GAS EKM,1.0000,0.000000,C2.1
+1234,R001222,Portalámparas SQUARED,1.0000,0.000000,C2.1
+1235,R001223,Pulsador,1.0000,0.000000,C2.1
+1236,R001224,"Pulsador de seta, liberación por giro",1.0000,0.000000,C2.1
+1237,R001225,Relé 110/120V,4.0000,0.000000,C2.1
+1238,R001226,Relé 220/240V,4.0000,0.000000,C2.1
+1239,R001227,Relé 24V,3.0000,0.000000,C2.1
+1240,R001228,Rit switch,10.0000,0.000000,C2.1
+1241,R001229,"Sensor Capacitivo KI-2015-BBOW, D30 mm",0.0000,0.000000,C2.1
+1242,R001230,Sensor Capacitivo KI-3015APKG,1.0000,0.000000,C2.1
+1243,R001231,"Sensor inductivo, E57EAL8T110SP, NPN NO, D08mm",5.0000,0.000000,C2.1
+1244,R001232,"Sensor inductivo, NPN N.O, D10mm",10.0000,0.000000,C2.1
+1245,R001233,"Sensor Inductivo, E55BLT1C",1.0000,0.000000,C2.1 – 1
+1246,R001234,Sensor Inductivo P+F,1.0000,0.000000,C2.1 – 1
+1247,R001235,Carbones 15 x 66 x 94 UNITED CAM,7.0000,0.000000,C2.1 – 1
+1248,R001236,Potenciómetro  CCW CW S 7276 R10K L.25,1.0000,0.000000,C2.1 – 1
+1249,R001237,Switch KCD2,1.0000,0.000000,C2.1 – 2
+1250,R001238,Switch KCD3,1.0000,0.000000,C2.1 – 2
+1251,R001239,"Sensor  inductivo, PNP, NO + NC, D18mm, 6-36V",2.0000,0.000000,C2.1 – 2
+1252,R001240,"Sensor inductivo, NPN, NO + NC, D18mm, 6-36V",2.0000,0.000000,C2.1 – 2
+1253,R001241,"Rolé con bobina de 24V DC, con base",2.0000,0.000000,C2.1 – 2
+1254,R001242,"Sensor inductivo, PNP, NO, D12mm, LJ12A3-4-Z/BY",4.0000,0.000000,C2.1 – 2
+1255,R001243,"Sensor  inductivo, PNP, NO, D18mm, 6-36V",5.0000,0.000000,C2.1 – 2
+1256,R001244,"Sensor  inductivo, PNP, NC, D18mm, 6-36V",5.0000,0.000000,C2.1 – 2
+1257,R001245,"Sensor inductivo, NPN, NO, D18mm, 6-36V",5.0000,0.000000,C2.1 – 2
+1258,R001246,"Sensor inductivo, NPN, NC, D18mm, 6-36V",5.0000,0.000000,C2.1 – 2
+1259,R001247,"Modulo de salida de RELE 6ES5 452-8MA11, 4x30V DC/230V AC",1.0000,0.000000,C2.2
+1260,R001248,"Modulo de salida digital 6ES5 421-8MA12, 4x24V DC",1.0000,0.000000,C2.2
+1261,R001249,"Modulo de salida digital 6ES5 441-8MA11, 4x24V DC/0,5A",1.0000,0.000000,C2.2
+1262,R001250,Rueda de soldar D 116 x 55 x 18,0.0000,0.000000,C2.2
+1263,R001251,"Rueda de soldar Inferior D43, GHK-43202359",2.0000,0.000000,C2.2
+1264,R001252,"Rueda de soldar Inferior D45, 64M 414347",2.0000,350.000000,C2.2
+1265,R001253,"Rueda de soldar Inferior D49, GHK-49302245",1.0000,0.000000,C2.2
+1266,R001254,"Rueda de soldar Inferior D52, 64M 485870",3.0000,0.000000,C2.2
+1267,R001255,"Rueda de soldar Inferior D62, GHK-621006648",1.0000,0.000000,C2.2
+1268,R001256,"Rueda de soldar Inferior D65/D62, GR-405424",0.0000,0.000000,C2.2
+1269,R001257,Rueda de soldar NRZD,0.0000,0.000000,C2.2
+1270,R001258,Rueda de soldar superior D120,2.0000,0.000000,C2.2
+1271,R001259,Rueda de soldar superior M-3-10158 D100,0.0000,0.000000,C2.2
+1272,R001260,Rueda de soldar superior M-3-10185 D100,1.0000,0.000000,C2.2
+1273,R001261,Rueda de soldar superior RKSR85,1.0000,"1,474.720000",C2.2
+1274,R001262,Rueda de soldar superior D100,1.0000,0.000000,C2.2
+1275,R001263,"Eje con paletas, 35 x 150, aplicador de polvo",4.0000,0.000000,C2.3
+1276,R001264,Rodillos para cincho de horno 15971,8.0000,0.000000,C2.3
+1277,R001265,Eje horno SODOUDRONIC,8.0000,0.000000,C2.3
+1278,R001266,Rueda para barniz liquido,5.0000,0.000000,C2.3
+1279,R001267,Separador Desapilador SOUDRONIC 62M – 45238,4.0000,0.000000,C2.3 – 1
+1280,R001268,Ruedas para flexer,12.0000,0.000000,C2.3 – 1
+1281,R001269,Base para ruedas de flexer SMAG,0.0000,0.000000,C2.3 – 2
+1282,R001270,Base para ruedas de flexer SOUDRONIC,10.0000,0.000000,C2.3 – 2
+1283,R001271,"Microswitch 125VAC, 15A, 1NO+1NC, KOI",0.0000,0.000000,C2.3 – 3
+1284,R001272,Base trinquete SOUDRONIC M – 445017,1.0000,0.000000,C2.3 – 3
+1285,R001273,Base trinquete SOUDRONIC M – 305028,1.0000,0.000000,C2.3 – 3
+1286,R001274,Base empujador de trinquete SOUDRONIC,2.0000,0.000000,C2.3 – 3
+1287,R001275,Separadores de caucho SOUDRONIC 1/4,3.0000,0.000000,C2.3 – 3
+1288,R001276,Niple hexagonal macho de 1/2” x 3/8”,6.0000,0.000000,C2.3 – 3
+1289,R001277,Rodillos de aplicador de polvo FREIAG 18560,8.0000,0.000000,C2.3 – 3
+1290,R001278,Tornillo cilíndrico Allen M4 FREIAG 18758,8.0000,0.000000,C2.3 – 3
+1291,R001279,Horómetro digital,0.0000,0.000000,C2.4
+1292,R001280,Horómetro análogo,0.0000,0.000000,C2.4
+1293,R001281,Switch de encendido LA10,1.0000,0.000000,C2.4
+1294,R001282,Transformador universal,1.0000,0.000000,C2.4
+1295,R001283,"Control para portones, BS-PYGM",2.0000,0.000000,C2.4
+1296,R001284,Amplificador de sensor de 80 a 500 microhenrios,3.0000,0.000000,C2.4
+1297,R001285,Sensores infrarrojos IR30,8.0000,0.000000,C2.4
+1298,R001286,Lámparas de alarma de 24 V,10.0000,0.000000,C2.4
+1299,R001287,Repuestos usados varios,1.0000,0.000000,C3.0
+1300,R001288,Válvulas hidráulicas HS2016,2.0000,0.000000,C3.1
+1301,R001289,Kit de o ring XS2016,2.0000,0.000000,C3.1
+1302,R001290,Switch XS2016,2.0000,0.000000,C3.1
+1303,R001291,Rueda Trasera HPT50,4.0000,0.000000,C3.1
+1304,R001292,Rueda Trasera HPT30,4.0000,0.000000,C3.1
+1305,R001293,Rueda Trasera HS2016,4.0000,0.000000,C3.1
+1306,R001294,Rueda delantera HS2016,4.0000,0.000000,C3.1
+1307,R001295,Rueda Trasera XS2016,4.0000,0.000000,C3.1
+1308,R001296,Rueda delantera XS2016,4.0000,0.000000,C3.1
+1309,R001297,Rueda delantera HPT50,8.0000,0.000000,C3.1
+1310,R001298,Rueda delantera HPT30,8.0000,0.000000,C3.1
+1311,R001299,Rodamientos Varios litografía,1.0000,0.000000,C3.2
+1312,R001300,Motores de portones,1.0000,0.000000,C3.3
+1313,R001301,Motor JSCC 100YT200GV22 100GH10H  200W / 220V,1.0000,0.000000,C3.3
+1314,R001302,"Interruptor magnético XCSDMC590, puertas",1.0000,0.000000,C3.3
+1315,R001303,Control de velocidad SF200E,1.0000,0.000000,C3.3
+1316,R001304,Control de vibrador SDVC31-M,1.0000,0.000000,C3.3
+1317,R001305,Sensor IME08-04NNSZW2K  1040895,1.0000,0.000000,C3.3
+1318,R001306,Distribuidor de 4 vías,1.0000,0.000000,C3.3
+1319,R001307,Distribuidor de 5 vías,1.0000,0.000000,C3.3
+1320,R001308,Filtro de aceite,1.0000,0.000000,C3.3
+1321,R001309,Kit de sellos de aluminio,1.0000,0.000000,C3.3
+1322,R001310,Micro switch,1.0000,0.000000,C3.3
+1323,R001311,Motor bomba 3 PH,1.0000,0.000000,C3.3
+1324,R001312,"Sensor QS18VN6CV45, sensor de soportes",2.0000,0.000000,C3.3
+1325,R001313,Sensor de detección de soldadura,2.0000,0.000000,C3.3
+1326,R001314,Electrodos,2.0000,0.000000,C3.3
+1327,R001315,"Yunques, soldadora de soportes",2.0000,0.000000,C3.3
+1328,R001316,Sensor GSE6-N1111   1052449,2.0000,0.000000,C3.3
+1329,R001317,Electroválvula 5/2 de 1/4” SY7120-5LZD-02,0.0000,0.000000,C3.3
+1330,R001318,Electrodos,2.0000,0.000000,C3.3
+1331,R001319,Kit de sellos de válvula R055,2.0000,0.000000,C3.3
+1332,R001320,Roldanas soldadura sin hilo,3.0000,0.000000,C3.3
+1333,R001321,Lañas de cobre,10.0000,0.000000,C3.3
+1334,R001322,Repuestos de motores de portones,1.0000,0.000000,C4.4
+1335,R001323,"Soportes para guías lineales, incompletas",2.0000,0.000000,D1.0
+1336,R001324,Faja corrugada de 3” x 2.00 mm,1.0000,0.000000,D1.1
+1337,R001325,"Contactor MKEP,",0.0000,0.000000,D1.1
+1338,R001326,Guía,2.0000,0.000000,D1.1
+1339,R001327,Tuerca de bolas,2.0000,0.000000,D1.1
+1340,R001328,Arandelas plásticas de 55 mm x 90 mm x 18 mm,4.0000,0.000000,D1.1
+1341,R001329,Resortes de horno,4.0000,0.000000,D1.1
+1342,R001330,Cilindro MGPM12-30DZ,1.0000,0.000000,D1.2
+1343,R001331,Cilindro CDM2E20-160A,2.0000,0.000000,D1.2
+1344,R001332,Cojinetes de aguja  12 x 19 x 12,4.0000,0.000000,D1.2
+1345,R001333,Corona de agujas 20 x 24 x 12,3.0000,0.000000,D1.2
+1346,R001334,"Correa 154L 050 J04, 395 mm largo",2.0000,0.000000,D1.2
+1347,R001335,Correa 194XL,2.0000,0.000000,D1.2
+1348,R001336,"Correa 315L 050 J10, 800 mm largo",2.0000,0.000000,D1.2
+1349,R001337,Correa A074,0.0000,0.000000,D1.2
+1350,R001338,Correa A38,0.0000,0.000000,D1.2
+1351,R001339,Correa A965 LI,4.0000,0.000000,D1.2
+1352,R001340,Correa HTD1200 – 8M,1.0000,0.000000,D1.2
+1353,R001341,Correa STD 780-S5M,2.0000,0.000000,D1.2
+1354,R001342,"Electro Válvula de paso, 24VDC 1/4 NPT",1.0000,0.000000,D1.2
+1355,R001343,Encoder 15BRT-1009-CO1 / F2-720RSV,1.0000,0.000000,D1.2
+1356,R001344,Faja FM – 34,7.0000,24.063333,D1.2
+1357,R001345,Formador de vacío PZL212,1.0000,0.000000,D1.2
+1358,R001346,"Placa de rodillos HJG-k68105T D2, PATINES",2.0000,0.000000,D1.2
+1359,R001347,Presostato Digital ISE30A-01-B-L,1.0000,0.000000,D1.2
+1360,R001348,Presostato IS10-01S-6L,2.0000,0.000000,D1.2
+1361,R001349,Punto de conexión AJ65SBTB1-16D,1.0000,0.000000,D1.2
+1362,R001350,Punto de conexión AJ65SBTB1-16T,1.0000,0.000000,D1.2
+1363,R001351,Rodamiento 51101 251Z,2.0000,0.000000,D1.2
+1364,R001352,Rodamiento B118,2.0000,0.000000,D1.2
+1365,R001353,Rodamiento de aguja 14BTM2012,1.0000,0.000000,D1.2
+1366,R001354,Rodamiento de agujas INA NKIS17,1.0000,0.000000,D1.2
+1367,R001355,Rodamiento de agujas INA RNA-NA 4905,4.0000,0.000000,D1.2
+1368,R001356,Rodamiento de agujas INA SCE 912 B,1.0000,0.000000,D1.2
+1369,R001357,Rodamiento INA HK1812,1.0000,0.000000,D1.2
+1370,R001358,Rodamiento INA NKIA/ NKIB 5905,1.0000,0.000000,D1.2
+1371,R001359,Rodamiento lineal 0730-20,1.0000,0.000000,D1.2
+1372,R001360,Rodamiento lineal BL 3045,1.0000,0.000000,D1.2
+1373,R001361,Rodamiento lineal de diámetro 25,3.0000,0.000000,D1.2
+1374,R001362,Rodamiento LM29749,1.0000,0.000000,D1.2
+1375,R001363,Rodamiento NKIB 5903,0.0000,0.000000,D1.2
+1376,R001364,Rodamiento 6008 2RS/C3,2.0000,0.000000,D1.2
+1377,R001365,"Sellos de diámetro 51, 7 altura",4.0000,0.000000,D1.2
+1378,R001366,"Válvula 3/2 pilotada de 1/4 NPT, 24VDC VP342-5DZ-02A",2.0000,0.000000,D1.2
+1379,R001367,Ventosa PF-60,3.0000,0.000000,D1.2
+1380,R001368,Ventosa ZPT50CN-B8,3.0000,0.000000,D1.2
+1381,R001369,"Banda de hule lona 4” de ancho, largo de 6936 mm, negra",1.0000,0.000000,D1.3
+1382,R001370,"Banda de lona de 5 1/2” de ancho, verde",1.0000,0.000000,D1.3
+1383,R001371,"Banda de lona de 3” de ancho, largo de 3100mm, verde",1.0000,0.000000,D1.3
+1384,R001372,"Banda de lona de 3” de ancho, largo de 3265mm, verde",1.0000,0.000000,D1.3
+1385,R001373,"Banda de PVC de 8 3/4”, Verde",1.0000,0.000000,D1.3
+1386,R001374,"Banda de lona 30 mm de ancho, largo de 2150 mm, verde",2.0000,0.000000,D1.3
+1387,R001375,Aguja engomadora,4.0000,0.000000,D1.4
+1388,R001376,Bombilla 10 x 28; 130V; 20 mA,15.0000,31.250000,D1.4
+1389,R001377,Boquilla engomadora,4.0000,0.000000,D1.4
+1390,R001378,Cable para sensor conexión a 90º,5.0000,0.000000,D1.4
+1391,R001379,Codificador de eje CE 65M encoder,1.0000,0.000000,D1.4
+1392,R001380,Codificador de eje CE 65S encoder,1.0000,0.000000,D1.4
+1393,R001381,Conector para sensor SME0-4-4-led-24 con cable,1.0000,0.000000,D1.4
+1394,R001382,Convertidor neumático – electrónico PEN-M5 FESTO,1.0000,0.000000,D1.4
+1395,R001383,"Electroválvula DC24V, de 1/8”",2.0000,0.000000,D1.4
+1396,R001384,Empaque para boquilla engomadora,2.0000,0.000000,D1.4
+1397,R001385,Interruptor de presión 176  110 450,0.0000,0.000000,D1.4
+1398,R001386,"Interruptor de proximidad magnético SMEO-4-K-LED-24 B, 164 595, 9 mm",2.0000,0.000000,D1.4
+1399,R001387,Interruptor de proximidad magnético SMT-8-PS-K-LED-24-B 175 436 rectangular,3.0000,0.000000,D1.4
+1400,R001388,Opto acoplador de 1-pliegue,1.0000,0.000000,D1.4
+1401,R001389,Opto acoplador de 2-pliegue,2.0000,0.000000,D1.4
+1402,R001390,Pantalla,1.0000,0.000000,D1.4
+1403,R001391,PLC SIMATIC salida analógica,1.0000,0.000000,D1.4
+1404,R001392,Protector para cable,1.0000,0.000000,D1.4
+1405,R001393,"Rodillo para el interruptor, posición 8",4.0000,0.000000,D1.4
+1406,R001394,"Sensor de proximidad , conexión roscada, Bi5-M18-VP4X-H1141",2.0000,0.000000,D1.4
+1407,R001395,"Sensor de proximidad inductivo lm18-3008na, 200mA de 16 mm",1.0000,0.000000,D1.4
+1408,R001396,Sensor de proximidad inductivo M2M30-S10POCDCLS DC 10-30V,3.0000,0.000000,D1.4
+1409,R001397,"Sensor de proximidad inductivo, 872C-A4N12-A5 300mA, 10 mm",1.0000,0.000000,D1.4
+1410,R001398,"Sensor de proximidad inductivo, NMB8-30GM65-E2-FE-V1, 10-30VDC, 200mA, 1 1/4”",1.0000,0.000000,D1.4
+1411,R001399,"Sensor de proximidad inductivo, NPN NO, 18 mm, 10-30V",0.0000,0.000000,D1.4
+1412,R001400,"Sensor de proximidad Magnético-inductivo Bi2U-M12-AP4X-H1141, 11 mm,",1.0000,0.000000,D1.4
+1413,R001401,"Sensor de proximidad RGT, pos 12, 1 1/4”",0.0000,0.000000,D1.4
+1414,R001402,Sensor de Switch photoelectric ER18-5DL,1.0000,0.000000,D1.4
+1415,R001403,Sensor magnético de seguridad BNS300 01zG 2230,1.0000,0.000000,D1.4
+1416,R001404,Sensor y/o seguro sobrepresión XS1N30P de 27 mm,4.0000,0.000000,D1.4
+1417,R001405,Servodrive ACP201-14 ABB Eje Y,1.0000,0.000000,D1.4
+1418,R001406,Tarjeta de sistema de control de alimentación,1.0000,0.000000,D1.4
+1419,R001407,Tarjeta DOI32 Channel Board,3.0000,0.000000,D1.4
+1420,R001408,Tarjeta DOUT24 Channel Board,2.0000,0.000000,D1.4
+1421,R001409,Tarjeta modulo CAN 2 serie 1132,1.0000,0.000000,D1.4
+1422,R001410,Tuerca para sensor de 1 1/4”,4.0000,0.000000,D1.4
+1423,R001411,Resistencia para horno,10.0000,65.000000,D1.5
+1424,R001412,Brazo aplicador de polvo,1.0000,0.000000,D2.0
+1425,R001413,Cilindros metálicos,4.0000,0.000000,D2.0
+1426,R001414,Correa 25 x 255L,3.0000,0.000000,D2.0
+1427,R001415,Correa 25 x 300H,4.0000,0.000000,D2.0
+1428,R001416,Correa 25 x 322L,3.0000,0.000000,D2.0
+1429,R001417,Correa 25 x 330H,2.0000,0.000000,D2.0
+1430,R001418,Correa AX-27,2.0000,0.000000,D2.0
+1431,R001419,Eje Ø24 L397,2.0000,0.000000,D2.0
+1432,R001420,Eje Ø40 L457,1.0000,0.000000,D2.0
+1433,R001421,Eje Ø40 L470,1.0000,0.000000,D2.0
+1434,R001422,Eje Ø40 L528,1.0000,0.000000,D2.0
+1435,R001423,Faja tangencial 35 mm x 2630 mm x 4 mm,2.0000,0.000000,D2.0
+1436,R001424,Faja Verde-amarilla 980 x 10 x 980 mm,3.0000,0.000000,D2.0
+1437,R001425,Faja Verde-amarilla 2200 x 30 x 4 mm,1.0000,0.000000,D2.0
+1438,R001426,Faja Verde-amarilla 2600 x 35 x 4 mm,0.0000,0.000000,D2.0
+1439,R001427,Filtros de aire 95/155 x 32,2.0000,0.000000,D2.0
+1440,R001428,Guía metálica,2.0000,0.000000,D2.0
+1441,R001429,"Manómetro de 3” de 0 a 10 Kpa, tubería de gas",1.0000,0.000000,D2.1
+1442,R001430,Filtro de metal para aplicador de polvo,1.0000,0.000000,D2.1
+1443,R001431,Regulador de presión electrónico SMC ITV-2030-312L3,1.0000,0.000000,D2.1
+1444,R001432,Electroválvula VE4025A1004,1.0000,0.000000,D2.1
+1445,R001433,Tarjeta HJDY-5-2012,1.0000,0.000000,D2.1
+1446,R001434,Bujía para encendido de horno,2.0000,0.000000,D2.1
+1447,R001435,Fuente de alimentación de NEON HT-308B,2.0000,0.000000,D2.1
+1448,R001436,Vibrador  K16,3.0000,0.000000,D2.1
+1449,R001437,"Selector dos posiciones NO, 6A250VAC",4.0000,0.000000,D2.1
+1450,R001438,"Pulsador con block uno NO y uno NC, rojo",5.0000,0.000000,D2.1
+1451,R001439,"Pulsador con enclavamiento con block NO, paro de emergencia",2.0000,0.000000,D2.1
+1452,R001440,"Pulsador con enclavamiento con block NC, paro de emergencia",3.0000,0.000000,D2.1
+1453,R001441,Ventosa festo ESS-50SN,39.0000,0.000000,D2.1
+1454,R001442,Válvula solenoide de 1/2” 24VDC,1.0000,0.000000,D2.1
+1455,R001443,Rueda sistema de alambre,2.0000,0.000000,D2.1 – 01
+1456,R001444,Rueda de corte de alambre,1.0000,0.000000,D2.1 – 01
+1457,R001445,Cilindro Festo DNG-32-40-PPV-A,1.0000,0.000000,D2.1 – 01
+1458,R001446,Válvula reguladora de aire de 1/4” AR20-02,1.0000,0.000000,D2.1 – 01
+1459,R001447,Dedos de traslado de cuerpos,5.0000,0.000000,D2.1 – 01
+1460,R001448,Anillo metálico de 28 x 15 x 02,8.0000,0.000000,D2.1 – 01
+1461,R001449,"Manómetro de 3/4”, 0 – 0.2 Mpa",3.0000,0.000000,D2.1 – 02
+1462,R001450,Regulador de presión 0.005 – 02MPA. IR1000-01,1.0000,0.000000,D2.1 – 02
+1463,R001451,Rodamiento AELS204D1,3.0000,0.000000,D2.1 – 02
+1464,R001452,Rodamiento YET 204-012,4.0000,0.000000,D2.1 – 02
+1465,R001453,Presostato VQ21M1 -5G-C6,3.0000,18.000000,D2.1 – 03
+1466,R001454,Switch de flujo PF2A550-02-1,1.0000,0.000000,D2.1 – 03
+1467,R001455,Filtro de aire vogel 213-910,1.0000,0.000000,D2.1 – 03
+1468,R001456,Control de vacío ZSE40A-01-22L,2.0000,0.000000,D2.1 – 03
+1469,R001457,Válvula de seguridad VXF21AAA,2.0000,0.000000,D2.1 – 03
+1470,R001458,Sensor PM-K44,1.0000,0.000000,D2.1 – 04
+1471,R001459,Sensor PRT12-4DO,2.0000,0.000000,D2.1 – 04
+1472,R001460,Sensor PSN17-5DN,2.0000,0.000000,D2.1 – 04
+1473,R001461,Sensor EX-31A,2.0000,0.000000,D2.1 – 04
+1474,R001462,"Fusibles RX1D, 1000V",4.0000,0.000000,D2.1 – 04
+1475,R001463,"Guía Z, 0.8",1.0000,0.000000,D2.1 – 05
+1476,R001464,"Guía Z, 0.5",3.0000,0.000000,D2.1 – 05
+1477,R001465,Cascada de aplicador de polvo,1.0000,0.000000,D2.1 – 05
+1478,R001466,Tornillo M4 x 15,44.0000,0.000000,D2.1 – 05
+1479,R001467,Tornillo M3 x 6,45.0000,0.000000,D2.1 – 05
+1480,R001468,Faldas de obturación o labios,163.0000,5.000000,D2.1 – 05
+1481,R001469,Ficha plástica de D6 x 1 mm,216.0000,0.000000,D2.1 – 05
+1482,R001470,Clutch eléctrico laminador de alambre de cobre,1.0000,0.000000,D3.3
+1483,R001471,Lubricadores,2.0000,0.000000,D3.3
+1484,R001472,Válvula neumática K16,3.0000,0.000000,D3.3
+1485,R001473,Rodillo de leva de mandril inferior,4.0000,0.000000,D3.3
+1486,R001474,Chumacera UCFC205,5.0000,0.000000,D3.3
+1487,R001475,Uñas,7.0000,0.000000,D3.3
+1488,R001476,"Manómetro de 2” de 0 a 1.6 Mpa, conexión de 1/4”",1.0000,0.000000,D2.1 – 01
+1489,R001477,"Sensor modelo CS1-A, DC/AC 5-240V 100mA 10W",1.0000,0.000000,D2.1 – 01
+1490,R001478,Cilindro MGPM12-30,1.0000,0.000000,D2.1 – 01
+1491,R001479,Cilindro MA16 x 25 – S – U,2.0000,0.000000,D2.1 – 01
+1492,R001480,Potenciómetros RoHS R10K,4.0000,0.000000,D2.1 – 01
+1493,R001481,Tarjeta HJOY-4B-2006,1.0000,0.000000,D2.1 – 06
+1494,R001482,Tarjeta 070820.PCB,1.0000,0.000000,D2.1 – 06
+1495,R001483,Medidor digital Modelo: DM3B-DV20,3.0000,0.000000,D2.1 – 06
+1496,R001484,Agujas Centradoras,10.0000,0.000000,D2.1 – 06
+1497,R001485,Pines de pinza 2240-2,4.0000,0.000000,D2.1 – 07
+1498,R001486,Guía para tijera manual 064-19,1.0000,0.000000,D2.4
+1499,R001487,Cilindro original TVS,1.0000,0.000000,D2.3
+1500,R001488,Guía de troqueles BIBRA,4.0000,0.000000,D2.4
+1501,R001489,Amortiguador SA-3/8X1/ AIRTAC ACJ2525,4.0000,24.130000,D2.4
+1502,R001490,Anillo de tuerca 974-820-031,10.0000,0.000000,D2.4
+1503,R001491,Base para shock,4.0000,0.000000,D2.4
+1504,R001492,Cilindro ADVU-25-10-A-P-A,1.0000,0.000000,D2.4
+1505,R001493,Cilindro festo EV-20-4 150683 max. 6 bar,5.0000,25.000000,D2.4
+1506,R001494,Cilindro MA20X10-S-CA,1.0000,0.000000,D2.4
+1507,R001495,"Correa 10 x T05 x 450, 450-5M-25",2.0000,0.000000,D2.4
+1508,R001496,"Correa 15 x DL T05 x 800, HTD800-5M doble",1.0000,0.000000,D2.4
+1509,R001497,Correa 15 x HTD 900 – 5M,2.0000,0.000000,D2.4
+1510,R001498,"Correa 15 x T05 x 450, 450-5M-25",0.0000,0.000000,D2.4
+1511,R001499,Correa 50 1200 8M,1.0000,0.000000,D2.4
+1512,R001500,Correa en V 9.5 x 1250,1.0000,0.000000,D2.4
+1513,R001501,Correa en V SPA 1180 Lw,2.0000,0.000000,D2.4
+1514,R001502,Correa en V SPZ 1262 Lw,2.0000,0.000000,D2.4
+1515,R001503,Correa en V SPZ 1262 Lw,2.0000,0.000000,D2.4
+1516,R001504,"Electroválvula 3/2, 24VDC, 1/4” Normalmente abierta",1.0000,0.000000,D2.4
+1517,R001505,"Electroválvula 3/2, 24VDC, 1/4” Normalmente cerrada",2.0000,0.000000,D2.4
+1518,R001506,Engranes mesa de expulsión de lamina,4.0000,0.000000,D2.4
+1519,R001507,Faja verde 2340 mm x 80 mm x 3 mm,1.0000,0.000000,D2.4
+1520,R001508,Faja verde 4600 mm x 80 mm x 3 mm,1.0000,758.930000,D2.4
+1521,R001509,Faja verde 6600 mm x 80 mm x 3 mm,1.0000,0.000000,D2.4
+1522,R001510,Banda verde monofilamento antiestatica 8975 mm x 80 mm x 3 mm,2.0000,"1,130.970000",D2.4
+1523,R001511,Filtro de aire vogel 213-910,1.0000,0.000000,D2.4
+1524,R001512,"Filtro de bronce de 6 mm, 995-554-003",10.0000,0.000000,D2.4
+1525,R001513,Formador de vacío,2.0000,0.000000,D2.4
+1526,R001514,"Inserto de válvulas, 995-000-817",10.0000,0.000000,D2.4
+1527,R001515,Manifold de 1/4”,1.0000,0.000000,D2.4
+1528,R001516,"Manómetro de 1”, 0 – 3000 PSI",9.0000,6.098333,D2.4
+1529,R001517,Nivel 996-000-117,10.0000,0.000000,D2.4
+1530,R001518,O ´ring 06 x 16 x 6 mm,7.0000,0.000000,D2.4
+1531,R001519,O ´ring 10 x 14.8 x 3.3 mm,11.0000,0.000000,D2.4
+1532,R001520,Retenedor 10 x 20 x 6 mm,0.0000,0.000000,D2.4
+1533,R001521,O ring 28 x 35.5 x 5 mm loaded rod seal,0.0000,0.000000,D2.4
+1534,R001522,O ring 3/16 x 1-3/4 x 3/8 Hyd Rod Seals,0.0000,0.000000,D2.4
+1535,R001523,Pistón de guía 843-110-010,10.0000,0.000000,D2.4
+1536,R001524,Racor rápido roscado de 1/4” x 10 mm,50.0000,12.054000,D2.4
+1537,R001525,Relé con base 24V DC RM 024L 14 PINS,2.0000,0.000000,D1.4
+1538,R001526,Retenedor 10x19x7,3.0000,0.000000,D2.4
+1539,R001527,Retenedor 15x32x7,15.0000,0.000000,D2.4
+1540,R001528,Retenedor 17x23x3,1.0000,0.000000,D2.4
+1541,R001529,Retenedor 17x28x7,2.0000,0.000000,D2.4
+1542,R001530,Ventosas GR75,3.0000,0.000000,D2.4
+1543,R001531,Filtros de aire 95/155 x 32,1.0000,0.000000,D3.0
+1544,R001532,Parafina,1.0000,0.000000,D3.0
+1545,R001533,Rodamiento 6009-ZZ,16.0000,0.000000,D3.1 – 01
+1546,R001534,Rines de nylon,1.0000,0.000000,D3.1 – 02
+1547,R001535,Nozzle- boquilla,3.0000,0.000000,D3.1 – 02
+1548,R001536,Agujas,3.0000,0.000000,D3.1 – 02
+1549,R001537,O´ring 18 x 3.5 mm,7.0000,0.000000,D3.1 – 02
+1550,R001538,Empaque 5/31 x 10,8.0000,0.000000,D3.1 – 02
+1551,R001539,O´ring 25 x 3.5 mm,9.0000,0.000000,D3.1 – 02
+1552,R001540,Empaque 3/13 x 4,37.0000,0.000000,D3.1 – 02
+1553,R001541,Empaque 0.25/1.25” x 3/16”,80.0000,0.000000,D3.1 – 02
+1554,R001542,"Bomba de tinta, PUMP TYPE 04040166",11.0000,400.000000,D3.2
+1555,R001543,"Fuente de poder -12v, +12v, +300v",1.0000,0.000000,D3.2
+1556,R001544,Generador de alto voltaje,0.0000,0.000000,D3.2
+1557,R001545,Generador de alto voltaje P24-7500-01,0.0000,0.000000,D3.2
+1558,R001546,Tarjeta Madre 4P0050L4A0,1.0000,0.000000,D3.2
+1559,R001547,Tarjeta Madre 4P0050MNA0,0.0000,0.000000,D3.2
+1560,R001548,Touch screen,1.0000,0.000000,D3.2
+1561,R001549,Aplicador de solvente,3.0000,0.000000,D3.2 – C1
+1562,R001550,Dampers,13.0000,0.000000,D3.2 – C1
+1563,R001551,Deposito de solvente,1.0000,0.000000,D3.2 – C1
+1564,R001552,Deposito de tinta,1.0000,0.000000,D3.2 – C1
+1565,R001553,Deposito de tinta,1.0000,0.000000,D3.2 – C1
+1566,R001554,Filtros de tinta,9.0000,50.000000,D3.2 – C1
+1567,R001555,Base de alto voltaje,1.0000,0.000000,D3.2 – C2
+1568,R001556,Bomba de vacío 24VDC,6.0000,0.000000,D3.2 – C2
+1569,R001557,Conector plástico four way,2.0000,0.000000,D3.2 – C2
+1570,R001558,Conector reducidor plásticos manguera de 2.3 mm,37.0000,0.000000,D3.2 – C2
+1571,R001559,"Electroválvula 24V, 00208873",2.0000,0.000000,D3.2 – C2
+1572,R001560,Filtros de aguja,12.0000,0.000000,D3.2 – C2
+1573,R001561,Filtros mariposa de 1/8”,48.0000,15.000000,D3.2 – C2
+1574,R001562,Filtros mariposa de 1/4”,27.0000,15.000000,D3.2 – C2
+1575,R001563,Fiting plásticos,18.0000,0.000000,D3.2 – C2
+1576,R001564,Modulo de tinta,2.0000,0.000000,D3.2 – C2
+1577,R001565,O ring para fiting plásticos,19.0000,0.000000,D3.2 – C2
+1578,R001566,Tuerca de compresión,39.0000,0.000000,D3.2 – C2
+1579,R001567,Tuerca plástica manguera 2.3 mm,153.0000,0.000000,D3.2 – C2
+1580,R001568,Válvula three way,4.0000,180.000000,D3.2 – C2
+1581,R001569,Venturi,2.0000,0.000000,D3.2 – C2
+1582,R001570,Generador de alto voltaje,2.0000,0.000000,D3.2 – C2
+1583,R001571,Manguera blanca de 1.5 mm,17.0000,0.000000,D3.2 – C2
+1584,R001572,Manguera blanca de 2.3 mm,14.3000,0.000000,D3.2 – C2
+1585,R001573,Manguera blanca de 4 mm,16.5000,0.000000,D3.2 – C2
+1586,R001574,Sensor de presión 1608359,1.0000,0.000000,D3.2 – C2
+1587,R001575,Válvula three way,3.0000,0.000000,D3.2 – C2
+1588,R001576,"Kit de herramientas, LEADJET",1.0000,0.000000,D3.3
+1589,R001577,Micropump (bomba de tinta),3.0000,0.000000,D3.3
+1590,R001578,Sensor de presión 1012613,3.0000,0.000000,D3.3
+1591,R001579,Sensor de presión 1220467,3.0000,0.000000,D3.3
+1592,R001580,Spray gum,0.0000,0.000000,D3.3
+1593,R001581,Viscosímetro,0.0000,0.000000,D3.3
+1594,R001582,"Fuente de poder 5 v, 12 v, -12 v",3.0000,0.000000,D3.3 – C1
+1595,R001583,Spray gum 7 boquillas,3.0000,0.000000,D3.3 – C1
+1596,R001584,Aguja 62,1.0000,0.000000,D3.3 – C1
+1597,R001585,Disipador para resistencias,1.0000,0.000000,D3.3 – C1
+1598,R001586,Electroválvula 24V,17.0000,36.000000,D3.3 – C1
+1599,R001587,Filtro de spray,10.0000,0.000000,D3.3 – C1
+1600,R001588,Fuente de poder 24VDC 4.5A,3.0000,0.000000,D3.3 – C1
+1601,R001589,O ´ring  4 mm x 0.5 mm blanco,43.0000,0.000000,D3.3 – C1
+1602,R001590,O ´ring  4 mm x 0.5 mm negro,28.0000,0.000000,D3.3 – C1
+1603,R001591,Power SWITCH,2.0000,0.000000,D3.3 – C1
+1604,R001592,Resistencias de 5K 25V,3.0000,0.000000,D3.3 – C1
+1605,R001593,Sensor de nivel de solvente,4.0000,0.000000,D3.3 – C1
+1606,R001594,Sensor de presión,9.0000,85.000000,D3.3 – C1
+1607,R001595,Sensor de señal GR-D11,5.0000,75.000000,D3.3 – C1
+1608,R001596,Tarjeta madre  K053024,1.0000,0.000000,D3.3 – C1
+1609,R001597,Tarjeta madre  K053024; V160,5.0000,280.000000,D3.3 – C1
+1610,R001598,Tarjeta TOUCH SCREEM,1.0000,0.000000,D3.3 – C1
+1611,R001599,Touch screen,1.0000,0.000000,D3.3 – C1
+1612,R001600,Tuerca de aguja 62,1.0000,0.000000,D3.3 – C1
+1613,R001601,Válvula antiretorno,2.0000,0.000000,D3.3 – C1
+1614,R001602,Ventilador de 24V C60025x24BPCP1,1.0000,0.000000,D3.3 – C1
+1615,R001603,Ventilador de 24V C8025x24BPLP1,1.0000,0.000000,D3.3 – C1
+1616,R001604,Viscosímetro,5.0000,85.000000,D3.3 – C1
+1617,R001605,Base para rodillo,0.0000,0.000000,D3.4
+1618,R001606,Bolsas para basura,0.0000,0.000000,D3.4
+1619,R001607,Cinta de precaución,3.0000,49.105000,D3.4
+1620,R001608,Cinturón de cuero talla L - Protección Lumbar,4.0000,75.892500,D3.4
+1621,R001609,Cinturón de protección lumbar talla M,8.0000,80.000000,D3.4
+1622,R001610,Cinturón de protección lumbar talla S,6.0000,80.000000,D3.4
+1623,R001611,"Cinturón de protección lumbar talla M, elástico",4.0000,65.000000,D3.4
+1624,R001612,Escobas,0.0000,0.000000,D3.4
+1625,R001613,Gabacha de cuero,6.0000,44.643333,D3.4
+1626,R001614,Guantes anticorte talla L,22.0000,71.429000,D3.4
+1627,R001615,Guantes anticorte talla M,26.0000,71.428500,D3.4
+1628,R001616,Guantes de cuero manga corta talla M,0.0000,0.000000,D3.4
+1629,R001617,Guantes de nitrilo limpieza,5.0000,13.393333,D3.4
+1630,R001618,Guantes mangalarga,10.0000,26.785000,D3.4
+1631,R001619,Lentes oscuros,31.0000,9.821667,D3.4
+1632,R001620,Lentes transparentes,20.0000,11.000000,D3.4
+1633,R001621,Limpia vidrios,2.0000,0.000000,D3.4
+1634,R001622,Trapeadores,0.0000,0.000000,D3.4
+1635,R001623,"Filtro en Y Ø1/2"""" acero inoxidable""",0.0000,0.000000,E1.3 - 04
+1636,R001624,"Válvula de retención Ø 1/2""""""",0.0000,0.000000,E3.2
+1637,R001625,Cilindro de 1900 N Ø 14 / 28,0.0000,0.000000,E1.2
+1638,R001626,Cilindro de 1400 N Ø 8 / 15,0.0000,0.000000,E1.2
+1639,R001627,"Manguera vacío aire 1 1/4""""""",15.0000,0.000000,C1.5
+1640,R001628,"Manguera S&D agua rural 3/4""""""",30.0000,0.000000,C1.5
+1641,R001629,Retenedor 20 x 28 x 5,2.0000,0.000000,E2.3 - 11
+1642,R001630,Ruedas para aplicación de barniz,10.0000,0.000000,C2.3
+1643,R001631,Poxipol transparente,1.0000,75.895000,E4.3
+1644,R001632,Jabón industrial tipo crema,7.0000,0.000000,E4.3
+1645,R001633,Tornillo cilíndrico Allen M05 x 35 mm HN,32.0000,0.982000,E3.1 - 2
+1646,R001634,Tornillo cilíndrico Allen M8 x 30,60.0000,0.000000,E3.1 – 02
+1647,R001635,Rollo de teflón de 3/4”,5.0000,0.000000,E4.2
+1648,R001636,Válvula 5/2,15.0000,0.000000,E2.2 - 12
+1649,R001637,Válvula 3/2,13.0000,0.000000,E2.2 - 19
+1650,R001638,Bobina AC24V,3.0000,0.000000,E2.2 - 19
+1651,R001639,Bobina DC12V,4.0000,0.000000,E2.2 - 12
+1652,R001640,Cilindro KMA25X10SCA,2.0000,0.000000,D2.4
+1653,R001641,Sensor para Cilindro KMA25X10SCA,2.0000,0.000000,D2.4
+1654,R001642,Válvula racor manguera de 6 mm,10.0000,48.214000,E1.3 - 12
+1655,R001643,Válvula racor manguera de 8 mm,10.0000,53.884000,E1.3 - 12
+1656,R001644,Sensor BMS2M-MDT,2.0000,0.000000,D1.1
+1657,R001645,"Válvula 3/2 pilotada de 1/4 NPT, 24VDC VP342-5DZ-02A",6.0000,263.392000,D1.2
+1658,R001646,Tornillo cilíndrico Allen M8 x 70,36.0000,0.000000,E3.1 – 02
+1659,R001647,Tornillo cilíndrico Allen M8 x 40,12.0000,0.000000,E3.1 – 02
+1660,R001648,"Tornillo hexagonal de 3/8"""" x 1 1/4""""""",96.0000,0.000000,E3.1 – 02
+1661,R001649,"Tuerca de 3/8""""""",100.0000,0.000000,E3.1 – 02
+1662,R001650,"Arandela de presión de 3/8""""""",100.0000,0.000000,E3.1 – 02
+1663,R001651,Tubo de llanta 7.00 x 12,2.0000,0.000000,A3.3
+1664,R001652,"Resorte a tensión Ø9/16"""" x 3"""" Øalam 1/16""""""",10.0000,0.000000,E2.3 - 12
+1665,R001653,Tuerca de seguridad de 10 mm,2.0000,0.000000,E3.1 – 02
+1666,R001654,Válvula de paso racor de 8 mm,2.0000,0.000000,E1.3 - 12
+1667,R001655,Válvula de paso racor de 6 mm,5.0000,0.000000,E1.3 - 12
+1668,R001656,Regulador roscado en L de 3 mm x 04 mm,1.0000,0.000000,E1.3 - 13
+1669,R001657,Racor rápido en Y de 08 mm,10.0000,12.679000,E1.3 - 12
+1670,R001658,"Electro Válvula 3/2 , 24VDC 1/4 NPT, alto caudal",4.0000,0.000000,E2.2 - 12
+1671,R001659,Retenedor 12 x 22 x 7,22.0000,2.272000,E2.3 - 11
+1672,R001660,Rueda de soldar superior Ø 116mm,1.0000,0.000000,D2.2
+1673,R001661,Rueda de soldar inferior Ø 91 mm,1.0000,0.000000,D2.2
+1674,R001662,"Ventosa plástica de 2""""""",20.0000,0.000000,D2.2
+1675,R001663,Rodillo de alambre,2.0000,0.000000,D2.2
+1676,R001664,Ventosas desapilador,4.0000,0.000000,D2.2
+1677,R001665,Cilindro SAU40X100S,2.0000,0.000000,D2.2
+1678,R001666,Driverboard,1.0000,0.000000,D2.2
+1679,R001667,Generador de vacío,3.0000,8.855000,D2.2
+1680,R001668,Rodillos blancos,65.0000,0.000000,D2.2
+1681,R001669,Rodillos naranja,50.0000,0.000000,D2.2
+1682,R001670,Modulo de transistores INFINEOS IGBT G2201,1.0000,0.000000,D2.2
+1683,R001671,Faja 20-HTD5M-4000,1.0000,0.000000,D2.2
+1684,R001672,Relé Térmico LRN22N 16-24A01,1.0000,0.000000,D2.2
+1685,R001673,Contactor 220V 50 Hz 11Kw-380V,1.0000,0.000000,D2.2
+1686,R001674,Faja HTD 816 - 8M,1.0000,0.000000,D2.2
+1687,R001675,Faja HTD 960 - 8M,1.0000,0.000000,D2.2
+1688,R001676,Faja HTD 880 - 8M,1.0000,0.000000,D2.2
+1689,R001677,Faja HTD 800 - 8M,1.0000,0.000000,D2.2
+1690,R001678,Faja HTD 760 - 8M,1.0000,0.000000,D2.2
+1691,R001679,Faja HTD 640 - 8M,1.0000,0.000000,D2.3
+1692,R001680,Faja HTD 560 - 5M,1.0000,0.000000,D2.2
+1693,R001681,Guía de botes,4.0000,0.000000,D2.2
+1694,R001682,Faja HTD 496 - 8M,2.0000,0.000000,D2.2
+1695,R001683,Faja 30 - HTD 8M - 16640,1.0000,0.000000,D2.2
+1696,R001684,Display,2.0000,0.000000,D2.2
+1697,R001685,Convertidor NPN a PNP,1.0000,0.000000,D2.2
+1698,R001686,Tarjeta de soldadura,1.0000,0.000000,D2.2
+1699,R001687,Manguera de 16 mm,1.0000,0.000000,D2.2
+1700,R001688,Pinceles,61.0000,4.375000,D2.2
+1701,R001689,Faja A965LI,5.0000,0.000000,D2.2
+1702,R001690,Faja HTD 600 - 5M,2.0000,0.000000,D2.2
+1703,R001691,Faja A1100LI,2.0000,0.000000,D2.2
+1704,R001692,Cilindro MBL25x125CA 10-J-V,2.0000,0.000000,D2.2
+1705,R001693,Cilindro SC63x75,2.0000,0.000000,D2.2
+1706,R001694,Cilindro SC40x25S,0.0000,0.000000,D2.2
+1707,R001695,Cilindro SC63x75S,0.0000,0.000000,D2.2
+1708,R001696,Regulador roscado en L de 3/8” x 10 mm,0.0000,0.000000,D2.2
+1709,R001697,"Cinturón de protección lumbar talla S, elástico",7.0000,65.000000,E1.3 - 13
+1710,R001698,Cemento de contacto 1/8 galón,2.0000,0.000000,D3.4
+1711,R001699,Tapaderas para drenajes,0.0000,0.000000,E4.2
+1712,R001700,Aguja aplicador de polvo,8.0000,0.000000,A1.0
+1713,R001701,Aplicador de nitrógeno 142-160,1.0000,0.000000,AS 2.3 – 10
+1714,R001702,Aplicador de nitrógeno 76-86,2.0000,0.000000,AS 2.0
+1715,R001703,Boquilla para horno con conexión de gas,1.0000,0.000000,AS 2.0
+1716,R001704,Boquilla para horno con tapadera,1.0000,0.000000,AS 2.0
+1717,R001705,Boquilla para horno sin tapas,2.0000,0.000000,AS 2.0
+1718,R001706,Esponja para filtro de 4 3/4” x 4 3/4” x 1/2”,15.0000,0.000000,AS 2.0
+1719,R001707,Guía barnizadora 62M-29692-01,1.0000,0.000000,AS 2.0
+1720,R001708,Guía Z M29103,1.0000,0.000000,AS 2.0
+1721,R001709,Guía Z M29103 NR100,1.0000,0.000000,AS 2.0
+1722,R001710,Guía Z M29103 NR109,1.0000,0.000000,AS 2.0
+1723,R001711,Guías para cinchos de horno SOUDRONIC,4.0000,0.000000,AS 2.0
+1724,R001712,"Panel PC4020, sin llave",1.0000,0.000000,AS 2.0
+1725,R001713,Prensa para unión de alambre de cobre,2.0000,0.000000,AS 2.0
+1726,R001714,"Electroválvula 24V , DN12 PN 0.5-16BAR",1.0000,0.000000,AS 2.0
+1727,R001715,Esponja de 5” x 5 1/4” x 1”,1.0000,0.000000,AS 2.0 – 01
+1728,R001716,Kit de reparación de válvula de polvo FREIAG,1.0000,0.000000,AS 2.0 – 01
+1729,R001717,Piedra de diamante,1.0000,0.000000,AS 2.0 – 01
+1730,R001718,Arandela de acero inoxidable 65/90 x 20,1.0000,0.000000,AS 2.0 – 01
+1731,R001719,"Cuerpo de imán 86275-09A1-100, 63 434019482",3.0000,0.000000,AS 2.0 – 02
+1732,R001720,Presionadores de limpiadores de ruedas barnizadoras FREIAG 3214,6.0000,0.000000,AS 2.0 – 02
+1733,R001721,Rueda jalador troceador de alambre M426129,1.0000,0.000000,AS 2.0 – 02
+1734,R001722,"Sprocket 24/46 x 37, cuña 8 mm, 15 dientes",1.0000,0.000000,AS 2.0 – 02
+1735,R001723,"Sprocket 24/52 x 37, cuña 8 mm, 17 dientes",1.0000,0.000000,AS 2.0 – 02
+1736,R001724,Engranaje M302981,1.0000,0.000000,AS 2.0 – 02
+1737,R001725,Filtro 5” x 250MY,1.0000,0.000000,AS 2.0 – 03
+1738,R001726,Filtro 5” x 355MY,2.0000,0.000000,AS 2.0 – 03
+1739,R001727,Filtro 5” x 400MY,7.0000,0.000000,AS 2.0 – 03
+1740,R001728,Placa 22996,1.0000,0.000000,AS 2.0 – 03
+1741,R001729,Placa 371809,1.0000,0.000000,AS 2.0 – 03
+1742,R001730,Placa 8924,1.0000,0.000000,AS 2.0 – 03
+1743,R001731,Tubo de caucho 15071JG,3.0000,0.000000,AS 2.0 – 03
+1744,R001732,"Brazo aplicador de polvo 64P 1106233/03 T65 B=10 mm NW5.0, completo",1.0000,0.000000,AS 2.0 – 03
+1745,R001733,"Cascada 0935100 HS R-52, Nr532",1.0000,0.000000,AS 2.2
+1746,R001734,Cascada 62M-390541-1/6076/3.276,1.0000,0.000000,AS 2.2
+1747,R001735,Cascada F025,1.0000,0.000000,AS 2.2
+1748,R001736,Cascada FREIAG 19877,1.0000,0.000000,AS 2.2
+1749,R001737,Cascada HSE 87018,1.0000,0.000000,AS 2.2
+1750,R001738,"Cascada precisión tools, PWR 2.517",1.0000,0.000000,AS 2.2
+1751,R001739,Conector de cascada,1.0000,0.000000,AS 2.2
+1752,R001740,Contactor 3RH2122-1BB40,1.0000,0.000000,AS 2.2
+1753,R001741,Contactor 3RH2131-1BB40,1.0000,0.000000,AS 2.2
+1754,R001742,Contactor 3RH2140-1BB40,1.0000,0.000000,AS 2.2
+1755,R001743,"Transformador KVA 0.25, 50/60 Hz, PRIM 360-380-400",1.0000,0.000000,AS 2.2
+1756,R001744,"Base frontal para interruptor, 71 415253020",6.0000,0.000000,AS 2.2
+1757,R001745,Base para interruptor CH 4153,1.0000,0.000000,AS 2.2 – C1
+1758,R001746,"Bloque de terminales interface SWM-2, 745.30076390/00",1.0000,0.000000,AS 2.2 – C1
+1759,R001747,Bombilla 24V,5.0000,0.000000,AS 2.2 – C1
+1760,R001748,"Bombillo para interruptor, 71 415300190",1.0000,0.000000,AS 2.2 – C1
+1761,R001749,Botón verde para interruptor 41 415253031,1.0000,0.000000,AS 2.2 – C1
+1762,R001750,"Contactor 1S+0E, 71 415253060, para interruptor",4.0000,0.000000,AS 2.2 – C1
+1763,R001751,Contadores 015-016-317,2.0000,0.000000,AS 2.2 – C1
+1764,R001752,"Interruptor de botón de luz amarilla 24V, 74 414002010",1.0000,0.000000,AS 2.2 – C1
+1765,R001753,Interruptor de botón de luz naranja 24V,1.0000,0.000000,AS 2.2 – C1
+1766,R001754,"Interruptor de botón de luz roja 24V, 74 414002012",2.0000,0.000000,AS 2.2 – C1
+1767,R001755,"Interruptor de botón de luz verde 24V, 74 414002010",2.0000,0.000000,AS 2.2 – C1
+1768,R001756,"Interruptor de llave 24V, 74 415253015",1.0000,0.000000,AS 2.2 – C1
+1769,R001757,Potenciómetro 22/35,1.0000,0.000000,AS 2.2 – C1
+1770,R001758,Potenciómetro 220KA X 7,1.0000,0.000000,AS 2.2 – C1
+1771,R001759,"Relé RSIS-5A, DC 12V",2.0000,0.000000,AS 2.2 – C1
+1772,R001760,Sensor doble lamina,2.0000,0.000000,AS 2.2 – C1
+1773,R001761,"Set de botón NOT-AUS 1S+1 OE D22, 74  414125001",3.0000,0.000000,AS 2.2 – C1
+1774,R001762,Soporte de acero inoxidable 38071,2.0000,0.000000,AS 2.2 – C1
+1775,R001763,Switch CT2D2-A2,1.0000,0.000000,AS 2.2 – C1
+1776,R001764,Terminales eléctricas cascada,2.0000,0.000000,AS 2.2 – C1
+1777,R001765,Woerts 2701,1.0000,0.000000,AS 2.2 – C1
+1778,R001766,Woerts 3600,10.0000,0.000000,AS 2.2 – C1
+1779,R001767,Woerts 3880/2D2,3.0000,0.000000,AS 2.2 – C1
+1780,R001768,"Cabeza del rodillo de péndulo, PNP DIFUSO, 64M-1-10060",2.0000,0.000000,AS 2.2 – C1
+1781,R001769,"Cable de carcasa de la maquina +7.1 ZU, 745.99424375/00",1.0000,0.000000,AS 2.2 – C2
+1782,R001770,Cable M8 ST 180/M8 0.3M,1.0000,0.000000,AS 2.2 – C2
+1783,R001771,Cable MIT Crimp-schuh L=0.09M,2.0000,0.000000,AS 2.2 – C2
+1784,R001772,Cable MIT Crimp-schuh L=0.14M,2.0000,0.000000,AS 2.2 – C2
+1785,R001773,Carril de contactor 74.99250006/02-00,1.0000,0.000000,AS 2.2 – C2
+1786,R001774,"Conductor de conexión a tierra, 724.00207530",1.0000,0.000000,AS 2.2 – C2
+1787,R001775,"Conector M12 4P ST 90 R=120 OHM, 745.99376010/01",1.0000,0.000000,AS 2.2 – C2
+1788,R001776,Conector macho recto M8 con cable PUR 3 x 0.25,2.0000,0.000000,AS 2.2 – C2
+1789,R001777,Contactor auxiliar SIEMENS 3RH2122-1BB40,1.0000,0.000000,AS 2.2 – C2
+1790,R001778,Flipon 5SY41 MCB C2,1.0000,0.000000,AS 2.2 – C2
+1791,R001779,Flipon 5SY42 MCB C6,1.0000,0.000000,AS 2.2 – C2
+1792,R001780,Interruptor corto de 2 circuitos de limite FNJ-G,1.0000,0.000000,AS 2.2 – C2
+1793,R001781,"Optocopladores AMMS 10-44/1, 71 458800100",1.0000,0.000000,AS 2.2 – C2
+1794,R001782,"Relé 71 425000609, PHOENIX CONTACT 2961105",1.0000,0.000000,AS 2.2 – C2
+1795,R001783,Relé PLC-BSP-24DC/21,2.0000,0.000000,AS 2.2 – C2
+1796,R001784,"Sensor de proximidad M12X1 PNP NO S14 4 mm, 71 436101022",1.0000,0.000000,AS 2.2 – C2
+1797,R001785,Pieza metálica flexer M-3030043,1.0000,0.000000,AS 2.2 – C2
+1798,R001786,"Casquillo de cojinete GLY.PG 121412 F, 61 302190059",2.0000,0.000000,AS 2.3
+1799,R001787,"Casquillo de cojinete 12E7/16R7X20, 61 302170200",8.0000,0.000000,AS 2.3 – 09
+1800,R001788,Casquillo de rodamiento de  agujas 62M 446176,2.0000,0.000000,AS 2.3 – 09
+1801,R001789,Eje 3198 50634,2.0000,0.000000,AS 2.3 – 09
+1802,R001790,Rodamiento de agujas 10/14X15 HK1015,1.0000,0.000000,AS 2.3 – 09
+1803,R001791,Rodamiento de agujas 12/16X10 HK1210,2.0000,0.000000,AS 2.3 – 09
+1804,R001792,Rotula hembra 61 305050520,3.0000,0.000000,AS 2.3 – 09
+1805,R001793,Rotula hembra BRF 8,4.0000,0.000000,AS 2.3 – 09
+1806,R001794,"Anillo de apriete 25/40 x 4, 61 301140090",4.0000,0.000000,AS 2.3 – 09
+1807,R001795,"Anillo de bronce, 62M-44189/03",4.0000,0.000000,AS 2.3 – 10
+1808,R001796,Castigador plástico M4 x 10,58.0000,22.876000,AS 2.3 – 10
+1809,R001797,Disco 46x62,2.0000,0.000000,AS 2.3 – 10
+1810,R001798,Disco de bronce 62M-414954,30.0000,0.000000,AS 2.3 – 10
+1811,R001799,Filtro exclusa giratoria FREIAG 13044,2.0000,0.000000,AS 2.3 – 10
+1812,R001800,Inserto de pulverización OBEN 10 mm 62P-250123030,2.0000,0.000000,AS 2.3 – 10
+1813,R001801,"inserto de pulverización OBEN 10 mm, 230",2.0000,0.000000,AS 2.3 – 10
+1814,R001802,"Inserto de pulverización UNTEN 10 mm 65, 62P-250124030",4.0000,0.000000,AS 2.3 – 10
+1815,R001803,"Junta anular 20/26 x 4, 61 301133090",8.0000,0.000000,AS 2.3 – 10
+1816,R001804,Tornillo cabeza plana 3/16” x 1 1/4”,25.0000,0.000000,AS 2.3 – 10
+1817,R001805,"Tornillo cilíndrico M3 x 8, 61 201020041",2.0000,0.000000,AS 2.3 – 10
+1818,R001806,Tornillo cilíndrico M4 x 20,2.0000,0.000000,AS 2.3 – 10
+1819,R001807,Tornillo plástico avellanado M3x6,10.0000,0.000000,AS 2.3 – 10
+1820,R001808,"Tornillo plástico avellanado M4x20, 61 201070092",21.0000,0.000000,AS 2.3 – 10
+1821,R001809,"Tornillo plástico avellanado M5x20, 61 201070140",45.0000,0.000000,AS 2.3 – 10
+1822,R001810,"Tornillo plástico cabeza plana M4x16, 61 201050838",45.0000,0.000000,AS 2.3 – 10
+1823,R001811,Tornillo plástico cabeza plana M4x20,14.0000,0.000000,AS 2.3 – 10
+1824,R001812,Cojinete de agujas NKIB 5903,8.0000,0.000000,AS 2.3 – 10
+1825,R001813,Rodamiento 5/11x3,10.0000,0.000000,AS 2.3 – 11
+1826,R001814,Rodamiento 624,3.0000,0.000000,AS 2.3 – 11
+1827,R001815,Rodamiento 625,6.0000,0.000000,AS 2.3 – 11
+1828,R001816,Rodamiento 63800,20.0000,103.571000,AS 2.3 – 11
+1829,R001817,"Rodamiento de agujas 25/37x17, INA RNA4904-2RS",1.0000,0.000000,AS 2.3 – 11
+1830,R001818,"Rodamiento de agujas 61 302060072, 17/30x13 INA NA4903-2RS",3.0000,0.000000,AS 2.3 – 11
+1831,R001819,"Rodamiento de agujas 61 302120030, INA NKIB 5904B",1.0000,0.000000,AS 2.3 – 11
+1832,R001820,"Rodamiento de agujas 61 302120035, INA NKIB 5905",6.0000,0.000000,AS 2.3 – 11
+1833,R001821,Rodamiento de agujas INA NKI 10/20 x 20,2.0000,0.000000,AS 2.3 – 11
+1834,R001822,"Rodamiento de bolas 15/35x11, 6202-2Z",1.0000,0.000000,AS 2.3 – 11
+1835,R001823,"Rodamiento lineal 3045, SOUDRONIC M-415440",2.0000,0.000000,AS 2.3 – 11
+1836,R001824,"Rodillo calibrador D77, 62M-415562",2.0000,0.000000,AS 2.3 – 12
+1837,R001825,Rodillo calibrador M400331,3.0000,0.000000,AS 2.3 – 12
+1838,R001826,Rodillo calibrador W ZCEA52,6.0000,0.000000,AS 2.3 – 12
+1839,R001827,Rodillo calibrador W ZCEA65,2.0000,0.000000,AS 2.3 – 12
+1840,R001828,Rodillo calibrador W ZCEA73,2.0000,0.000000,AS 2.3 – 12
+1841,R001829,"Rodillo Calibrador D=73, 62M400653",4.0000,0.000000,AS 2.3 – 12
+1842,R001830,"Rodillo Calibrador D=65, 62M400627",4.0000,0.000000,AS 2.3 – 12
+1843,R001831,"Rodillo Calibrador D=52, 62M400331",4.0000,0.000000,AS 2.3 – 12
+1844,R001832,"Rodillo Calibrador D=73, 62M415561",2.0000,0.000000,AS 2.3 – 12
+1845,R001833,"Rodillo Calibrador D=65, 62M415559",2.0000,0.000000,AS 2.3 – 12
+1846,R001834,"Rodillo Calibrador D=52, 62M415554",2.0000,0.000000,AS 2.3 – 12
+1847,R001835,Disco limpiador de alambre,8.0000,57.500000,AS 2.3 – 12
+1848,R001836,"Faldas de obturación (labios), 34806 FREIAG",88.0000,0.000000,AS 2.3 – 13
+1849,R001837,"Pincel de barnizado 6 mm, 64P140401340",61.0000,0.000000,AS 2.3 – 13
+1850,R001838,"Ventosa 38/3, 62M-418748",0.0000,0.000000,AS 2.3 – 13
+1851,R001839,"Ventosa 50/10 x 3, 62M-4-16987",0.0000,0.000000,AS 2.3 – 13
+1852,R001840,"Cadena de rodillos de 3/8”, 20 cm",1.0000,0.000000,AS 2.3 – 13
+1853,R001841,Laterales de cadena de rodillos,40.0000,0.000000,AS 2.3 – 14
+1854,R001842,Leva de cadena 62M-4-10990,12.0000,953.834000,AS 2.3 – 14
+1855,R001843,Leva de cadena KN342,2.0000,0.000000,AS 2.3 – 14
+1856,R001844,Leva de cadena KNBW6199,1.0000,0.000000,AS 2.3 – 14
+1857,R001845,Leva de cadena 62M – 426199,0.0000,468.799000,AS 2.3 – 14
+1858,R001846,Cepillos banda FREIAG 8162,8.0000,0.000000,AS 2.3 – 14
+1859,R001847,Cilindro 9142,3.0000,0.000000,AS 2.3 – 15
+1860,R001848,Cilindro cerámico 133421 D6,3.0000,0.000000,AS 2.3 – 15
+1861,R001849,Cilindro cerámico 41211 D3.5,3.0000,0.000000,AS 2.3 – 15
+1862,R001850,Cilindro cerámico 41212 D4,2.0000,0.000000,AS 2.3 – 15
+1863,R001851,Cilindro cerámico 412132 D6,4.0000,0.000000,AS 2.3 – 15
+1864,R001852,Cilindro cerámico 9380 D3.5,2.0000,0.000000,AS 2.3 – 15
+1865,R001853,Cilindro plástico 18735,3.0000,0.000000,AS 2.3 – 15
+1866,R001854,Cilindro plástico 9379 D3.0,4.0000,0.000000,AS 2.3 – 15
+1867,R001855,Deflector 62P-4105653/02,1.0000,0.000000,AS 2.3 – 15
+1868,R001856,"Guía plástica 21820, 9 mm",2.0000,0.000000,AS 2.3 – 15
+1869,R001857,"Guía plástica 22377, 9 mm",3.0000,0.000000,AS 2.3 – 15
+1870,R001858,"Guía plástica 25374, 7.5 mm",3.0000,0.000000,AS 2.3 – 15
+1871,R001859,Inserto del perfil 250,1.0000,0.000000,AS 2.3 – 15
+1872,R001860,Inserto del perfil 260,2.0000,0.000000,AS 2.3 – 15
+1873,R001861,Inserto del perfil 270,2.0000,0.000000,AS 2.3 – 15
+1874,R001862,Inserto del perfil 280,2.0000,0.000000,AS 2.3 – 15
+1875,R001863,"Inserto del perfil, 25.01.359.40",2.0000,0.000000,AS 2.3 – 15
+1876,R001864,"Inserto del perfil, 62P-3105652/02",2.0000,0.000000,AS 2.3 – 15
+1877,R001865,"Platina plástica 11 mm x 33 mm, 19799",2.0000,0.000000,AS 2.3 – 15
+1878,R001866,Platina plástica 15 mm x 125 mm,10.0000,0.000000,AS 2.3 – 15
+1879,R001867,Platina plástica 16 mm x 125 mm,10.0000,0.000000,AS 2.3 – 15
+1880,R001868,Tapón cerámico 38638,1.0000,0.000000,AS 2.3 – 15
+1881,R001869,Tapón Excéntrico 13251,7.0000,0.000000,AS 2.3 – 15
+1882,R001870,"Tope plástico D 12, D 08, D 06, L 37,  30.01.037.40",11.0000,0.000000,AS 2.3 – 15
+1883,R001871,"Tope plástico D 12, D 08, D 06, L 37,  30.01.049.46",8.0000,0.000000,AS 2.3 – 15
+1884,R001872,"Tope plástico D 12, D 08, D 06, L 37,  30.01.155.40",17.0000,0.000000,AS 2.3 – 15
+1885,R001873,"Tope plástico D 12, D 08, D 06, L 37,  30.01.179.40",4.0000,0.000000,AS 2.3 – 15
+1886,R001874,"Tope plástico D 12, D 08, L 37,  04.08.002.40",14.0000,0.000000,AS 2.3 – 15
+1887,R001875,"Tope plástico D 5, D 4, L6, 37301",8.0000,0.000000,AS 2.3 – 15
+1888,R001876,Pieza plástica 12210,10.0000,0.000000,AS 2.3 – 15
+1889,R001877,"Guía plástica 9378, D2.5",5.0000,0.000000,AS 2.3 – 16
+1890,R001878,"Guía plástica 41209, D2.5",4.0000,0.000000,AS 2.3 – 16
+1891,R001879,"Pieza plástica 63626, FREIAG",6.0000,0.000000,AS 2.3 – 16
+1892,R001880,"Pieza sobrepuesta plástica 23989, 6mm, FREIAG",5.0000,0.000000,AS 2.3 – 16
+1893,R001881,"Pieza sobrepuesta plástica 25973, 7.5mm, FREIAG",4.0000,0.000000,AS 2.3 – 16
+1894,R001882,"Pieza sobrepuesta plástica 22375, 9mm, FREIAG",5.0000,0.000000,AS 2.3 – 16
+1895,R001883,"Pieza sobrepuesta plástica 23990, 6mm, FREIAG",5.0000,0.000000,AS 2.3 – 16
+1896,R001884,"Pieza sobrepuesta plástica 25972, 7.5mm, FREIAG",4.0000,0.000000,AS 2.3 – 16
+1897,R001885,"Castigador 9145, FREIAG",5.0000,0.000000,AS 2.3 – 16
+1898,R001886,Inserto de boquilla 13483,1.0000,0.000000,AS 2.3 – 16
+1899,R001887,Inserto de boquilla 42620,10.0000,0.000000,AS 2.3 – 16
+1900,R001888,"Pieza sobrepuesta plástica 22376, 9mm, FREIAG",6.0000,0.000000,AS 2.3 – 16
+1901,R001889,"Tope plástico 21821, 11 mm",2.0000,0.000000,AS 2.3 – 16
+1902,R001890,"Inserto de boquilla  inyectora 50636, D3",17.0000,0.000000,AS 2.3 – 16
+1903,R001891,Manguito de brazo de aplicación 13481 FREIAG,5.0000,0.000000,AS 2.3 – 16
+1904,R001892,"Pieza tope 23995, 6 mm",7.0000,0.000000,AS 2.3 – 16
+1905,R001893,"Cuña de aspiración 13478, FREIAG",7.0000,0.000000,AS 2.3 – 16
+1906,R001894,"Inserto de codo 13482, FREIAG",5.0000,0.000000,AS 2.3 – 16
+1907,R001895,"Platinas de fijación de labios de obturación , 22374 FREIAG, 68389",10.0000,0.000000,AS 2.3 – 16
+1908,R001896,"Platinas de fijación de labios de obturación , 21817 FREIAG",1.0000,0.000000,AS 2.3 – 16
+1909,R001897,Cepillos aplicador de polvo SMAG,34.0000,0.000000,AS 2.3 – 16
+1910,R001898,"Contactor RM28-ULC, DC24V",1.0000,0.000000,AS 2.4
+1911,R001899,"Flipon NC325, C25",1.0000,0.000000,AS 2.4
+1912,R001900,Flipon S211 K3A,0.0000,0.000000,AS 2.4
+1913,R001901,"Fusible Tiristor 315A 660V, 71 410353040",4.0000,0.000000,AS 2.4
+1914,R001902,"Guía cerámica M-29102/01 18, SMAG",1.0000,0.000000,AS 2.4
+1915,R001903,Guía Z (64M-443854) y base  de monitor,1.0000,0.000000,AS 2.4
+1916,R001904,Guía Z 62M-3-10166/02,1.0000,0.000000,AS 2.4
+1917,R001905,Guía Z 62M-39580/10 UE=0.4,1.0000,"6,690.350000",AS 2.4
+1918,R001906,"Guía Z, inserción al metal duro 62M 39580",1.0000,0.000000,AS 2.4
+1919,R001907,Juego de contactos principales 3TB46,4.0000,0.000000,AS 2.4
+1920,R001908,Peak Clipper N72,1.0000,0.000000,AS 2.4
+1921,R001909,Potenciómetro,1.0000,0.000000,AS 2.4
+1922,R001910,Potenciómetro SMAG 11019,1.0000,0.000000,AS 2.4
+1923,R001911,"Relé 3s, 71 425251117",1.0000,0.000000,AS 2.4
+1924,R001912,"Relé AB 0.15 -35 24v, 71 425251123",2.0000,0.000000,AS 2.4
+1925,R001913,Relé de retardo COMAT CSA 2 -65,1.0000,0.000000,AS 2.4
+1926,R001914,Tarjeta SMAG ZP,1.0000,0.000000,AS 2.4
+1927,R001915,"Arandela (PASS-SCHEIBE), 22/32 x 0.5, E84054-001",8.0000,0.000000,AS 2.4
+1928,R001916,"Cabeza pulverizador polvo KPL. T65 B=10.0 NW 5.0 P, 64P-1106233/03",1.0000,0.000000,AS 2.4 – 17
+1929,R001917,Carbones 22437,8.0000,0.000000,AS 2.4 – 17
+1930,R001918,"Casquillo de cojinete GLY.PG 060810 F, 61 302190049",2.0000,0.000000,AS 2.4 – 17
+1931,R001919,"Casquillo de cojinete GLY.PG 101210 F, 61 302179080",1.0000,0.000000,AS 2.4 – 17
+1932,R001920,"Casquillo de cojinete GLY.PG 182020 F, 61 302190067",3.0000,0.000000,AS 2.4 – 17
+1933,R001921,"Casquillo de cojinete GLY.PG 252820 F, 61 302190074",2.0000,0.000000,AS 2.4 – 17
+1934,R001922,"Disco distanciador, 62M-446349",1.0000,0.000000,AS 2.4 – 17
+1935,R001923,"Presostato festo PEV-1/4-SC-OD 161760 A543, 250v-ac, 125V-DC",1.0000,0.000000,AS 2.4 – 17
+1936,R001924,"Rodamiento de agujas  61 302130030, INA NATR 6",1.0000,0.000000,AS 2.4 – 17
+1937,R001925,"Rodamiento de agujas 6/12x10, 61 502060021, INA HK6/10TN",1.0000,0.000000,AS 2.4 – 17
+1938,R001926,"Rotula hembra M6 #PRT, 61 305050522",3.0000,0.000000,AS 2.4 – 17
+1939,R001927,"Temporizador digital V0DDTS, 0.1s a 999h",1.0000,0.000000,AS 2.4 – 17
+1940,R001928,"Válvula de seguridad de 3/8”, 61 605180310",1.0000,0.000000,AS 2.4 – 17
+1941,R001929,"Empaque de biton, eje aplicador de barniz",1.0000,0.000000,AS 2.4 – 17
+1942,R001930,Filtros 790D,3.0000,0.000000,AS 2.4 – 18
+1943,R001931,Rueda de fricción 35 x 80 x 16m 6 perforaciones,8.0000,0.000000,AS 2.4 – 18
+1944,R001932,Castigador 10 mm con separador,8.0000,0.000000,AS 2.4 – 18
+1945,R001933,Conector rápido para manguera,2.0000,0.000000,AS 2.4-A
+1946,R001934,Pines de acero inoxidable 9 mm x 11 mm FREIAG 16029,9.0000,0.000000,AS 2.4-A
+1947,R001935,"Rodamiento de agujas 35/55x21 61 302060171, INA RNA-NA 4907.RS",1.0000,0.000000,AS 2.4-A
+1948,R001936,Rodamiento de agujas HF1216,1.0000,0.000000,AS 2.4-A
+1949,R001937,Rotula hembra 10 x 14 rosca M10,2.0000,0.000000,AS 2.4-A
+1950,R001938,Tapón plástico,1.0000,0.000000,AS 2.4-A
+1951,R001939,"Buje de bronce 30 x 45 x 24, 62M 415441",1.0000,0.000000,AS 2.4-A
+1952,R001940,Carbones 10x12x6,5.0000,0.000000,AS 2.4-B
+1953,R001941,Carbones 10x29x5,6.0000,0.000000,AS 2.4-B
+1954,R001942,"Carbones de motor LAP 1, 73 431019560",5.0000,0.000000,AS 2.4-B
+1955,R001943,Guía de metal 62m 418007,1.0000,0.000000,AS 2.4-B
+1956,R001944,"Rodamiento de agujas 35/57x17, INA RNA-NA 4906.2RS",3.0000,0.000000,AS 2.4-B
+1957,R001945,Rodillos de transportador FREIAG 6186,1.0000,0.000000,AS 2.4-B
+1958,R001946,Rodillos de transportador FREIAG 6187,2.0000,0.000000,AS 2.4-C
+1959,R001947,Rodillos de transportador FREIAG 6188,1.0000,0.000000,AS 2.4-C
+1960,R001948,Rodillos de transportador FREIAG 6189,1.0000,0.000000,AS 2.4-C
+1961,R001949,"Aro de fricción ART-NR 63 522021823, KM-NR 472081",1.0000,0.000000,AS 2.4-C
+1962,R001950,"Contactor  COMAT AG CH-3076, C3-A 30",3.0000,0.000000,AS 2.5
+1963,R001951,Control de soldadura soldadora de soportes,1.0000,0.000000,AS 2.5
+1964,R001952,Elemento de registro de brillo 71 415253000,1.0000,0.000000,AS 2.5
+1965,R001953,"Final de carrera, 1/055 000 5 1089",2.0000,0.000000,AS 2.5
+1966,R001954,"Fuente de alimentación ML100, 71 437 000 045/10",1.0000,0.000000,AS 2.5
+1967,R001955,Fusible de 80A  500V AC  35.040.0040,3.0000,0.000000,AS 2.5
+1968,R001956,"Regatron 73 431019870, SMAG",1.0000,0.000000,AS 2.5
+1969,R001957,"Relé de tiempo 2 sec – 12 min, 71 425200131",4.0000,0.000000,AS 2.5
+1970,R001958,"Relé de tiempo 2 sec – 12 min, 71 425200132",1.0000,0.000000,AS 2.5
+1971,R001959,Relé 10A  NO/ 5A NC  220/240VAC  50/60 Hz,1.0000,0.000000,AS 2.5
+1972,R001960,Tarjeta 317840,1.0000,0.000000,AS 2.5
+1973,R001961,Tarjeta 41010214 7.9V.4.7.V,1.0000,0.000000,AS 2.5
+1974,R001962,Tarjeta 41010215 8V.4.8.V,1.0000,0.000000,AS 2.5
+1975,R001963,Tarjeta 745.10705,1.0000,0.000000,AS 2.5
+1976,R001964,Tarjeta 745.10870/00,1.0000,0.000000,AS 2.5
+1977,R001965,Tarjeta alimentador de tensión 745.10890/00,1.0000,0.000000,AS 2.5
+1978,R001966,Tarjeta cableado de tiristor 745.10704/23,2.0000,0.000000,AS 2.5
+1979,R001967,Tarjeta Choper 745.10705,1.0000,0.000000,AS 2.5
+1980,R001968,Tarjeta del transformador 745.10706/02,1.0000,0.000000,AS 2.5
+1981,R001969,Tarjeta FREIAG 39153,1.0000,0.000000,AS 2.5
+1982,R001970,Tarjeta paso de encendido 745.10703/00,2.0000,0.000000,AS 2.5
+1983,R001971,"Tarjeta PRECISION TOOLS cascada HV/EA-60, 4.504.0102",1.0000,0.000000,AS 2.5
+1984,R001972,Tarjeta regulador de corriente 745.10831/050,1.0000,0.000000,AS 2.5
+1985,R001973,Tarjeta lógica de mando statischer umformer 745.10815/00,1.0000,0.000000,AS 2.5
+1986,R001974,Tarjeta ZSMA-120 001 (A1),1.0000,0.000000,AS 2.5
+1987,R001975,Tarjeta ZSMA-180 001 (A1),1.0000,0.000000,AS 2.5
+1988,R001976,Transformador HUMBER 3 fases 38.5 KVA 25 A,0.0000,0.000000,AS 2.5
+1989,R001977,Bomba hidráulica,1.0000,0.000000,A1.0
+1990,R001978,Rueda 200/50-100,4.0000,0.000000,A1.1
+1991,R001979,Modulo BIBRA,1.0000,0.000000,A1.1
+1992,R001980,Contactores,1.0000,0.000000,A1.2
+1993,R001981,Soplador,1.0000,0.000000,A1.2
+1994,R001982,Poleas,12.0000,0.000000,A1.2
+1995,R001983,Repuestos usados,1.0000,0.000000,A1.2
+1996,R001984,Arandela plástica D11 mm x 9 mm,12.0000,0.000000,A1.3
+1997,R001985,Llave a piso a 90ª,4.0000,0.000000,A1.3
+1998,R001986,Desoxidante,0.5000,0.000000,A1.4
+1999,R001987,Arbolito para sanitario,5.0000,50.225000,A1.4
+2000,R001988,Flote para sanitario,1.0000,0.000000,A1.4
+2001,R001989,Juego de tornillos para sanitario,1.0000,0.000000,A1.4
+2002,R001990,Silicon Gris 85 g,9.0000,35.714000,A1.4
+2003,R001991,Sikadur 52,1.0000,0.000000,A1.4
+2004,R001992,Flapper para sanitario,2.0000,0.000000,A1.4
+2005,R001993,Manguera de grifería de 3/8” a 1/2”,8.0000,0.000000,A1.4
+2006,R001994,Manguera de grifería de 3/8” a 3/8”,6.0000,0.000000,A1.4
+2007,R001995,Llave a piso recta,3.0000,0.000000,A1.4
+2008,R001996,Clavo de 4” lb,2.0000,0.000000,A1.4
+2009,R001997,Sifón,5.0000,0.000000,A1.4
+2010,R001998,Arandelas para lamina HG,150.0000,0.000000,
+2011,R001999,Tuerca galvanizada de 1/4”,150.0000,0.000000,
+2012,R002000,Manecilla para tanque de sanitario,4.0000,0.000000,
+2013,R002001,Accesorios de cañería usados,1.0000,0.000000,
+2014,R002002,Repuestos de montacargas usados,1.0000,0.000000,
+2015,R002003,Rueda 125/37.5-50 con base fija,4.0000,29.873333,
+2016,R002004,Rueda 125/37.5-50 con base giratoria,5.0000,42.447500,
+2017,R002005,Rueda 125/37.5-50,15.0000,0.000000,
+2018,R002006,Rueda 60/30-50,10.0000,0.000000,
+2019,R002007,Rueda 60/30-50 con base fija,2.0000,0.000000,
+2020,R002008,Rueda 100/30-50,11.0000,0.000000,
+2021,R002009,Rueda plástica de 3”,2.0000,0.000000,
+2022,R002010,Rueda 200/50-100 con base giratoria,0.0000,0.000000,
+2023,R002011,Rueda plástica de 8”,12.0000,0.000000,
+2024,R002012,Drenador de 1” para vapor,1.0000,0.000000,
+2025,R002013,Drenador de 1/2” para agua,0.0000,0.000000,
+2026,R002014,Faja con rach para apretar,2.0000,0.000000,
+2027,R002015,Par de Cascos de proteccion auditiva,5.0000,40.180000,
+2028,R002016,Perno de anclaje HILTY D7/8”,4.0000,0.000000,
+2029,R002017,Catalizador poliéster,0.2500,0.000000,
+2030,R002018,Acabado poliéster,0.2500,0.000000,
+2031,R002019,Pintura látex blanco antiguo americano,1.0000,0.000000,
+2032,R002020,Bandejas plásticas para pintura,2.0000,0.000000,
+2033,R002021,Pintura verde claro,3.0000,0.000000,
+2034,R002022,Brocha de 4”,4.0000,29.732500,
+2035,R002023,Rodillo de esponja para látex de 2” con base,4.0000,0.000000,
+2036,R002024,Cinta tapa goteras,3.0000,0.000000,
+2037,R002025,Rodillo de esponja para látex de 3” con base,5.0000,0.000000,
+2038,R002026,Brocha de 3”,8.0000,4.463333,
+2039,R002027,Rodillos de esponja para látex de 9”,8.0000,0.000000,
+2040,R002028,Rodillo de felpa para esmalte de 4”,8.0000,6.026250,
+2041,R002029,Rodillo de felpa para esmalte de 9”,6.0000,19.642500,
+2042,R002030,Barra roscada de 5mm x 1 metro,0.4000,0.000000,
+2043,R002031,Barra roscada de 3/8” x 1 metro,1.0000,0.000000,
+2044,R002032,Accesorios de aspiradora,1.0000,0.000000,
+2045,R002033,Barra roscada de 3/8” x 1 metro,4.0000,0.000000,
+2046,R002034,Barra roscada de 1/4” x 1 metro,180.0000,0.000000,
+2047,R002035,Tubo de llanta 500/570,1.0000,0.000000,
+2048,R002036,Tubo de llanta 6.00,1.0000,0.000000,
+2049,R002037,Martillo de madera,1.0000,0.000000,
+2050,R002038,Base para filtro de agua,1.0000,0.000000,
+2051,R002039,Switch de presión de gas,2.0000,0.000000,
+2052,R002040,Filo tijera united,2.0000,0.000000,
+2053,R002041,Muestras de lamina,1.0000,0.000000,
+2054,R002042,Rueda 80/25-50 con base fija,7.0000,23.215000,
+2055,R002043,Arandela plana 16 mm,37.0000,0.000000,
+2056,R002044,Tornillo Allen M8 x 30,16.0000,0.000000,
+2057,R002045,Tornillo Allen M6 x 20,18.0000,1.392667,
+2058,R002046,Tornillo avellanado M5 x 38,20.0000,0.000000,
+2059,R002047,Seguro Pin de expansión agujero Ø8 mm,1.0000,0.000000,
+2060,R002048,Removedor de pintura,0.0000,0.000000,
+2061,R002049,Unión universal de 1 1/2” HN,2.0000,0.000000,
+2062,R002050,Resorte Øe: 10.5  Øa: 2 L: 750 mm,2.0000,0.000000,
+2063,R002051,Resorte Øe: 10.5  Øa: 2 L: 620 mm,1.0000,0.000000,
+2064,R002052,Resorte Øe: 10.5  Øa: 2 L: 830 mm,1.0000,0.000000,
+2065,R002053,Cilindro KSC32 x 75,3.0000,0.000000,
+2066,R002054,Válvula de paso 2V025-08,1.0000,0.000000,
+2067,R002055,Tornillo allen M10 x 110,0.0000,0.000000,
+2068,R002056,Tornillo allen M8 x 90,0.0000,0.000000,
+2069,R002057,Tornillo allen M8 x 70,0.0000,0.000000,
+2070,R002058,Electroválvula de paso 2V025-08,3.0000,0.000000,
+2071,R002059,Carbón para amoladora DWALT,0.0000,0.000000,
+2072,R002060,Sello hidráulico 100 x 75,1.0000,0.000000,
+2073,R002061,"Terminales de anillo cable 14 - 16 AWD tornillo de 1/4""""""",24.0000,0.000000,
+2074,R002062,"Terminales de anillo cable 14 - 16 AWD tornillo de 1/7""""""",24.0000,0.000000,
+2075,R002063,Tornillo hexagonal M10 x 100 mm HN,0.0000,0.000000,
+2076,R002064,"Silenciador de 3/4"""" plastico""",0.0000,0.000000,
+2077,R002065,"Resorte a compresion Øi 10 mm, Øa 3 mm, largo 56 mm",6.0000,0.000000,
+2078,R002066,"Tornillo allen M10 x 90, acero negro",10.0000,13.670000,
+2079,R002067,Mandril para barreno 195430-9 de 13 mm,0.0000,0.000000,
+2080,R002068,Reducidor bushing 1 1/2” a 1/2” HG,1.0000,0.000000,E3.2 - 01
+2081,R002069,SIN ASIGNAR / (CODIGO DISPONIBLE),0.0000,0.000000,
+2082,R002070,SIN ASIGNAR / (CODIGO DISPONIBLE),0.0000,0.000000,
+2083,R002071,Reducidor bushing 1 1/2” a 1” HG,3.0000,17.680000,D2.1
+2084,R002072,"Separador de lámina, GE",6.0000,0.000000,D2.3
+2085,R002073,"Ruedas rojas pequeñas, Tijera GE PTGS-2",60.0000,0.000000,D2.3
+2086,R002074,"Ventosas, Tijera GE PTGS-2",15.0000,0.000000,D2.3
+2087,R002075,"Filos, Tijera GE PTGS-2",2.0000,0.000000,D2.3
+2088,R002076,"Piedras para afilar, Tijera GE PTGS-2",2.0000,0.000000,D2.3
+2089,R002077,Rueda de soldar superior GE SMART 220,1.0000,0.000000,D2.3
+2090,R002078,Rueda de soldar inferior GE SMART 220,1.0000,0.000000,D2.3
+2091,R002079,Barra Z GE SMART 220,1.0000,0.000000,D2.3
+2092,R002080,Ventosas,20.0000,0.000000,D2.3
+2093,R002081,Aguja 1 GE SMART 220,20.0000,0.000000,D2.3
+2094,R002082,Aguja 2 GE SMART 220,20.0000,0.000000,D2.3
+2095,R002083,Powder stripper GE SMART 220,20.0000,0.000000,B1.3
+2096,R002084,Chuck de anillo GE2 610,3.0000,0.000000,B1.3
+2097,R002085,Chuck de fondo GE2 610,3.0000,0.000000,D2.3
+2098,R002086,Rodillos de 1er operación GE2 610,6.0000,0.000000,D2.3
+2099,R002087,Rodillos de 2da operación GE2 610,6.0000,0.000000,D2.3
+2100,R002088,Rodillos de pestañadora GE2 610,100.0000,0.000000,D2.3
+2101,R002089,Faja 1300 - 5M,1.0000,0.000000,D2.3
+2102,R002090,Faja 1200 - 5M,1.0000,0.000000,D2.3
+2103,R002091,Faja HTD 1152 - 8M,1.0000,0.000000,D2.3
+2104,R002092,Faja HTD 1080 - 8M,1.0000,0.000000,D2.3
+2105,R002093,Faja 800 - 5M doble,1.0000,0.000000,E2.2
+2106,R002094,"Válvula solenoide 3/8” NPT, DC 24 V NC",1.0000,0.000000,D2.3
+2107,R002095,Faja HTD 640 - 5M,2.0000,0.000000,D2.3
+2108,R002096,Faja HTD 639 - 3M,1.0000,0.000000,D2.3
+2109,R002097,Faja HTD 608 - 8M,1.0000,0.000000,D2.3
+2110,R002098,Faja HTD 510 - 5M,1.0000,0.000000,D2.3
+2111,R002099,Ventosa Soldadora,20.0000,0.000000,D2.3
+2112,R002100,Faldas de obturación o labios GE SMART 220,40.0000,0.000000,E1.3 - 02
+2113,R002101,Silenciador para aire de 3/8” con regulador,1.0000,0.000000,
+2114,R002102,Faja A - 122,3.0000,0.000000,E3.2
+2115,R002103,"Regulador de GLP Ø 1""""""",0.0000,0.000000,E1.3 - 02
+2116,R002104,"Válvula 5/2 con accionamiento de palanca, Ø ¼”",0.0000,0.000000,E1.3 - 12
+2117,R002105,Racor rápido reductor de 12 mm a 08 mm,2.0000,0.000000,E1.3 - 13
+2118,R002106,Regulador roscado en L de 3/8” x 08 mm,2.0000,0.000000,E1.3 - 04
+2119,R002107,"Niple hexagonal Ø 1/2"""", Acero Inoxidable""",0.0000,0.000000,E3.2 - 01
+2120,R002108,"Reducidor de campana 2” a 1/2"""" HG""",2.0000,0.000000,E3.2 - 06
+2121,R002109,T roscada de 2” HG,2.0000,0.000000,E3.2 - 01
+2122,R002110,Reducidor bushing 2” a 1/2” HG,17.0000,23.214000,E3.2 - 08
+2123,R002111,Niple doble rosca de 2” x 6” HG,4.0000,0.000000,E3.2 - 07
+2124,R002112,"Codo roscado a 90º de Ø 1/2"""" HG hembra macho""",10.0000,5.045000,E4.3
+2125,R002113,Lana abrasiva de acero inoxidable,6.0000,0.000000,E4.3
+2126,R002114,"Pichacha de Ø 1/2"""" de bronce """,0.0000,0.000000,E3.1 – 01
+2127,R002115,"Tornillo avellanado Allen M5 x 20, Acero Inoxidable",10.0000,0.000000,E3.1 – 01
+2128,R002116,"Tornillo avellanado Allen M5 x 10, Acero Inoxidable",20.0000,1.116000,E3.1 – 01
+2129,R002117,"Arandela plana M6, Acero Inoxidable",20.0000,0.000000,Taller Electricidad
+2130,R002118,"Capacitor de 30μF (microfaradios), 450 voltios AC, con envoltura de plástico sellado",0.0000,0.000000,E2.3 - 11
+2131,R002119,Retenedor 25 x 42 x 7,0.0000,0.000000,D2.3
+2132,R002120,Cadena de rodillos 06B-3 X 160L,1.0000,0.000000,B2.2
+2133,R002121,Faja B – 52,1.0000,0.000000,ASISMAN
+2134,R002122,"Barra redonda de Acero D2 Ø 7-1/2"""" """,0.0000,0.000000,ASISMAN
+2135,R002123,"Barra redonda de Acero O1 Ø5-1/2""""""",0.0000,0.000000,ASISMAN
+2136,R002124,"Barra redonda de Acero D2 Ø7""""""",0.0000,0.000000,ASISMAN
+2137,R002125,"Barra redonda de Acero O1 Ø9""""""",0.0000,0.000000,ASISMAN
+2138,R002126,"Barra redonda de Acero D2 Ø10-1/2""""""",0.0000,0.000000,ASISMAN
+2139,R002127,Barra redonda de Acero D2 Ø10,0.0000,0.000000,Taller Electricidad
+2140,R002128,Tablero para flipón THQL 100A trifásico 220V,0.0000,0.000000,Taller Electricidad
+2141,R002129,Flipón THQL trifásico 70A,0.0000,0.000000,Taller Electricidad
+2142,R002130,Flipón THQL trifásico 50A,0.0000,0.000000,Taller Electricidad
+2143,R002131,Cable THHN #8 rojo,0.0000,0.000000,Taller Electricidad
+2144,R002132,Cable THHN #8 negro,0.0000,0.000000,Taller Electricidad
+2145,R002133,Cable THHN #8 azul,0.0000,0.000000,Taller Electricidad
+2146,R002134,Cable THHN #10 rojo,0.0000,0.000000,Taller Electricidad
+2147,R002135,Cable THHN #10 negro,0.0000,0.000000,Taller Electricidad
+2148,R002136,Cable THHN #10 azul,0.0000,0.000000,Taller Electricidad
+2149,R002137,Cable THHN #12 rojo,0.0000,0.000000,Taller Electricidad
+2150,R002138,Cable THHN #12 negro,0.0000,0.000000,Taller Electricidad
+2151,R002139,Cable THHN #12 azul,0.0000,0.000000,Taller Electricidad
+2152,R002140,Cable THHN #12 blanco,0.0000,0.000000,ASISMAN
+2153,R002141,Cable USB a mini USB x 1.8 metros de largo,0.0000,0.000000,ASISMAN
+2154,R002142,Acido férrico,0.0000,0.000000,ASISMAN
+2155,R002143,Placa de cobre de 30x30cm (Un solo lado),0.0000,0.000000,ASISMAN
+2156,R002144,Diodo 1N4003,0.0000,0.000000,ASISMAN
+2157,R002145,Led ultra brillante blanco 5mm,0.0000,0.000000,ASISMAN
+2158,R002146,Tornillo avellanado allen M6 x 15mm de largo Acero Negro,0.0000,0.000000,ASISMAN
+2159,R002147,Barra redonda de Acero D2 Ø45mm,0.0000,0.000000,ASISMAN
+2160,R002148,Machuelo M16 x 1.5 mm,0.0000,0.000000,ASISMAN
+2161,R002149,Machuelo M20 x 1.5 mm,0.0000,0.000000,ASISMAN
+2162,R002150,Machuelo M8 x 1.25 mm,0.0000,0.000000,
+2163,R002151,"O 'ring Øinterior 130 mm, Øsección 3 mm",0.0000,0.000000,
+2164,R002152,"Acople rápido hembra con rosca hembra de 1/4"""" de cañería""",0.0000,0.000000,
+2165,R002153,"Acople rápido macho con rosca hembra de 1/4"""" de cañería""",0.0000,0.000000,
+2166,R002154,"Disco de porte para pulidora de 9"""", 230 x 6 x 22.2 mm""",0.0000,0.000000,
+2167,R002155,"Batería BOSCH HIGHTEC SILVER AMS AM, 100D23L, 12V 120RC 70AH, 650 CCA BCI/SAE, 0092 S57 167HW",0.0000,0.000000,
+2168,R002156,Retenedor 30 x 44 x 7,1.0000,0.000000,
+2169,R002157,Rodillo de 2da Op. Cerradora de cubeta,1.0000,0.000000,D2.3
+2170,R002158,Rodillo de 1er Op. Cerradora de cubeta,1.0000,0.000000,D2.3
+2171,R002159,"Seguro pin de expansión Ø1/4"""" x 2""""""",2.0000,0.000000,
+2172,R002160,"Tornillo avellanado Allen M4 x 10, Acero Inoxidable",0.0000,0.000000,
+2173,R002161,"Tornillo cilíndrico Allen M06 x 85 mm, Acero Inoxidable",0.0000,0.000000,
+2174,R002162,"Tornillo cilíndrico Allen M06 x 40 mm, Acero Inoxidable",0.0000,0.000000,
+2175,R002163,"Tornillo cilíndrico Allen M06 x 25 mm, Acero Inoxidable",0.0000,0.000000,
+2176,R002164,Seguro pin de expansión Ø5 mm x 15 mm,0.0000,0.000000,
+2177,R002165,Seguro pin de expansión Ø2.5 mm x 20 mm,0.0000,0.000000,
+2178,R002166,"Resorte a compresión Øi 16 mm, Øa 3 mm, largo 130 mm, paso 7 mm",0.0000,0.000000,
+2179,R002167,"Unión universal de 1 1/2"""" HG""",0.0000,0.000000,
+2180,R002168,"T roscada de 1 1/2"""" HG""",0.0000,0.000000,
+2181,R002169,"Codo roscado a 90º de Ø 1 1/2"""" HG""",0.0000,0.000000,
+2182,R002170,"Válvula de bola de 1"""" Cromada""",0.0000,0.000000,
+2183,R002171,Agua desmineralizada,5.0000,16.963333,BMP
+2184,R002172,SIN ASIGNAR / (CODIGO DISPONIBLE),0.0000,0.000000,
+2185,R002173,Seguro pin de expansión de Ø 5 mm x 40 mm,0.0000,0.000000,
+2186,R002174,Niple doble rosca de 1 1/2” x 5” HG,0.0000,0.000000,
+2187,R002175,"Niple rosca corrida de 1 1/2"""" HG""",0.0000,0.000000,
+2188,R002176,"Cincho plástico de 8"""" de largo""",20.0000,0.000000,
+2189,R002177,Variador de frecuencia trifásico 220V 2HP,0.0000,0.000000,
+2190,R002178,Pintura epoxica blanca GR063101,0.0000,0.000000,
+2191,R002179,"Limit Switch HY-M904, brazo ajustable rodo",1.0000,0.000000,
+2192,R002180,"Caja de registro de 6"""" x 6"""" Tipo Pesado""",0.0000,0.000000,
+2193,R002181,Chucho para cable acerado # 6,0.0000,0.000000,
+2194,R002182,"Tablero monofásico 220 V para 1 flip on doble, General Electric",0.0000,0.000000,
+2195,R002183,"Flip on de 1 x 20 amperios, General Electric",0.0000,0.000000,
+2196,R002184,"Tubo BX LT de 1/2"""" flexible con forro""",0.0000,0.000000,
+2197,R002185,"Tubo BX LT de 3/8"""" flexible con forro""",0.0000,0.000000,
+2198,R002186,Cable TSJ 4 x 16 AWG,0.0000,0.000000,
+2199,R002187,Cable # 2 Azul,0.0000,0.000000,
+2200,R002188,Cable # 2 Rojo,0.0000,0.000000,
+2201,R002189,Cable # 2 Negro,0.0000,0.000000,
+2202,R002190,Cable # 6 Blanco,0.0000,0.000000,
+2203,R002191,"Tablero para 1 flip on 3 fases + neutro, General Elecric",0.0000,0.000000,
+2204,R002192,"Flip on 3 x 50 amperios, General Electric",0.0000,0.000000,
+2205,R002193,Chucho para cable acerado # 2,0.0000,0.000000,
+2206,R002194,"Resorte a compresión Øexterior 12mm, Øalambre=2.5mm Paso=3.5mm Largo=55mm",2.0000,0.000000,
+2207,R002195,"Tornillo hexagonal M6 x 20 mm, Acero inoxidable",0.0000,0.000000,
+2208,R002196,Seguro seeger para ranura Ø47 mm,0.0000,0.000000,
+2209,R002197,Rodamiento HK 1816,0.0000,0.000000,E2.3 - 05
+2210,R002198,Rodamiento 607/8  2RS Øint=8 Ø=19 alto=6,0.0000,0.000000,
+2211,R002199,Static controller,1.0000,"20,302.460000",D2.1 - 05
+2212,R002200,Seguro pin de expansión Ø2.5 mm x 40 mm,0.0000,0.000000,E2.3 - 08
+2213,R002201,"Niple hexagonal 1/8"""" x 1/8"""" para gollete""",0.0000,0.000000,E1.3 - 05
+2214,R002202,Guardamotor termomagnético 13-18A NS2-25X-18,0.0000,0.000000,
+2215,R002203,Reducidor bushing de 1/2” a 3/8”,0.0000,0.000000,E1.3 - 05
+2216,R002204,Tanque para pintar alto caudal manual,0.0000,0.000000,
+2217,R002205,"Contactor trifásico 220V, 20A, bobina 24 VAC",0.0000,0.000000,
+2218,R002206,"Tubo de 1 1/2"""" cedula 40, rosca en las puntas""",0.0000,0.000000,
+2219,R002207,"Enchufe línea de seguridad NO, NEMA, 20A 120/ 208V, 4P - 4W",20.0000,0.000000,Taller Electrico
+2220,R002208,Reducidor bushing 2” a 1” HG,1.0000,22.320000,E3.2 - 01
+2221,R002209,Reducidor de campana 2” a 1” HG,1.0000,27.680000,E3.2 - 01
+2222,R002210,"Niple Hexagonal de 1""""""",0.0000,0.000000,
+2223,R002211,"Terminales de horquilla para cable 22 - 16 AWG y tornillo 5/32""""""",0.0000,0.000000,
+2224,R002212,"Terminales de horquilla para cable 16 - 14 AWG y tornillo 5/32""""""",0.0000,0.000000,
+2225,R002213,Machuelo 5KC M3 x 0.5 mm,0.0000,0.000000,
+2226,R002214,Broca de cobalto de 6 mm para metal,2.0000,0.000000,
+2227,R002215,"Contactor trifásico 25A, bobina 24 VDC",1.0000,0.000000,
+2228,R002216,Relay térmico (bimetálico) 2.5 a 4 A,1.0000,0.000000,
+2229,R002217,Módulo de contactos auxiliares 2NO,1.0000,0.000000,
+2230,R002218,"Leva 3G00338LT01/1, código 4L641",0.0000,0.000000,B1.3
+2231,R002219,"Tornillo de regulación 3G00470CK00/1, código 1L626",0.0000,0.000000,B1.3
+2232,R002220,"Contactor trifásico Eaton DILM9-Y(24VD) 9A, bobina 24 VDC",0.0000,0.000000,
+2233,R002221,Relay térmico (bimetálico) 2.5 a 4 A Marca Eaton compatible con DILM9,0.0000,0.000000,
+2234,R002222,Módulo de contactos auxiliares 2NO Marca Eaton compatible con DILM9,0.0000,0.000000,
+2235,R002223,Barra roscada (espárrago) M12 LH (Rosca Izquierda),0.0000,0.000000,
+2236,R002224,Sprocket paso 80 simple tipo B de 17 dientes,0.0000,0.000000,
+2237,R002225,Barra roscada (espárrago) M10,0.0000,0.000000,
+2238,R002226,"Chumacera de banco de 2 1/2"""", con anillo excéntrico""",0.0000,0.000000,
+2239,R002227,"Tapón macho de 1 1/2"""" HG""",0.0000,0.000000,E3.2 - 02
+2240,R002228,"Lámpara listón para 2 tubos led de 48"""" (LUXLITE)""",20.0000,33.950500,
+2241,R002229,"Tubo LED (lux lite) vidrio claro 48"""", 18W T8 Color blanco 6500°K""",40.0000,18.367500,
+2242,R002230,Cable TSJ 2X16,0.0000,0.000000,
+2243,R002231,Interruptor intercambiable BTICINO código 5001,0.0000,0.000000,
+2244,R002232,Tablero 3 circuitos 70 A trifásico TQL General Electric,0.0000,0.000000,
+2245,R002233,Flip on THQL 3 polos 50A General Electric,0.0000,0.000000,
+2246,R002234,Tablero 2 circuitos 70A monofásico TQL General Electric,0.0000,0.000000,
+2247,R002235,Flip on 1 polo 20A General Electric,0.0000,0.000000,
+2248,R002236,"Caja rectangular de 2"""" x 4"""" tipo pesado agujeros 1/2""""""",0.0000,0.000000,
+2249,R002237,Armaduras BTICINO monofásicos 110V 15A/ código 5028N,0.0000,0.000000,
+2250,R002238,Armaduras BTICINO monofásicos 110V 15A/ código 5015,0.0000,0.000000,
+2251,R002239,Tapas de aluminio anodizado BTICINO con puente y 2 agujeros.,0.0000,0.000000,
+2252,R002240,Chumacera UCF203,0.0000,0.000000,
+2253,R002241,Guardamotor termomagnético NS2-25X 9 – 14A,0.0000,0.000000,
+2254,R002242,Contactor trifásico 9A con bobina 110VAC,0.0000,0.000000,
+2255,R002243,Relay térmico (bimetálico) 1 a 1.6A,0.0000,0.000000,
+2256,R002244,Vaso con drenador automático,2.0000,312.500000,E1.2
+2257,R002245,Filtro C - 75,0.0000,0.000000,
+2258,R002246,Filtro LC 217 / C64 -1,0.0000,0.000000,
+2259,R002247,"Prensa estopa con tuerca para 1/2"""" NPT""",0.0000,0.000000,
+2260,R002248,"Riel/Carrilera DIN ancho: 35mm, alto: 7.5mm, largo: 2000mm",0.0000,0.000000,
+2261,R002249,Pulsador verde base metálica,0.0000,0.000000,
+2262,R002250,Pulsador rojo base metálica,0.0000,0.000000,
+2263,R002251,"Contactor trifásico 25A, bobina 24VAC",0.0000,0.000000,
+2264,R002252,Contactor trifásico 9A bobina 24VAC,0.0000,0.000000,
+2265,R002253,Relay térmico (bimetálico) 4-6A,0.0000,0.000000,
+2266,R002254,Relay térmico (bimetálico) 17-25A,0.0000,0.000000,
+2267,R002255,Block de contactos frontal 1NO + 1NC para Contactor CHINT,0.0000,0.000000,
+2268,R002256,Block de contactos frontal 2NO + 2NC para Contactor CHINT,0.0000,0.000000,
+2269,R002257,"Módulo de relés de 5V, 2 canales",0.0000,0.000000,
+2270,R002258,Módulo de expansión con borneras para Arduino Nano,0.0000,0.000000,
+2271,R002259,Módulo Sensor de llama IR 0-15VDC,0.0000,0.000000,
+2272,R002260,Contacto frontal para guardamotor NS2-25X,0.0000,0.000000,
+2273,R002261,Faja FM – 29,0.0000,0.000000,B2.2
+2274,R002262,Cable paralelo calibre 14,0.0000,0.000000,Comercial
+2275,R002263,"Canaleta 250 x 10 mm x 2 MT JSL 7 EAGLE, plástica sin división",0.0000,0.000000,
+2276,R002264,Seguro Pin de expansión para agujero de 5 mm x 40 mm de largo,0.0000,0.000000,
+2277,R002265,Banda transportadora de 3mm de espesor y 80mm de ancho x 1950mm de largo. Verde y amarillo.,0.0000,0.000000,
+2278,R002266,Acople PHE L070HUB SKF,0.0000,0.000000,
+2279,R002267,Acople PHE L070NR SKF,4.0000,13.390000,
+2280,R002268,Seeger interior 22 mm,0.0000,0.000000,
+2281,R002269,Acople Lovejoy L075 (juego de 3 piezas),0.0000,0.000000,
+2282,R002270,Cable TSJ 2x14,0.0000,0.000000,
+2283,R002271,Cable THHN #10 Blanco,0.0000,0.000000,
+2284,R002272,"Tubo BX LT de 3/4"""" flexible con forro""",0.0000,0.000000,
+2285,R002273,"Conector para tubo BX de 3/4"""" Recto""",0.0000,0.000000,
+2286,R002274,"Conector para tubo BX de 3/4"""" Curvo""",0.0000,0.000000,
+2287,R002275,"Sello perfil K6, material H-PUR, Medidas 100 x 85 x 9",0.0000,0.000000,
+2288,R002276,"Sello perfil S6, material H-PUR, Medidas 33 x 25 x 5",0.0000,0.000000,
+2289,R002277,T de 1 1/4” HG,0.0000,0.000000,E3.2 - 06
+2290,R002278,Reducidor bushing 1 1/4” a 1/2” HN,2.0000,14.285000,E3.2 - 01
+2291,R002279,Pomo de teflón liquido 567 de 250 ml,0.0000,0.000000,
+2292,R002280,"Unión universal de 1 1/4"""" HG""",0.0000,0.000000,E3.2 - 05
+2293,R002281,Niple doble rosca de 1 1/4” x 3” HG,2.0000,8.930000,E3.2 - 08
+2294,R002282,Faja B - 33,0.0000,0.000000,
+2295,R002283,"T de bronce Ø 1/2""""""",0.0000,0.000000,E1.3 - 08
+2296,R002284,Tornillo cilíndrico Allen M8 x 35,0.0000,0.000000,E3.1 – 02
+2297,R002285,"Cinta reflectiva 3M, rojo-blanco",0.0000,0.000000,
+2298,R002286,"Pump guard filter assembly, connectors ¼”，30um",10.0000,3.000000,D3.2 Ð C1
+2299,R002287,"Pump guard filter assembly, connectors 1/8”，30um",3.0000,3.000000,D3.2 Ð C1
+2300,R002288,Bulk filter connectors 1/4”，W050,15.0000,7.000000,D3.2 Ð C1
+2301,R002289,"Pressure pulse dampener,connectors 1/4”",2.0000,3.000000,D3.2 Ð C1
+2302,R002290,"Metal nut for 1/4 thread, for 4.5mm inner hose",10.0000,1.000000,D3.2 Ð C1
+2303,R002291,Receptáculo hembra 60/63A 380-415V AC Pin & Sleeve,3.0000,"1,709.823333",
+2304,R002292,Caja para dispositivos Pin & Sleeve de 60 y 63A,0.0000,0.000000,
+2305,R002293,Plug macho 60/63A 380-415V AC Pin & Sleeve,3.0000,848.213333,
+2306,R002294,Cruz de 1” HG,3.0000,31.250000,
+2307,R002295,Reducidor bushing 1 1/4” a 1” HG,2.0000,8.930000,
+2308,R002296,"Pestañadores completos, Multifuncional BODA GT3B59B-FSS",2.0000,0.000000,
+2309,R002297,"Rodillo de primer operación, Multifuncional BODA GT3B59B-FSS",4.0000,0.000000,
+2310,R002298,"Rodillo de segunda operación, Multifuncional BODA GT3B59B-FSS",4.0000,0.000000,
+2311,R002299,Cuchillas de separación,3.0000,0.000000,
+2312,R002300,Sensor inductivo LR18XBF05DNO-E2,4.0000,20.030000,C2.4
+2313,R002301,Correa dentada 420L,2.0000,0.000000,
+2314,R002302,Correa dentada 476L,2.0000,0.000000,
+2315,R002303,Correa dentada 135L,2.0000,0.000000,
+2316,R002304,Faja A - 125,0.0000,0.000000,B2.2
+2317,R002305,"Resorte a compresión Øexterior 12.5mm, Øalambre=3mm Paso=4mm Distancia entre espiras=1mm Largo=110mm",0.0000,0.000000,
+2318,R002306,Donas de metal con hule color rojo ISHIN,10.0000,0.000000,C2.4
+2319,R002307,Filo tijera ISHIN,10.0000,0.000000,C2.4
+2320,R002308,Donas de metal con hule color negro Golden EAGLE,10.0000,0.000000,B2.1
+2321,R002309,Filo tijera Golden EAGLE,2.0000,0.000000,B2.1
+2322,R002310,Hule rojo Golden EAGLe,10.0000,0.000000,B2.1
+2323,R002311,Nivelador plastico con barra de acero inoxidable,12.0000,0.000000,B2.1
+2324,R002312,Tornillo en T M8,100.0000,0.000000,B2.1
+2325,R002313,Tornillo conico especial con Tuerca  M8,60.0000,0.000000,B2.1
+2326,R002314,"Tuerca M8, 45M8",250.0000,0.000000,B2.1
+2327,R002315,Tornillo allen M8,300.0000,0.000000,B2.1
+2328,R002316,"Tuerca M8, 40M8",250.0000,0.000000,B2.1
+2329,R002317,Tornillo conico allen M8,50.0000,0.000000,B2.1
+2330,R002318,Tuerca M8 con flange,50.0000,0.000000,B2.1
+2331,R002319,Conector para perfiles 4040,25.0000,0.000000,A2.0
+2332,R002320,Conector para perfiles 4545,25.0000,0.000000,A2.0
+2333,R002321,Tuerca cuadrada M8,300.0000,0.000000,B2.1
+2334,R002322,"Escuadra a 90° tamaño 40, 4080",256.0000,0.000000,A2.0
+2335,R002323,"Escuadra a 90° tamaño 45x45, 4590",160.0000,0.000000,A2.0
+2336,R002324,Escuadra a 90° 4545,24.0000,0.000000,A2.0
+2337,R002325,Escuadra a 90° 8080,72.0000,0.000000,A2.0
+2338,R002326,Escuadra a 90° bordes redondos,30.0000,0.000000,A2.0
+2339,R002327,Arrancador trifásico 220V para motor de 3/4 HP,0.0000,238.790000,
+2340,R002328,Tarjeta Pacemaker Can Man V5 PM476,1.0000,"9,130.000000",Armario Beige 2.4
+2341,R002329,Contacto frontal para guardamotor NS2-25X,0.0000,0.000000,
+2342,R002330,Guia Z GE SMART 220,0.0000,0.000000,
+2343,R002331,Guia rollador BestMetal SMART 220,1.0000,0.000000,
+2344,R002332,Rueda superior 116mm BestMetal SMART 220,1.0000,0.000000,C2.2
+2345,R002333,Rueda Inferior 65mm BestMetal SMART 220 Sin Mercurio,1.0000,0.000000,C2.2
+2346,R002334,Guía Z BestMetal Smart 220,1.0000,0.000000,C2.2
+2347,R002335,Rueda 43mm 64M-447045 BestMetal,1.0000,0.000000,C2.2
+2348,R002336,Guía Z M39580 BestMetal,1.0000,0.000000,AS 2.4
+2349,R002337,Radiador AH0608 220v,3.0000,582.850000,
+2350,R002338,Relay LY4N-J DC24V,6.0000,7.100000,AS2.5
+2351,R002339,Realy timmer JSZ6-2 (1segundo),2.0000,9.890000,AS2.5
+2352,R002340,Relay timmer JSZ6-2 (5segundos),4.0000,9.890000,AS2.5
+2353,R002341,Grasera sin cabeza (Flush) M5,10.0000,0.521000,E1.3-02
+2354,R002342,Grasera sin cabeza (Flush) M6,20.0000,0.340000,E1.3-02
+2355,R002343,"Grasera sin cabeza (Flush) 1/8""",10.0000,0.469000,E1.3-02
+2356,R002344,Sello viton 12x22x6,6.0000,2.320000,
+2357,R002345,Sello viton 14x28x7,6.0000,2.320000,
+2358,R002346,Electrovalvula de silicon VX2120-08-SS NC,2.0000,19.470000,
+2359,R002347,Valvula de cubeta expansora y pestañadora DSG-03-3C6-D2,0.0000,0.000000,E2.2
+2360,R002348,Valvula de cubeta venadora DBW10-C-2B2-D2,0.0000,0.000000,E2.2
+2361,R002349,Valvula de cubeta venadora SF06+10-02-2B2L-D2,0.0000,0.000000,E2.2
+2362,R002350,Valvula de cubeta venadora DSHG-04-3C2-D2,0.0000,0.000000,E2.2
+2363,R002351,Vacuometro de -30 a 0 in hg,0.0000,0.000000,E2.2 - 16
+2364,R002352,Cilindro MAL32x75-S,3.0000,22.970000,E1.2
+2365,R002353,"Tijera para cortar lámina 10""",2.0000,65.475000,
+2366,R002354,Seguro pin de expansión Ø5 mm x 32 mm,30.0000,5.357000,
+2367,R002355,Resorte Øa: 2mm; Øi: 21 mm; ØE: 25 mm; largo: 115 mm; paso 10 mm,2.0000,58.035000,
+2368,R002356,Banda Verde monofilamento antiestatica 6700 mm x 80 mm x 3 mm,2.0000,970.240000,
+2369,R002357,"Eje de rodillo superior de soldadura, Smart 120",0.0000,0.000000,
+2370,R002358,Placa de presión para labio obturadores Smart 120,0.0000,0.000000,
+2371,R002359,Guia Z 0.5 mm Smart 120,2.0000,400.000000,
+2372,R002360,Acople para encoder del volante de prensa; CNC2,0.0000,0.000000,
+2373,R002361,Tornillo M6 X 15 Allen,1.0000,44.640000,
+2374,R002362,Pliego de lija Grano 320,22.0000,3.214000,
+2375,R002363,Eje de rodillo superior de soldadora smart 110,1.0000,880.000000,
+2376,R002364,"platina de fijacion de labios de obturacion, Smart 110",10.0000,15.000000,
+2377,R002365,Sensor de doble lámina. IXIN,3.0000,321.000000,
+2378,R002366,Boquilla para grasera plana,4.0000,58.930000,
+2379,R002367,Generador de Vacio ZU07L para manguera 6 mm.,9.0000,2.535000,E1.2
+2380,R002368,válvula 5/2; 24 VDC; Mod: 4V110-06,1.0000,14.710000,D2.4
+2381,R002369,Rueda inferior 62mm BestMetal Smart120 BestMetal Sin mercurio,2.0000,"1,500.000000",C2.2
+2382,R002370,Rueda superior 120mm Best Metal Smart120,2.0000,380.000000,C2.2
+2383,R002371,Moleton de Toalla ancho 100 mm,0.0000,111.607143,
+2384,R002372,"Dedos Empujadores Barnizadora, Litografía Crabtree",0.0000,0.000000,
+2385,R002373,"Manguera Taygon 5/8""",0.0000,0.000000,
+2386,R002374,Seguro pin de expansión Ø 5 mm x 40 mm,10.0000,18.750000,
+2387,R002375,Tornillo allen con boton M5 x 16 mm HN,15.0000,1.875333,
+2388,R002376,"Filtro de aire de línea de 1/4"" NPT",2.0000,379.465000,
+2389,R002377,"Filtro de aire de línea de 1/2"" NPT",2.0000,379.465000,
+2390,R002378,Respirador N95 valvulada con tirantes ajustables,25.0000,71.428800,
+2391,R002379,"Cojinete de bolas sin sello: Øi: 1""; Øe: 2 1/2""; altura: 3/4""",6.0000,23.213750,
+2392,R002380,Cojinete de rodillos conicos 32209,0.0000,138.395000,
+2393,R002381,Cojinete de rodillos conicos 30207,0.0000,102.680000,
+2394,R002382,Retenedor TC 75X100x10,0.0000,66.965000,
+2395,R002383,Arandela M4 Inoxidable,4.0000,0.177500,
+2396,R002384,Arandela M8 Inoxidable,10.0000,0.447000,
+2397,R002385,"Pliego de Velumoide 12""x12""x1/32""",4.0000,6.965000,
+2398,R002386,Tuerca M4 Inoxidable,8.0000,0.670000,
+2399,R002387,Tuerca M8 Inoxidable,0.0000,0.000000,
+2400,R002388,"Asbesto Laminado, pulgada lineal 1/32""",36.0000,9.553611,
+2401,R002389,tornillo poliamida M4 x 20; cod: 16403,25.0000,11.438400,
+2402,R002390,Tornillo poliamida M3x6; Cod 21819,100.0000,5.719000,
+2403,R002391,"Platinas de fijación de labios de obturación 68389 ,  reemplaza 21817 y 22374 FREIAG",100.0000,205.885100,
+2404,R002392,"Tornillo Allen Inoxidable M8 x 40, Soudronic",12.0000,3.455833,
+2405,R002393,"Arrandela M8 Inoxidable, para soudronic",12.0000,0.892500,
+2406,R002394,Resorte a compresión Øe: 7 mm; Øi: 4.72 mm; Largo: 21 mm,16.0000,11.161000,
+2407,R002395,Bateriás AA,10.0000,3.670000,
+2408,R002396,"Manguera flexible reforzada para vacio 1""",10.0000,44.196000,
+2409,R002397,Baterias 12V 11 A/H para moto,5.0000,211.054000,
+2410,R002399,Rueda 100/30-50 con base fija,2.0000,31.250000,
+2411,R002400,Rueda 80/25-50,4.0000,30.267500,
+2412,R002401,"Copla de 1/4"" HG",5.0000,4.910000,
+2413,R002402,Rueda de soldar superior Ixin HG35L,1.0000,"2,158.880000",
+2414,R002403,Rueda de soldar inferior Ixin HG35L,1.0000,"2,698.610000",
+2415,R002404,Tarjeta control de soldadura Ixin HG35L,1.0000,"19,275.750000",
+2416,R002405,3 phase power regulator Ixin HG35L,2.0000,601.405000,
+2417,R002406,Solid State Relay Ixin HG35L,2.0000,616.825000,
+2418,R002407,Guia Z Ixin HG35L,1.0000,"1,835.050000",
+2419,R002408,Black handle and earplug,0.0000,0.000000,
+2420,R002409,"Vaso para lubricador, sin drenador",0.0000,0.000000,
+2421,R002410,"Cruz de 1/4"" HG",2.0000,17.850000,
+2422,R002411,Tuerca M5 Inoxidable,12.0000,0.892500,
+2423,R002412,Rodo 160/40-80 con base fija,0.0000,0.000000,
+2424,R002413,Rodo 160/40-80 con base movil,0.0000,0.000000,
+2425,R002414,Rueda 160/40-80,6.0000,33.035000,
+2426,R002415,resorte a compresión Øe:20mm; Øi: 17 mm; largo:50mm; paso 11 mm,2.0000,16.517500,
+2427,R002416,"Racor rápido Roscado de 1/2""  x 8 mm",20.0000,21.205500,
+2428,R002417,Racor Rapido en Y 10 mm,10.0000,16.071000,
+2429,R002418,Racor Rapido en Y 12 mm,10.0000,17.411000,
+2430,R002419,"Racor rápido Roscado en L de 1/4""  x 12 mm",10.0000,22.188000,
+2431,R002420,"Racor rápido Roscado en L de 1/2""  x 8 mm",10.0000,22.321000,
+2432,R002421,Guantes de cuero manga corta talla L,0.0000,0.000000,
+2433,R002422,Square Spray Chamber; LDJZJ0027; P1110220,7.0000,240.000000,
+2434,R002423,"conector de filtro de mariposa para filtro 1/4""; Leadjet",15.0000,1.000000,
+2435,R002424,Esclusa 35150 ; rotor Ø 100/6.,1.0000,"8,320.870000",
+2436,R002425,Rectangular flangin mod; Ishin rectangular,0.0000,"2,795.750000",
+2437,R002426,faja verde 5350 x 90 x 3; banda salida CNC 3,1.0000,875.890000,
+2438,R002427,Guantes anticorte talla S,0.0000,71.428500,
+2439,r002428,Ventosa ZP50CN Slitter 610,15.0000,5.400000,
+2440,r002429,Generador de vacio FESTO VADMI-95 162508 Slitter 610,1.0000,83.000000,
+2441,r002430,Sello 125x112x9 CNC3,2.0000,3.000000,
+2442,r002431,Sellos 28x20x5 CNC3,2.0000,3.000000,
+2443,r002432,Sensor PSE17-5DN,2.0000,10.593000,
+2444,r002433,Cilindro SDA25x20,2.0000,19.815000,
+2445,r002434,Cilindro SDA25x30,2.0000,20.015000,E1.2
+2446,r002435,Cilindro SDAJ 100x30 -30,1.0000,67.900000,
+2447,r002436,Ventosa silicon rojo DP50 (Ishin HG-35),10.0000,1.349000,
+2448,r002437,Cilindro SDA100x35,1.0000,38.090000,
+2449,r002438,Cilindro TN16x30S,2.0000,13.275000,
+2450,R002439,"Válvula solenoide 3/8"" 2/2 24 VAC; normalmente cerrada",1.0000,"1,607.140000",
+2451,R002440,"manguera hidraulica de 3/8"" con conectores hembra flare giratorios de 5/8"", 4000 psi; 8 metros de largo",3.0000,725.293333,
+2452,R002441,Mascarilla/respidardor descartable KN95 con Válvula,10.0000,7.143000,
+2453,R002442,faja trapecial S7370,2.0000,23.215000,
+2454,R002443,Cojinete cónico de rodillos cilindricos 30204,1.0000,66.960000,
+2455,R002444,Faja Trapezial FM-24,1.0000,22.410000,
+2456,R002445,"Cilindro MAL 25 x 25 doble efecto conexiones 1/8""; montaje en Horquilla",2.0000,133.930000,
+2457,R002446,Barra roleadora SMART120 (BestMetal),1.0000,350.000000,
+2458,R002447,"Faja Plana de 25.4 mm x 3,830 mm x 3 mm, Barnizadora Litografía",5.0000,313.394000,
+2459,R002448,"Faja plana 25.4 mm x 1600 mm x 3 mm vulcanizada, para Barnizadora de Litografía",5.0000,200.894000,
+2460,r002449,Sensor inductivo LJ12A3-4-Z/CX (4hilos NPN NC+NO),2.0000,2.653333,
+2461,r002450,Sensor inductivo LJ12A3-4Z/DX (2hilos DC6-36v NC),2.0000,2.655000,
+2462,r002451,Sensor inductivo LJ12A3-4-Z/CX (2 hilos DC6-36v NC),2.0000,3.190000,
+2463,r002452,"Electro válvula 2w-040-10 DC 24v (3/8"")",2.0000,15.720000,
+2464,r002453,"Llave neumatica 1/8"" HSV-06",3.0000,2.940000,
+2465,r002454,Pedal neumatico FV420,1.0000,7.150000,
+2466,R002455,Retenedor 25 x 40 x 7,2.0000,40.180000,
+2467,R002456,regulador neumatico para manguera de 4 mm de rosca 4 mm (3/16 mm),0.0000,0.000000,
+2468,R002457,Faja 2250x50x3 mm con grapas,1.0000,498.210000,
+2469,R002458,"Faja 12,430x50x2 mm",2.0000,794.640000,
+2470,R002459,filtro para mascarilla multigas EN14387:2004 + A1:2008,6.0000,129.463333,
+2471,R002460,"banda transportadora 11,450 x 100 x 3 mm; elevador SMAG",3.0000,"1,473.210000",
+2472,R002461,"Banda Transportadora 7,700 x 840 x 3 mm; elevador Bliss",1.0000,"2,455.360000",
+2473,R002462,Cilindro MAL 20 X 25 (MAY20 X 25),3.0000,151.785000,
+2474,R002463,Metro de tubo de cobre de 4 mm,1.0000,16.610000,
+2475,R002464,"Racor rápido roscado en T de 1/4"" x 12 mm",0.0000,0.000000,
+2476,R002465,Resorte a compresión: Øe 13 mm; Øi 11 mm; Øal: 1 mm; paso: 10 mm. (chichera),10.0000,22.321000,
+2477,R002466,Abrazadera de cincho de 7/13 mm,0.0000,0.000000,
+2478,R002467,Faja en V SPZ 1250 LW; (Bibra),2.0000,219.645000,
+2479,R002468,Faja Trapecial B1900LI,7.0000,232.142500,
+2480,R002469,"Faja tangencial 3830 mm x 25.4 x 36 mm, Barnizadora Litografia",0.0000,0.000000,
+2481,R002470,Faja tangencial 4490 mm x 25 mm x 3 mm,2.0000,388.395000,
+2482,R002471,Faja verde monofilamento antiestatica 1665 mm x 25 mm x 3 mm vulcanizada,8.0000,220.232500,
+2483,R002472,Faja tangencial 4490 mm x 25 mm x 3 mm,0.0000,0.000000,
+2484,R002473,Cilindro neumatico ADVC-16-5-I-P,3.0000,18.460000,
+2485,R002474,Unión Racor 6 mm,6.0000,5.893333,
+2486,R002476,Unión Racor de 10 mm,10.0000,10.715000,
+2487,R002477,"Tee HG 2""",5.0000,33.930000,
+2488,R002478,"Cruz HG 1/4""",5.0000,16.964000,
+2489,R002479,"Codo 90° 1/4"" inoxidable, hembra-hembra",3.0000,7.140000,
+2490,R002480,"Regulador roscado en ""L"" de 5 mm x 4 mm, pincel Smag",6.0000,66.965000,
+2491,R002481,"Niple de 1/4"" x 5"" HG",2.0000,15.305000,
+2492,R002482,"Codo 90° 1/4"" inox, hembra-hembra",0.0000,0.000000,
+2493,R002483,"niple de inox de 1/4"" x 4""",1.0000,13.390000,
+2494,R002484,Faja trapecial B2134Li (B-84),2.0000,98.215000,
+2495,R002485,Faja  3VX560 dentada trapecial,2.0000,241.070000,
+2496,R002488,Trampa de agua de balde invertido para linea de aire,8.0000,22.125000,
+2497,R002489,"Manómetro para nitrógeno Bibra (0-3000 psi) conexión 1/8""",0.0000,0.000000,
+2498,R002490,trampa de agua de flotador de bola para linea de aire comprimido,6.0000,30.156667,
+2499,R002491,Faja trapecial FM-32,4.0000,26.785000,
+2500,R002493,"Conector para manguera bronce 1/4"" x 1/4""",5.0000,9.822000,
+2501,R002494,Retenedor 22 x 42 x 11,5.0000,4.400000,
+2502,R002495,Faja Trapecial A-65,3.0000,44.553333,
+2503,R002496,Manguera Transparente de 14 mm (horno Ishin),12.0000,16.517500,
+2504,R002497,Cilindro CDM2E 20-100; Ø: 20 mm; carrera: 100 mm,2.0000,637.945000,
+2505,R002498,Banda 3360 x 78 x 3 mm vulcanizada de hule y lona,1.0000,"1,031.250000",
+2506,R002499,"Control de velocidad de electroválvula 1/8""",10.0000,65.178000,
+2507,R002500,"Control de velocidad de electroválvula 1/4""",10.0000,13.929000,
+2508,R002501,Cilindro neumatico ADN-50-5-A-P-A,2.0000,45.685000,
+2509,R002502,"Banda alta temperatura fibra algodón 48 mm x 25,490 mm x 1.8 mm (vulcanizada en planta) para horno Smart 220",1.0000,"3,080.360000",
+2510,S-0004,SERVICIO FLETE IMPORTACION,0.0000,"1,161.700000",
+2511,T000001,"Acero Inoxidable 420 Ø4""",0.0000,0.000000,
+2512,T000002,Borneras desmontables a 90° de 2 contactos,0.0000,0.000000,
+2513,T000003,Borneras desmontables a 90° de 3 contactos,0.0000,0.000000,
+2514,T000004,Borneras desmontables a 90° de 4 contactos,0.0000,0.000000,
+2515,T000005,Borneras desmontables a 90° de 5 contactos,0.0000,0.000000,
+2516,T000006,Transistor TIP31,0.0000,0.000000,
+2517,T000007,Resistencia 1k Ohm a 1 Watt,0.0000,0.000000,
+2518,T000008,Resistencia 10k Ohm a 1 Watt,0.0000,0.000000,
+2519,T000009,Resistencia 1k Ohm a 1/2 Watt,0.0000,0.000000,
+2520,T000010,Resistencia 10k Ohm a 1 /2Watt,0.0000,0.000000,
+2521,T000011,Diodo Zener 5V y 1 Watt,0.0000,0.000000,
+2522,T000012,Bases para circuito integrado de 6 pines,0.0000,0.000000,
+2523,T000013,Tira de pinhead macho de 40 pines,0.0000,0.000000,
+2524,T000014,Tira de pinhead hembra de 40 pines,0.0000,0.000000,
+2525,T000015,Resistencia de 50k Ohm a 1/4 Watt,0.0000,0.000000,
+2526,T000016,Barra de acero corriente Ø170mm,0.0000,0.000000,
+2527,T000017,"Resortes a compresión Øexterior = 12mm, Øalambre=1.6mm, Paso=4mm, Largo=40mm",0.0000,0.000000,
+2528,T000018,"Barra de acero O1 Ø3-1/4""",0.0000,0.000000,
+2529,T000019,"Fresa plana de 4 filos Ø10mm, vástago de 1/2"" HSS",0.0000,0.000000,
+2530,T000020,"Fresa plana de 4 filos Ø12mm, vástago de 1/2"" HSS",0.0000,0.000000,
+2531,T000021,"Fresa plana de 4 filos Ø14mm, vástago de 1/2"" HSS",0.0000,0.000000,
+2532,T000022,"Fresa plana de 4 filos Ø16mm, vástago de 5/8"" HSS",0.0000,0.000000,
+2533,T000023,"Barra cuadrada de acero inoxidable de 2""",0.0000,0.000000,
+2534,T000024,"Barra cuadrada de acero inoxidable de 1-1/2""",0.0000,0.000000,
+2535,T000025,"Barra perforada de acero corriente Øexterior= 7"", Øagujero= Menor a 4""",0.0000,0.000000,
+2536,T000026,"Barra de acero D2 Ø3-3/4""",0.0000,0.000000,Taller
+2537,T000027,Barra de Delrin Ø180mm,0.0000,0.000000,Taller
+2538,T000028,"Acero D2 Ø9""",0.0000,0.000000,
+2539,T000029,"Acero O1 Ø8""",0.0000,0.000000,
+2540,T000030,Barra de acero O1 Ø170 mm,0.0000,0.000000,
+2541,T000031,"Barra de acero O1 Ø6-1/2""",0.0000,0.000000,
+2542,T000032,"Barra de acero corriente Ø4-3/4""",0.0000,0.000000,
+2543,T000033,"Terraja Ø3/4"" UNC para maneral de 1-1/2""",0.0000,0.000000,Armario de proyectos
+2544,T000034,"Terraja Ø1/2"" UNC para maneral de 1""",0.0000,0.000000,Armario de proyectos
+2545,T000035,"Barra de acero cold rolled Ø2-1/2"" x 65"" de largo Superficie pulida",0.0000,0.000000,
+2546,T000036,"Barra de acero corriente Ø4""",0.0000,0.000000,
+2547,T000037,"Barra de Delrin Ø3""",0.0000,0.000000,
+2548,T000038,Barra de acero corriente Ø150mm,0.0000,0.000000,
+2549,T000039,"Platina de acero corriente 3/4"" x 2-1/2""",0.0000,0.000000,
+2550,T000040,"Perfil hembra de acero inoxidable 3"" x 1/8""",0.0000,0.000000,
