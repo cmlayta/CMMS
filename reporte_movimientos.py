@@ -15,7 +15,7 @@ DB_CONFIG = {
 
 EMAIL_CONFIG = {
     'remitente': 'cmlayta@gmail.com',
-    'destinatario': 'proyectos@layta.gt, mantenimiento@layta.gt, rsuarez@layta.gt',
+    'destinatario': 'proyectos@layta.gt, mantenimiento@layta.gt, rsuarezv@layta.gt',
     'password': 'fmgg kszc ymys lubo',
     'smtp': 'smtp.gmail.com',
     'puerto': 465
