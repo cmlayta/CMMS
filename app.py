@@ -901,7 +901,11 @@ def ver_mantenimiento():
     con = connect_db()
     cur = con.cursor(dictionary=True)
 
-    # Traer las OT abiertas
+    # -------- NOTIFICACIONES PENDIENTES -----------
+    cur.execute("SELECT COUNT(*) AS pendientes FROM solicitudes_repuestos WHERE estado = 'pendiente'")
+    notif_pendientes = cur.fetchone()['pendientes']
+
+    # -------- OTs abiertas -----------
     query_ot = """
         SELECT 
             ot.id,
@@ -922,7 +926,7 @@ def ver_mantenimiento():
     cur.execute(query_ot)
     ordenes = cur.fetchall()
 
-    # Traer todas las actividades
+    # Todas actividades
     cur.execute("SELECT * FROM actividades_mantenimiento")
     actividades = cur.fetchall()
 
@@ -930,17 +934,12 @@ def ver_mantenimiento():
     actividades_por_ot = {}
     for act in actividades:
         ot_id = act['orden_trabajo_id']
+        actividades_por_ot.setdefault(ot_id, []).append(act)
 
-        if ot_id not in actividades_por_ot:
-            actividades_por_ot[ot_id] = []
-
-        actividades_por_ot[ot_id].append(act)
-
-    # ✅ ASIGNAR ACTIVIDADES + CALCULAR % AVANCE DE LA OT
+    # Calcular porc. avance
     for ot in ordenes:
         acts = actividades_por_ot.get(ot["id"], [])
-
-        ot["actividades"] = acts  # sigue funcionando tu desplegable
+        ot["actividades"] = acts
 
         total = 0
         count = 0
@@ -960,7 +959,6 @@ def ver_mantenimiento():
                 total += porcentaje
                 count += 1
 
-        # Porcentaje general de la OT
         ot["porcentaje"] = round(total / count, 1) if count > 0 else 0
 
     cur.close()
@@ -968,7 +966,8 @@ def ver_mantenimiento():
 
     return render_template(
         'ver_mantenimiento.html',
-        ordenes=ordenes
+        ordenes=ordenes,
+        notif_pendientes=notif_pendientes  # 👈 SE PASA AL HTML
     )
 
 def actualizar_duracion_total_ot(ot_id):

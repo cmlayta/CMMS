@@ -216,6 +216,25 @@
             cursor: pointer;
         }
 
+.notif-btn {
+    position: relative;
+    font-size: 28px;
+    text-decoration: none;
+}
+
+.notif-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    padding: 3px 6px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+
         .btn-ver { background: #475569; }
         .btn-ver:hover { background: #334155; }
 
@@ -248,7 +267,13 @@
     Módulo de Mantenimientos – CMMS
 
     <!-- 🔔 Campanita de notificaciones -->
-    <a href="{{ url_for('solicitudes_repuestos_admin') }}" class="notif-btn">🔔</a>
+    <a href="{{ url_for('solicitudes_repuestos_admin') }}" class="notif-btn">
+        🔔
+        {% if notif_pendientes > 0 %}
+            <span class="notif-badge">{{ notif_pendientes }}</span>
+        {% endif %}
+    </a>
+
 </header>
 
 <div class="container">
