@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Técnicos – CMMS</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f6f9;
+        }
+
+        header {
+            background: #1e293b;
+            color: white;
+            padding: 15px 30px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .container {
+            padding: 30px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #1e293b;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        form {
+            display: grid;
+            gap: 15px;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            font-size: 14px;
+            width: 100%;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 10px 18px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+        }
+
+        .btn-secondary {
+            background: #64748b;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #475569;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #e2e8f0;
+            color: #1e293b;
+            text-align: left;
+            padding: 10px;
+        }
+
+        td {
+            border-bottom: 1px solid #e5e7eb;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        tr:hover {
+            background: #f1f5f9;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    Técnicos – CMMS
+</header>
+
+<div class="container">
+
+    <!-- AGREGAR TÉCNICO -->
+    <div class="card">
+
+        <div class="title">Agregar Técnico</div>
+
+        <form method="POST">
+            <input type="text" name="usuario" placeholder="Nombre de usuario" required>
+            <input type="password" name="contrasena" placeholder="Contraseña" required>
+
+            <div class="buttons">
+                <button type="submit" class="btn btn-primary">
+                    Guardar Técnico
+                </button>
+
+                <a href="{{ url_for('ver_mantenimiento') }}" class="btn btn-secondary">
+                    Volver
+                </a>
+            </div>
+        </form>
+
+    </div>
+
+    <!-- LISTA DE TÉCNICOS -->
+    <div class="card">
+
+        <div class="title">Lista de Técnicos</div>
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Usuario</th>
+                <th>Rol</th>
+            </tr>
+
+            {% for t in tecnicos %}
+                <tr>
+                    <td>{{ t.id }}</td>
+                    <td>{{ t.usuario }}</td>
+                    <td>Técnico</td>
+                    <td>
+                        <a href="/eliminar_tecnico/{{ t.id }}"
+                        onclick="return confirm('¿Seguro que deseas eliminar este técnico?')"
+                        class="btn btn-secondary">
+                            Eliminar
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>

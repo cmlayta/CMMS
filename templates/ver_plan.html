@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Plan de Mantenimiento</title>
+
+<style>
+
+body {
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+    background:#f4f6f9;
+}
+
+header {
+    background:#1e293b;
+    color:white;
+    padding:15px 30px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.container {
+    padding:30px;
+    max-width:1300px;
+    margin:auto;
+}
+
+/* Tarjetas */
+.card {
+    background:white;
+    padding:25px;
+    border-radius:14px;
+    margin-bottom:25px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+}
+
+/* TITULOS */
+h2, h3 {
+    margin-top:0;
+    color:#1e293b;
+}
+
+/* Detalles OT */
+.ot-grid {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:15px 40px;
+    margin-top:10px;
+}
+
+.ot-item {
+    background:#f8fafc;
+    padding:12px 15px;
+    border-radius:10px;
+    border-left:4px solid #2563eb;
+}
+
+.ot-item strong {
+    display:block;
+    font-size:13px;
+    color:#64748b;
+}
+
+.ot-item span {
+    font-size:16px;
+    font-weight:600;
+    color:#1e293b;
+}
+
+.ot-actions {
+    margin-top:15px;
+}
+
+/* Tabla */
+table {
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+    font-size:14px;
+}
+
+th {
+    background:#1e293b;
+    color:white;
+    padding:12px;
+    text-align:left;
+}
+
+td {
+    padding:12px;
+    border-bottom:1px solid #e5e7eb;
+    vertical-align:top;
+}
+
+tr:hover {
+    background:#f8fafc;
+}
+
+/* Botones */
+button, .btn {
+    padding:8px 15px;
+    cursor:pointer;
+    border-radius:9px;
+    border:none;
+    font-size:14px;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    display:inline-block;
+}
+
+button:hover, .btn:hover {
+    opacity:0.9;
+}
+
+.delete {
+    background:#dc2626 !important;
+}
+
+.edit {
+    background:#f59e0b;
+}
+
+/* Etiquetas */
+.tag {
+    background:#e0f2fe;
+    color:#075985;
+    padding:4px 12px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+    display:inline-block;
+    white-space:nowrap;
+}
+
+.tag-prioridad {
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.tag-fecha {
+    background:#ede9fe;
+    color:#5b21b6;
+}
+
+.tag-dia {
+    background:#dcfce7;
+    color:#166534;
+}
+
+.tag-semana {
+    background:#fef3c7;
+    color:#92400e;
+}
+
+.table-header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:8px;
+}
+
+small {
+    color:#64748b;
+    font-size:12px;
+}
+
+.frecuencia-box span {
+    display:block;
+}
+
+/* Responsive only basic */
+@media (max-width:900px) {
+    .ot-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>Plan de mantenimiento</header>
+
+<div class="container">
+
+    <!-- DETALLE DE LA OT -->
+    <div class="card">
+        <h2>🛠️ OT Fija Nº {{ ot.numero_ot }}</h2>
+
+        <div class="ot-grid">
+            <div class="ot-item">
+                <strong>Equipo</strong>
+                <span>{{ ot.equipo }}</span>
+            </div>
+
+            <div class="ot-item">
+                <strong>Técnico</strong>
+                <span>{{ ot.tecnico }}</span>
+            </div>
+
+            <div class="ot-item">
+                <strong>Tipo de mantenimiento</strong>
+                <span>{{ ot.tipo_mantenimiento }}</span>
+            </div>
+
+            <div class="ot-item">
+                <strong>Fecha de creación</strong>
+                <span>{{ ot.fecha_creacion }}</span>
+            </div>
+
+            <div class="ot-item" style="grid-column:1 / -1;">
+                <strong>Prioridad</strong>
+                <span>{{ ot.descripcion }}</span>
+            </div>
+        </div>
+
+        <div class="ot-actions">
+            <a href="{{ url_for('ver_planes_mantenimiento') }}">
+                <button>← Volver</button>
+            </a>
+        </div>
+    </div>
+
+    <!-- ACTIVIDADES -->
+    <div class="card">
+
+        <div class="table-header">
+            <h3>📋 Actividades del plan ({{ actividades|length }})</h3>
+
+            <a href="{{ url_for('nueva_actividad_fija', ot_id=ot.id) }}" class="btn">
+                + Añadir actividad
+            </a>
+        </div>
+
+        <table>
+            <tr>
+                <th>Código</th>
+                <th>Actividad</th>
+                <th>Duración</th>
+                <th>Prioridad</th>
+                <th>Frecuencia</th>
+                <th>Programación detallada</th>
+                <th>Observaciones</th>
+                <th>Acciones</th>
+            </tr>
+
+            {% if actividades %}
+                {% for act in actividades %}
+                <tr>
+
+                    <td>{{ act.codigo_actividad if act.codigo_actividad else '-' }}</td>
+
+                    <td><strong>{{ act.actividad }}</strong></td>
+
+                    <td>
+                        {{ act.duracion ~ " min" if act.duracion else '-' }}
+                    </td>
+
+                    <td>
+                        <span class="tag tag-prioridad">
+                            {{ act.prioridad }}
+                        </span>
+                    </td>
+
+                    <td>
+                        <span class="tag">
+                            {{ act.frecuencia_new }}
+                        </span>
+                    </td>
+
+                    <!-- PROGRAMACIÓN DETALLADA: lógica clara y completa -->
+                    <td class="frecuencia-box">
+                        {% set f = act.frecuencia_new %}
+                        {# PERSONALIZADO: fecha exacta #}
+                        {% if f == 'Personalizada' or f == 'Personalizado' %}
+                            {% if act.fecha_personalizada %}
+                                {% if act.fecha_personalizada is string %}
+                                    <span class="tag tag-fecha">📅 {{ act.fecha_personalizada }}</span>
+                                {% else %}
+                                    <span class="tag tag-fecha">📅 {{ act.fecha_personalizada.strftime('%d-%m-%Y') }}</span>
+                                {% endif %}
+                            {% else %}
+                                <span class="tag-fecha">Fecha no definida</span>
+                            {% endif %}
+
+                        {# DIARIA: simple etiqueta #}
+                        {% elif f == 'Diaria' %}
+                            <span class="tag">Diaria</span>
+
+                        {# SEMANAL: día de la semana #}
+                        {% elif f == 'Semanal' %}
+                            {% if act.dia_semana %}
+                                <span class="tag tag-dia">
+                                    {% if act.dia_semana == 1 %}Lunes
+                                    {% elif act.dia_semana == 2 %}Martes
+                                    {% elif act.dia_semana == 3 %}Miércoles
+                                    {% elif act.dia_semana == 4 %}Jueves
+                                    {% elif act.dia_semana == 5 %}Viernes
+                                    {% elif act.dia_semana == 6 %}Sábado
+                                    {% elif act.dia_semana == 7 %}Domingo
+                                    {% else %}Día inválido{% endif %}
+                                </span>
+                            {% else %}
+                                <span class="tag">Día no definido</span>
+                            {% endif %}
+
+                        {# QUINCENAL: semana 1/2 y día #}
+                        {% elif f == 'Quincenal' %}
+                            {% set parts = [] %}
+                            {% if act.semana_mes %}
+                                {% set _ = parts.append('Semana ' ~ act.semana_mes) %}
+                            {% endif %}
+                            {% if act.dia_semana %}
+                                {% set dayname = (
+                                    'Lunes' if act.dia_semana==1 else
+                                    'Martes' if act.dia_semana==2 else
+                                    'Miércoles' if act.dia_semana==3 else
+                                    'Jueves' if act.dia_semana==4 else
+                                    'Viernes' if act.dia_semana==5 else
+                                    'Sábado' if act.dia_semana==6 else
+                                    'Domingo' if act.dia_semana==7 else
+                                    'Día inválido'
+                                ) %}
+                                {% set _ = parts.append(dayname) %}
+                            {% endif %}
+                            {% if parts %}
+                                <span class="tag tag-semana">{{ parts|join(' • ') }}</span>
+                            {% else %}
+                                <span class="tag">Quincenal (sin detalle)</span>
+                            {% endif %}
+
+                        {# MENSUAL: mostrar día_mes o semana+dia #}
+                        {% elif f == 'Mensual' %}
+                            {% if act.dia_mes %}
+                                <span class="tag tag-semana">Día {{ act.dia_mes }} de cada mes</span>
+                            {% else %}
+                                {% set parts = [] %}
+                                {% if act.semana_mes %} {% set _ = parts.append('Semana ' ~ act.semana_mes) %} {% endif %}
+                                {% if act.dia_semana %}
+                                    {% set dayname = (
+                                        'Lunes' if act.dia_semana==1 else
+                                        'Martes' if act.dia_semana==2 else
+                                        'Miércoles' if act.dia_semana==3 else
+                                        'Jueves' if act.dia_semana==4 else
+                                        'Viernes' if act.dia_semana==5 else
+                                        'Sábado' if act.dia_semana==6 else
+                                        'Domingo' if act.dia_semana==7 else
+                                        'Día inválido'
+                                    ) %}
+                                    {% set _ = parts.append(dayname) %}
+                                {% endif %}
+                                {% if parts %}
+                                    <span class="tag tag-semana">{{ parts|join(' • ') }}</span>
+                                {% else %}
+                                    <span class="tag">Mensual (sin detalle)</span>
+                                {% endif %}
+                            {% endif %}
+
+                        {# TRIMESTRAL / SEMESTRAL / ANUAL: combinar mes + (semana/día o día_mes) #}
+                        {% elif f in ['Trimestral','Semestral','Anual'] %}
+                            {% set parts = [] %}
+                            {% if act.mes %} {% set _ = parts.append('Mes ' ~ act.mes) %} {% endif %}
+                            {% if act.dia_mes %} {% set _ = parts.append('Día ' ~ act.dia_mes) %} {% endif %}
+                            {% if act.semana_mes %} {% set _ = parts.append('Semana ' ~ act.semana_mes) %} {% endif %}
+                            {% if act.dia_semana %}
+                                {% set dayname = (
+                                    'Lunes' if act.dia_semana==1 else
+                                    'Martes' if act.dia_semana==2 else
+                                    'Miércoles' if act.dia_semana==3 else
+                                    'Jueves' if act.dia_semana==4 else
+                                    'Viernes' if act.dia_semana==5 else
+                                    'Sábado' if act.dia_semana==6 else
+                                    'Domingo' if act.dia_semana==7 else
+                                    None
+                                ) %}
+                                {% if dayname %} {% set _ = parts.append(dayname) %} {% endif %}
+                            {% endif %}
+
+                            {% if parts %}
+                                <span class="tag tag-semana">{{ parts|join(' • ') }}</span>
+                            {% else %}
+                                <span class="tag">{{ f }} (sin detalle)</span>
+                            {% endif %}
+
+                        {# FALLBACK #}
+                        {% else %}
+                            —
+                        {% endif %}
+                    </td>
+
+                    <td>
+                        {{ act.observaciones if act.observaciones else 'Sin observaciones' }}
+                    </td>
+
+                    <td>
+                        <a href="{{ url_for('editar_actividad_ot_fija', actividad_id=act.id) }}">
+                            <button class="edit">Editar</button>
+                        </a>
+
+                        <form action="{{ url_for('eliminar_actividad_fija', actividad_id=act.id, ot_id=ot.id) }}"
+                            method="POST"
+                            style="display:inline;"
+                            onsubmit="return confirm('¿Seguro que deseas eliminar esta actividad?');">
+
+                            <button type="submit" class="btn delete">
+                                🗑 Eliminar
+                            </button>
+
+                        </form>
+
+
+                    </td>
+
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="8" style="text-align:center;">
+                        Aún no hay actividades registradas
+                    </td>
+                </tr>
+            {% endif %}
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>

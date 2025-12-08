@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear Plan de Mantenimiento</title>
+</head>
+<body>
+
+<h2>Crear plan desde OT</h2>
+
+<h3>Datos de la OT</h3>
+<p><b>Equipo:</b> {{ ot.equipo_nombre }}</p>
+<p><b>Descripción:</b> {{ ot.descripcion }}</p>
+
+<form method="POST">
+
+    <label>Nombre del plan:</label><br>
+    <input type="text" name="nombre_plan" value="{{ ot.descripcion }}" required>
+    <br><br>
+
+    <label>Frecuencia:</label><br>
+    <select name="frecuencia" id="frecuencia" required>
+        <option value="">-- Seleccione --</option>
+        <option value="Semanal">Semanal</option>
+        <option value="Mensual">Mensual</option>
+        <option value="Anual">Anual</option>
+    </select>
+    <br><br>
+
+    <!-- SEMANAL -->
+    <div id="campos_semanal" style="display:none;">
+        <label>Día de la semana:</label>
+        <select name="dia_semana">
+            <option value="1">Lunes</option>
+            <option value="2">Martes</option>
+            <option value="3">Miércoles</option>
+            <option value="4">Jueves</option>
+            <option value="5">Viernes</option>
+            <option value="6">Sábado</option>
+            <option value="7">Domingo</option>
+        </select>
+    </div>
+
+    <!-- MENSUAL -->
+    <div id="campos_mensual" style="display:none;">
+        <label>Semana del mes:</label>
+        <select name="semana_mes">
+            <option value="1">Primera</option>
+            <option value="2">Segunda</option>
+            <option value="3">Tercera</option>
+            <option value="4">Cuarta</option>
+        </select>
+
+        <br><br>
+
+        <label>Día de la semana:</label>
+        <select name="dia_semana">
+            <option value="1">Lunes</option>
+            <option value="2">Martes</option>
+            <option value="3">Miércoles</option>
+            <option value="4">Jueves</option>
+            <option value="5">Viernes</option>
+            <option value="6">Sábado</option>
+            <option value="7">Domingo</option>
+        </select>
+    </div>
+
+    <!-- ANUAL -->
+    <div id="campos_anual" style="display:none;">
+        <label>Día del mes:</label>
+        <input type="number" name="dia_mes" min="1" max="31">
+
+        <br><br>
+
+        <label>Mes del año:</label>
+        <select name="mes_anio">
+            <option value="1">Enero</option>
+            <option value="2">Febrero</option>
+            <option value="3">Marzo</option>
+            <option value="4">Abril</option>
+            <option value="5">Mayo</option>
+            <option value="6">Junio</option>
+            <option value="7">Julio</option>
+            <option value="8">Agosto</option>
+            <option value="9">Septiembre</option>
+            <option value="10">Octubre</option>
+            <option value="11">Noviembre</option>
+            <option value="12">Diciembre</option>
+        </select>
+    </div>
+
+    <br>
+
+    <label>Técnico asignado:</label><br>
+    <select name="tecnico_id">
+        <option value="">Sin asignar</option>
+        {% for t in tecnicos %}
+            <option value="{{ t.id }}">{{ t.usuario }}</option>
+        {% endfor %}
+    </select>
+
+    <br><br>
+
+    <button type="submit">Guardar plan</button>
+
+</form>
+
+<script>
+document.getElementById('frecuencia').addEventListener('change', function() {
+
+    document.getElementById('campos_semanal').style.display = 'none';
+    document.getElementById('campos_mensual').style.display = 'none';
+    document.getElementById('campos_anual').style.display = 'none';
+
+    if (this.value === "Semanal") {
+        document.getElementById('campos_semanal').style.display = 'block';
+    }
+    else if (this.value === "Mensual") {
+        document.getElementById('campos_mensual').style.display = 'block';
+    }
+    else if (this.value === "Anual") {
+        document.getElementById('campos_anual').style.display = 'block';
+    }
+});
+</script>
+
+</body>
+</html>

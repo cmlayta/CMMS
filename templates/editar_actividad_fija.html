@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Editar actividad | OT {{ ot.numero_ot }}</title>
+
+<style>
+    body { font-family: Arial, sans-serif; background: #f3f4f6; margin:0; padding:0; }
+    .header { background:#1f2937; color:white; padding:15px 25px; }
+    .title { display:flex; justify-content:space-between; align-items:center; font-size:18px; }
+    a { text-decoration:none; color:inherit; }
+    .btn { padding:8px 14px; border-radius:6px; background:#374151; color:white; font-size:14px; border:none; cursor:pointer; }
+    .btn:hover, button:hover { opacity:0.9; }
+    .save { background:#16a34a; } .delete { background:#dc2626; }
+    .container { padding:25px; }
+    .card { background:white; padding:20px; border-radius:12px; max-width:900px; margin:auto; }
+    .grid { display:grid; grid-template-columns: repeat(2,1fr); gap:15px; }
+    .full { grid-column:1 / -1; }
+    label { font-weight:600; display:block; margin-bottom:5px; }
+    input, select, textarea { width:100%; padding:8px; border-radius:6px; border:1px solid #d1d5db; }
+    textarea { resize:vertical; }
+    .actions { margin-top:20px; display:flex; justify-content:space-between; }
+    .hidden { display:none; }
+    .info-ot { margin-bottom:20px; padding:12px; background:#e5e7eb; border-radius:8px; }
+    small { color:#475569; font-size:13px; }
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <div class="title">
+        <span>Editar actividad - OT {{ ot.numero_ot }}</span>
+        <a href="{{ url_for('ver_plan', ot_id=ot_id) }}" class="btn">← Volver</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="card">
+
+        <div class="info-ot">
+            <b>OT:</b> {{ ot.numero_ot }} <br>
+            <b>Descripción:</b> {{ ot.descripcion }}
+        </div>
+
+        <form method="POST">
+            <div class="grid">
+
+                <div>
+                    <label>Código de actividad</label>
+                    <input type="text" name="codigo" value="{{ actividad.codigo_actividad }}" required>
+                </div>
+
+                <div>
+                    <label>Duración (min)</label>
+                    <input type="number" name="duracion" min="1" value="{{ actividad.duracion if actividad.duracion is not none }}">
+                </div>
+
+                <div class="full">
+                    <label>Actividad</label>
+                    <input type="text" name="actividad" value="{{ actividad.actividad }}" required>
+                </div>
+
+                <div>
+                    <label>Prioridad</label>
+                    <select name="prioridad">
+                        <option value="Baja"   {% if actividad.prioridad == 'Baja' %}selected{% endif %}>Baja</option>
+                        <option value="Media"  {% if actividad.prioridad == 'Media' %}selected{% endif %}>Media</option>
+                        <option value="Alta"   {% if actividad.prioridad == 'Alta' %}selected{% endif %}>Alta</option>
+                        <option value="Critica"{% if actividad.prioridad == 'Critica' %}selected{% endif %}>Crítica</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Frecuencia</label>
+                    <select name="frecuencia" id="frecuencia" onchange="mostrarCampos()">
+                        <option value="Diaria"        {% if actividad.frecuencia_new == 'Diaria' %}selected{% endif %}>Diaria</option>
+                        <option value="Semanal"       {% if actividad.frecuencia_new == 'Semanal' %}selected{% endif %}>Semanal</option>
+                        <option value="Quincenal"     {% if actividad.frecuencia_new == 'Quincenal' %}selected{% endif %}>Quincenal</option>
+                        <option value="Mensual"       {% if actividad.frecuencia_new == 'Mensual' %}selected{% endif %}>Mensual</option>
+                        <option value="Trimestral"    {% if actividad.frecuencia_new == 'Trimestral' %}selected{% endif %}>Trimestral</option>
+                        <option value="Semestral"     {% if actividad.frecuencia_new == 'Semestral' %}selected{% endif %}>Semestral</option>
+                        <option value="Anual"         {% if actividad.frecuencia_new == 'Anual' %}selected{% endif %}>Anual</option>
+                        <option value="Personalizada" {% if actividad.frecuencia_new == 'Personalizada' %}selected{% endif %}>Personalizada</option>
+                    </select>
+                </div>
+
+                <!-- SEMANAL / DÍA DE SEMANA (1..6 -> Lun-Sab) -->
+                <div id="grupo_semanal" class="hidden">
+                    <label>Día de la semana</label>
+                    <select name="dia_semana">
+                        <option value="">-- Seleccione --</option>
+                        <option value="1" {% if actividad.dia_semana == 1 %}selected{% endif %}>Lunes</option>
+                        <option value="2" {% if actividad.dia_semana == 2 %}selected{% endif %}>Martes</option>
+                        <option value="3" {% if actividad.dia_semana == 3 %}selected{% endif %}>Miércoles</option>
+                        <option value="4" {% if actividad.dia_semana == 4 %}selected{% endif %}>Jueves</option>
+                        <option value="5" {% if actividad.dia_semana == 5 %}selected{% endif %}>Viernes</option>
+                        <option value="6" {% if actividad.dia_semana == 6 %}selected{% endif %}>Sábado</option>
+                    </select>
+                </div>
+
+                <!-- SEMANA DEL MES (1..5) -->
+                <div id="grupo_semana_mes" class="hidden">
+                    <label>Semana del mes</label>
+                    <select name="semana_mes">
+                        <option value="">-- Seleccione --</option>
+                        <option value="1" {% if actividad.semana_mes == 1 %}selected{% endif %}>Primera</option>
+                        <option value="2" {% if actividad.semana_mes == 2 %}selected{% endif %}>Segunda</option>
+                        <option value="3" {% if actividad.semana_mes == 3 %}selected{% endif %}>Tercera</option>
+                        <option value="4" {% if actividad.semana_mes == 4 %}selected{% endif %}>Cuarta</option>
+                        <option value="5" {% if actividad.semana_mes == 5 %}selected{% endif %}>Quinta</option>
+                    </select>
+                </div>
+
+                <!-- MES (1..12) -->
+                <div id="grupo_mes" class="hidden">
+                    <label>Mes</label>
+                    <select name="mes">
+                        <option value="">-- Seleccione --</option>
+                        <option value="1"  {% if actividad.mes == 1 %}selected{% endif %}>Enero</option>
+                        <option value="2"  {% if actividad.mes == 2 %}selected{% endif %}>Febrero</option>
+                        <option value="3"  {% if actividad.mes == 3 %}selected{% endif %}>Marzo</option>
+                        <option value="4"  {% if actividad.mes == 4 %}selected{% endif %}>Abril</option>
+                        <option value="5"  {% if actividad.mes == 5 %}selected{% endif %}>Mayo</option>
+                        <option value="6"  {% if actividad.mes == 6 %}selected{% endif %}>Junio</option>
+                        <option value="7"  {% if actividad.mes == 7 %}selected{% endif %}>Julio</option>
+                        <option value="8"  {% if actividad.mes == 8 %}selected{% endif %}>Agosto</option>
+                        <option value="9"  {% if actividad.mes == 9 %}selected{% endif %}>Septiembre</option>
+                        <option value="10" {% if actividad.mes == 10 %}selected{% endif %}>Octubre</option>
+                        <option value="11" {% if actividad.mes == 11 %}selected{% endif %}>Noviembre</option>
+                        <option value="12" {% if actividad.mes == 12 %}selected{% endif %}>Diciembre</option>
+                    </select>
+                </div>
+
+                <!-- PERSONALIZADO -->
+                <div id="grupo_personalizado" class="hidden full">
+                    <label>Fecha personalizada</label>
+                    <input type="date" name="fecha_personalizada" value="{{ actividad.fecha_personalizada|default('', true) }}">
+                </div>
+
+                <div class="full">
+                    <label>Observaciones</label>
+                    <textarea name="observaciones" rows="3">{{ actividad.observaciones }}</textarea>
+                </div>
+
+            </div>
+
+            <div class="actions">
+                <a href="{{ url_for('ver_plan', ot_id=ot_id) }}" class="btn delete">Cancelar</a>
+                <button type="submit" class="btn save">Guardar cambios</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<script>
+function mostrarCampos(){
+    const f = document.getElementById('frecuencia').value;
+
+    // ocultar todos
+    document.getElementById('grupo_semanal').classList.add('hidden');
+    document.getElementById('grupo_semana_mes').classList.add('hidden');
+    document.getElementById('grupo_mes').classList.add('hidden');
+    document.getElementById('grupo_personalizado').classList.add('hidden');
+
+    // mostrar según el valor exacto que viene de DB (capitalizado)
+    if (f === 'Semanal') {
+        document.getElementById('grupo_semanal').classList.remove('hidden');
+    }
+    else if (f === 'Quincenal') {
+        document.getElementById('grupo_semanal').classList.remove('hidden');
+        document.getElementById('grupo_semana_mes').classList.remove('hidden'); // solo 1/2 en tu JS de crear
+    }
+    else if (f === 'Mensual') {
+        document.getElementById('grupo_semanal').classList.remove('hidden');
+        document.getElementById('grupo_semana_mes').classList.remove('hidden');
+    }
+    else if (f === 'Trimestral') {
+        document.getElementById('grupo_semanal').classList.remove('hidden');
+        document.getElementById('grupo_semana_mes').classList.remove('hidden');
+        document.getElementById('grupo_mes').classList.remove('hidden');
+    }
+    else if (f === 'Semestral') {
+        document.getElementById('grupo_semanal').classList.remove('hidden');
+        document.getElementById('grupo_semana_mes').classList.remove('hidden');
+        document.getElementById('grupo_mes').classList.remove('hidden');
+    }
+    else if (f === 'Anual') {
+        document.getElementById('grupo_semanal').classList.remove('hidden');
+        document.getElementById('grupo_semana_mes').classList.remove('hidden');
+        document.getElementById('grupo_mes').classList.remove('hidden');
+    }
+    else if (f === 'Personalizada') {
+        document.getElementById('grupo_personalizado').classList.remove('hidden');
+    }
+}
+
+// Ejecutar al cargar para mostrar los campos correctos según la actividad actual
+document.addEventListener('DOMContentLoaded', function(){
+    mostrarCampos();
+});
+</script>
+
+</body>
+</html>

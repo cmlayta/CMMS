@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Solicitudes de Repuestos</title>
+
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f9;
+    margin: 0;
+    padding: 20px;
+}
+
+/* TÍTULO + BOTÓN REGRESAR */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 26px;
+    color: #1e293b;
+}
+
+/* Botón regresar */
+.btn-volver {
+    background: #475569;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-volver:hover {
+    background: #334155;
+}
+
+/* TARJETAS */
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.07);
+    border-left: 8px solid #94a3b8;
+}
+
+.card.no-leido {
+    border-left: 8px solid #b45309;
+    background: #fff7ed;
+}
+
+.info {
+    color: #334155;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.mensaje {
+    font-size: 15px;
+    margin-bottom: 12px;
+    color: #0f172a;
+    white-space: pre-wrap;
+}
+
+.imagen {
+    margin-bottom: 12px;
+}
+
+.imagen img {
+    max-width: 260px;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+}
+
+/* Botón marcar leído */
+.btn {
+    padding: 8px 14px;
+    background: #64748b;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background: #4b5563;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h2>Solicitudes de Repuestos</h2>
+
+    <!-- BOTÓN REGRESAR -->
+    <a href="{{ url_for('ver_mantenimiento') }}" class="btn-volver">← Regresar</a>
+</div>
+
+{% for s in solicitudes %}
+<div class="card {% if s.estado == 'pendiente' %}no-leido{% endif %}">
+    
+    <div class="info">
+        <strong>Técnico:</strong> {{ s.tecnico }}
+        — <strong>Fecha:</strong> {{ s.fecha }}
+        — <strong>Máquina:</strong> {{ s.maquina }}
+    </div>
+
+    <div class="mensaje">{{ s.descripcion }}</div>
+
+    {% if s.imagen_path %}
+    <div class="imagen">
+        <img src="{{ url_for('solicitud_imagen', id=s.id) }}" alt="Imagen adjunta">
+    </div>
+    {% endif %}
+
+    {% if s.estado == 'pendiente' %}
+    <form method="POST" action="{{ url_for('marcar_solicitud_leida', id=s.id) }}">
+        <button class="btn">Marcar como leída</button>
+    </form>
+    {% endif %}
+</div>
+{% endfor %}
+
+{% if not solicitudes %}
+<p style="text-align:center; color:#64748b;">No hay solicitudes de repuestos.</p>
+{% endif %}
+
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Nueva actividad fija</title>
+
+<style>
+body{
+    font-family: Segoe UI, sans-serif;
+    background:#f4f6f9;
+    padding:30px;
+}
+.card{
+    background:white;
+    padding:25px;
+    max-width:700px;
+    margin:auto;
+    border-radius:12px;
+    box-shadow:0 5px 10px rgba(0,0,0,.05);
+}
+label{font-weight:600;}
+select, input, textarea{
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:8px;
+    cursor:pointer;
+}
+a{
+    margin-left:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>Nueva actividad - OT Fija {{ ot.numero_ot }}</h2>
+<p>{{ ot.descripcion }}</p>
+
+<form method="POST">
+
+    <label>Código de la actividad</label>
+    <input type="text" name="codigo" required>
+
+    <label>Descripción de la actividad</label>
+    <textarea name="actividad" required></textarea>
+
+    <label>Duración estimada (min)</label>
+    <input type="number" name="duracion" min="1" placeholder="Ej: 60">
+
+    <label>Prioridad</label>
+    <select name="prioridad" required>
+        <option value="Baja">Baja</option>
+        <option value="Media" selected>Media</option>
+        <option value="Alta">Alta</option>
+        <option value="Critica">Crítica</option>
+    </select>
+
+    <label>Frecuencia</label>
+    <select name="frecuencia" id="frecuencia" required onchange="mostrarOpciones()">
+        <option value="">Seleccione</option>
+        <option value="Diaria">Diaria</option>
+        <option value="Semanal">Semanal</option>
+        <option value="Quincenal">Quincenal</option>
+        <option value="Mensual">Mensual</option>
+        <option value="Trimestral">Trimestral</option>
+        <option value="Semestral">Semestral</option>
+        <option value="Anual">Anual</option>
+        <option value="Personalizada">Personalizada</option>
+    </select>
+
+    <!-- DÍA DE LA SEMANA -->
+    <div id="dia_semana_box" style="display:none;">
+        <label>Día de la semana</label>
+        <select name="dia_semana">
+            <option value="">Seleccione</option>
+            <option value="1">Lunes</option>
+            <option value="2">Martes</option>
+            <option value="3">Miércoles</option>
+            <option value="4">Jueves</option>
+            <option value="5">Viernes</option>
+            <option value="6">Sábado</option>
+        </select>
+    </div>
+
+    <!-- SEMANA DEL MES -->
+    <div id="semana_mes_box" style="display:none;">
+        <label>Semana del mes</label>
+        <select name="semana_mes" id="semana_mes">
+            <option value="">Seleccione</option>
+            <!-- Se llenará dinámicamente -->
+        </select>
+    </div>
+
+    <!-- MES -->
+    <div id="mes_box" style="display:none;">
+        <label>Mes</label>
+        <select name="mes" id="mes_select"></select>
+    </div>
+
+    <!-- FECHA PERSONALIZADA -->
+    <div id="fecha_box" style="display:none;">
+        <label>Fecha específica</label>
+        <input type="date" name="fecha_personalizada">
+    </div>
+
+    <label>Observaciones</label>
+    <textarea name="observaciones"></textarea>
+
+    <br><br>
+    <button type="submit">Guardar actividad</button>
+    <a href="{{ url_for('ver_plan', ot_id=ot_id) }}">Volver</a>
+
+</form>
+</div>
+
+<script>
+
+function llenarMeses(limite){
+    const mesSelect = document.getElementById("mes_select");
+    mesSelect.innerHTML = '<option value="">Seleccione</option>';
+
+    for(let i=1;i<=limite;i++){
+        mesSelect.innerHTML += `<option value="${i}">Mes ${i}</option>`;
+    }
+}
+
+function llenarSemanas(tipo){
+    const semanaSelect = document.getElementById("semana_mes");
+
+    semanaSelect.innerHTML = '<option value="">Seleccione</option>';
+
+    if (tipo === "Quincenal"){
+        // SOLO 2 SEMANAS
+        semanaSelect.innerHTML += '<option value="1">Semana 1</option>';
+        semanaSelect.innerHTML += '<option value="2">Semana 2</option>';
+    } 
+    else {
+        // NORMAL (Mensual, Trimestral, Semestral, Anual)
+        semanaSelect.innerHTML += '<option value="1">Semana 1</option>';
+        semanaSelect.innerHTML += '<option value="2">Semana 2</option>';
+        semanaSelect.innerHTML += '<option value="3">Semana 3</option>';
+        semanaSelect.innerHTML += '<option value="4">Semana 4</option>';
+        semanaSelect.innerHTML += '<option value="5">Semana 5</option>';
+    }
+}
+
+function mostrarOpciones(){
+    const f = document.getElementById("frecuencia").value;
+
+    const dia = document.getElementById("dia_semana_box");
+    const semana = document.getElementById("semana_mes_box");
+    const mes = document.getElementById("mes_box");
+    const fecha = document.getElementById("fecha_box");
+
+    dia.style.display = "none";
+    semana.style.display = "none";
+    mes.style.display = "none";
+    fecha.style.display = "none";
+
+    if (f === "Semanal"){
+        dia.style.display = "block";
+    }
+
+    if (f === "Quincenal"){
+        dia.style.display = "block";
+        semana.style.display = "block";
+        llenarSemanas("Quincenal");
+    }
+
+    if (f === "Mensual"){
+        dia.style.display = "block";
+        semana.style.display = "block";
+        llenarSemanas("Mensual");
+    }
+
+    if (f === "Trimestral"){
+        dia.style.display = "block";
+        semana.style.display = "block";
+        mes.style.display = "block";
+        llenarMeses(3);
+        llenarSemanas("Mensual");
+    }
+
+    if (f === "Semestral"){
+        dia.style.display = "block";
+        semana.style.display = "block";
+        mes.style.display = "block";
+        llenarMeses(6);
+        llenarSemanas("Mensual");
+    }
+
+    if (f === "Anual"){
+        dia.style.display = "block";
+        semana.style.display = "block";
+        mes.style.display = "block";
+        llenarMeses(12);
+        llenarSemanas("Mensual");
+    }
+
+    if (f === "Personalizada"){
+        fecha.style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>

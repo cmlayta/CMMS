@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Planes de Mantenimiento – CMMS</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f9;
+}
+
+header {
+    background: #1e293b;
+    color: white;
+    padding: 15px 30px;
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-volver {
+    background: #0f172a;
+    border: 1px solid #334155;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.btn-volver:hover {
+    background: #1e293b;
+}
+
+.container {
+    padding: 30px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+}
+
+.note {
+    background: #fef9c3;
+    border-left: 5px solid #eab308;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #0f172a;
+}
+
+.actions-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.actions-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* 🔍 BUSCADOR */
+.search-box {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    font-size: 14px;
+    width: 260px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #e2e8f0;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    user-select: none;
+}
+
+th .col-label {
+    margin-right: 8px;
+}
+
+th .sort-ind {
+    font-size: 12px;
+    color: #334155;
+}
+
+th:hover {
+    background: #cbd5e1;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+tr:hover {
+    background: #f8fafc;
+}
+
+.btn {
+    padding: 8px 14px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-green { background: #16a34a; }
+.btn-purple { background: #7c3aed; }
+.btn-blue { background: #2563eb; }
+.btn-red { background: #dc2626; }
+
+button, .btn {
+    transition: transform .05s ease, box-shadow .05s ease;
+}
+
+button:hover, .btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+</style>
+
+<script>
+// 🔍 BUSCADOR POR EQUIPO
+function filtrarTabla() {
+    const input = document.getElementById("buscarEquipo");
+    const filtro = input.value.toLowerCase();
+    const tabla = document.getElementById("tablaOTS");
+    const filas = tabla.getElementsByTagName("tr");
+
+    for (let i = 1; i < filas.length; i++) {
+        const colEquipo = filas[i].getElementsByTagName("td")[1];
+        if (colEquipo) {
+            let txt = colEquipo.textContent || colEquipo.innerText;
+            filas[i].style.display = txt.toLowerCase().includes(filtro) ? "" : "none";
+        }
+    }
+}
+
+// ↕️ ORDENAR COLUMNAS (robusta, alterna asc/desc, detecta números)
+function ordenarTabla(n) {
+    const table = document.getElementById("tablaOTS");
+    const rows = Array.from(table.querySelectorAll("tr")).slice(1); // exclude header row
+    if (rows.length === 0) return;
+
+    // Inicializar dataset.orig en headers (una sola vez)
+    const headers = table.querySelectorAll("tr")[0].cells;
+    for (let h = 0; h < headers.length; h++) {
+        const th = headers[h];
+        if (!th.dataset.orig) {
+            th.dataset.orig = th.innerHTML;
+        }
+    }
+
+    const th = headers[n];
+    // alternar dirección
+    const current = th.dataset.dir === "asc" ? "asc" : "desc";
+    const dir = current === "asc" ? "desc" : "asc";
+    th.dataset.dir = dir;
+
+    // ordenar rows
+    rows.sort((a, b) => {
+        const cellA = (a.cells[n] && a.cells[n].textContent) ? a.cells[n].textContent.trim() : "";
+        const cellB = (b.cells[n] && b.cells[n].textContent) ? b.cells[n].textContent.trim() : "";
+
+        // intentar comparar como número
+        const numA = parseFloat(cellA.replace(/[^0-9\.\-]+/g, ''));
+        const numB = parseFloat(cellB.replace(/[^0-9\.\-]+/g, ''));
+
+        if (!isNaN(numA) && !isNaN(numB)) {
+            return dir === 'asc' ? numA - numB : numB - numA;
+        }
+
+        // comparar texto (case-insensitive)
+        const A = cellA.toLowerCase();
+        const B = cellB.toLowerCase();
+        if (A < B) return dir === 'asc' ? -1 : 1;
+        if (A > B) return dir === 'asc' ? 1 : -1;
+        return 0;
+    });
+
+    // volver a anexar filas en orden
+    rows.forEach(r => table.appendChild(r));
+
+    // actualizar indicadores en encabezados (flechas)
+    Array.from(headers).forEach((headerCell, idx) => {
+        const orig = headerCell.dataset.orig || headerCell.innerHTML;
+        // quitar cualquier flecha previa y dejar el contenido original
+        headerCell.innerHTML = orig.replace(/[\u25B2\u25BC]\s*$/, '').replace(/\s*⬍\s*$/, '');
+        if (idx === n) {
+            headerCell.innerHTML = (headerCell.dataset.orig || orig) + (dir === 'asc' ? ' ▲' : ' ▼');
+        } else {
+            // dejar sin flecha, pero mantén el símbolo original si tenía (no necesario)
+        }
+    });
+}
+</script>
+</head>
+
+<body>
+
+<header>
+    <span>Planes de Mantenimiento – CMMS</span>
+
+    <a href="{{ url_for('ver_mantenimiento') }}" class="btn-volver">
+        ← Volver a mantenimiento
+    </a>
+</header>
+
+<div class="container">
+    <div class="card">
+
+        <h3>Lista de Planes de Mantenimiento</h3>
+
+        <div class="note">
+            Estas órdenes de trabajo se utilizan para planificar la creación automática de OTs mensuales.
+        </div>
+
+        <div class="actions-bar">
+            <div class="actions-left">
+                <a href="{{ url_for('nueva_ot_fija') }}" class="btn btn-green">
+                    + Agregar OT fija (planificación)
+                </a>
+
+                <form action="{{ url_for('generar_ots_mensuales') }}" 
+                        method="post" 
+                        target="_blank"
+                        onsubmit="return confirm('¿Deseas generar automáticamente las OTs de este mes?');"
+                        style="display:inline;">
+
+                        <button type="submit" class="btn btn-purple">
+                            ⚙️ Generar OTs automáticas del mes
+                        </button>
+
+                </form>
+            </div>
+
+            <!-- 🔍 BUSCADOR POR EQUIPO -->
+            <input id="buscarEquipo" 
+                   type="text"
+                   onkeyup="filtrarTabla()" 
+                   class="search-box"
+                   placeholder="🔍 Buscar por equipo...">
+        </div>
+
+        <table id="tablaOTS" aria-describedby="Tabla de OTs fijas">
+            <tr>
+                <th onclick="ordenarTabla(0)"><span class="col-label">N° OT</span><span class="sort-ind">⬍</span></th>
+                <th onclick="ordenarTabla(1)"><span class="col-label">Equipo</span><span class="sort-ind">⬍</span></th>
+                <th onclick="ordenarTabla(2)"><span class="col-label">Técnico</span><span class="sort-ind">⬍</span></th>
+                <th onclick="ordenarTabla(3)"><span class="col-label">Prioridad</span><span class="sort-ind">⬍</span></th>
+                <th onclick="ordenarTabla(4)"><span class="col-label">Tipo</span><span class="sort-ind">⬍</span></th>
+                <th>Opciones</th>
+            </tr>
+
+            {% for ot in ots %}
+            <tr>
+                <td>{{ ot.numero_ot }}</td>
+                <td>{{ ot.equipo }}</td>
+                <td>{{ ot.tecnico }}</td>
+                <td>{{ ot.descripcion }}</td>
+                <td>{{ ot.tipo_mantenimiento }}</td>
+                <td>
+                    <button onclick="location.href='/ver_plan/{{ ot.id }}'" class="btn btn-blue">
+                        Ver Plan
+                    </button>
+
+                    <button onclick="location.href='/editar_ot_fija/{{ ot.id }}'" class="btn btn-purple">
+                        Editar Plan
+                    </button>
+
+                    <form action="{{ url_for('eliminar_ot_fija', ot_id=ot.id) }}"
+                          method="post"
+                          style="display:inline"
+                          onsubmit="return confirm('¿Seguro que deseas eliminar esta OT fija y todas sus actividades?');">
+                        <button type="submit" class="btn btn-red">
+                            Eliminar
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+
+            {% if not ots %}
+            <tr>
+                <td colspan="6">No hay OT fijas registradas</td>
+            </tr>
+            {% endif %}
+        </table>
+
+    </div>
+</div>
+
+</body>
+</html>

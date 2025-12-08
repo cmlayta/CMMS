@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar OT Fija – Plan de Mantenimiento</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f6f9;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            padding: 15px 30px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .container {
+            padding: 30px;
+        }
+
+        .card {
+            background: white;
+            max-width: 700px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+        }
+
+        .title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #1e293b;
+            text-align: center;
+        }
+
+        label {
+            font-weight: 600;
+            display: block;
+            margin-top: 15px;
+            color: #334155;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            font-size: 14px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+        }
+
+        .btn-secondary {
+            background: #64748b;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #475569;
+        }
+
+        .note {
+            background: #fef9c3;
+            border-left: 5px solid #eab308;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #0f172a;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    Editar Orden de Trabajo Fija – CMMS
+</header>
+
+<div class="container">
+    <div class="card">
+
+        <div class="title">
+            Editar OT Fija
+        </div>
+
+        <div class="note">
+            Estás modificando una OT que pertenece a tu plan de mantenimiento.
+        </div>
+
+        <form method="POST">
+
+            <label>Equipo</label>
+            <select name="equipo" required>
+                {% for equipo in equipos %}
+                    <option value="{{ equipo.id }}"
+                        {% if equipo.id == ot.equipo_id %} selected {% endif %}>
+                        {{ equipo.nombre }}
+                    </option>
+                {% endfor %}
+            </select>
+
+            <label>Tipo de mantenimiento</label>
+            <select name="tipo_mantenimiento" required>
+                <option value="Preventivo" {% if ot.tipo_mantenimiento == 'Preventivo' %}selected{% endif %}>Preventivo</option>
+                <option value="Correctivo" {% if ot.tipo_mantenimiento == 'Correctivo' %}selected{% endif %}>Correctivo</option>
+                <option value="Predictivo" {% if ot.tipo_mantenimiento == 'Predictivo' %}selected{% endif %}>Predictivo</option>
+            </select>
+
+            <label>Prioridad</label>
+            <select name="descripcion" required>
+                <option value="Baja" {% if ot.descripcion == 'Baja' %}selected{% endif %}>Baja</option>
+                <option value="Media" {% if ot.descripcion == 'Media' %}selected{% endif %}>Media</option>
+                <option value="Alta" {% if ot.descripcion == 'Alta' %}selected{% endif %}>Alta</option>
+            </select>
+
+            <label>Técnico responsable</label>
+            <select name="tecnico" required>
+                {% for t in tecnicos %}
+                    <option value="{{ t.usuario }}"
+                        {% if t.usuario == ot.tecnico %} selected {% endif %}>
+                        {{ t.usuario }}
+                    </option>
+                {% endfor %}
+            </select>
+
+            <label>Observaciones</label>
+            <textarea name="observaciones" rows="3">{{ ot.observaciones }}</textarea>
+
+            <div class="buttons">
+                <button type="submit" class="btn btn-primary">
+                    Guardar cambios
+                </button>
+
+                <a href="{{ url_for('ver_planes_mantenimiento') }}" class="btn btn-secondary">
+                    Volver
+                </a>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>

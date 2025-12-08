@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Solicitud de Repuestos</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        h2 {
+            margin-top: 0;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+        textarea { height: 120px; }
+        .btn {
+            margin-top: 20px;
+            padding: 10px 18px;
+            background: #2563eb;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+        }
+        .btn:hover {
+            background: #1e40af;
+        }
+        .volver {
+            display: inline-block;
+            margin-top: 10px;
+            color: #555;
+            text-decoration: none;
+        }
+        .volver:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Solicitud de Repuestos</h2>
+
+    <form action="{{ url_for('guardar_solicitud_repuesto') }}" method="POST" enctype="multipart/form-data">
+
+        <label>Máquina o Sitio (escriba manualmente)</label>
+        <input type="text" name="maquina" required>
+
+        <label>Detalle de la Solicitud</label>
+        <textarea name="descripcion" required placeholder="Explique qué repuesto necesita..."></textarea>
+
+        <label>Adjuntar imagen (opcional)</label>
+        <input type="file" name="imagen" accept="image/*">
+
+        <button class="btn" type="submit">Enviar Solicitud</button>
+
+    </form>
+
+<a href="{{ url_for('inicio_tecnico') }}" class="volver">← Volver</a>
+
+</div>
+
+</body>
+</html>

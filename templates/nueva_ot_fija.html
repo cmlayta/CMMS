@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nueva OT Fija – Plan de Mantenimiento</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f6f9;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            padding: 15px 30px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .container {
+            padding: 30px;
+        }
+
+        .card {
+            background: white;
+            max-width: 700px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+        }
+
+        .title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #1e293b;
+            text-align: center;
+        }
+
+        label {
+            font-weight: 600;
+            display: block;
+            margin-top: 15px;
+            color: #334155;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            font-size: 14px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .btn-primary {
+            background: #16a34a;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #15803d;
+        }
+
+        .btn-secondary {
+            background: #64748b;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #475569;
+        }
+
+        .note {
+            background: #ecfeff;
+            border-left: 5px solid #38bdf8;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #0f172a;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    Nueva Orden de Trabajo Fija – CMMS
+</header>
+
+<div class="container">
+    <div class="card">
+
+        <div class="title">Crear Orden Base para Planificación</div>
+
+        <div class="note">
+            Esta OT será usada para generar planes de mantenimiento automáticos.
+            <b>No requiere fechas ni código ISO.</b>
+        </div>
+
+        <form action="/guardar_ot_fija" method="POST">
+
+            <label>Equipo</label>
+            <select name="equipo" required>
+                {% for equipo in equipos %}
+                    <option value="{{ equipo.id }}">{{ equipo.nombre }}</option>
+                {% endfor %}
+            </select>
+
+            <label>Tipo de mantenimiento</label>
+            <select name="tipo_mantenimiento" required>
+                <option value="Preventivo">Preventivo</option>
+                <option value="Correctivo">Correctivo</option>
+                <option value="Predictivo">Predictivo</option>
+            </select>
+
+            <label>Prioridad</label>
+            <select name="descripcion" required>
+                <option value="Baja">Baja</option>
+                <option value="Media">Media</option>
+                <option value="Alta">Alta</option>
+            </select>
+            <label>Técnico responsable</label>
+            <select name="tecnico" required>
+                <option value="">Seleccione un técnico</option>
+                {% for t in tecnicos %}
+                    <option value="{{ t.usuario }}">{{ t.usuario }}</option>
+                {% endfor %}
+            </select>
+
+            <label>Observaciones</label>
+            <textarea name="observaciones" rows="3"></textarea>
+
+            <div class="buttons">
+                <button type="submit" class="btn btn-primary">
+                    Guardar OT Fija
+                </button>
+
+                <a href="{{ url_for('ver_planes_mantenimiento') }}" class="btn btn-secondary">
+                    Volver
+                </a>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>

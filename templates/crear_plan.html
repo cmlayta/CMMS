@@ -1,0 +1,78 @@
+@app.route('/crear_plan_desde_ot/<int:ot_id>', methods=['GET', 'POST'])
+def crear_plan_desde_ot(ot_id):
+
+    con = connect_db()
+    cur = con.cursor(dictionary=True)
+
+    # Traer información de la OT
+    cur.execute("""
+        SELECT 
+            ot.id,
+            ot.descripcion,
+            ot.equipo_id,
+            e.nombre AS equipo_nombre,
+            ot.tecnico
+        FROM ordenes_trabajo ot
+        JOIN equipos e ON ot.equipo_id = e.id
+        WHERE ot.id = %s
+    """, (ot_id,))
+
+    ot = cur.fetchone()
+
+    if not ot:
+        con.close()
+        flash("La OT no existe", "danger")
+        return redirect(url_for('ver_mantenimiento'))
+
+    # Traer técnicos
+    cur.execute("SELECT id, usuario FROM usuarios WHERE rol = 'tecnico'")
+    tecnicos = cur.fetchall()
+
+    if request.method == 'POST':
+        nombre_plan = request.form['nombre_plan']
+        frecuencia = request.form['frecuencia']
+
+        dia_semana = request.form.get('dia_semana') or None
+        semana_mes = request.form.get('semana_mes') or None
+        dia_mes = request.form.get('dia_mes') or None
+        mes_anio = request.form.get('mes_anio') or None
+        tecnico_id = request.form.get('tecnico_id') or None
+
+        cur.execute("""
+            INSERT INTO planes_mantenimiento
+            (
+                equipo_id,
+                tecnico_id,
+                nombre_plan,
+                frecuencia,
+                dia_semana,
+                semana_mes,
+                dia_mes,
+                mes_anio,
+                activo
+            )
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,1)
+        """, (
+            ot['equipo_id'],
+            tecnico_id,
+            nombre_plan,
+            frecuencia,
+            dia_semana,
+            semana_mes,
+            dia_mes,
+            mes_anio
+        ))
+
+        con.commit()
+        con.close()
+
+        flash("✅ Plan de mantenimiento creado correctamente", "success")
+        return redirect(url_for('ver_planes_mantenimiento'))
+
+    con.close()
+
+    return render_template(
+        'crear_plan_mantenimiento.html',
+        ot=ot,
+        tecnicos=tecnicos
+    )
