@@ -185,6 +185,7 @@
             </div>
             
             <div style="overflow:auto;">
+                <form method="post" action="{{ url_for('guardar_todas_actividades', ot_id=ot.id, year=year, month=month) }}">
                 <table>
                     <thead>
                         <tr>
@@ -236,11 +237,15 @@
                                                 <div style="height:18px;"></div>
                                             {% endif %}
                                             <div class="checkbox-day">
-                                                <input type="checkbox" name="dias_realizados" value="{{ d }}" id="chk-{{ act.id }}-{{ d }}" {% if d in act.dias_realizados_list %}checked{% endif %} >
+                                                <input type="checkbox" 
+                                                name="dias_realizados_{{ act.id }}" 
+                                                value="{{ d }}" 
+                                                id="chk-{{ act.id }}-{{ d }}"
+                                                {% if d in act.dias_realizados_list %}checked{% endif %} >
                                             </div>
                                         </td>
                                     {% endfor %}
-                                    <td style="vertical-align:middle;" class="form-actions">
+                                    <td style="display:none" class="form-actions">
                                         <div class="form-actions">
                                             <button type="submit" class="small-btn">💾 Guardar</button>
                                         </div>
@@ -250,6 +255,10 @@
                         {% endfor %}
                     </tbody>
                 </table>
+                <div class="form-actions print-ocultar" style="margin-top:15px;">
+                    <button type="submit" class="small-btn" style="background:#059669;">💾 Guardar TODO</button>
+                </div>
+                </form>
             </div>
             <!-- === OBSERVACIONES DEL TÉCNICO === -->
 <div class="card print-ocultar">
