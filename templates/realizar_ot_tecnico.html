@@ -240,7 +240,8 @@
                                                 name="dias_realizados_{{ act.id }}" 
                                                 value="{{ d }}" 
                                                 id="chk-{{ act.id }}-{{ d }}"
-                                                {% if d in act.dias_realizados_list %}checked{% endif %} >
+                                                {% if d in act.dias_realizados_list %}checked{% endif %}>
+
                                             </div>
                                         </td>
                                     {% endfor %}

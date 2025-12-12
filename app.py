@@ -1454,8 +1454,6 @@ def guardar_todas_actividades(ot_id, year, month):
     con = connect_db()
     cur = con.cursor()
 
-    # Recorremos todos los campos enviados
-    # Cada actividad llega en forma: dias_realizados_ACTIVIDADID[]
     for key in request.form:
         if key.startswith("dias_realizados_"):
             actividad_id = int(key.replace("dias_realizados_", ""))
