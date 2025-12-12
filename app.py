@@ -1417,6 +1417,38 @@ def realizar_ot_tecnico(ot_id):
         ot_completado=ot_completado
     )
 
+@app.route('/guardar_dias_realizados_tecnicos/<int:actividad_id>', methods=['POST'])
+def guardar_dias_realizados_tecnicos(actividad_id):
+    # obtiene ot_id, year, month para redirigir luego
+    ot_id = request.args.get('ot_id')
+    year = request.args.get('year')
+    month = request.args.get('month')
+
+    # recoger lista de dias seleccionados (valores múltiples)
+    dias = request.form.getlist('dias_realizados')  # list of strings
+    # filtrar y ordenar numéricamente
+    dias_int = sorted({int(x) for x in dias if x.isdigit()})
+    dias_csv = ','.join(str(x) for x in dias_int) if dias_int else None
+
+    con = connect_db()
+    cur = con.cursor()
+
+    cur.execute("""
+        UPDATE actividades_mantenimiento
+        SET dias_realizados = %s
+        WHERE id = %s
+    """, (dias_csv, actividad_id))
+
+    con.commit()
+    cur.close()
+    con.close()
+
+    # redirigir de regreso a la vista de realizar OT conservando year/month si venían
+    if ot_id:
+        return redirect(url_for('realizar_ot_tecnico', ot_id=int(ot_id), year=year, month=month))
+    else:
+        return redirect(url_for('inicio_tecnico'))
+
 @app.route('/guardar_todas_actividades/<int:ot_id>/<int:year>/<int:month>', methods=['POST'])
 def guardar_todas_actividades(ot_id, year, month):
     con = connect_db()
@@ -1446,7 +1478,6 @@ def guardar_todas_actividades(ot_id, year, month):
                             ot_id=ot_id,
                             year=year,
                             month=month))
-
 
 @app.route('/guardar_dias_realizados/<int:actividad_id>', methods=['POST'])
 def guardar_dias_realizados(actividad_id):
