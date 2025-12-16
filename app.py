@@ -1464,76 +1464,62 @@ def guardar_todo_tecnico():
     year = request.form.get('year')
     month = request.form.get('month')
     
-    con = None # Inicializar para el bloque finally
+    # SOLUCIÓN CLAVE: Obtener la lista COMPLETA de IDs de actividades a procesar
+    actividad_ids_a_procesar = request.form.getlist('actividad_ids_guardar') 
+    
+    con = None
     cur = None
     
     try:
-        # 2. Conexión (Punto de fallo potencial)
         con = connect_db()
         cur = con.cursor()
         
-        # 3. Mapeo y procesamiento de datos del formulario
-        actividades_a_guardar = {}
-        for key in request.form:
-            if key.startswith('dias_realizados_'):
-                try:
-                    actividad_id = int(key.split('_')[-1])
-                except ValueError:
-                    continue # Saltar si el ID no es numérico
-
-                # Usar getlist() para obtener todos los valores de ese checkbox/actividad
-                dias = request.form.getlist(key)
-                actividades_a_guardar[actividad_id] = dias
-
-        # 4. Procesar y actualizar cada actividad
-        for actividad_id, dias in actividades_a_guardar.items():
+        # 4. Iteramos sobre los IDs que *debemos* procesar, incluso si no tienen días marcados.
+        for actividad_id_str in actividad_ids_a_procesar:
+            try:
+                actividad_id = int(actividad_id_str)
+            except ValueError:
+                continue
+                
+            # 4.1. Obtener la lista de días marcados (request.form.getlist)
+            # Si el usuario desmarcó todos los días, esta lista estará vacía: []
+            key_name = f'dias_realizados_{actividad_id}'
+            dias = request.form.getlist(key_name)
             
-            # 4.1. Limpieza y formateo
+            # 4.2. Limpieza y formateo
             dias_int = sorted({int(x) for x in dias if x.isdigit()})
+            
+            # Si dias_int está vacío ([]), dias_csv será None. Esto actualizará a NULL en la BD.
             dias_csv = ','.join(str(x) for x in dias_int) if dias_int else None
 
-            # 4.2. Ejecutar la actualización
+            # 4.3. Ejecutar la actualización para la actividad específica
             cur.execute("""
                 UPDATE actividades_mantenimiento
                 SET dias_realizados = %s
                 WHERE id = %s
             """, (dias_csv, actividad_id))
             
-            # --- AGREGAR DEPURACIÓN TEMPORAL ---
-            # print(f"DEBUG: Actividad {actividad_id} guardada con días: {dias_csv}")
-            # ----------------------------------
-
         # 5. Confirmar todas las transacciones
         con.commit()
         
     except Exception as e:
-        # Si la conexión se abrió, intentar hacer rollback para limpiar el estado
         if con:
             con.rollback()
-        
-        # --- AGREGAR REGISTRO DE ERROR EN EL SERVIDOR ---
-        # Si estás en un entorno de desarrollo, esto es CRUCIAL
-        print("--------------------------------------------------")
-        print(f"!!! ERROR FATAL AL GUARDAR EN OT {ot_id} !!!")
-        print(f"Error: {e}")
-        print("--------------------------------------------------")
-        # ------------------------------------------------
-        
-        # Devolver una respuesta de error más clara al usuario
-        return f"Error al guardar las actividades. Por favor, revise los logs del servidor para: {e}", 500 
+        print(f"!!! ERROR FATAL AL GUARDAR EN OT {ot_id} !!! Error: {e}")
+        return f"Error al guardar las actividades: {e}", 500 
         
     finally:
-        # 6. Cerrar recursos
         if cur:
             cur.close()
         if con:
             con.close()
 
-    # 7. Redireccionar de regreso
+    # 6. Redireccionar de regreso
     if ot_id:
         return redirect(url_for('realizar_ot_tecnico', ot_id=int(ot_id), year=year, month=month))
     else:
         return redirect(url_for('inicio_tecnico'))
+
 
 @app.route('/guardar_dias_realizados/<int:actividad_id>', methods=['POST'])
 def guardar_dias_realizados(actividad_id):
