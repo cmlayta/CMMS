@@ -1449,33 +1449,82 @@ def guardar_dias_realizados_tecnicos(actividad_id):
     else:
         return redirect(url_for('inicio_tecnico'))
 
-@app.route('/guardar_todas_actividades/<int:ot_id>/<int:year>/<int:month>', methods=['POST'])
-def guardar_todas_actividades(ot_id, year, month):
+from flask import request, redirect, url_for
+from datetime import datetime # (Asumiendo que necesitas esto en tu app)
+# from .db import connect_db # Importa tu función
+
+# =========================================================================
+# NUEVA RUTA: GUARDADO MASIVO (UN SOLO BOTÓN)
+# =========================================================================
+
+@app.route('/guardar_todo_tecnico', methods=['POST'])
+def guardar_todo_tecnico():
+    # 1. Obtener datos de redirección del formulario (ahora como campos ocultos)
+    ot_id = request.form.get('ot_id')
+    year = request.form.get('year')
+    month = request.form.get('month')
+    
+    # 2. Conexión a la base de datos
     con = connect_db()
     cur = con.cursor()
+    
+    # 3. Iterar sobre todos los datos enviados por el formulario
+    # Buscamos todas las claves que empiecen por 'dias_realizados_'
+    actividades_a_guardar = {}
+    
+    # request.form.items() contiene tuplas (nombre_del_campo, valor)
+    for key, value in request.form.items():
+        if key.startswith('dias_realizados_'):
+            # La clave es 'dias_realizados_ID', extraemos el ID
+            try:
+                actividad_id = int(key.split('_')[-1])
+            except ValueError:
+                continue # Saltar si el ID no es numérico
 
-    for key in request.form:
-        if key.startswith("dias_realizados_"):
-            actividad_id = int(key.replace("dias_realizados_", ""))
+            # request.form.getlist(key) es necesario porque el navegador agrupa
+            # los checkboxes con el mismo 'name' en una lista.
+            # Sin embargo, dado que estamos iterando sobre el formulario completo, 
+            # necesitamos volver a obtener la lista para ese nombre específico.
             dias = request.form.getlist(key)
+            
+            # Recoger los días para este ID
+            actividades_a_guardar[actividad_id] = dias
 
+
+    try:
+        # 4. Procesar y actualizar cada actividad en la base de datos
+        for actividad_id, dias in actividades_a_guardar.items():
+            
+            # Limpiar, convertir a entero, ordenar y formatear a CSV
             dias_int = sorted({int(x) for x in dias if x.isdigit()})
-            dias_csv = ",".join(str(x) for x in dias_int) if dias_int else None
+            dias_csv = ','.join(str(x) for x in dias_int) if dias_int else None
 
+            # Ejecutar la actualización para la actividad específica
             cur.execute("""
                 UPDATE actividades_mantenimiento
                 SET dias_realizados = %s
                 WHERE id = %s
             """, (dias_csv, actividad_id))
 
-    con.commit()
-    cur.close()
-    con.close()
+        # 5. Confirmar todas las transacciones de golpe
+        con.commit()
+        
+    except Exception as e:
+        con.rollback()
+        print(f"Error en guardado masivo de OT {ot_id}: {e}")
+        # Manejo de error: podrías redirigir a una página de error con un mensaje
+        return f"Error al guardar las actividades: {e}", 500 
+        
+    finally:
+        cur.close()
+        con.close()
 
-    return redirect(url_for('realizar_ot_tecnico',
-                            ot_id=ot_id,
-                            year=year,
-                            month=month))
+    # 6. Redireccionar de regreso a la vista de OT
+    if ot_id:
+        return redirect(url_for('realizar_ot_tecnico', ot_id=int(ot_id), year=year, month=month))
+    else:
+        return redirect(url_for('inicio_tecnico'))
+
 
 @app.route('/guardar_dias_realizados/<int:actividad_id>', methods=['POST'])
 def guardar_dias_realizados(actividad_id):
