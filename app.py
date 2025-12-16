@@ -1459,62 +1459,77 @@ from datetime import datetime # (Asumiendo que necesitas esto en tu app)
 
 @app.route('/guardar_todo_tecnico', methods=['POST'])
 def guardar_todo_tecnico():
-    # 1. Obtener datos de redirección del formulario (ahora como campos ocultos)
+    # 1. Obtener datos de redirección
     ot_id = request.form.get('ot_id')
     year = request.form.get('year')
     month = request.form.get('month')
     
-    # 2. Conexión a la base de datos
-    con = connect_db()
-    cur = con.cursor()
+    con = None # Inicializar para el bloque finally
+    cur = None
     
-    # 3. Iterar sobre todos los datos enviados por el formulario
-    actividades_a_guardar = {}
-    
-    # Recorremos SOLO las claves que nos interesan (dias_realizados_ID)
-    for key in request.form:
-        if key.startswith('dias_realizados_'):
-            try:
-                # Extraemos el ID de la actividad
-                actividad_id = int(key.split('_')[-1])
-            except ValueError:
-                continue # Saltar si el ID no es numérico
-
-            # 🚨 OBTENEMOS LA LISTA DE DÍAS (valores) PARA ESE NAME ESPECÍFICO 🚨
-            # Esto es necesario porque un solo 'name' puede tener múltiples valores (los días seleccionados)
-            dias = request.form.getlist(key)
-            
-            actividades_a_guardar[actividad_id] = dias
-
     try:
-        # 4. Procesar y actualizar cada actividad en la base de datos
+        # 2. Conexión (Punto de fallo potencial)
+        con = connect_db()
+        cur = con.cursor()
+        
+        # 3. Mapeo y procesamiento de datos del formulario
+        actividades_a_guardar = {}
+        for key in request.form:
+            if key.startswith('dias_realizados_'):
+                try:
+                    actividad_id = int(key.split('_')[-1])
+                except ValueError:
+                    continue # Saltar si el ID no es numérico
+
+                # Usar getlist() para obtener todos los valores de ese checkbox/actividad
+                dias = request.form.getlist(key)
+                actividades_a_guardar[actividad_id] = dias
+
+        # 4. Procesar y actualizar cada actividad
         for actividad_id, dias in actividades_a_guardar.items():
             
-            # Limpiar, convertir a entero, ordenar y formatear a CSV
-            # Los días son strings, los convertimos a int para ordenar
+            # 4.1. Limpieza y formateo
             dias_int = sorted({int(x) for x in dias if x.isdigit()})
             dias_csv = ','.join(str(x) for x in dias_int) if dias_int else None
 
-            # Ejecutar la actualización para la actividad específica
+            # 4.2. Ejecutar la actualización
             cur.execute("""
                 UPDATE actividades_mantenimiento
                 SET dias_realizados = %s
                 WHERE id = %s
             """, (dias_csv, actividad_id))
+            
+            # --- AGREGAR DEPURACIÓN TEMPORAL ---
+            # print(f"DEBUG: Actividad {actividad_id} guardada con días: {dias_csv}")
+            # ----------------------------------
 
-        # 5. Confirmar todas las transacciones de golpe
+        # 5. Confirmar todas las transacciones
         con.commit()
         
     except Exception as e:
-        con.rollback()
-        print(f"Error en guardado masivo de OT {ot_id}: {e}")
-        return f"Error al guardar las actividades: {e}", 500 
+        # Si la conexión se abrió, intentar hacer rollback para limpiar el estado
+        if con:
+            con.rollback()
+        
+        # --- AGREGAR REGISTRO DE ERROR EN EL SERVIDOR ---
+        # Si estás en un entorno de desarrollo, esto es CRUCIAL
+        print("--------------------------------------------------")
+        print(f"!!! ERROR FATAL AL GUARDAR EN OT {ot_id} !!!")
+        print(f"Error: {e}")
+        print("--------------------------------------------------")
+        # ------------------------------------------------
+        
+        # Devolver una respuesta de error más clara al usuario
+        return f"Error al guardar las actividades. Por favor, revise los logs del servidor para: {e}", 500 
         
     finally:
-        cur.close()
-        con.close()
+        # 6. Cerrar recursos
+        if cur:
+            cur.close()
+        if con:
+            con.close()
 
-    # 6. Redireccionar de regreso a la vista de OT
+    # 7. Redireccionar de regreso
     if ot_id:
         return redirect(url_for('realizar_ot_tecnico', ot_id=int(ot_id), year=year, month=month))
     else:
