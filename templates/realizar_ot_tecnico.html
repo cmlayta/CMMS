@@ -200,9 +200,14 @@
                                 {% endfor %}
                                 </tr>
                         </thead>
+                        
                         <tbody>
                             {% for act in actividades %}
                                 <tr class="act-row">
+                                    
+                                    <input type="hidden" 
+                                        name="actividad_ids_guardar" 
+                                        value="{{ act.id }}">
                                     <td class="left">
                                         <strong>{{ act.codigo_actividad or '-' }}</strong><br>
                                         <small>{{ act.descripcion }}</small>
