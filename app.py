@@ -1469,33 +1469,29 @@ def guardar_todo_tecnico():
     cur = con.cursor()
     
     # 3. Iterar sobre todos los datos enviados por el formulario
-    # Buscamos todas las claves que empiecen por 'dias_realizados_'
     actividades_a_guardar = {}
     
-    # request.form.items() contiene tuplas (nombre_del_campo, valor)
-    for key, value in request.form.items():
+    # Recorremos SOLO las claves que nos interesan (dias_realizados_ID)
+    for key in request.form:
         if key.startswith('dias_realizados_'):
-            # La clave es 'dias_realizados_ID', extraemos el ID
             try:
+                # Extraemos el ID de la actividad
                 actividad_id = int(key.split('_')[-1])
             except ValueError:
                 continue # Saltar si el ID no es numérico
 
-            # request.form.getlist(key) es necesario porque el navegador agrupa
-            # los checkboxes con el mismo 'name' en una lista.
-            # Sin embargo, dado que estamos iterando sobre el formulario completo, 
-            # necesitamos volver a obtener la lista para ese nombre específico.
+            # 🚨 OBTENEMOS LA LISTA DE DÍAS (valores) PARA ESE NAME ESPECÍFICO 🚨
+            # Esto es necesario porque un solo 'name' puede tener múltiples valores (los días seleccionados)
             dias = request.form.getlist(key)
             
-            # Recoger los días para este ID
             actividades_a_guardar[actividad_id] = dias
-
 
     try:
         # 4. Procesar y actualizar cada actividad en la base de datos
         for actividad_id, dias in actividades_a_guardar.items():
             
             # Limpiar, convertir a entero, ordenar y formatear a CSV
+            # Los días son strings, los convertimos a int para ordenar
             dias_int = sorted({int(x) for x in dias if x.isdigit()})
             dias_csv = ','.join(str(x) for x in dias_int) if dias_int else None
 
@@ -1512,7 +1508,6 @@ def guardar_todo_tecnico():
     except Exception as e:
         con.rollback()
         print(f"Error en guardado masivo de OT {ot_id}: {e}")
-        # Manejo de error: podrías redirigir a una página de error con un mensaje
         return f"Error al guardar las actividades: {e}", 500 
         
     finally:
@@ -1524,7 +1519,6 @@ def guardar_todo_tecnico():
         return redirect(url_for('realizar_ot_tecnico', ot_id=int(ot_id), year=year, month=month))
     else:
         return redirect(url_for('inicio_tecnico'))
-
 
 @app.route('/guardar_dias_realizados/<int:actividad_id>', methods=['POST'])
 def guardar_dias_realizados(actividad_id):
