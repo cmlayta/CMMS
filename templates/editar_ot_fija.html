@@ -133,6 +133,9 @@
                 {% endfor %}
             </select>
 
+            <label>Equipo Padre</label>
+            <textarea name="padre">{{ ot.padre }}</textarea>
+
             <label>Tipo de mantenimiento</label>
             <select name="tipo_mantenimiento" required>
                 <option value="Preventivo" {% if ot.tipo_mantenimiento == 'Preventivo' %}selected{% endif %}>Preventivo</option>
