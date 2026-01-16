@@ -2164,6 +2164,7 @@ def guardar_ot_fija():
     descripcion = request.form['descripcion']
     tecnico = request.form['tecnico']
     observaciones = request.form.get('observaciones')
+    padre = request.form.get('padre')
 
     con = connect_db()
     cur = con.cursor()
@@ -2197,10 +2198,10 @@ def guardar_ot_fija():
         if numero_ot is not None:
             query = """
             INSERT INTO ordenes_trabajo_fijas
-            (numero_ot, equipo_id, tipo_mantenimiento, descripcion, tecnico, observaciones)
-            VALUES (%s, %s, %s, %s, %s, %s)
+            (numero_ot, equipo_id, tipo_mantenimiento, descripcion, tecnico, observaciones, padre)
+            VALUES (%s, %s, %s, %s, %s, %s,%s)
             """
-            valores = (str(numero_ot), equipo, tipo, descripcion, tecnico, observaciones)
+            valores = (str(numero_ot), equipo, tipo, descripcion, tecnico, observaciones, padre)
             cur.execute(query, valores)
             con.commit()
 
@@ -2208,10 +2209,10 @@ def guardar_ot_fija():
             # Fallback: insertar primero sin numero_ot y luego actualizar con el id (o formato que quieras)
             query = """
             INSERT INTO ordenes_trabajo_fijas
-            (equipo_id, tipo_mantenimiento, descripcion, tecnico, observaciones)
-            VALUES (%s, %s, %s, %s, %s)
+            (equipo_id, tipo_mantenimiento, descripcion, tecnico, observaciones, padre)
+            VALUES (%s, %s, %s, %s, %s,%s)
             """
-            cur.execute(query, (equipo, tipo, descripcion, tecnico, observaciones))
+            cur.execute(query, (equipo, tipo, descripcion, tecnico, observaciones, padre))
             ot_id = cur.lastrowid
 
             # Decide cómo quieres el número correlativo final. Ejemplo simple: usar el id.
@@ -2264,6 +2265,7 @@ def editar_ot_fija(ot_id):
         prioridad = request.form.get('descripcion')
         tecnico = request.form.get('tecnico')
         observaciones = request.form.get('observaciones')
+        padre = request.form.get('padre')
 
         try:
             cur.execute("""
@@ -2272,7 +2274,8 @@ def editar_ot_fija(ot_id):
                     tipo_mantenimiento = %s,
                     descripcion = %s,
                     tecnico = %s,
-                    observaciones = %s
+                    observaciones = %s,
+                        padre=%s
                 WHERE id = %s
             """, (
                 equipo,
@@ -2280,6 +2283,7 @@ def editar_ot_fija(ot_id):
                 prioridad,
                 tecnico,
                 observaciones,
+                padre,
                 ot_id
             ))
 
