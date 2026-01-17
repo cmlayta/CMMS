@@ -1814,12 +1814,12 @@ def generar_ots_mensuales():
                 prioridades = [a['prioridad'] for a in actividades_a_insertar]
                 priority_order = {'Crítica': 4, 'Alta': 3, 'Media': 2, 'Baja': 1}
                 max_priority = max(prioridades, key=lambda p: priority_order.get(p, 0))
-                
+                padre = act.get('padre') 
                 cur.execute("""
                     INSERT INTO ordenes_trabajo
                     (numero_ot, duracion_estimada_total, fecha_inicio, fecha_final, estado,
-                     equipo_id, tipo_mantenimiento, tecnico, observaciones, prioridad)
-                    VALUES (%s, %s, %s, %s, 'Pendiente', %s, %s, %s, %s, %s)
+                     equipo_id, tipo_mantenimiento, tecnico, observaciones, prioridad, padre)
+                    VALUES (%s, %s, %s, %s, 'Pendiente', %s, %s, %s, %s, %s, %s)
                 """, (
                     nuevo_numero_ot, 
                     total_duracion, 
