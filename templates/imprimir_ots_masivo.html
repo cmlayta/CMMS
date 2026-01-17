@@ -11,7 +11,7 @@
         .wrap { max-width: 210mm; margin: 0 auto; padding: 0; }
         h2 { margin: 0; color: #0f172a; }
         .meta { color: #475569; font-size: 14px; margin-bottom: 5px; line-height: 1.6; }
-        table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 15px; }
         th, td { padding: 8px 6px; border-bottom: 1px solid #eef2f7; vertical-align: top; text-align: center; }
         th { background: #f8fafc; color: #0f172a; font-weight: 600; }
         td.left { text-align: left; padding-left: 12px; }
@@ -21,7 +21,7 @@
         .checkbox-day input[type="checkbox"] { visibility: hidden; }
 
         /* ========================================================== */
-        /* === ESTILOS PARA IMPRESIÓN MASIVA (Clave) === */
+        /* === ESTILOS PARA IMPRESIÓN MASIVA === */
         /* ========================================================== */
         @media print {
             @page {
@@ -39,95 +39,71 @@
                 z-index: 1000;
             }
 
-            /* NUEVO: El salto de página ocurre por cada GRUPO (Técnico + Padre) */
+            /* Cada grupo (Técnico + Padre) empieza en hoja nueva */
             .grupo-container {
                 page-break-before: always;
+                display: flex;
+                flex-direction: column;
+                min-height: 95vh; /* Ayuda a empujar el footer al final */
             }
             .grupo-container:first-child {
                 page-break-before: auto;
             }
 
-            /* Cada OT individual dentro del grupo no rompe página automáticamente */
-            .ot-container {
-                page-break-inside: avoid; /* Evita que una OT se corte a la mitad si es posible */
-                padding-top: 10px;
-                border-bottom: 2px dashed #ccc; /* Línea divisoria entre OTs del mismo grupo */
-                margin-bottom: 20px;
-                padding-bottom: 20px;
-            }
-            .ot-container:last-child {
-                border-bottom: none;
+            /* Evitar que una tabla se corte a la mitad entre dos páginas */
+            .ot-seccion {
+                page-break-inside: avoid;
+                margin-bottom: 10px;
             }
 
             body { font-size: 7.5pt; }
             .wrap { max-width: none; margin: 0; } 
 
             .print-header-content {
-                display: block; 
                 border-bottom: 2px solid #0f172a;
-                padding-bottom: 5px;
-                padding-top: 5px;
+                padding-bottom: 10px;
+                margin-bottom: 15px;
             }
-            .print-header-content h2 { font-size: 14pt; margin: 0; color: #0f172a; }
-            .print-header-content .meta { font-size: 8.5pt; color: #333; margin: 0; padding-top: 5px; } 
+            .print-header-content h2 { font-size: 16pt; }
 
-            table { border: 1px solid #0f172a; margin-top: 10px; }
+            table { border: 1px solid #0f172a; }
             th { 
                 background: #1e293b !important; 
                 color: white !important; 
-                font-weight: 700; 
-                font-size: 7.5pt; 
-                padding: 3px 1px; 
                 border: 1px solid #0f172a; 
             }
-            
-            td { 
-                padding: 1px 0.5px; 
-                border: 1px solid #cbd5e1; 
-                height: 28px; 
-                font-size: 7.5pt; 
-                vertical-align: top; 
-            }
-            td.left { text-align: left !important; padding-left: 5px !important; }
-            
-            th:nth-child(1) { width: 30%; max-width: 30%; text-align: left !important; padding-left: 5px; } 
+            td { border: 1px solid #cbd5e1; height: 25px; }
             
             .checkbox-day input[type="checkbox"] {
                 -webkit-appearance: none;
                 appearance: none;
                 border: 1px solid black; 
-                width: 9px; 
-                height: 9px; 
-                display: block; 
-                margin: 0 auto; 
+                width: 9px; height: 9px; 
+                display: block; margin: 0 auto; 
                 visibility: visible; 
             }
-            
+
+            /* PIE DE PÁGINA ÚNICO AL FINAL DEL GRUPO */
             .print-footer {
-                margin-top: 15px; 
-                font-size: 8.5pt; 
+                margin-top: auto; /* Empuja el footer al final del contenedor */
+                padding-top: 20px;
                 width: 100%;
-                display: flex;
-                flex-direction: column;
             }
             .print-footer .observations {
                 border: 1px solid #0f172a;
-                height: 80px; /* Reducido un poco para que quepan varias OTs por hoja */
+                height: 100px; 
                 padding: 5px;
-                margin-bottom: 20px; 
-                width: 100%;
+                margin-bottom: 20px;
             }
             .print-footer .signatures {
                 display: flex;
                 justify-content: space-around;
-                width: 100%;
             }
             .print-footer .signature-box {
                 width: 30%;
                 text-align: center;
                 border-top: 1px solid #0f172a;
-                padding-top: 5px; 
-                height: 80px; 
+                padding-top: 5px;
             }
         }
     </style>
@@ -141,94 +117,86 @@
         {% for grupo in all_ots %}
         <div class="grupo-container">
             
-            {% for ot in grupo.ots %}
-            <div class="ot-container"> 
-                
-                <div class="print-header-content">
-                    <div>
-                        <h2>ORDEN DE TRABAJO N° {{ ot.numero_ot }}</h2>
-                        <div class="meta">
-                            Equipo: <strong>{{ ot.equipo }}</strong> (Padre: {{ grupo.padre }}) &nbsp; | &nbsp; 
-                            Técnico Asignado: <strong>{{ grupo.tecnico }}</strong> &nbsp; | &nbsp; 
-                            Tipo OT: <strong>{{ ot.tipo_mantenimiento }}</strong> &nbsp; | &nbsp; 
-                            Prioridad: <strong>{{ ot.prioridad }}</strong>
-                        </div>
-                        <div class="meta">
-                            Código: MARE01 Ver. 3 &nbsp; | &nbsp; 
-                            Duración Estimada: <strong>{{ ot.duracion_estimada_total }} min</strong> &nbsp; | &nbsp; 
-                            Periodo: {{ ot.fecha_inicio }} al {{ ot.fecha_final }}
-                        </div>
-                    </div>
+            <div class="print-header-content">
+                <h2>REPORTE DE MANTENIMIENTO: {{ grupo.padre }}</h2>
+                <div class="meta">
+                    Técnico Responsable: <strong>{{ grupo.tecnico }}</strong> &nbsp; | &nbsp; 
+                    Equipo Padre: <strong>{{ grupo.padre }}</strong> &nbsp; | &nbsp;
+                    Total de Órdenes en esta página: <strong>{{ grupo.ots|length }}</strong>
                 </div>
-                
-                <div style="overflow:auto;">
-                    <table>
-                        <thead>
+            </div>
+
+            {% for ot in grupo.ots %}
+            <div class="ot-seccion">
+                <div style="background: #f1f5f9; padding: 5px; border-left: 4px solid #0f172a; margin-bottom: 5px;">
+                    <strong>OT N° {{ ot.numero_ot }}</strong> — {{ ot.equipo }} 
+                    <span style="float: right;">Tipo: {{ ot.tipo_mantenimiento }} | Prioridad: {{ ot.prioridad }}</span>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="min-width:280px; text-align:left;">Actividad / Tarea</th> 
+                            <th style="min-width:40px;">Min.</th> 
+                            {% set dias_en_mes = ot.dias_en_mes or 31 %} 
+                            {% for d in range(1, dias_en_mes+1) %}
+                                <th class="cal-day">{{ d }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for act in ot.actividades %} 
                             <tr>
-                                <th style="min-width:280px; text-align:left;">Actividad / Tarea</th> 
-                                <th style="min-width:50px;">Dur. (min)</th> 
-                                <th style="min-width:50px;">Prioridad</th> 
-                                {% set dias_en_mes = ot.dias_en_mes or 31 %} 
+                                <td class="left">
+                                    <strong>{{ act.codigo_actividad or '-' }}</strong> — <small>{{ act.descripcion }}</small>
+                                </td>
+                                <td>{{ act.duracion_estimada }}</td>
                                 {% for d in range(1, dias_en_mes+1) %}
-                                    <th class="cal-day">{{ d }}</th>
+                                    <td class="cal-day">
+                                        {% if d in act.dias_mes_list %}
+                                            <div style="font-size: 8pt; line-height: 1;">🛠️</div>
+                                            <div class="checkbox-day"><input type="checkbox"></div>
+                                        {% else %}
+                                            <div class="checkbox-day" style="height: 15px;"></div>
+                                        {% endif %}
+                                    </td>
                                 {% endfor %}
                             </tr>
-                        </thead>
-                        <tbody>
-                            {% for act in ot.actividades %} 
-                                <tr class="act-row">
-                                    <td class="left">
-                                        <strong>{{ act.codigo_actividad or '-' }}</strong><br>
-                                        <small>{{ act.descripcion }}</small>
-                                    </td>
-                                    <td>{{ act.duracion_estimada }}</td>
-                                    <td>{{ act.prioridad }}</td>
-                                    {% for d in range(1, dias_en_mes+1) %}
-                                        <td class="cal-day">
-                                            {% if d in act.dias_mes_list %}
-                                                <div style="font-size: 9pt; color: #1e293b; font-weight: 700; line-height: 1;">🛠️</div>
-                                                <div class="checkbox-day"><input type="checkbox"></div>
-                                            {% else %}
-                                                <div style="height:14px;"></div> 
-                                                <div class="checkbox-day"><input type="checkbox" disabled style="visibility: hidden;"></div>
-                                            {% endif %}
-                                        </td>
-                                    {% endfor %}
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% endfor %}
+
+            <div class="print-footer">
+                <h3>OBSERVACIONES GENERALES Y RECURSOS UTILIZADOS</h3>
+                <div class="observations"></div>
                 
-                <div class="print-footer">
-                    <h3>OBSERVACIONES DEL TÉCNICO Y RECURSOS UTILIZADOS</h3>
-                    <div class="observations"></div>
-                    
-                    <div class="signatures">
-                        <div class="signature-box">
-                            FIRMA DEL TÉCNICO
-                            <p>{{ grupo.tecnico or '___________________________' }}</p>
-                        </div>
-                        <div class="signature-box">
-                            FIRMA DEL SUPERVISOR
-                            <p>___________________________</p>
-                        </div>
-                        <div class="signature-box">
-                            FECHA DE CIERRE
-                            <p>___________________________</p>
-                        </div>
+                <div class="signatures">
+                    <div class="signature-box">
+                        FIRMA DEL TÉCNICO
+                        <p>{{ grupo.tecnico }}</p>
+                    </div>
+                    <div class="signature-box">
+                        FIRMA DEL SUPERVISOR
+                        <p>___________________________</p>
+                    </div>
+                    <div class="signature-box">
+                        FECHA DE CIERRE
+                        <p>___________________________</p>
                     </div>
                 </div>
-                
             </div>
-            {% endfor %} </div>
-        {% endfor %} </div>
+            
+        </div>
+        {% endfor %}
+        
+    </div>
     
     <script>
         window.onload = function() {
             window.print();
         };
     </script>
-
 </body>
 </html>
