@@ -1814,7 +1814,6 @@ def generar_ots_mensuales():
                 prioridades = [a['prioridad'] for a in actividades_a_insertar]
                 priority_order = {'Crítica': 4, 'Alta': 3, 'Media': 2, 'Baja': 1}
                 max_priority = max(prioridades, key=lambda p: priority_order.get(p, 0))
-                padre = act.get('padre') 
                 cur.execute("""
                     INSERT INTO ordenes_trabajo
                     (numero_ot, duracion_estimada_total, fecha_inicio, fecha_final, estado,
@@ -1829,7 +1828,8 @@ def generar_ots_mensuales():
                     ot_fija['tipo_mantenimiento'], 
                     ot_fija['tecnico'],
                     ot_fija.get('observaciones'), 
-                    max_priority
+                    max_priority,
+                    ot_fija['padre']
                 ))
                 ot_id = cur.lastrowid
                 
