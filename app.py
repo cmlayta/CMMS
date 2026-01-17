@@ -2760,53 +2760,59 @@ from flask import request, render_template, current_app
 # --------------------------------------------------------------------------------
 # FUNCIÓN CLAVE: Obtiene todas las OTs con sus actividades para la impresión masiva
 # --------------------------------------------------------------------------------
+import calendar
+from collections import defaultdict
+
 def obtener_todas_las_ots_con_actividades():
     """
     Consulta la base de datos para obtener todas las Órdenes de Trabajo activas,
-    junto con sus equipos y actividades asociadas, preparándolas para la plantilla masiva.
+    agrupadas por técnico y equipo padre para optimizar la impresión.
     """
     con = connect_db()
     cur = con.cursor(dictionary=True)
     
-    ots_para_imprimir = []
-    
-    # 1. Obtener TODAS las OTs (con el equipo asociado)
+    # 1. Obtener TODAS las OTs incluyendo la nueva columna 'padre'
+    # Ordenamos por tecnico y padre para que los grupos salgan juntos
     cur.execute("""
         SELECT ot.id, ot.numero_ot, ot.fecha_inicio, ot.fecha_final,
-               ot.tecnico, ot.tipo_mantenimiento, ot.duracion_estimada_total, ot.prioridad,
+               ot.tecnico, ot.tipo_mantenimiento, ot.duracion_estimada_total, 
+               ot.prioridad, ot.padre,
                e.nombre AS equipo
         FROM ordenes_trabajo ot
         LEFT JOIN equipos e ON ot.equipo_id = e.id
         WHERE ot.estado IN ('Pendiente', 'En Proceso')
-        ORDER BY ot.numero_ot
+        ORDER BY ot.tecnico ASC, ot.padre ASC, ot.numero_ot ASC
     """)
     todas_ots = cur.fetchall()
 
-    # 2. Iterar sobre cada OT para obtener sus actividades y formatear la estructura
+    # Estructura para agrupar: {(tecnico, padre): [lista_de_ots]}
+    grupos = defaultdict(list)
+
+    # 2. Iterar sobre cada OT para obtener sus actividades
     for ot in todas_ots:
         ot_id = ot['id']
+        
+        # Mantengo tu lógica exacta de formateo de datos
         ot_data = {
             'id': ot['id'],
             'numero_ot': ot['numero_ot'],
             'equipo': ot['equipo'] or 'N/A',
             'tecnico': ot['tecnico'] or 'Sin Asignar',
+            'padre': ot['padre'] or 'General', # Captura el valor de la nueva columna
             'tipo_mantenimiento': ot['tipo_mantenimiento'],
             'prioridad': 'Alta' if ot.get('prioridad') is None else ot['prioridad'], 
-            
-            # ¡CLAVE! INCLUIMOS LA DURACIÓN TOTAL PARA QUE JINJA LA RECIBA
             'duracion_estimada_total': ot.get('duracion_estimada_total', 0) or 0, 
             
-            # Formatear fechas si son objetos date
+            # Formatear fechas
             'fecha_inicio': ot['fecha_inicio'].strftime('%d/%m/%Y') if ot['fecha_inicio'] else 'N/A',
             'fecha_final': ot['fecha_final'].strftime('%d/%m/%Y') if ot['fecha_final'] else 'N/A',
             
-            # Calcular días del mes (Tomamos el mes de inicio como referencia, o 31 por defecto)
+            # Calcular días del mes
             'dias_en_mes': calendar.monthrange(ot['fecha_inicio'].year, ot['fecha_inicio'].month)[1] if ot['fecha_inicio'] else 31,
             'actividades': []
         }
 
-        # 3. Obtener Actividades para esta OT
-        # ... (el resto del código sigue igual)
+        # 3. Obtener Actividades para esta OT (sin cambios en tu lógica)
         cur.execute("""
             SELECT codigo_actividad, descripcion, duracion_estimada, prioridad,
                    dias_mes, dias_realizados 
@@ -2816,23 +2822,33 @@ def obtener_todas_las_ots_con_actividades():
         """, (ot_id,))
         actividades = cur.fetchall()
         
-        # 4. Procesar actividades
         for a in actividades:
-            # Procesar dias_mes_list (Clave para los días programados en la impresión)
             if a.get('dias_mes'):
                 a['dias_mes_list'] = [int(x) for x in str(a['dias_mes']).split(',') if x.strip().isdigit()]
             else:
                 a['dias_mes_list'] = []
-
-            # Añadir la actividad al objeto OT
             ot_data['actividades'].append(a)
-            
-        ots_para_imprimir.append(ot_data)
+
+        # ------------------------------------------------------------------
+        # CLAVE: Agrupamos en el diccionario usando la tupla (tecnico, padre)
+        # ------------------------------------------------------------------
+        key = (ot_data['tecnico'], ot_data['padre'])
+        grupos[key].append(ot_data)
 
     cur.close()
     con.close()
     
-    return ots_para_imprimir
+    # 4. Transformamos el diccionario en una lista de grupos para el template
+    # Esto facilita el uso de {% for grupo in all_ots %} en Jinja2
+    ots_agrupadas_final = []
+    for (tecnico, padre), lista_ots in grupos.items():
+        ots_agrupadas_final.append({
+            'tecnico': tecnico,
+            'padre': padre,
+            'ots': lista_ots
+        })
+    
+    return ots_agrupadas_final
 # --------------------------------------------------------------------------------
 # RUTA FINAL PARA EL BOTÓN DE IMPRESIÓN MASIVA
 # --------------------------------------------------------------------------------
