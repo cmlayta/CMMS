@@ -1119,6 +1119,7 @@ def guardar_orden_trabajo():
     fecha_final = request.form['fecha_final']
     tecnico = request.form['tecnico']
     observaciones = request.form['observaciones']
+    padre = request.form['padre']
 
     numero_ot = generar_numero_ot(now.year, now.month)
 
@@ -1130,8 +1131,8 @@ def guardar_orden_trabajo():
         INSERT INTO ordenes_trabajo
         (numero_ot, equipo_id, tipo_mantenimiento,
          fecha_inicio, fecha_final, tecnico,
-         prioridad, observaciones, estado)
-        VALUES (%s,%s,%s,%s,%s,%s,%s,%s,'Pendiente')
+         prioridad, observaciones, estado, padre)
+        VALUES (%s,%s,%s,%s,%s,%s,%s,%s,'Pendiente', %s)
     """
 
     cur.execute(query, (
@@ -1142,7 +1143,8 @@ def guardar_orden_trabajo():
         fecha_final,
         tecnico,
         prioridad,
-        observaciones
+        observaciones,
+        padre
     ))
 
     con.commit()
