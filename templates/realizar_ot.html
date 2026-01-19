@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>Realizar OT - {{ ot.numero_ot }}</title>
     <style>
-        /* [ ... Estilos Existentes de Pantalla ... ] */
+        /* ESTILOS DE PANTALLA */
         body { font-family: "Segoe UI", Tahoma, sans-serif; background:#f4f6f9; margin:0; }
         header{ background:#1e293b; color:white; padding:16px 24px; display:flex; justify-content:space-between; align-items:center;}
         .wrap{ max-width:1200px; margin:22px auto; padding:0 16px; }
@@ -15,130 +15,29 @@
         table { width:100%; border-collapse:collapse; font-size:13px; }
         th, td { padding:8px 6px; border-bottom:1px solid #eef2f7; vertical-align:middle; text-align:center; }
         th { background:#f8fafc; color:#0f172a; font-weight:600; }
-        /* calendario: columna de días */
         .cal-day { width:28px; min-width:28px; max-width:28px; padding:4px; }
         .scheduled { background:#ecfeff; border-radius:6px; padding:4px; display:block; }
         .scheduled .dot { width:8px; height:8px; border-radius:50%; display:inline-block; margin-bottom:4px; background:#06b6d4; }
         .checkbox-day { margin-top:4px; }
         .act-row .left { text-align:left; padding-left:12px; }
         .small-btn { padding:6px 10px; border-radius:8px; border:none; cursor:pointer; background:#2563eb; color:white; font-size:13px; }
-        .small-btn.danger { background:#dc2626; }
         .form-actions { margin-top:8px; display:flex; gap:8px; justify-content:flex-end; }
+        
         @media (max-width:1000px){ .cal-day { width:22px; min-width:22px; max-width:22px; font-size:11px; } }
 
-        /* ESTILOS PARA IMPRESIÓN (OPTIMIZADOS PARA ESPACIO Y LECTURA) */
+        /* ESTILOS PARA IMPRESIÓN */
         @media print {
-            /* Configuraciones de página */
-            @page {
-                size: A4 landscape;
-                margin: 0.5cm;
-            }
-
-            /* OCULTAR ELEMENTOS SOLO EN IMPRESIÓN */
-            .print-ocultar,
-            header, 
-            .controls, 
-            .form-actions, 
-            .form-actions button,
-            .act-row form td:last-child {
-                display: none !important;
-            }
-            
-            /* Ajustes generales de texto y fondo */
-            body {
-                background: white;
-                margin: 0;
-                padding: 0;
-                font-size: 8pt; 
-                position: relative; 
-            }
-            .wrap, .card {
-                box-shadow: none;
-                border-radius: 0;
-                padding: 0;
-                margin: 0;
-                max-width: none;
-            }
-
-            /* LOGO PARA IMPRESIÓN */
-            .print-logo {
-                display: block !important; 
-                position: absolute; 
-                top: 0.5cm; 
-                right: 0.5cm; 
-                width: 100px; 
-                height: auto;
-                z-index: 1000;
-            }
-
-            /* AJUSTE CLAVE DE LA TABLA */
-            table {
-                width: 100%;
-                table-layout: fixed;
-                border: 1px solid #0f172a;
-                margin-top: 30px;
-            }
-
-            /* Estilo de ENCABEZADOS DE TABLA (TITULOS) */
-            th {
-                background: #1e293b !important; 
-                color: white !important; 
-                font-weight: 700; 
-                font-size: 9pt; 
-                padding: 4px 2px;
-                border: 1px solid #0f172a;
-            }
-            
-            /* Estilo de las celdas de datos */
-            td {
-                padding: 2px 1px;
-                border: 1px solid #cbd5e1; 
-                height: 30px; 
-                font-size: 8pt; /* Aseguramos que el contenido de la celda use el tamaño pequeño */
-            }
-            
-            /* Ajuste de columnas de Días */
-            .cal-day {
-                width: 16px !important; 
-                min-width: 16px !important;
-                max-width: 16px !important;
-                font-size: 8pt;
-                line-height: 1.0;
-                padding-top: 5px; 
-                position: relative;
-            }
-            
-            /* OCULTAR ELEMENTOS DIGITALES */
-            .scheduled {
-                background: none !important;
-                border: none !important;
-                padding: 0 !important;
-            }
-            .scheduled .dot {
-                display: none !important; 
-            }
-
-            /* AJUSTE CLAVE: Checkboxes vacíos y visibles */
+            @page { size: A4 landscape; margin: 0.5cm; }
+            .print-ocultar, header, .controls, .form-actions, .small-btn { display: none !important; }
+            body { background: white; margin: 0; padding: 0; font-size: 8pt; }
+            .wrap, .card { box-shadow: none; border-radius: 0; padding: 0; margin: 0; max-width: none; }
+            .print-logo { display: block !important; position: absolute; top: 0.5cm; right: 0.5cm; width: 100px; }
+            table { width: 100%; table-layout: fixed; border: 1px solid #0f172a; margin-top: 30px; }
+            th { background: #1e293b !important; color: white !important; font-weight: 700; border: 1px solid #0f172a; }
+            td { padding: 2px 1px; border: 1px solid #cbd5e1; height: 30px; }
             .checkbox-day input[type="checkbox"] {
-                -webkit-appearance: none;
-                -moz-appearance: none;
-                appearance: none;
-                border: 1px solid black; 
-                width: 10px;
-                height: 10px;
-                display: inline-block;
-                margin: 0;
-                padding: 0;
-                vertical-align: top;
-            }
-
-            /* Asegurar que el título principal de la OT también se vea bien */
-            h2 {
-                font-size: 14pt;
-                margin-bottom: 5px;
-            }
-            .meta {
-                font-size: 10pt;
+                -webkit-appearance: none; appearance: none; border: 1px solid black; 
+                width: 10px; height: 10px; display: inline-block;
             }
         }
     </style>
@@ -156,6 +55,7 @@
             <a href="{{ url_for('ver_mantenimiento') }}" style="color:white; text-decoration:none;">← Volver a Mantenimientos</a>
         </div>
     </header>
+
     <div class="wrap">
         <div class="card">
             <h2>TRABAJANDO EN {{ ot.numero_ot }} — {{ ot.equipo }}</h2>
@@ -165,101 +65,91 @@
                 Progreso OT: <strong style="color:#2563eb;">{{ ot_completado }}%</strong>
             </div>
             
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;" class="controls">
-                <div>
-                    <form method="get" action="{{ url_for('realizar_ot', ot_id=ot.id) }}" style="display:inline;">
-                        Mes:
-                        <select name="month" onchange="this.form.submit()">
-                            {% for m in range(1,13) %}
-                                <option value="{{ m }}" {% if m==month %}selected{% endif %}>{{ m }}</option>
-                            {% endfor %}
-                        </select>
-                        <select name="year" onchange="this.form.submit()">
-                            {% for y in range(year-1, year+2) %}
-                                <option value="{{ y }}" {% if y==year %}selected{% endif %}>{{ y }}</option>
-                            {% endfor %}
-                        </select>
-                        <input type="hidden" name="ot_id" value="{{ ot.id }}">
-                    </form>
-                </div>
-                <div style="color:#475569; font-size:13px;">
+            <div class="controls print-ocultar">
+                <form method="get" action="{{ url_for('realizar_ot', ot_id=ot.id) }}">
+                    Mes:
+                    <select name="month" onchange="this.form.submit()">
+                        {% for m in range(1,13) %}
+                            <option value="{{ m }}" {% if m==month %}selected{% endif %}>{{ m }}</option>
+                        {% endfor %}
+                    </select>
+                    <select name="year" onchange="this.form.submit()">
+                        {% for y in range(year-1, year+2) %}
+                            <option value="{{ y }}" {% if y==year %}selected{% endif %}>{{ y }}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="hidden" name="ot_id" value="{{ ot.id }}">
+                </form>
+                <div style="color:#475569; font-size:13px; margin-left: auto;">
                     Mostrando {{ dias_en_mes }} días ({{ month }}/{{ year }})
                 </div>
             </div>
             
-            <div style="overflow:auto;">
-                <form method="post" action="{{ url_for('guardar_todo_tecnico') }}"></form>
-                <table>
-                    <thead>
-                        <tr>
-                            <th style="min-width:280px; text-align:left;">Actividad</th> <th style="min-width:50px;">Duración</th> <th style="min-width:50px;">Prioridad</th> <th style="min-width:100px;" class="print-ocultar">Completado</th> 
-                            {% for d in range(1, dias_en_mes+1) %}
-                                <th class="cal-day">{{ d }}</th>
-                            {% endfor %}
-                            <th style="min-width:120px;" class="form-actions">Guardar</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for act in actividades %}
-                            <tr class="act-row">
-                                <td class="left">
-                                    <strong>{{ act.codigo_actividad or '-' }}</strong><br>
-                                    <small>{{ act.descripcion }}</small>
-                                </td>
-                                <td style="width:50px;">{{ act.duracion_estimada }} min</td>
-                                <td style="width:50px;">{{ act.prioridad }}</td>
-                                <td class="print-ocultar">
-                                    {% set total = act.dias_mes_list|length %}
-                                    {% set realizados = act.dias_realizados_list|length %}
-                                    {% if total > 0 %}
-                                        {{ ((realizados / total) * 100) | round(0) }}%
-                                    {% else %}
-                                        0%
-                                    {% endif %}
-                                </td>
-                                <form method="post" action="{{ url_for('guardar_dias_realizados', actividad_id=act.id) }}?ot_id={{ ot.id }}&year={{ year }}&month={{ month }}">
+            <form method="post" action="{{ url_for('guardar_todo') }}">
+                <input type="hidden" name="ot_id" value="{{ ot.id }}">
+                <input type="hidden" name="year" value="{{ year }}">
+                <input type="hidden" name="month" value="{{ month }}">
+
+                <div style="overflow:auto;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="min-width:280px; text-align:left;">Actividad</th> 
+                                <th style="min-width:50px;">Duración</th> 
+                                <th style="min-width:50px;">Prioridad</th> 
+                                <th style="min-width:100px;" class="print-ocultar">Completado</th> 
+                                {% for d in range(1, dias_en_mes+1) %}
+                                    <th class="cal-day">{{ d }}</th>
+                                {% endfor %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for act in actividades %}
+                                <tr class="act-row">
+                                    <td class="left">
+                                        <input type="hidden" name="actividad_ids_guardar" value="{{ act.id }}">
+                                        <strong>{{ act.codigo_actividad or '-' }}</strong><br>
+                                        <small>{{ act.descripcion }}</small>
+                                    </td>
+                                    <td>{{ act.duracion_estimada }} min</td>
+                                    <td>{{ act.prioridad }}</td>
+                                    <td class="print-ocultar">
+                                        {% set total = act.dias_mes_list|length %}
+                                        {% set realizados = act.dias_realizados_list|length %}
+                                        {% if total > 0 %}
+                                            {{ ((realizados / total) * 100) | round(0) }}%
+                                        {% else %}
+                                            0%
+                                        {% endif %}
+                                    </td>
+                                    
                                     {% for d in range(1, dias_en_mes+1) %}
                                         <td class="cal-day">
                                             {% if d in act.dias_mes_list %}
-                                                <div class="scheduled" title="Programado">
-                                                    <span class="dot"></span><br>
-                                                </div>
-                                                
-                                                <span class="print-only-tool-icon" style="display: none; font-size: 10pt; color: #0f172a;">🛠️</span>
-                                                
-                                                <style media="print">
-                                                     .act-row .cal-day .print-only-tool-icon {
-                                                        display: inline !important; 
-                                                        position: absolute;
-                                                        top: 1px;
-                                                        left: 2px;
-                                                    }
-                                                </style>
-                                                
+                                                <div class="scheduled" title="Programado"><span class="dot"></span></div>
                                             {% else %}
                                                 <div style="height:18px;"></div>
                                             {% endif %}
                                             <div class="checkbox-day">
-                                                <input type="checkbox" name="dias_realizados" value="{{ d }}" id="chk-{{ act.id }}-{{ d }}" {% if d in act.dias_realizados_list %}checked{% endif %} >
+                                                <input type="checkbox" 
+                                                       name="dias_realizados_{{ act.id }}" 
+                                                       value="{{ d }}" 
+                                                       {% if d in act.dias_realizados_list %}checked{% endif %}>
                                             </div>
                                         </td>
                                     {% endfor %}
-                                    <td style="vertical-align:middle;" class="form-actions">
-                                        <div class="form-actions">
-                                            <button type="submit" class="small-btn">💾 Guardar</button>
-                                        </div>
-                                    </td>
-                                </form>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-                <div class="form-actions" style="margin-top:20px; border-top:1px solid #eef2f7; padding-top:12px;">
-                        <button type="submit" class="small-btn" style="padding:10px 20px; font-size:14px; background:#10b981;">
-                            ✅ Guardar TODAS las Actividades
-                        </button>
-                    </div>
-            </div>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="form-actions print-ocultar" style="margin-top:20px; border-top:1px solid #eef2f7; padding-top:20px; justify-content: center;">
+                    <button type="submit" class="small-btn" style="padding:12px 40px; font-size:15px; background:#10b981; font-weight:bold; box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2);">
+                        ✅ GUARDAR TODAS LAS MODIFICACIONES
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </body>
