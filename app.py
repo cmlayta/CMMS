@@ -1522,6 +1522,69 @@ def guardar_todo_tecnico():
     else:
         return redirect(url_for('inicio_tecnico'))
 
+@app.route('/guardar_todo', methods=['POST'])
+def guardar_todo():
+    # 1. Obtener datos de redirección
+    ot_id = request.form.get('ot_id')
+    year = request.form.get('year')
+    month = request.form.get('month')
+    
+    # SOLUCIÓN CLAVE: Obtener la lista COMPLETA de IDs de actividades a procesar
+    actividad_ids_a_procesar = request.form.getlist('actividad_ids_guardar') 
+    
+    con = None
+    cur = None
+    
+    try:
+        con = connect_db()
+        cur = con.cursor()
+        
+        # 4. Iteramos sobre los IDs que *debemos* procesar, incluso si no tienen días marcados.
+        for actividad_id_str in actividad_ids_a_procesar:
+            try:
+                actividad_id = int(actividad_id_str)
+            except ValueError:
+                continue
+                
+            # 4.1. Obtener la lista de días marcados (request.form.getlist)
+            # Si el usuario desmarcó todos los días, esta lista estará vacía: []
+            key_name = f'dias_realizados_{actividad_id}'
+            dias = request.form.getlist(key_name)
+            
+            # 4.2. Limpieza y formateo
+            dias_int = sorted({int(x) for x in dias if x.isdigit()})
+            
+            # Si dias_int está vacío ([]), dias_csv será None. Esto actualizará a NULL en la BD.
+            dias_csv = ','.join(str(x) for x in dias_int) if dias_int else None
+
+            # 4.3. Ejecutar la actualización para la actividad específica
+            cur.execute("""
+                UPDATE actividades_mantenimiento
+                SET dias_realizados = %s
+                WHERE id = %s
+            """, (dias_csv, actividad_id))
+            
+        # 5. Confirmar todas las transacciones
+        con.commit()
+        
+    except Exception as e:
+        if con:
+            con.rollback()
+        print(f"!!! ERROR FATAL AL GUARDAR EN OT {ot_id} !!! Error: {e}")
+        return f"Error al guardar las actividades: {e}", 500 
+        
+    finally:
+        if cur:
+            cur.close()
+        if con:
+            con.close()
+
+    # 6. Redireccionar de regreso
+    if ot_id:
+        return redirect(url_for('realizar_ot', ot_id=int(ot_id), year=year, month=month))
+    else:
+        return redirect(url_for('ver_mantenimiento'))
+
 
 @app.route('/guardar_dias_realizados/<int:actividad_id>', methods=['POST'])
 def guardar_dias_realizados(actividad_id):
