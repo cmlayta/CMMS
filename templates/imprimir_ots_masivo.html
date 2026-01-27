@@ -118,11 +118,14 @@
         <div class="grupo-container">
             
             <div class="print-header-content">
-                <h2>REPORTE DE MANTENIMIENTO: {{ grupo.padre }}</h2>
+                <h2>Orden de Trabajo de Mantenimiento Preventivo: {{ grupo.padre }}</h2>
                 <div class="meta">
                     Técnico Responsable: <strong>{{ grupo.tecnico }}</strong> &nbsp; | &nbsp; 
                     Equipo Padre: <strong>{{ grupo.padre }}</strong> &nbsp; | &nbsp;
                     Total de Órdenes en esta página: <strong>{{ grupo.ots|length }}</strong>
+                </div>
+                <div class="meta">
+                    <strong>MARE01 Ver.4</strong>
                 </div>
             </div>
 
