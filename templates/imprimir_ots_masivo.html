@@ -7,11 +7,11 @@
         /* ========================================================== */
         /* === ESTILOS BASE === */
         /* ========================================================== */
-        body { 
-            font-family: "Segoe UI", Tahoma, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            background: white; 
+        body {
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: white;
         }
 
         .wrap { max-width: 210mm; margin: 0 auto; padding: 0; }
@@ -21,13 +21,20 @@
         th, td { padding: 8px 6px; border-bottom: 1px solid #eef2f7; vertical-align: top; text-align: center; }
         th { background: #f8fafc; color: #0f172a; font-weight: 600; }
         td.left { text-align: left; padding-left: 12px; }
-        
+
         /* ESTILOS DE DÍAS */
-        .cal-day { width: 5.7mm; min-width: 5.7mm; max-width: 5.7mm; padding: 1px 0; font-size: 7pt; line-height: 1.0; }
+        .cal-day {
+            width: 5.7mm;
+            min-width: 5.7mm;
+            max-width: 5.7mm;
+            padding: 1px 0;
+            font-size: 7pt;
+            line-height: 1.0;
+        }
         .checkbox-day input[type="checkbox"] { visibility: hidden; }
 
         /* ========================================================== */
-        /* === ESTILOS PARA IMPRESIÓN MASIVA === */
+        /* === ESTILOS PARA IMPRESIÓN === */
         /* ========================================================== */
         @media print {
             @page {
@@ -35,22 +42,8 @@
                 margin: 0.5cm;
             }
 
-            /* ===== CAMBIO 1: LOGO A LA IZQUIERDA ===== */
-            .print-logo {
-                display: block !important; 
-                position: fixed; 
-                top: 0.5cm; 
-                left: 0.5cm;      /* ← antes estaba a la derecha */
-                width: 100px; 
-                height: auto;
-                z-index: 100;
-            }
-
-            /* ===== CAMBIO 2: RESERVAR ESPACIO PARA EL LOGO ===== */
-            body {
-                font-size: 7.5pt;
-                padding-top: 3cm; /* evita que el logo se monte en páginas siguientes */
-            }
+            body { font-size: 7.5pt; }
+            .wrap { max-width: none; margin: 0; }
 
             /* Cada grupo empieza en hoja nueva */
             .grupo-container {
@@ -63,38 +56,50 @@
                 page-break-before: auto;
             }
 
-            /* Evitar cortes de tabla */
+            /* Evitar cortes de tablas */
             .ot-seccion {
                 page-break-inside: avoid;
                 margin-bottom: 10px;
             }
 
-            .wrap { max-width: none; margin: 0; } 
-
+            /* ENCABEZADO */
             .print-header-content {
                 border-bottom: 2px solid #0f172a;
                 padding-bottom: 10px;
                 margin-bottom: 15px;
             }
-            .print-header-content h2 { font-size: 16pt; }
+            .print-header-content h2 {
+                font-size: 16pt;
+            }
+
+            /* LOGO: solo una vez por grupo */
+            .print-logo {
+                width: 100px;
+                height: auto;
+                display: block;
+                margin-bottom: 10px;
+            }
 
             table { border: 1px solid #0f172a; }
-            th { 
-                background: #1e293b !important; 
-                color: white !important; 
-                border: 1px solid #0f172a; 
+            th {
+                background: #1e293b !important;
+                color: white !important;
+                border: 1px solid #0f172a;
             }
-            td { border: 1px solid #cbd5e1; height: 25px; }
-            
+            td {
+                border: 1px solid #cbd5e1;
+                height: 25px;
+            }
+
             .checkbox-day input[type="checkbox"] {
                 -webkit-appearance: none;
                 appearance: none;
-                border: 1px solid black; 
-                width: 9px; 
-                height: 9px; 
-                display: block; 
-                margin: 0 auto; 
-                visibility: visible; 
+                border: 1px solid black;
+                width: 9px;
+                height: 9px;
+                display: block;
+                margin: 0 auto;
+                visibility: visible;
             }
 
             /* PIE DE PÁGINA */
@@ -105,7 +110,7 @@
             }
             .print-footer .observations {
                 border: 1px solid #0f172a;
-                height: 60px; 
+                height: 60px;
                 padding: 5px;
                 margin-bottom: 20px;
             }
@@ -123,21 +128,23 @@
     </style>
 </head>
 <body>
-    
-    <img src="{{ url_for('static', filename='logoLayta.png') }}" 
-         alt="Logo LAYTA" 
-         class="print-logo" 
-         style="display: none;">
 
     <div class="wrap">
-        
+
         {% for grupo in all_ots %}
         <div class="grupo-container">
-            
+
             <div class="print-header-content">
+
+                <!-- LOGO: aparece solo al inicio del grupo -->
+                <img src="{{ url_for('static', filename='logoLayta.png') }}"
+                     alt="Logo LAYTA"
+                     class="print-logo">
+
                 <h2>Orden de Trabajo de Mantenimiento Preventivo: {{ grupo.padre }}</h2>
+
                 <div class="meta">
-                    Técnico Responsable: <strong>{{ grupo.tecnico }}</strong> &nbsp; | &nbsp; 
+                    Técnico Responsable: <strong>{{ grupo.tecnico }}</strong> &nbsp; | &nbsp;
                     Equipo Padre: <strong>{{ grupo.padre }}</strong> &nbsp; | &nbsp;
                     Total de Órdenes en esta página: <strong>{{ grupo.ots|length }}</strong>
                 </div>
@@ -148,9 +155,9 @@
 
             {% for ot in grupo.ots %}
             <div class="ot-seccion">
-                <div style="background: #f1f5f9; padding: 5px; border-left: 4px solid #0f172a; margin-bottom: 5px;">
-                    <strong>{{ ot.numero_ot }}</strong> — {{ ot.equipo }} 
-                    <span style="float: right;">
+                <div style="background:#f1f5f9; padding:5px; border-left:4px solid #0f172a; margin-bottom:5px;">
+                    <strong>{{ ot.numero_ot }}</strong> — {{ ot.equipo }}
+                    <span style="float:right;">
                         Tipo: {{ ot.tipo_mantenimiento }} | Prioridad: {{ ot.prioridad }}
                     </span>
                 </div>
@@ -158,29 +165,29 @@
                 <table>
                     <thead>
                         <tr>
-                            <th style="min-width:280px; text-align:left;">Actividad / Tarea</th> 
-                            <th style="min-width:40px;">Min.</th> 
-                            {% set dias_en_mes = ot.dias_en_mes or 31 %} 
-                            {% for d in range(1, dias_en_mes+1) %}
+                            <th style="min-width:280px; text-align:left;">Actividad / Tarea</th>
+                            <th style="min-width:40px;">Min.</th>
+                            {% set dias_en_mes = ot.dias_en_mes or 31 %}
+                            {% for d in range(1, dias_en_mes + 1) %}
                                 <th class="cal-day">{{ d }}</th>
                             {% endfor %}
                         </tr>
                     </thead>
                     <tbody>
-                        {% for act in ot.actividades %} 
+                        {% for act in ot.actividades %}
                         <tr>
                             <td class="left">
-                                <strong>{{ act.codigo_actividad or '-' }}</strong> — 
+                                <strong>{{ act.codigo_actividad or '-' }}</strong> —
                                 <small>{{ act.descripcion }}</small>
                             </td>
                             <td>{{ act.duracion_estimada }}</td>
-                            {% for d in range(1, dias_en_mes+1) %}
+                            {% for d in range(1, dias_en_mes + 1) %}
                             <td class="cal-day">
                                 {% if d in act.dias_mes_list %}
-                                    <div style="font-size: 8pt; line-height: 1;">🛠️</div>
+                                    <div style="font-size:8pt; line-height:1;">🛠️</div>
                                     <div class="checkbox-day"><input type="checkbox"></div>
                                 {% else %}
-                                    <div class="checkbox-day" style="height: 15px;"></div>
+                                    <div class="checkbox-day" style="height:15px;"></div>
                                 {% endif %}
                             </td>
                             {% endfor %}
@@ -194,27 +201,23 @@
             <div class="print-footer">
                 <h3>OBSERVACIONES GENERALES Y RECURSOS UTILIZADOS</h3>
                 <div class="observations"></div>
-                <div style="height: 50px;"></div>
+                <div style="height:50px;"></div>
                 <div class="signatures">
                     <div class="signature-box">
                         <p>{{ grupo.tecnico }}</p>
                     </div>
-                    <div class="signature-box">
-                        FIRMA DEL SUPERVISOR
-                    </div>
-                    <div class="signature-box">
-                        FECHA DE CIERRE
-                    </div>
+                    <div class="signature-box">FIRMA DEL SUPERVISOR</div>
+                    <div class="signature-box">FECHA DE CIERRE</div>
                 </div>
             </div>
-            
+
         </div>
         {% endfor %}
-        
+
     </div>
-    
+
     <script>
-        window.onload = function() {
+        window.onload = function () {
             window.print();
         };
     </script>
