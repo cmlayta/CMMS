@@ -68,16 +68,25 @@
                 padding-bottom: 10px;
                 margin-bottom: 15px;
             }
-            .print-header-content h2 {
+
+            /* Header en dos columnas: texto / logo */
+            .header-row {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                gap: 15px;
+                margin-bottom: 5px;
+            }
+
+            .header-text h2 {
                 font-size: 16pt;
             }
 
-            /* LOGO: solo una vez por grupo */
+            /* LOGO: solo una vez por grupo, alineado a la derecha */
             .print-logo {
                 width: 100px;
                 height: auto;
-                display: block;
-                margin-bottom: 10px;
+                flex-shrink: 0;
             }
 
             table { border: 1px solid #0f172a; }
@@ -129,20 +138,17 @@
 </head>
 <body>
 
-    <div class="wrap">
+<div class="wrap">
 
-        {% for grupo in all_ots %}
-        <div class="grupo-container">
+{% for grupo in all_ots %}
+<div class="grupo-container">
 
-            <div class="print-header-content">
+    <div class="print-header-content">
 
-                <!-- LOGO: aparece solo al inicio del grupo -->
-                <img src="{{ url_for('static', filename='logoLayta.png') }}"
-                     alt="Logo LAYTA"
-                     class="print-logo">
-
+        <!-- HEADER CON LOGO A LA DERECHA -->
+        <div class="header-row">
+            <div class="header-text">
                 <h2>Orden de Trabajo de Mantenimiento Preventivo: {{ grupo.padre }}</h2>
-
                 <div class="meta">
                     Técnico Responsable: <strong>{{ grupo.tecnico }}</strong> &nbsp; | &nbsp;
                     Equipo Padre: <strong>{{ grupo.padre }}</strong> &nbsp; | &nbsp;
@@ -153,73 +159,81 @@
                 </div>
             </div>
 
-            {% for ot in grupo.ots %}
-            <div class="ot-seccion">
-                <div style="background:#f1f5f9; padding:5px; border-left:4px solid #0f172a; margin-bottom:5px;">
-                    <strong>{{ ot.numero_ot }}</strong> — {{ ot.equipo }}
-                    <span style="float:right;">
-                        Tipo: {{ ot.tipo_mantenimiento }} | Prioridad: {{ ot.prioridad }}
-                    </span>
-                </div>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th style="min-width:280px; text-align:left;">Actividad / Tarea</th>
-                            <th style="min-width:40px;">Min.</th>
-                            {% set dias_en_mes = ot.dias_en_mes or 31 %}
-                            {% for d in range(1, dias_en_mes + 1) %}
-                                <th class="cal-day">{{ d }}</th>
-                            {% endfor %}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for act in ot.actividades %}
-                        <tr>
-                            <td class="left">
-                                <strong>{{ act.codigo_actividad or '-' }}</strong> —
-                                <small>{{ act.descripcion }}</small>
-                            </td>
-                            <td>{{ act.duracion_estimada }}</td>
-                            {% for d in range(1, dias_en_mes + 1) %}
-                            <td class="cal-day">
-                                {% if d in act.dias_mes_list %}
-                                    <div style="font-size:8pt; line-height:1;">🛠️</div>
-                                    <div class="checkbox-day"><input type="checkbox"></div>
-                                {% else %}
-                                    <div class="checkbox-day" style="height:15px;"></div>
-                                {% endif %}
-                            </td>
-                            {% endfor %}
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-            {% endfor %}
-
-            <div class="print-footer">
-                <h3>OBSERVACIONES GENERALES Y RECURSOS UTILIZADOS</h3>
-                <div class="observations"></div>
-                <div style="height:50px;"></div>
-                <div class="signatures">
-                    <div class="signature-box">
-                        <p>{{ grupo.tecnico }}</p>
-                    </div>
-                    <div class="signature-box">FIRMA DEL SUPERVISOR</div>
-                    <div class="signature-box">FECHA DE CIERRE</div>
-                </div>
-            </div>
-
+            <img src="{{ url_for('static', filename='logoLayta.png') }}"
+                 alt="Logo LAYTA"
+                 class="print-logo">
         </div>
-        {% endfor %}
 
     </div>
 
-    <script>
-        window.onload = function () {
-            window.print();
-        };
-    </script>
+    {% for ot in grupo.ots %}
+    <div class="ot-seccion">
+        <div style="background:#f1f5f9; padding:5px; border-left:4px solid #0f172a; margin-bottom:5px;">
+            <strong>{{ ot.numero_ot }}</strong> — {{ ot.equipo }}
+            <span style="float:right;">
+                Tipo: {{ ot.tipo_mantenimiento }} | Prioridad: {{ ot.prioridad }}
+            </span>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="min-width:280px; text-align:left;">Actividad / Tarea</th>
+                    <th style="min-width:40px;">Min.</th>
+                    {% set dias_en_mes = ot.dias_en_mes or 31 %}
+                    {% for d in range(1, dias_en_mes + 1) %}
+                        <th class="cal-day">{{ d }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for act in ot.actividades %}
+                <tr>
+                    <td class="left">
+                        <strong>{{ act.codigo_actividad or '-' }}</strong> —
+                        <small>{{ act.descripcion }}</small>
+                    </td>
+                    <td>{{ act.duracion_estimada }}</td>
+                    {% for d in range(1, dias_en_mes + 1) %}
+                    <td class="cal-day">
+                        {% if d in act.dias_mes_list %}
+                            <div style="font-size:8pt; line-height:1;">🛠️</div>
+                            <div class="checkbox-day"><input type="checkbox"></div>
+                        {% else %}
+                            <div class="checkbox-day" style="height:15px;"></div>
+                        {% endif %}
+                    </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endfor %}
+
+    <div class="print-footer">
+        <h3>OBSERVACIONES GENERALES Y RECURSOS UTILIZADOS</h3>
+        <div class="observations"></div>
+        <div style="height:50px;"></div>
+        <div class="signatures">
+            <div class="signature-box">
+                <p>{{ grupo.tecnico }}</p>
+            </div>
+            <div class="signature-box">FIRMA DEL SUPERVISOR</div>
+            <div class="signature-box">FECHA DE CIERRE</div>
+        </div>
+    </div>
+
+</div>
+{% endfor %}
+
+</div>
+
+<script>
+    window.onload = function () {
+        window.print();
+    };
+</script>
+
 </body>
 </html>
