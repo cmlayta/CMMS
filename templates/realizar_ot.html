@@ -3,65 +3,189 @@
 <head>
     <meta charset="utf-8" />
     <title>Realizar OT - {{ ot.numero_ot }}</title>
-    <style>
-        /* ESTILOS DE PANTALLA */
-        body { font-family: "Segoe UI", Tahoma, sans-serif; background:#f4f6f9; margin:0; }
-        header{ background:#1e293b; color:white; padding:16px 24px; display:flex; justify-content:space-between; align-items:center;}
-        .wrap{ max-width:1200px; margin:22px auto; padding:0 16px; }
-        .card{ background:white; border-radius:12px; padding:18px; box-shadow:0 6px 18px rgba(0,0,0,0.06); margin-bottom:18px; }
-        h2{ margin:0 0 8px 0; color:#0f172a; }
-        .meta{ color:#475569; font-size:14px; margin-bottom:12px; line-height:1.6; }
-        .controls{ display:flex; gap:8px; align-items:center; margin-bottom:8px; }
-        table { width:100%; border-collapse:collapse; font-size:13px; }
-        th, td { padding:8px 6px; border-bottom:1px solid #eef2f7; vertical-align:middle; text-align:center; }
-        th { background:#f8fafc; color:#0f172a; font-weight:600; }
-        .cal-day { width:28px; min-width:28px; max-width:28px; padding:4px; }
-        .scheduled { background:#ecfeff; border-radius:6px; padding:4px; display:block; }
-        .scheduled .dot { width:8px; height:8px; border-radius:50%; display:inline-block; margin-bottom:4px; background:#06b6d4; }
-        .checkbox-day { margin-top:4px; }
-        .act-row .left { text-align:left; padding-left:12px; }
-        .small-btn { padding:6px 10px; border-radius:8px; border:none; cursor:pointer; background:#2563eb; color:white; font-size:13px; }
-        .form-actions { margin-top:8px; display:flex; gap:8px; justify-content:flex-end; }
 
-        @media (max-width:1000px){
-            .cal-day { width:22px; min-width:22px; max-width:22px; font-size:11px; }
+    <style>
+        /* ===================== */
+        /* ESTILOS DE PANTALLA   */
+        /* ===================== */
+        body {
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
         }
 
-        /* ===================== IMPRESIÓN ===================== */
-        @media print {
-            @page { size: A4 landscape; margin: 0.5cm; }
+        header {
+            background: #1e293b;
+            color: white;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-            header, .controls, .form-actions, .small-btn, .print-ocultar {
+        .wrap {
+            max-width: 1200px;
+            margin: 22px auto;
+            padding: 0 16px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+            margin-bottom: 18px;
+        }
+
+        h2 {
+            margin: 0 0 8px 0;
+            color: #0f172a;
+        }
+
+        .meta {
+            color: #475569;
+            font-size: 14px;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .controls {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        th, td {
+            padding: 8px 6px;
+            border-bottom: 1px solid #eef2f7;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        th {
+            background: #f8fafc;
+            color: #0f172a;
+            font-weight: 600;
+        }
+
+        .act-row .left {
+            text-align: left;
+            padding-left: 12px;
+        }
+
+        .cal-day {
+            width: 28px;
+            min-width: 28px;
+            max-width: 28px;
+            padding: 4px;
+        }
+
+        .scheduled {
+            background: #ecfeff;
+            border-radius: 6px;
+            padding: 4px;
+            display: block;
+        }
+
+        .scheduled .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            background: #06b6d4;
+        }
+
+        .checkbox-day {
+            margin-top: 4px;
+        }
+
+        .small-btn {
+            padding: 6px 10px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            background: #2563eb;
+            color: white;
+            font-size: 13px;
+        }
+
+        .form-actions {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        @media (max-width:1000px){
+            .cal-day {
+                width: 22px;
+                min-width: 22px;
+                max-width: 22px;
+                font-size: 11px;
+            }
+        }
+
+        /* ===================== */
+        /* ESTILOS DE IMPRESIÓN  */
+        /* ===================== */
+        @media print {
+
+            @page {
+                size: A4 landscape;
+                margin: 0.5cm;
+            }
+
+            header,
+            .controls,
+            .print-ocultar {
                 display: none !important;
             }
 
-            body { background: white; margin: 0; padding: 0; font-size: 8pt; }
-            .wrap, .card { box-shadow: none; border-radius: 0; padding: 0; margin: 0; max-width: none; }
-
-            /* Header de impresión (logo + info) */
-            .print-header {
-                border-bottom: 2px solid #0f172a;
-                padding-bottom: 10px;
-                margin-bottom: 15px;
+            body {
+                background: white;
+                font-size: 8pt;
+                margin: 0;
             }
 
-            .print-header-row {
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                gap: 16px;
+            .wrap,
+            .card {
+                box-shadow: none;
+                border-radius: 0;
+                padding: 0;
+                margin: 0;
+                max-width: none;
             }
 
             .print-logo {
+                display: block !important;
+                position: absolute;
+                top: 0.5cm;
+                right: 0.5cm;
                 width: 100px;
-                height: auto;
-                flex-shrink: 0;
+            }
+
+            h2 {
+                margin-top: 0.5cm;
+                font-size: 11pt;
+            }
+
+            .meta {
+                font-size: 8pt;
+                margin-bottom: 6px;
             }
 
             table {
                 width: 100%;
                 table-layout: fixed;
                 border: 1px solid #0f172a;
+                margin-top: 20px;
             }
 
             th {
@@ -69,12 +193,13 @@
                 color: white !important;
                 font-weight: 700;
                 border: 1px solid #0f172a;
+                padding: 4px 2px;
             }
 
             td {
-                padding: 2px 1px;
                 border: 1px solid #cbd5e1;
-                height: 30px;
+                padding: 2px 1px;
+                height: 28px;
             }
 
             .checkbox-day input[type="checkbox"] {
@@ -83,111 +208,138 @@
                 border: 1px solid black;
                 width: 10px;
                 height: 10px;
-                display: inline-block;
             }
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <div>Realizar -- {{ ot.numero_ot }}</div>
-    <div style="font-size:14px;color:#cbd5e1; display:flex; align-items:center; gap:16px;">
-        <button onclick="window.print()" style="padding:6px 10px; border-radius:8px; border:none; cursor:pointer; background:#f59e0b; color:white; font-size:13px; font-weight:600;">
-            🖨️ Imprimir (Horizontal)
-        </button>
-        <a href="{{ url_for('ver_mantenimiento') }}" style="color:white; text-decoration:none;">← Volver a Mantenimientos</a>
-    </div>
-</header>
+    <!-- LOGO SOLO PARA IMPRESIÓN -->
+    <img src="{{ url_for('static', filename='logoLayta.png') }}"
+         class="print-logo"
+         style="display:none;"
+         alt="Logo">
 
-<div class="wrap">
-    <div class="card">
+    <header>
+        <div>Realizar — {{ ot.numero_ot }}</div>
+        <div style="display:flex; gap:16px; align-items:center;">
+            <button onclick="window.print()" class="small-btn" style="background:#f59e0b;">
+                🖨️ Imprimir (Horizontal)
+            </button>
+            <a href="{{ url_for('ver_mantenimiento') }}" style="color:white; text-decoration:none;">
+                ← Volver
+            </a>
+        </div>
+    </header>
 
-        <!-- HEADER SOLO PARA IMPRESIÓN -->
-        <div class="print-header">
-            <div class="print-header-row">
-                <div>
-                    <h2>TRABAJANDO EN {{ ot.numero_ot }} — {{ ot.equipo }}</h2>
-                    <div class="meta">
-                        <strong>MARE01 Ver. 3</strong><br>
-                        Equipo: {{ ot.equipo }} &nbsp; • &nbsp;
-                        Tipo OT: <strong>{{ ot.tipo_mantenimiento }}</strong> &nbsp; • &nbsp;
-                        Duración Planificada: <strong>{{ ot.duracion_estimada_total }} min</strong><br>
-                        Técnico: {{ ot.tecnico }} &nbsp; • &nbsp;
-                        Fecha inicio: {{ ot.fecha_inicio }} &nbsp; • &nbsp;
-                        Fecha final: {{ ot.fecha_final }}<br>
-                        Progreso OT: <strong>{{ ot_completado }}%</strong>
-                    </div>
+    <div class="wrap">
+        <div class="card">
+
+            <h2>OT {{ ot.numero_ot }} — {{ ot.equipo }}</h2>
+
+            <div class="meta">
+                Tipo: <strong>{{ ot.tipo_mantenimiento }}</strong> •
+                Duración: <strong>{{ ot.duracion_estimada_total }} min</strong><br>
+                Técnico: {{ ot.tecnico }} •
+                Inicio: {{ ot.fecha_inicio }} •
+                Fin: {{ ot.fecha_final }} •
+                Progreso: <strong>{{ ot_completado }}%</strong>
+            </div>
+
+            <!-- CONTROLES -->
+            <div class="controls print-ocultar">
+                <form method="get" action="{{ url_for('realizar_ot', ot_id=ot.id) }}">
+                    Mes:
+                    <select name="month" onchange="this.form.submit()">
+                        {% for m in range(1,13) %}
+                        <option value="{{ m }}" {% if m==month %}selected{% endif %}>{{ m }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <select name="year" onchange="this.form.submit()">
+                        {% for y in range(year-1, year+2) %}
+                        <option value="{{ y }}" {% if y==year %}selected{% endif %}>{{ y }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <input type="hidden" name="ot_id" value="{{ ot.id }}">
+                </form>
+            </div>
+
+            <!-- FORMULARIO PRINCIPAL -->
+            <form method="post" action="{{ url_for('guardar_todo') }}">
+                <input type="hidden" name="ot_id" value="{{ ot.id }}">
+                <input type="hidden" name="year" value="{{ year }}">
+                <input type="hidden" name="month" value="{{ month }}">
+
+                <div style="overflow:auto;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="min-width:260px;text-align:left;">Actividad</th>
+                                <th>Duración</th>
+                                <th>Prioridad</th>
+                                <th class="print-ocultar">%</th>
+                                {% for d in range(1, dias_en_mes+1) %}
+                                <th class="cal-day">{{ d }}</th>
+                                {% endfor %}
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {% for act in actividades %}
+                            <tr class="act-row">
+                                <td class="left">
+                                    <input type="hidden" name="actividad_ids_guardar" value="{{ act.id }}">
+                                    <strong>{{ act.codigo_actividad or '-' }}</strong><br>
+                                    <small>{{ act.descripcion }}</small>
+                                </td>
+
+                                <td>{{ act.duracion_estimada }} min</td>
+                                <td>{{ act.prioridad }}</td>
+
+                                <td class="print-ocultar">
+                                    {% if act.dias_mes_list|length > 0 %}
+                                        {{ ((act.dias_realizados_list|length / act.dias_mes_list|length) * 100) | round(0) }}%
+                                    {% else %}
+                                        0%
+                                    {% endif %}
+                                </td>
+
+                                {% for d in range(1, dias_en_mes+1) %}
+                                <td class="cal-day">
+                                    {% if d in act.dias_mes_list %}
+                                        <div class="scheduled"><span class="dot"></span></div>
+                                    {% else %}
+                                        <div style="height:14px;"></div>
+                                    {% endif %}
+                                    <div class="checkbox-day">
+                                        <input type="checkbox"
+                                               name="dias_realizados_{{ act.id }}"
+                                               value="{{ d }}"
+                                               {% if d in act.dias_realizados_list %}checked{% endif %}>
+                                    </div>
+                                </td>
+                                {% endfor %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
                 </div>
 
-                <img src="{{ url_for('static', filename='logoLayta.png') }}"
-                     alt="Logo LAYTA"
-                     class="print-logo">
-            </div>
+                <!-- BOTÓN GUARDAR (NO TOCADO) -->
+                <div class="form-actions print-ocultar">
+                    <button type="submit"
+                            class="small-btn"
+                            style="padding:12px 40px;font-size:15px;background:#10b981;font-weight:bold;">
+                        ✅ GUARDAR TODAS LAS MODIFICACIONES
+                    </button>
+                </div>
+
+            </form>
+
         </div>
-
-        <!-- CONTENIDO NORMAL -->
-        <form method="post" action="{{ url_for('guardar_todo') }}">
-            <input type="hidden" name="ot_id" value="{{ ot.id }}">
-            <input type="hidden" name="year" value="{{ year }}">
-            <input type="hidden" name="month" value="{{ month }}">
-
-            <div style="overflow:auto;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th style="min-width:280px; text-align:left;">Actividad</th>
-                            <th style="min-width:50px;">Duración</th>
-                            <th style="min-width:50px;">Prioridad</th>
-                            <th style="min-width:100px;" class="print-ocultar">Completado</th>
-                            {% for d in range(1, dias_en_mes+1) %}
-                                <th class="cal-day">{{ d }}</th>
-                            {% endfor %}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for act in actividades %}
-                        <tr class="act-row">
-                            <td class="left">
-                                <input type="hidden" name="actividad_ids_guardar" value="{{ act.id }}">
-                                <strong>{{ act.codigo_actividad or '-' }}</strong><br>
-                                <small>{{ act.descripcion }}</small>
-                            </td>
-                            <td>{{ act.duracion_estimada }} min</td>
-                            <td>{{ act.prioridad }}</td>
-                            <td class="print-ocultar">
-                                {% set total = act.dias_mes_list|length %}
-                                {% set realizados = act.dias_realizados_list|length %}
-                                {% if total > 0 %}
-                                    {{ ((realizados / total) * 100) | round(0) }}%
-                                {% else %}
-                                    0%
-                                {% endif %}
-                            </td>
-                            {% for d in range(1, dias_en_mes+1) %}
-                            <td class="cal-day">
-                                {% if d in act.dias_mes_list %}
-                                    <div class="scheduled"><span class="dot"></span></div>
-                                {% else %}
-                                    <div style="height:18px;"></div>
-                                {% endif %}
-                                <div class="checkbox-day">
-                                    <input type="checkbox"
-                                           name="dias_realizados_{{ act.id }}"
-                                           value="{{ d }}"
-                                           {% if d in act.dias_realizados_list %}checked{% endif %}>
-                                </div>
-                            </td>
-                            {% endfor %}
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-
-        </form>
     </div>
-</div>
-
 </body>
 </html>
