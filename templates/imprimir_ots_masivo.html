@@ -7,7 +7,13 @@
         /* ========================================================== */
         /* === ESTILOS BASE === */
         /* ========================================================== */
-        body { font-family: "Segoe UI", Tahoma, sans-serif; margin: 0; padding: 0; background: white; }
+        body { 
+            font-family: "Segoe UI", Tahoma, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background: white; 
+        }
+
         .wrap { max-width: 210mm; margin: 0 auto; padding: 0; }
         h2 { margin: 0; color: #0f172a; }
         .meta { color: #475569; font-size: 14px; margin-bottom: 5px; line-height: 1.6; }
@@ -28,35 +34,41 @@
                 size: A4 landscape;
                 margin: 0.5cm;
             }
-            
+
+            /* ===== CAMBIO 1: LOGO A LA IZQUIERDA ===== */
             .print-logo {
                 display: block !important; 
                 position: fixed; 
                 top: 0.5cm; 
-                right: 0.5cm; 
+                left: 0.5cm;      /* ← antes estaba a la derecha */
                 width: 100px; 
                 height: auto;
                 z-index: 100;
             }
 
-            /* Cada grupo (Técnico + Padre) empieza en hoja nueva */
+            /* ===== CAMBIO 2: RESERVAR ESPACIO PARA EL LOGO ===== */
+            body {
+                font-size: 7.5pt;
+                padding-top: 3cm; /* evita que el logo se monte en páginas siguientes */
+            }
+
+            /* Cada grupo empieza en hoja nueva */
             .grupo-container {
                 page-break-before: always;
                 display: flex;
                 flex-direction: column;
-                min-height: 95vh; /* Ayuda a empujar el footer al final */
+                min-height: 95vh;
             }
             .grupo-container:first-child {
                 page-break-before: auto;
             }
 
-            /* Evitar que una tabla se corte a la mitad entre dos páginas */
+            /* Evitar cortes de tabla */
             .ot-seccion {
                 page-break-inside: avoid;
                 margin-bottom: 10px;
             }
 
-            body { font-size: 7.5pt; }
             .wrap { max-width: none; margin: 0; } 
 
             .print-header-content {
@@ -78,14 +90,16 @@
                 -webkit-appearance: none;
                 appearance: none;
                 border: 1px solid black; 
-                width: 9px; height: 9px; 
-                display: block; margin: 0 auto; 
+                width: 9px; 
+                height: 9px; 
+                display: block; 
+                margin: 0 auto; 
                 visibility: visible; 
             }
 
-            /* PIE DE PÁGINA ÚNICO AL FINAL DEL GRUPO */
+            /* PIE DE PÁGINA */
             .print-footer {
-                margin-top: auto; /* Empuja el footer al final del contenedor */
+                margin-top: auto;
                 padding-top: 10px;
                 width: 100%;
             }
@@ -110,7 +124,10 @@
 </head>
 <body>
     
-    <img src="{{ url_for('static', filename='logoLayta.png') }}" alt="Logo LAYTA" class="print-logo" style="display: none;">
+    <img src="{{ url_for('static', filename='logoLayta.png') }}" 
+         alt="Logo LAYTA" 
+         class="print-logo" 
+         style="display: none;">
 
     <div class="wrap">
         
@@ -133,7 +150,9 @@
             <div class="ot-seccion">
                 <div style="background: #f1f5f9; padding: 5px; border-left: 4px solid #0f172a; margin-bottom: 5px;">
                     <strong>{{ ot.numero_ot }}</strong> — {{ ot.equipo }} 
-                    <span style="float: right;">Tipo: {{ ot.tipo_mantenimiento }} | Prioridad: {{ ot.prioridad }}</span>
+                    <span style="float: right;">
+                        Tipo: {{ ot.tipo_mantenimiento }} | Prioridad: {{ ot.prioridad }}
+                    </span>
                 </div>
 
                 <table>
@@ -149,22 +168,23 @@
                     </thead>
                     <tbody>
                         {% for act in ot.actividades %} 
-                            <tr>
-                                <td class="left">
-                                    <strong>{{ act.codigo_actividad or '-' }}</strong> — <small>{{ act.descripcion }}</small>
-                                </td>
-                                <td>{{ act.duracion_estimada }}</td>
-                                {% for d in range(1, dias_en_mes+1) %}
-                                    <td class="cal-day">
-                                        {% if d in act.dias_mes_list %}
-                                            <div style="font-size: 8pt; line-height: 1;">🛠️</div>
-                                            <div class="checkbox-day"><input type="checkbox"></div>
-                                        {% else %}
-                                            <div class="checkbox-day" style="height: 15px;"></div>
-                                        {% endif %}
-                                    </td>
-                                {% endfor %}
-                            </tr>
+                        <tr>
+                            <td class="left">
+                                <strong>{{ act.codigo_actividad or '-' }}</strong> — 
+                                <small>{{ act.descripcion }}</small>
+                            </td>
+                            <td>{{ act.duracion_estimada }}</td>
+                            {% for d in range(1, dias_en_mes+1) %}
+                            <td class="cal-day">
+                                {% if d in act.dias_mes_list %}
+                                    <div style="font-size: 8pt; line-height: 1;">🛠️</div>
+                                    <div class="checkbox-day"><input type="checkbox"></div>
+                                {% else %}
+                                    <div class="checkbox-day" style="height: 15px;"></div>
+                                {% endif %}
+                            </td>
+                            {% endfor %}
+                        </tr>
                         {% endfor %}
                     </tbody>
                 </table>
