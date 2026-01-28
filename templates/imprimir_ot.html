@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>Impresión de Órdenes de Trabajo</title>
+    <style>
+        /* [Tus estilos se mantienen exactamente iguales] */
+        body { font-family: "Segoe UI", Tahoma, sans-serif; margin: 0; padding: 0; background: white; }
+        .wrap { max-width: 210mm; margin: 0 auto; padding: 0; }
+        h2 { margin: 0; color: #0f172a; }
+        .meta { color: #475569; font-size: 14px; margin-bottom: 5px; line-height: 1.6; }
+        table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 15px; }
+        th, td { padding: 8px 6px; border-bottom: 1px solid #eef2f7; vertical-align: top; text-align: center; }
+        th { background: #f8fafc; color: #0f172a; font-weight: 600; }
+        td.left { text-align: left; padding-left: 12px; }
+        .cal-day { width: 5.7mm; min-width: 5.7mm; max-width: 5.7mm; padding: 1px 0; font-size: 7pt; line-height: 1.0; }
+        .checkbox-day input[type="checkbox"] { visibility: hidden; }
+
+        @media print {
+            @page { size: A4 landscape; margin: 0.5cm; }
+            body { font-size: 7.5pt; }
+            .wrap { max-width: none; margin: 0; }
+            .grupo-container { page-break-before: always; display: flex; flex-direction: column; min-height: 95vh; }
+            .grupo-container:first-child { page-break-before: auto; }
+            .ot-seccion { page-break-inside: avoid; margin-bottom: 10px; }
+            .print-header-content { border-bottom: 2px solid #0f172a; padding-bottom: 10px; margin-bottom: 15px; }
+            .header-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 15px; margin-bottom: 5px; }
+            .header-text h2 { font-size: 16pt; }
+            .print-logo { width: 100px; height: auto; flex-shrink: 0; }
+            table { border: 1px solid #0f172a; }
+            th { background: #1e293b !important; color: white !important; border: 1px solid #0f172a; }
+            td { border: 1px solid #cbd5e1; height: 25px; }
+            .checkbox-day input[type="checkbox"] {
+                -webkit-appearance: none;
+                appearance: none;
+                border: 1px solid black;
+                width: 9px;
+                height: 9px;
+                display: block;
+                margin: 0 auto;
+                visibility: visible;
+            }
+            /* Esto asegura que los checks marcados se vean en la impresión */
+            .checkbox-day input[type="checkbox"]:checked {
+                background-color: black !important;
+                position: relative;
+            }
+            .checkbox-day input[type="checkbox"]:checked::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: black;
+            }
+
+            .print-footer { margin-top: auto; padding-top: 10px; width: 100%; }
+            .print-footer .observations { border: 1px solid #0f172a; height: 60px; padding: 5px; margin-bottom: 20px; }
+            .print-footer .signatures { display: flex; justify-content: space-around; }
+            .print-footer .signature-box { width: 30%; text-align: center; border-top: 1px solid #0f172a; padding-top: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrap">
+
+{% for grupo in all_ots %}
+<div class="grupo-container">
+
+    <div class="print-header-content">
+        <div class="header-row">
+            <div class="header-text">
+                <h2>Orden de Trabajo de Mantenimiento Preventivo: {{ grupo.padre }}</h2>
+                <div class="meta">
+                    Técnico Responsable: <strong>{{ grupo.tecnico }}</strong> &nbsp; | &nbsp;
+                    Equipo Padre: <strong>{{ grupo.padre }}</strong> &nbsp; | &nbsp;
+                    Órdenes en este reporte: <strong>{{ grupo.ots|length }}</strong>
+                </div>
+                <div class="meta">
+                    <strong>MARE01 Ver.4</strong>
+                </div>
+            </div>
+
+            <img src="{{ url_for('static', filename='logoLayta.png') }}"
+                 alt="Logo LAYTA"
+                 class="print-logo">
+        </div>
+    </div>
+
+    {% for ot in grupo.ots %}
+    <div class="ot-seccion">
+        <div style="background:#f1f5f9; padding:5px; border-left:4px solid #0f172a; margin-bottom:5px;">
+            <strong>{{ ot.numero_ot }}</strong> — {{ ot.equipo }}
+            <span style="float:right;">
+                Tipo: {{ ot.tipo_mantenimiento }} | Prioridad: {{ ot.prioridad }} | Mes: {{ ot.fecha_inicio[:7] if ot.fecha_inicio else '' }}
+            </span>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="min-width:280px; text-align:left;">Actividad / Tarea</th>
+                    <th style="min-width:40px;">Min.</th>
+                    {% set dias_en_mes = ot.dias_en_mes or 31 %}
+                    {% for d in range(1, dias_en_mes + 1) %}
+                        <th class="cal-day">{{ d }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for act in ot.actividades %}
+                <tr>
+                    <td class="left">
+                        <strong>{{ act.codigo_actividad or '-' }}</strong> —
+                        <small>{{ act.descripcion }}</small>
+                    </td>
+                    <td>{{ act.duracion_estimada }}</td>
+                    {% for d in range(1, dias_en_mes + 1) %}
+                    <td class="cal-day">
+                        {% if d in act.dias_mes_list %}
+                            <div style="font-size:8pt; line-height:1;">🛠️</div>
+                            <div class="checkbox-day">
+                                <input type="checkbox" {% if d in act.dias_realizados_list %}checked{% endif %}>
+                            </div>
+                        {% else %}
+                            <div class="checkbox-day" style="height:15px;"></div>
+                        {% endif %}
+                    </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endfor %}
+
+    <div class="print-footer">
+        <h3>OBSERVACIONES GENERALES Y RECURSOS UTILIZADOS</h3>
+        <div class="observations">
+            {% if grupo.ots|length == 1 %}
+                {{ grupo.ots[0].observaciones or '' }}
+            {% endif %}
+        </div>
+        <div style="height:20px;"></div>
+        <div class="signatures">
+            <div class="signature-box">
+                <p>{{ grupo.tecnico }}</p>
+                <small>Firma Técnico</small>
+            </div>
+            <div class="signature-box">
+                <p>&nbsp;</p>
+                <small>FIRMA DEL SUPERVISOR</small>
+            </div>
+            <div class="signature-box">
+                <p>&nbsp;</p>
+                <small>FECHA DE CIERRE</small>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endfor %}
+
+</div>
+
+<script>
+    window.onload = function () {
+        // Un pequeño delay asegura que los estilos de impresión carguen bien
+        setTimeout(function(){
+            window.print();
+        }, 500);
+    };
+</script>
+
+</body>
+</html>

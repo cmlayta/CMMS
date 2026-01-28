@@ -374,6 +374,7 @@
                             <button class="btn-ver" onclick="toggleActividades('act-{{ ot.id }}')">👁️ Ver</button>
                             <button class="btn-realizar" onclick="location.href='/realizar_ot/{{ ot.id }}'">⚙️ Realizar</button>
                             <button class="btn-actividad" onclick="location.href='/agregar_actividad/{{ ot.id }}'">➕ Actividad</button>
+                            <button class="btn-imprimir" onclick="location.href='/imprimir_ot_individual/{{ ot.id }}'">🖨️</button>
                             <button class="btn-cerrar"
                                 onclick="return confirm('¿Seguro que desea cerrar esta OT?') ? location.href='/finalizar_ot/{{ ot.id }}' : false;">
                                 ✔️ Cerrar

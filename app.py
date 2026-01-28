@@ -2923,9 +2923,110 @@ def imprimir_ots_masivo():
     # Renderizamos la plantilla con TODAS las OTs
     return render_template('imprimir_ots_masivo.html', all_ots=all_ots)
 
+def obtener_ots_con_actividades(ot_id=None): # Añadimos el parámetro opcional
+    """
+    Obtiene una o todas las OTs activas.
+    Si ot_id tiene un valor, filtra por ese ID.
+    """
+    con = connect_db()
+    cur = con.cursor(dictionary=True)
+    
+    # 1. Ajustamos la consulta con un filtro condicional
+    # Si ot_id es None, trae las Pendientes/En Proceso. 
+    # Si ot_id tiene valor, trae esa específica sin importar el estado.
+    query = """
+        SELECT ot.id, ot.numero_ot, ot.fecha_inicio, ot.fecha_final,
+               ot.tecnico, ot.tipo_mantenimiento, ot.duracion_estimada_total, 
+               ot.prioridad, ot.padre,
+               e.nombre AS equipo
+        FROM ordenes_trabajo ot
+        LEFT JOIN equipos e ON ot.equipo_id = e.id
+        WHERE (%s IS NULL OR ot.id = %s)
+    """
+    
+    # Si no pedimos una OT específica, mantenemos el filtro de estados activos
+    if ot_id is None:
+        query += " AND ot.estado IN ('Pendiente', 'En Proceso')"
+    
+    query += " ORDER BY ot.tecnico ASC, ot.padre ASC, ot.numero_ot ASC"
+    
+    cur.execute(query, (ot_id, ot_id))
+    todas_ots = cur.fetchall()
 
+    grupos = defaultdict(list)
 
+    for ot in todas_ots:
+        current_ot_id = ot['id']
+        
+        # --- Tu lógica de formateo (Se mantiene igual) ---
+        ot_data = {
+            'id': ot['id'],
+            'numero_ot': ot['numero_ot'],
+            'equipo': ot['equipo'] or 'N/A',
+            'tecnico': ot['tecnico'] or 'Sin Asignar',
+            'padre': ot['padre'] or 'General',
+            'tipo_mantenimiento': ot['tipo_mantenimiento'],
+            'prioridad': 'Alta' if ot.get('prioridad') is None else ot['prioridad'], 
+            'duracion_estimada_total': ot.get('duracion_estimada_total', 0) or 0, 
+            'fecha_inicio': ot['fecha_inicio'].strftime('%d/%m/%Y') if ot['fecha_inicio'] else 'N/A',
+            'fecha_final': ot['fecha_final'].strftime('%d/%m/%Y') if ot['fecha_final'] else 'N/A',
+            'dias_en_mes': calendar.monthrange(ot['fecha_inicio'].year, ot['fecha_inicio'].month)[1] if ot['fecha_inicio'] else 31,
+            'actividades': []
+        }
 
+        # 3. Obtener Actividades para esta OT
+        cur.execute("""
+            SELECT codigo_actividad, descripcion, duracion_estimada, prioridad,
+                   dias_mes, dias_realizados 
+            FROM actividades_mantenimiento
+            WHERE orden_trabajo_id = %s
+            ORDER BY id
+        """, (current_ot_id,))
+        actividades = cur.fetchall()
+        
+        for a in actividades:
+            if a.get('dias_mes'):
+                a['dias_mes_list'] = [int(x) for x in str(a['dias_mes']).split(',') if x.strip().isdigit()]
+            else:
+                a['dias_mes_list'] = []
+            
+            # También procesamos los días realizados para que se vean en la impresión si ya hay avance
+            if a.get('dias_realizados'):
+                a['dias_realizados_list'] = [int(x) for x in str(a['dias_realizados']).split(',') if x.strip().isdigit()]
+            else:
+                a['dias_realizados_list'] = []
+
+            ot_data['actividades'].append(a)
+
+        key = (ot_data['tecnico'], ot_data['padre'])
+        grupos[key].append(ot_data)
+
+    cur.close()
+    con.close()
+    
+    # 4. Transformamos a lista de grupos
+    ots_agrupadas_final = []
+    for (tecnico, padre), lista_ots in grupos.items():
+        ots_agrupadas_final.append({
+            'tecnico': tecnico,
+            'padre': padre,
+            'ots': lista_ots
+        })
+    
+    return ots_agrupadas_final
+
+@app.route('/imprimir_ot_individual/<int:ot_id>')
+def imprimir_ot_individual(ot_id):
+    # Llamamos a la función pasando el ID específico
+    ot_agrupada = obtener_ots_con_actividades(ot_id=ot_id)
+    
+    # Si no se encuentra la OT, redirigir o mostrar error
+    if not ot_agrupada:
+        return "Orden de Trabajo no encontrada", 404
+        
+    # Reutilizamos el mismo template masivo. 
+    # Como enviamos una lista con un solo grupo, el HTML funcionará igual.
+    return render_template('imprimir_ots_masivo.html', all_ots=ot_agrupada)
 
 
 # -------------------------TECNICOS---------------------------------------
