@@ -22,7 +22,6 @@
         th { background: #f8fafc; color: #0f172a; font-weight: 600; }
         td.left { text-align: left; padding-left: 12px; }
 
-        /* ESTILOS DE DÍAS */
         .cal-day {
             width: 5.7mm;
             min-width: 5.7mm;
@@ -45,31 +44,35 @@
             body { font-size: 7.5pt; }
             .wrap { max-width: none; margin: 0; }
 
-            /* Cada grupo empieza en hoja nueva */
             .grupo-container {
                 page-break-before: always;
                 display: flex;
                 flex-direction: column;
                 min-height: 95vh;
             }
+
             .grupo-container:first-child {
                 page-break-before: auto;
             }
 
-            /* Evitar cortes de tablas */
+            /* === HOJA EN BLANCO ENTRE CADA GRUPO === */
+            .grupo-container:not(:last-child)::after {
+                content: "";
+                display: block;
+                page-break-after: always;
+            }
+
             .ot-seccion {
                 page-break-inside: avoid;
                 margin-bottom: 10px;
             }
 
-            /* ENCABEZADO */
             .print-header-content {
                 border-bottom: 2px solid #0f172a;
                 padding-bottom: 10px;
                 margin-bottom: 15px;
             }
 
-            /* Header en dos columnas: texto / logo */
             .header-row {
                 display: flex;
                 align-items: flex-start;
@@ -82,7 +85,6 @@
                 font-size: 16pt;
             }
 
-            /* LOGO: solo una vez por grupo, alineado a la derecha */
             .print-logo {
                 width: 100px;
                 height: auto;
@@ -111,22 +113,24 @@
                 visibility: visible;
             }
 
-            /* PIE DE PÁGINA */
             .print-footer {
                 margin-top: auto;
                 padding-top: 10px;
                 width: 100%;
             }
+
             .print-footer .observations {
                 border: 1px solid #0f172a;
                 height: 60px;
                 padding: 5px;
                 margin-bottom: 20px;
             }
+
             .print-footer .signatures {
                 display: flex;
                 justify-content: space-around;
             }
+
             .print-footer .signature-box {
                 width: 30%;
                 text-align: center;
@@ -144,8 +148,6 @@
 <div class="grupo-container">
 
     <div class="print-header-content">
-
-        <!-- HEADER CON LOGO A LA DERECHA -->
         <div class="header-row">
             <div class="header-text">
                 <h2>Orden de Trabajo de Mantenimiento Preventivo: {{ grupo.padre }}</h2>
@@ -163,7 +165,6 @@
                  alt="Logo LAYTA"
                  class="print-logo">
         </div>
-
     </div>
 
     {% for ot in grupo.ots %}

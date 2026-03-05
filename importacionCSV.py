@@ -2,7 +2,7 @@ import pandas as pd
 import mysql.connector
 
 # === CONFIGURACIÓN ===
-ruta_csv = r"C:\Users\Proyectos 2\Desktop\CMMS\mantenimiento_cmms\ListadeArtículos20251107.csv"  # <-- cambia esta ruta
+ruta_csv = r"G:\Mi unidad\Servidor Manto\CMMS\ListadeArtículos20260130.csv"  # <-- cambia esta ruta
 host = "192.168.0.122"
 user = "layta"
 password = "Layta.123"
