@@ -45,11 +45,14 @@
             .wrap { max-width: none; margin: 0; }
 
             /* Estilo para la hoja en blanco intermedia */
-            .salto-pagina {
-                page-break-after: always;
-                height: 0;
-                display: block;
-            }
+            /* Fuerza una hoja en blanco real */
+                .salto-pagina {
+                    page-break-after: always;
+                    display: block;
+                    height: 100vh; /* Ocupa toda la hoja */
+                    content: "";
+                    visibility: hidden; /* No se ve nada, pero ocupa espacio */
+                }
 
             .grupo-container {
                 page-break-before: always;
@@ -219,12 +222,12 @@
             <div class="signature-box">FIRMA DEL SUPERVISOR</div>
             <div class="signature-box">FECHA DE CIERRE</div>
         </div>
-    </div>
-</div>
-
-{% if not loop.last %}
-    <div class="salto-pagina"></div>
+    </div> 
+</div> {% if not loop.last %}
+    <div class="salto-pagina">&nbsp;</div>
 {% endif %}
+
+{% endfor %}
 
 {% endfor %}
 
