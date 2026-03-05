@@ -44,22 +44,21 @@
             body { font-size: 7.5pt; }
             .wrap { max-width: none; margin: 0; }
 
+            /* Estilo para la hoja en blanco intermedia */
+            .salto-pagina {
+                page-break-after: always;
+                height: 0;
+                display: block;
+            }
+
             .grupo-container {
                 page-break-before: always;
                 display: flex;
                 flex-direction: column;
                 min-height: 95vh;
             }
-
             .grupo-container:first-child {
                 page-break-before: auto;
-            }
-
-            /* === HOJA EN BLANCO ENTRE CADA GRUPO === */
-            .grupo-container:not(:last-child)::after {
-                content: "";
-                display: block;
-                page-break-after: always;
             }
 
             .ot-seccion {
@@ -118,19 +117,16 @@
                 padding-top: 10px;
                 width: 100%;
             }
-
             .print-footer .observations {
                 border: 1px solid #0f172a;
                 height: 60px;
                 padding: 5px;
                 margin-bottom: 20px;
             }
-
             .print-footer .signatures {
                 display: flex;
                 justify-content: space-around;
             }
-
             .print-footer .signature-box {
                 width: 30%;
                 text-align: center;
@@ -224,8 +220,12 @@
             <div class="signature-box">FECHA DE CIERRE</div>
         </div>
     </div>
-
 </div>
+
+{% if not loop.last %}
+    <div class="salto-pagina"></div>
+{% endif %}
+
 {% endfor %}
 
 </div>
