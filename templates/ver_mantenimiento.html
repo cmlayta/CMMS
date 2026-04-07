@@ -447,14 +447,20 @@
 
     /* === Buscar por equipo === */
     function filtrarPorEquipo() {
-        const filtro = document.getElementById("buscadorEquipo").value.toUpperCase();
-        const filas = document.querySelectorAll(".fila-ot");
+    const filtro = document.getElementById("buscadorEquipo").value.toUpperCase();
+    const filas = document.querySelectorAll(".fila-ot");
 
-        filas.forEach(f => {
-            const equipo = f.children[1].innerText.toUpperCase();
-            f.style.display = equipo.includes(filtro) ? "" : "none";
-        });
-    }
+    filas.forEach(f => {
+        const ot = f.children[0].innerText.toUpperCase();      // Columna OT
+        const equipo = f.children[1].innerText.toUpperCase();  // Columna equipo
+
+        if (ot.includes(filtro) || equipo.includes(filtro)) {
+            f.style.display = "";
+        } else {
+            f.style.display = "none";
+        }
+    });
+}
 
     /* === Barras de progreso animadas === */
     document.addEventListener("DOMContentLoaded", () => {
